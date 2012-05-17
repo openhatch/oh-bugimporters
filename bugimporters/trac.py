@@ -21,6 +21,7 @@ import csv
 import datetime
 import feedparser
 import lxml
+import lxml.html
 import twisted.web.error
 import twisted.web.http
 import urlparse

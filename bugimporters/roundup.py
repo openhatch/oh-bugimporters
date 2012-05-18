@@ -210,11 +210,17 @@ class RoundupBugParser(object):
             # This Roundup issue has no messages.
             description = ""
 
+        # Create a lookup set where all the values in here represent
+        # status values that "look closed"
+        closed_status_set = set()
+        for status_name in tm.closed_status.split(','):
+            closed_status_set.add(status_name.strip().lower())
+            
         ret = {'title': metadata_dict['Title'],
                'description': description,
                'importance': metadata_dict['Priority'],
                'status': metadata_dict['Status'],
-               'looks_closed': (metadata_dict['Status'] == tm.closed_status),
+               'looks_closed': (metadata_dict['Status'].lower() in closed_status_set),
                'submitter_username': submitter_username,
                'submitter_realname': self.get_submitter_realname(
                    self.bug_html,

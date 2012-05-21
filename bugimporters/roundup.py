@@ -27,6 +27,7 @@ try:
 except ImportError:
     from unicodecsv import UnicodeDictReader as DictReader
 
+import bugimporters.items
 from bugimporters.helpers import cached_property
 from bugimporters.base import BugImporter
 
@@ -215,8 +216,9 @@ class RoundupBugParser(object):
         closed_status_set = set()
         for status_name in tm.closed_status.split(','):
             closed_status_set.add(status_name.strip().lower())
-            
-        ret = {'title': metadata_dict['Title'],
+
+        ret = bugimporters.items.ParsedBug()
+        ret.update({'title': metadata_dict['Title'],
                'description': description,
                'importance': metadata_dict['Priority'],
                'status': metadata_dict['Status'],
@@ -230,11 +232,11 @@ class RoundupBugParser(object):
                'last_touched': self.str2datetime_obj(last_touched),
                'canonical_bug_link': self.bug_url,
                'last_polled': datetime.datetime.utcnow(),
-               }
+               '_project_name': tm.tracker_name,
+               })
 
         # Check for the bitesized keyword
         if tm.bitesized_field:
-            ret['bite_size_tag_name'] = tm.bitesized_text
             b_list = tm.bitesized_text.split(',')
             ret['good_for_newcomers'] = any(b in metadata_dict.get(tm.bitesized_field, '') for b in b_list)
         else:

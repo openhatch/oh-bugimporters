@@ -20,6 +20,7 @@ import datetime
 import dateutil.parser
 import logging
 
+import bugimporters.items
 from bugimporters.base import BugImporter
 
 
@@ -189,7 +190,7 @@ class LaunchpadBugImporter(BugImporter):
 class LaunchpadBug(object):
     def __init__(self, tracker):
         self._tracker = tracker
-        self._data = {}
+        self._data = bugimporters.items.ParsedBug()
         self._data['last_polled'] = datetime.datetime.utcnow()
 
     def _parse_datetime(self, ts):
@@ -207,6 +208,7 @@ class LaunchpadBug(object):
     def parse_bug(self, data):
         self.owner_link = data['owner_link']
         self._data['last_touched'] = self._parse_datetime(data['date_last_updated'])
+        self._data['_project_name'] = self._tracker.tracker_name
         self._data['description'] = data['description']
         self._data['concerns_just_documentation'] = \
             self._tracker.documentation_tag in data['tags']

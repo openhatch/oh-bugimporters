@@ -18,6 +18,7 @@ setup_params = dict(
         'twisted',
         'python-dateutil',
         'decorator',
+        'scrapy',
     ],
 )
 

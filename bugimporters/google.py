@@ -22,6 +22,7 @@ import datetime
 from atom.core import Parse
 from gdata.projecthosting.data import IssuesFeed, IssueEntry
 
+import bugimporters.items
 from bugimporters.base import BugImporter
 from bugimporters.helpers import string2naive_datetime, cached_property
 
@@ -208,7 +209,7 @@ class GoogleBugParser(object):
         else:
             author = issue.author
 
-        ret_dict = {
+        ret_dict = bugimporters.items.ParsedBug({
                 'title': issue.title.text,
                 'description': issue.content.text,
                 'status': status,
@@ -219,17 +220,16 @@ class GoogleBugParser(object):
                 'submitter_username': author.name.text,
                 'submitter_realname': '', # Can't get this from Google
                 'canonical_bug_link': self.bug_url,
+                '_project_name': tm.tracker_name,
                 'looks_closed': (issue.state.text == 'closed')
-                }
+                })
 
         labels = [label.text for label in issue.label]
         # Check for the bitesized keyword(s)
         if tm.bitesized_type:
-            ret_dict['bite_size_tag_name'] = tm.bitesized_text
             b_list = tm.bitesized_text.split(',')
             ret_dict['good_for_newcomers'] = any(b in labels for b in b_list)
         else:
-            ret_dict['bite_size_tag_name'] = ''
             ret_dict['good_for_newcomers'] = False
         # Check whether this is a documentation bug.
         if tm.documentation_type:

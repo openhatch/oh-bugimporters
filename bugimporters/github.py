@@ -18,6 +18,7 @@ import datetime
 import json
 import logging
 
+import bugimporters.items
 from bugimporters.base import BugImporter
 from bugimporters.helpers import string2naive_datetime
 
@@ -97,7 +98,7 @@ class GitHubBugParser(object):
         return 1
 
     def parse(self, issue):
-        parsed = {
+        parsed = bugimporters.items.ParsedBug({
             'title': issue['title'],
             'description': issue['body'],
             'status': issue['state'],
@@ -111,9 +112,9 @@ class GitHubBugParser(object):
                     self.github_name, self.github_repo, issue['number'],
                 ),
             'looks_closed': (issue['state'] == 'closed'),
-        }
+            '_project_name': self.tm.tracker_name,
+        })
 
-        parsed['bize_size_tag_name'] = self.tm.bitesized_tag
         b_list = self.tm.bitesized_tag.split(',')
         parsed['good_for_newcomers'] = any(b in issue['labels'] for b in b_list)
 

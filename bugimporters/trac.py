@@ -32,7 +32,7 @@ import StringIO
 from bugimporters.base import BugImporter
 from bugimporters.helpers import (string2naive_datetime, cached_property,
         unicodify_strings_when_inputted, wrap_file_object_in_utf8_check)
-
+import bugimporters.items
 
 class TracBugImporter(BugImporter):
     def __init__(self, *args, **kwargs):
@@ -342,10 +342,14 @@ class TracBugParser(object):
         return s
 
     def get_parsed_data_dict(self, tm):
+        # Note that this actually returns a scrapy.Item, which looks and
+        # feels like a dict object, but has some special conveniences.
+        #
         # Seems that some Trac bug trackers don't give all the information
         # below. For now, just put the offending item inside a try catch and
         # give it a null case.
-        ret = {'title': self.bug_csv['summary'],
+        ret = bugimporters.items.ParsedBug()
+        ret.update({'title': self.bug_csv['summary'],
                'description': TracBugParser.string_un_csv(
                         self.bug_csv['description']),
                'status': self.bug_csv['status'],
@@ -353,7 +357,8 @@ class TracBugParser(object):
                'submitter_realname': '',  # can't find this in Trac
                'canonical_bug_link': self.bug_url,
                'last_polled': datetime.datetime.utcnow(),
-               }
+               '_project_name': tm.tracker_name,
+               })
         ret['importance'] = self.bug_csv.get('priority', '')
 
         ret['looks_closed'] = (self.bug_csv['status'] == 'closed')
@@ -397,7 +402,6 @@ class TracBugParser(object):
 
         # Check for the bitesized keyword
         if tm.bitesized_type:
-            ret['bite_size_tag_name'] = tm.bitesized_text
             b_list = tm.bitesized_text.split(',')
             ret['good_for_newcomers'] = any(
                     b in self.bug_csv[tm.bitesized_type] for b in b_list)

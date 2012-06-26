@@ -70,6 +70,12 @@ You will see a bunch of output that indicates the "pytest" system is
 looking for, finding, and running tests. Each "." (dot) character
 indicates a test that passed.
 
+The code generates a coverage.xml file that with information to help
+understand which parts of the code are "covered" by the test suite. You
+can read `more about code coverage`_.
+
+.. _more about code coverage: https://en.wikipedia.org/wiki/Code_coverage
+
 License
 =======
 

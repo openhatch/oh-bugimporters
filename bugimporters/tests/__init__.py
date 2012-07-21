@@ -20,6 +20,14 @@ class TrackerModel(Mock):
     def get_base_url(self):
         return self.base_url
 
+class HaskellTrackerModel(TrackerModel):
+    """This is a Mock for the Haskell(GHC) tracker. Since it uses Trac we
+    just need to extend TrackerModel and overwrite it's specific bitesized
+    indentifiers"""
+
+    bitesized_type = 'difficulty'
+    bitesized_text = 'Easy (less than 1 hour)'
+
 
 class Bug(object):
 
@@ -44,5 +52,3 @@ class FakeGetPage(object):
                 twisted.web.error.Error(
                 404, 'File Not Found', None)))
         return d
-
-

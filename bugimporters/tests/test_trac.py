@@ -3,7 +3,7 @@ import os
 import twisted
 
 from bugimporters.tests import (Bug, ReactorManager, TrackerModel,
-        FakeGetPage)
+        FakeGetPage, HaskellTrackerModel)
 from bugimporters.trac import TracBugImporter, TracBugParser
 from mock import Mock
 
@@ -171,3 +171,23 @@ class TestTracBugImporter(object):
 
         self.im.process_bugs(all_bugs)
         assert len(all_bugs) == 0
+
+    def test_bug_with_difficulty_easy_is_bitesize(self):
+        tbp = TracBugParser(
+                bug_url='http://hackage.haskell.org/trac/ghc/ticket/4268')
+
+        cached_html_filename = os.path.join(HERE, 'sample-data',
+                'ghc-trac-4268.html')
+        tbp.set_bug_html_data(unicode(
+            open(cached_html_filename).read(), 'utf-8'))
+
+        cached_csv_filename = os.path.join(HERE, 'sample-data',
+                'ghc-trac-4268.csv')
+        tbp.set_bug_csv_data(open(cached_csv_filename).read())
+
+        tm = HaskellTrackerModel()
+
+        returned_data = tbp.get_parsed_data_dict(tm)
+        assert returned_data['good_for_newcomers'], '''The bug is considered
+                    good_for_newcomers because the value of the difficulty
+                    field is: "Easy (less than 1 hour)"'''

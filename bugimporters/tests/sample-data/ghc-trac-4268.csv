@@ -1,0 +1,2 @@
+id,summary,reporter,owner,description,type,status,priority,milestone,component,version,resolution,keywords,cc,os,architecture,failure,difficulty,testcase,blockedby,blocking,related
+4268,Annotation extension needs a flag,simonmar,,"There's no flag to enable the annotations extension, as far as I can tell.",bug,new,normal,7.6.1,Compiler,7.0.4,,,bgamari@…,Unknown/Multiple,Unknown/Multiple,Other,Easy (less than 1 hour),,,,

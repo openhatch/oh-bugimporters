@@ -1,0 +1,395 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+
+
+
+
+
+
+  <head>
+    <title>
+          #4268 (Annotation extension needs a flag)
+     – GHC
+    </title>
+        <link rel="search" href="/trac/ghc/search" />
+        <link rel="last" href="/trac/ghc/ticket/1487" title="Ticket #1487" />
+        <link rel="help" href="/trac/ghc/wiki/TracGuide" />
+        <link rel="alternate" href="/trac/ghc/ticket/4268?format=csv" type="text/csv" class="csv" title="Comma-delimited Text" /><link rel="alternate" href="/trac/ghc/ticket/4268?format=tab" type="text/tab-separated-values" class="tab" title="Tab-delimited Text" /><link rel="alternate" href="/trac/ghc/ticket/4268?format=rss" type="application/rss+xml" class="rss" title="RSS Feed" />
+        <link rel="up" href="/trac/ghc/query?status=new&amp;group=priority&amp;order=id&amp;difficulty=Easy+%28less+than+1+hour%29&amp;col=id&amp;col=summary&amp;col=status&amp;col=owner&amp;col=milestone&amp;col=component&amp;col=version&amp;desc=1&amp;type=bug" />
+        <link rel="next" href="/trac/ghc/ticket/4048" title="Ticket #4048" />
+        <link rel="start" href="/trac/ghc/wiki" />
+        <link rel="stylesheet" href="/trac-htdocs/css/trac.css" type="text/css" /><link rel="stylesheet" href="/trac-htdocs/css/ticket.css" type="text/css" />
+        <link rel="shortcut icon" href="/trac/ghc/chrome/common/trac.ico" type="image/x-icon" />
+        <link rel="icon" href="/trac/ghc/chrome/common/trac.ico" type="image/x-icon" />
+      <link type="application/opensearchdescription+xml" rel="search" href="/trac/ghc/search/opensearch" title="Search GHC" />
+    <script type="text/javascript" src="/trac-htdocs/js/jquery.js"></script><script type="text/javascript" src="/trac-htdocs/js/trac.js"></script><script type="text/javascript" src="/trac-htdocs/js/search.js"></script>
+    <!--[if lt IE 7]>
+    <script type="text/javascript" src="/trac-htdocs/js/ie_pre7_hacks.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="/trac-htdocs/js/wikitoolbar.js"></script><script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("div.description").find("h1,h2,h3,h4,h5,h6").addAnchor("Link to this section");
+        $("#changelog h3.change").addAnchor("Link to this change");
+        /* only enable control elements for the currently selected action */
+        var actions = $("#action input[name='action']");
+        function updateActionFields() {
+          actions.each(function () {
+            $(this).siblings().find("*[id]").enable($(this).checked());
+            $(this).siblings().filter("*[id]").enable($(this).checked());
+          });
+        }
+        actions.click(updateActionFields);
+        updateActionFields();
+      });
+    </script>
+    <link rel="stylesheet" type="text/css" href="/ghc/style.css" />
+    <script type="text/javascript" src="/ghc/tracDupeSearch.js"></script>
+    <link rel="stylesheet" type="text/css" href="/ghc/tracDupeSearch.css" />
+  </head>
+  <body>
+    <div id="siteheader">
+      <?cs ####################################################################
+# Site header - Contents are automatically inserted above Trac HTML
+?><div id="left">
+  <div class="block"><ul>
+    <li><a href="/trac/ghc">GHC Trac Home</a></li>
+    <li><a href="http://www.haskell.org/ghc/">GHC Home</a></li>
+    <li> </li>
+    <li><b>Documentation</b></li>
+    <li><a href="/trac/ghc/wiki/Status">Status Reports</a></li>
+    <li><a href="/trac/ghc/wiki/Repositories">Repositories</a></li>
+    <li><a href="/trac/ghc/wiki/Building">Building Guide</a></li>
+    <li><a href="/trac/ghc/wiki/Commentary">Commentary</a></li>
+    <li><a href="/trac/ghc/wiki/Debugging">Debugging</a></li>
+    <li> </li>
+    <li><b>View Tickets</b></li>
+    <li><a href="/trac/ghc/query?status=new&amp;status=assigned&amp;status=reopened&amp;group=priority&amp;type=bug&amp;order=id&amp;desc=1">All Bugs</a></li>
+    <li><a href="/trac/ghc/query?status=new&amp;status=assigned&amp;status=reopened&amp;type=task&amp;order=priority&amp;group=difficulty">All Tasks</a></li>
+    <li><a href="/trac/ghc/query?status=new&amp;status=assigned&amp;status=reopened&amp;type=feature+request&amp;order=priority">All Feature Req's</a></li>
+    <li><a href="/trac/ghc/query?status=new&amp;status=assigned&amp;status=reopened&amp;type=proposal&amp;order=priority">All Proposals</a></li>
+    <li><a href="/trac/ghc/query?status=infoneeded&amp;status=new&amp;status=patch&amp;order=priority&amp;owner=$USER">My Tickets</a></li>
+    <li><a href="/trac/ghc/query?status=infoneeded&amp;status=new&amp;status=patch&amp;order=priority&amp;reporter=$USER">Tickets I Created</a></li>
+    <li><a href="/trac/ghc/query?status=new&amp;status=assigned&amp;status=reopened&amp;group=milestone&amp;order=priority">By Milestone</a></li>
+    <li><a href="/trac/ghc/query?status=new&amp;status=assigned&amp;status=reopened&amp;group=os&amp;order=priority">By OS</a></li>
+    <li><a href="/trac/ghc/query?status=new&amp;status=assigned&amp;status=reopened&amp;group=architecture&amp;order=priority">By Architecture</a></li>
+    <li><a href="/trac/ghc/query?status=patch&amp;ol=id&amp;col=summary&amp;col=owner&amp;col=type&amp;col=priority&amp;col=milestone&amp;col=component&amp;order=priority">Patches for review</a></li>
+    <li> </li>
+    <li><b>Create Ticket</b></li>
+    <li><a href="/trac/ghc/newticket?type=bug">New Bug</a></li>
+    <li><a href="/trac/ghc/newticket?type=task">New Task</a></li>
+    <li><a href="/trac/ghc/newticket?type=feature+request">New Feature Req</a></li>
+    <li> </li>
+    <li><b>Joining In</b></li>
+    <li><a href="/trac/ghc/wiki/GettingStarted">Getting Started</a></li>
+    <li><a href="/trac/ghc/wiki/MailingListsAndIRC">Mailing Lists &amp; IRC</a></li>
+    <li><a href="/trac/ghc/wiki/WorkingConventions">Working on GHC</a></li>
+    <li><a href="/trac/ghc/wiki/Contributors">GHC Contributors</a></li>
+    <li> </li>
+    <li><b>Wiki</b></li>
+    <li><a href="/trac/ghc/wiki/TitleIndex">Title Index</a></li>
+    <li><a href="/trac/ghc/wiki/RecentChanges">Recent Changes</a></li>
+    <li><a href="/trac/ghc/wiki/TracWikiMisc">Wiki Notes</a></li>
+  </ul></div>
+</div>
+    </div>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="http://www.haskell.org/ghc/"><img src="/ghc/ghc_logo.png" alt="Trac" height="73" width="584" /></a>
+      </div>
+      <form id="search" action="/trac/ghc/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="/trac/ghc/login">Login</a></li><li><a href="/trac/ghc/wiki/TracGuide">Help/Guide</a></li><li><a href="/trac/ghc/about">About Trac</a></li><li><a href="/trac/ghc/register">Register</a></li><li><a href="/trac/ghc/reset_password">Forgot your password?</a></li><li class="last"><a href="/trac/ghc/prefs">Preferences</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="/trac/ghc/wiki">Wiki</a></li><li><a href="/trac/ghc/timeline">Timeline</a></li><li><a href="/trac/ghc/roadmap">Roadmap</a></li><li><a href="/trac/ghc/browser">Browse Source</a></li><li class="active"><a href="/trac/ghc/report">View Tickets</a></li><li><a href="/trac/ghc/pdashboard">Dashboard</a></li><li class="last"><a href="/trac/ghc/blog">Blog</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+          <ul>
+              <li class="first"><span class="missing">&larr; Previous Ticket</span></li><li><a href="/trac/ghc/query?status=new&amp;group=priority&amp;order=id&amp;difficulty=Easy+%28less+than+1+hour%29&amp;col=id&amp;col=summary&amp;col=status&amp;col=owner&amp;col=milestone&amp;col=component&amp;col=version&amp;desc=1&amp;type=bug">Back to Query</a></li><li class="last"><span><a class="next" href="/trac/ghc/ticket/4048" title="Ticket #4048">Next Ticket</a> &rarr;</span></li>
+          </ul>
+        <hr />
+      </div>
+    <div id="content" class="ticket">
+      <h1>
+              Ticket #4268
+          <span class="status">(new bug)</span>
+      </h1>
+      <!-- Do not show the ticket (pre)view when the user first comes to the "New Ticket" page.
+           Wait until they hit preview. -->
+        <!-- Ticket Box (ticket fields along with description) -->
+        <div id="ticket">
+          <div class="date">
+            <p>Opened <a class="timeline" href="/trac/ghc/timeline?from=2010-08-23T02%3A57%3A25-0700&amp;precision=second" title="2010-08-23T02:57:25-0700 in Timeline">23 months</a> ago</p>
+            <p>Last modified <a class="timeline" href="/trac/ghc/timeline?from=2011-12-25T14%3A49%3A17-0800&amp;precision=second" title="2011-12-25T14:49:17-0800 in Timeline">6 months</a> ago</p>
+          </div>
+          <!-- use a placeholder if it's a new ticket -->
+          <h2 class="summary searchable">Annotation extension needs a flag</h2>
+          <table class="properties">
+            <tr>
+              <th id="h_reporter">Reported by:</th>
+              <td headers="h_reporter" class="searchable">simonmar</td>
+              <th id="h_owner">Owned by:</th>
+              <td headers="h_owner">
+              </td>
+            </tr>
+            <tr>
+                <th id="h_priority">
+                  Priority:
+                </th>
+                <td headers="h_priority">
+                      normal
+                </td>
+                <th id="h_milestone">
+                  Milestone:
+                </th>
+                <td headers="h_milestone">
+                      <a class="milestone" href="/trac/ghc/milestone/7.6.1">7.6.1</a>
+                </td>
+            </tr><tr>
+                <th id="h_component">
+                  Component:
+                </th>
+                <td headers="h_component">
+                      Compiler
+                </td>
+                <th id="h_version">
+                  Version:
+                </th>
+                <td headers="h_version">
+                      7.0.4
+                </td>
+            </tr><tr>
+                <th id="h_keywords">
+                  Keywords:
+                </th>
+                <td headers="h_keywords" class="searchable">
+                </td>
+                <th id="h_cc">
+                  Cc:
+                </th>
+                <td headers="h_cc" class="searchable">
+                      bgamari@…
+                </td>
+            </tr><tr>
+                <th id="h_os">
+                  Operating System:
+                </th>
+                <td headers="h_os">
+                      Unknown/Multiple
+                </td>
+                <th id="h_architecture">
+                  Architecture:
+                </th>
+                <td headers="h_architecture">
+                      Unknown/Multiple
+                </td>
+            </tr><tr>
+                <th id="h_failure">
+                  Type of failure:
+                </th>
+                <td headers="h_failure">
+                      Other
+                </td>
+                <th id="h_difficulty">
+                  Difficulty:
+                </th>
+                <td headers="h_difficulty">
+                      Easy (less than 1 hour)
+                </td>
+            </tr><tr>
+                <th id="h_testcase">
+                  Test Case:
+                </th>
+                <td headers="h_testcase">
+                </td>
+                <th id="h_blockedby">
+                  Blocked By:
+                </th>
+                <td headers="h_blockedby"><span></span></td>
+            </tr><tr>
+                <th id="h_blocking">
+                  Blocking:
+                </th>
+                <td headers="h_blocking"><span></span></td>
+                <th id="h_related">
+                  Related Tickets:
+                </th>
+                <td headers="h_related">
+                </td>
+            </tr>
+          </table>
+            <div class="description">
+              <h3 id="comment:description">
+                Description
+              </h3>
+              <div class="searchable">
+                <p>
+There's no flag to enable the annotations extension, as far as I can tell.
+</p>
+
+              </div>
+            </div>
+        </div>
+          <h2>Change History</h2>
+          <div id="changelog">
+            <form method="get" action="#comment" class="printableform">
+              <div class="change">
+                <h3 class="change" id="comment:1">
+                  Changed <a class="timeline" href="/trac/ghc/timeline?from=2010-08-23T06%3A28%3A40-0700&amp;precision=second" title="2010-08-23T06:28:40-0700 in Timeline">23 months</a> ago by igloo
+                </h3>
+      <ul class="changes">
+        <li>
+          <strong>owner</strong>
+            set to <em>igloo</em>
+        </li>
+      </ul>
+      <div class="comment searchable">
+
+      </div>
+              </div>
+            </form><form method="get" action="#comment" class="printableform">
+              <div class="change">
+                <h3 class="change" id="comment:2">
+                  Changed <a class="timeline" href="/trac/ghc/timeline?from=2010-08-24T07%3A06%3A40-0700&amp;precision=second" title="2010-08-24T07:06:40-0700 in Timeline">23 months</a> ago by igloo
+                </h3>
+      <div class="comment searchable">
+        <p>
+Annotations are pragmas, which we haven't historically had extensions for. Some options:
+</p>
+<ul><li>Do nothing.
+</li><li>Ignore (but warn about) <tt>ANN</tt> pragmas if <tt>TemplateHaskell</tt> is off (I infer from the docs that they rely on TH). If they are a well-behaved pragma then ignoring them won't affect the correctness of the code.
+</li><li>Add an extension for annotations.
+</li><li>Add an extension for each pragma GHC knows about.
+</li></ul>
+      </div>
+              </div>
+            </form><form method="get" action="#comment" class="printableform">
+              <div class="change">
+                <h3 class="change" id="comment:3">
+                  Changed <a class="timeline" href="/trac/ghc/timeline?from=2010-08-27T10%3A49%3A05-0700&amp;precision=second" title="2010-08-27T10:49:05-0700 in Timeline">22 months</a> ago by igloo
+                </h3>
+      <ul class="changes">
+        <li>
+          <strong>status</strong>
+              changed from <em>new</em> to <em>closed</em>
+        </li><li>
+          <strong>resolution</strong>
+              set to <em>fixed</em>
+        </li>
+      </ul>
+      <div class="comment searchable">
+        <p>
+Consensus was "do nothing".
+</p>
+
+      </div>
+              </div>
+            </form><form method="get" action="#comment" class="printableform">
+              <div class="change">
+                <h3 class="change" id="comment:4">
+                  Changed <a class="timeline" href="/trac/ghc/timeline?from=2011-09-02T00%3A45%3A25-0700&amp;precision=second" title="2011-09-02T00:45:25-0700 in Timeline">10 months</a> ago by nomeata
+                </h3>
+      <ul class="changes">
+        <li>
+          <strong>owner</strong>
+            <em>igloo</em> deleted
+        </li><li>
+          <strong>status</strong>
+              changed from <em>closed</em> to <em>new</em>
+        </li><li>
+          <strong>version</strong>
+              changed from <em>6.12.3</em> to <em>7.0.4</em>
+        </li><li>
+          <strong>resolution</strong>
+              <em>fixed</em> deleted
+        </li>
+      </ul>
+      <div class="comment searchable">
+        <p>
+Can you please reconsider option two? On Debian, we have several arches where ghci does not work. It is already a pitty that we cannot build any TH-using library there, but now we also have to remove anything using annotation, e.g. haskell-vector.
+</p>
+<p>
+Thanks,
+Joachim
+</p>
+
+      </div>
+              </div>
+            </form><form method="get" action="#comment" class="printableform">
+              <div class="change">
+                <h3 class="change" id="comment:5">
+                  Changed <a class="timeline" href="/trac/ghc/timeline?from=2011-09-16T19%3A53%3A51-0700&amp;precision=second" title="2011-09-16T19:53:51-0700 in Timeline">10 months</a> ago by bgamari
+                </h3>
+      <ul class="changes">
+        <li>
+          <strong>cc</strong>
+            <em>bgamari@…</em> added
+        </li>
+      </ul>
+      <div class="comment searchable">
+
+      </div>
+              </div>
+            </form><form method="get" action="#comment" class="printableform">
+              <div class="change">
+                <h3 class="change" id="comment:6">
+                  Changed <a class="timeline" href="/trac/ghc/timeline?from=2011-12-25T14%3A49%3A17-0800&amp;precision=second" title="2011-12-25T14:49:17-0800 in Timeline">6 months</a> ago by igloo
+                </h3>
+      <ul class="changes">
+        <li>
+          <strong>milestone</strong>
+              changed from <em>7.0.1</em> to <em>7.6.1</em>
+        </li>
+      </ul>
+      <div class="comment searchable">
+
+      </div>
+              </div>
+            </form>
+          </div>
+      <div id="help">
+        <strong>Note:</strong> See
+        <a href="/trac/ghc/wiki/TracTickets">TracTickets</a> for help on using
+        tickets.
+      </div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="/trac/ghc/ticket/4268?format=csv" class="csv">Comma-delimited Text</a>
+        </li><li>
+          <a rel="nofollow" href="/trac/ghc/ticket/4268?format=tab" class="tab">Tab-delimited Text</a>
+        </li><li class="last">
+          <a rel="nofollow" href="/trac/ghc/ticket/4268?format=rss" class="rss">RSS Feed</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="/trac-htdocs/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">
+        Powered by <a href="/trac/ghc/about"><strong>Trac 0.11.6</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.
+      </p>
+      <p class="right">To edit, <a href="http://hackage.haskell.org/trac/ghc/login">login</a> as user <b>guest</b>, password <b>guest</b></p>
+    </div>
+    <div id="sitefooter">
+    </div>
+  </body>
+</html>

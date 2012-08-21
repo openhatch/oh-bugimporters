@@ -1,0 +1,6 @@
+- base_url: http://twistedmatrix.com/trac/
+  tracker_name: Twisted
+  documentation_text: documentation
+  documentation_type: keywords
+  bitesized_text: easy
+  bitesized_type: keywords

@@ -14,6 +14,7 @@ Contents:
    intro
    integration
    roadmap
+   cli
 
 
 Indices and tables

@@ -2,8 +2,9 @@ import scrapy.item
 
 class ParsedBug(scrapy.item.Item):
     # Fields beginning with an underscore are not really part of a
-    # bug, but extra information that must get processed.
+    # bug, but extra information that can be exported.
     _project_name = scrapy.item.Field()
+    _tracker_name = scrapy.item.Field()
 
     # These fields correspond to bug data
     title = scrapy.item.Field()
@@ -21,4 +22,3 @@ class ParsedBug(scrapy.item.Item):
     as_appears_in_distribution = scrapy.item.Field()
     good_for_newcomers = scrapy.item.Field()
     concerns_just_documentation = scrapy.item.Field()
-    tracker = scrapy.item.Field()

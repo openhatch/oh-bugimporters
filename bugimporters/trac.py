@@ -221,7 +221,7 @@ class TracBugImporter(BugImporter):
 
         # Get the parsed data dict from the TracBugParser
         data = tbp.get_parsed_data_dict(self.tm)
-        data['tracker'] = self.tm
+        data['_tracker_name'] = self.tm.tracker_name
 
         if self.tm.old_trac:
 

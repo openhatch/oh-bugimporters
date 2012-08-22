@@ -144,7 +144,7 @@ class TestTracBugImporter(object):
 
         assert bug.title == 'Deprecate twisted.persisted.journal'
         assert bug.submitter_username == 'thijs'
-        assert bug.tracker == self.tm
+        assert bug._tracker_name == self.tm.tracker_name
 
     def test_handle_bug_html_for_existing_bug(self):
         global all_bugs

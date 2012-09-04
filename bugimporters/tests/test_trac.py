@@ -227,6 +227,11 @@ class TestTracBugParser(object):
                 bitesized_type='priority',
                 bitesized_text='trivial',
                 documentation_type='')
+        cls.tm4 = TrackerModel(
+                tracker_name='Tango',
+                base_url='http://dsource.org/projects/tango/',
+                bug_project_name_format='{tracker_name}',
+                documentation_type='')
 
     def test_create_bug_object_data_dict_more_recent(self):
         tbp = TracBugParser('http://twistedmatrix.com/trac/ticket/4298')
@@ -489,3 +494,31 @@ class TestTracBugParser(object):
                   '_project_name': 'Trac',
                   }
         self.assertEqual(wanted, got)
+
+    def test_create_bug_that_has_another_date_format(self):
+        tbp = TracBugParser('http://dsource.org/projects/tango/ticket/1939')
+        tbp.bug_csv = {
+            'cc': '',
+            'component': 'Documentation',
+            'description': "tango.core.Memory.GC.monitor() is documented incorrectly. It just duplicates previous function documentation. At least in Kai. Can't see current trunk Memory module for some reason.\\r\\n",
+            'id': '1939',
+            'keywords': 'GC.monitor',
+            'milestone': 'Documentation',
+            'owner': 'community',
+            'priority': 'trivial',
+            'reporter': '~Gh0sT~',
+            'resolution': '',
+            'status': 'new',
+            'summary': 'tango.core.Memory.GC.monitor() is documented incorrectly',
+            'type': 'defect',
+            'version': '0.99.9 Kai',
+            }
+
+        cached_html_filename = os.path.join(HERE, 'sample-data', 'dsource-1939')
+        tbp.set_bug_html_data(unicode(
+            open(cached_html_filename).read(), 'utf-8'))
+
+        got = tbp.get_parsed_data_dict(self.tm4)
+        wanted_date = datetime.datetime(2010, 6, 19, 8, 15, 37)
+        self.assertEqual(wanted_date, got['date_reported'])
+        self.assertEqual(wanted_date, got['last_touched'])

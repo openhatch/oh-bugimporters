@@ -283,10 +283,14 @@ class TracBugParser(object):
 
     @staticmethod
     def page2date_opened(doc):
-        span = doc.cssselect(
+        span_or_a = doc.cssselect(
             '''.date p:contains("Opened") span,
-            .date p:contains("Opened") a''')[0]
-        return TracBugParser._span2date(span)
+            .date p:contains("Opened") a''')
+        if span_or_a:
+            tag = span_or_a[0]
+        else:
+            tag = doc.cssselect('''.date p:contains("Opened")''')[0]
+        return TracBugParser._span2date(tag)
 
     @staticmethod
     def page2date_modified(doc):

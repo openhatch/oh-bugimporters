@@ -17,6 +17,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import twisted.web.client
+import datetime
 
 
 class BugImporter(object):
@@ -136,3 +137,8 @@ class BugImporter(object):
     def determine_if_finished(self):
         # Implement this in a subclass
         raise NotImplementedError
+
+def printable_datetime(datetime_obj=None):
+    if datetime_obj is None:
+        datetime_obj = datetime.datetime.utcnow()
+    return datetime_obj.isoformat()

@@ -4,6 +4,7 @@ import twisted
 
 from bugimporters.tests import (Bug, ReactorManager, TrackerModel,
         FakeGetPage, HaskellTrackerModel)
+from bugimporters.base import printable_datetime
 from bugimporters.trac import TracBugImporter, TracBugParser
 from mock import Mock
 
@@ -266,8 +267,10 @@ class TestTracBugParser(object):
                   'importance': 'normal',
                   'people_involved': 4,
                   # FIXME: Need time zone
-                  'date_reported': datetime.datetime(2010, 2, 23, 0, 46, 30),
-                  'last_touched': datetime.datetime(2010, 3, 12, 18, 43, 5),
+                  'date_reported': printable_datetime(
+                datetime.datetime(2010, 2, 23, 0, 46, 30)),
+                  'last_touched': printable_datetime(
+                datetime.datetime(2010, 3, 12, 18, 43, 5)),
                   'looks_closed': False,
                   'submitter_username': 'thijs',
                   'submitter_realname': '',
@@ -311,8 +314,10 @@ class TestTracBugParser(object):
                   'importance': 'normal',
                   'people_involved': 5,
                   # FIXME: Need time zone
-                  'date_reported': datetime.datetime(2010, 2, 22, 19, 46, 30),
-                  'last_touched': datetime.datetime(2010, 2, 24, 0, 8, 47),
+                  'date_reported': printable_datetime(
+                datetime.datetime(2010, 2, 22, 19, 46, 30)),
+                  'last_touched': printable_datetime(
+                datetime.datetime(2010, 2, 24, 0, 8, 47)),
                   'looks_closed': False,
                   'submitter_username': 'thijs',
                   'submitter_realname': '',
@@ -357,8 +362,10 @@ class TestTracBugParser(object):
                   'importance': 'trivial',
                   'people_involved': 5,
                   # FIXME: Need time zone
-                  'date_reported': datetime.datetime(2010, 2, 22, 19, 46, 30),
-                  'last_touched': datetime.datetime(2010, 2, 24, 0, 8, 47),
+                  'date_reported': printable_datetime(
+                datetime.datetime(2010, 2, 22, 19, 46, 30)),
+                  'last_touched': printable_datetime(
+                datetime.datetime(2010, 2, 24, 0, 8, 47)),
                   'looks_closed': False,
                   'submitter_username': 'thijs',
                   'submitter_realname': '',
@@ -402,8 +409,10 @@ class TestTracBugParser(object):
                   'importance': 'normal',
                   'people_involved': 5,
                   # FIXME: Need time zone
-                  'date_reported': datetime.datetime(2010, 2, 22, 19, 46, 30),
-                  'last_touched': datetime.datetime(2010, 2, 22, 19, 46, 30),
+                  'date_reported': printable_datetime(
+                datetime.datetime(2010, 2, 22, 19, 46, 30)),
+                  'last_touched': printable_datetime(
+                datetime.datetime(2010, 2, 22, 19, 46, 30)),
                   'looks_closed': False,
                   'submitter_username': 'thijs',
                   'submitter_realname': '',
@@ -447,8 +456,10 @@ class TestTracBugParser(object):
                   'importance': 'normal',
                   'people_involved': 5,
                   # FIXME: Need time zone
-                  'date_reported': datetime.datetime(2010, 2, 22, 19, 46, 30),
-                  'last_touched': datetime.datetime(2010, 2, 22, 19, 46, 30),
+                  'date_reported': printable_datetime(
+                datetime.datetime(2010, 2, 22, 19, 46, 30)),
+                  'last_touched': printable_datetime(
+                datetime.datetime(2010, 2, 22, 19, 46, 30)),
                   'looks_closed': False,
                   'submitter_username': 'thijs',
                   'submitter_realname': '',
@@ -482,11 +493,13 @@ class TestTracBugParser(object):
                   'description': u"Hi\r\n\r\nWhen embedding sourcecode in wiki pages using the {{{-Makro, I would sometimes like to have line numbers displayed. This would make it possible to reference some lines in a text, like: \r\n\r\n''We got some c-sourcecode here, in line 1, a buffer is allocated, in line 35, some data is copied to the buffer without checking the size of the data...''\r\n\r\nThe svn browser shows line numbers, so I hope this will not be so difficult.",
                   'importance': '',
                   'canonical_bug_link': 'http://trac.edgewall.org/ticket/3275',
-                  'date_reported': datetime.datetime(2006, 6, 16, 15, 1, 52),
+                  'date_reported': printable_datetime(
+                datetime.datetime(2006, 6, 16, 15, 1, 52)),
                   'submitter_realname': '',
                   'title': 'Show line numbers when embedding source code in wiki pages',
                   'people_involved': 3,
-                  'last_touched': datetime.datetime(2010, 11, 26, 13, 45, 45),
+                  'last_touched': printable_datetime(
+                datetime.datetime(2010, 11, 26, 13, 45, 45)),
                   'submitter_username': 'erik@\xe2\x80\xa6',
                   'looks_closed': False,
                   'good_for_newcomers': False,
@@ -519,6 +532,7 @@ class TestTracBugParser(object):
             open(cached_html_filename).read(), 'utf-8'))
 
         got = tbp.get_parsed_data_dict(self.tm4)
-        wanted_date = datetime.datetime(2010, 6, 19, 8, 15, 37)
+        wanted_date = printable_datetime(
+            datetime.datetime(2010, 6, 19, 8, 15, 37))
         self.assertEqual(wanted_date, got['date_reported'])
         self.assertEqual(wanted_date, got['last_touched'])

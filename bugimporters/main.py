@@ -30,8 +30,13 @@ def main(raw_arguments):
     parser.add_argument('-o', action="store", dest="output")
     args = parser.parse_args(raw_arguments)
 
-    data = yaml.load(open(args.input))
-    out_fd = open(args.output, 'w')
+    with open(args.input) as input_file:
+        with open(args.output, 'w') as output_file:
+            input_data = yaml.load(input_file)
+            output = main_worker(input_data)
+            yaml.safe_dump(output, output_file)
+
+def main_worker(data):
     objs = []
     for d in data:
         objs.append(dict2obj(d))
@@ -76,8 +81,7 @@ def main(raw_arguments):
         if 'tracker' in bug:
             bug['tracker'] = None
 
-    yaml.safe_dump([dict(x) for x in all_bug_data], out_fd)
-    out_fd.close()
+    return [dict(x) for x in all_bug_data]
 
 if __name__ == '__main__':
     main(sys.argv[1:])

@@ -9,9 +9,36 @@ oh-bugimporters, you can use this to understand the architecture.)
 To understand that, we'll go through a few elements at a time.
 
 
+Input configuration
+===================
+
+In order to run oh-bugimporters and actually download bugs, you must
+configure a list of bug trackers that you want to pull data from.
+
+The file should be a YAML file.
+
+You can use a sample configuration file bundled in examples/sample_configuration.yaml.
+
+
+Downloading with scrapy
+=======================
+
+The process of doing the actual downloading is done using the "scrapy"
+command. Scrapy is a framework for running web crawlers, and you can
+use it to run the bug importers.
+
+If you have a virtualenv in which you have run "setup.py develop" for
+this code in env/, the following command will run a scrapy-based import::
+
+    env/bin/scrapy runspider bugimporters/trac.py  -a input_filename=/tmp/input-configuration.yaml  -s FEED_FORMAT=json -s FEED_URI=/tmp/results.json  -s LOG_FILE=/tmp/scrapy-log -s CONCURRENT_REQUESTS_PER_DOMAIN=1 -s CONCURRENT_REQUESTS=200
+
+Note that you must have a configuration file at /tmp/input-configuration.yaml
+for this command to work. If you need a sample configuration file, copy it
+out of examples/ as described above in the "Input configuration" section.
+
+
 On the web: /customs/
 =====================
-
 Within the OpenHatch code, "customs" is the name for data "import" and
 "export." (It's a pun.)
 
@@ -35,97 +62,8 @@ correspond to that type of tracker.
 
 By adjusting the information configured in this interface, project
 maintainers alter the contents of the OpenHatch database (via models
-and forms in mysite/customs/). Once per day, we run a periodic task
-known as customs_twist to configure oh-bugimporters and perform the
-downloading.
+and forms in mysite/customs/).
 
-
-customs_twist
-=============
-
-The process of doing the downloading is, at the moment, performed by a
-Django management command called "customs_twist." You can find its
-implementation in mysite/customs/management/commands/customs_twist.py.
-
-The high-level overview of customs_twist is that it prepares some
-objects for bookkeeping of asynchronous downloading, and then looks at
-the database for instances of the various TrackerModel subclasses. For
-each such object, it configures a corresponding BugImporter object from
-oh-bugimporters and asks it to perform an import.
-
-Much more can be written about the complexities of customs_twist. I hope
-that we throw it away quickly in a transition to usings scrapy to manage
-Twisted.
-
-
-TrackerModels and QueryModels
-=============================
-
-Recall that /customs/ adjusts data in the oh-mainline database, and that
-these URLs interact with code in mysite/customs/models.py.
-
-In those Django models, we have one model class to model each type of
-tracker. (A "type" of tracker here refers to the software running the
-remote bug tracker we are importing from -- for example, Bugzilla,
-Trac, or Github Issues.)
-
-We keep these different models (and corresponding data entry forms)
-so that the web app can prompt for, and store, the different
-configurable data about each tracker. You can see these models in
-mysite/customs/models.py. (Implementation detail: these model classes
-use object-oriented inheritance to permit us to shorten the code for
-each tracker.)
-
-It is the job of the BugImporter (within oh-bugimporters) to look at
-the data in a TrackerModel instance and configure the BugImporter and
-BugParser as needed.
-
-Note also that for bug trackers, such as large Bugzilla bug trackers,
-we want to refrain from downloading and processing every single bug in
-the bug tracker. In that case, the web interface offers a form for
-configuring "Queries" that yield a list of bugs that ought to be
-imported. In the oh-mainline customs code, there is a QueryModel for
-each bug tracker type that requires this. At bug import time, these
-are converted to URL strings and passed to the BugImporter object, via
-the BugImporter.handle_queries() method.
-
-
-What becomes of customs_twist in a scrapy world
-===============================================
-
-The following is my (Asheesh's) recommendation for how oh-bugimporters
-and oh-mainline should interact, once oh-bugimporters has been moved
-to using scrapy.
-
-First, oh-bugimporters should not have a management command that
-executes any HTTP requests. Instead, it should have a management
-command that outputs information from the TrackerModel objects and
-QueryModel objects into a configuration file for oh-bugimporters. (The
-configuration file could be a JSON file, if that is a convenient
-format.)
-
-There should be a command that one can run, based on scrapy, that
-launches oh-bugimpoters and tells it download all the data that is
-required by that configuration file. The result will be a series of
-bugimporters.items.ParsedBug objects. With the help of scrapy, these
-will be stored in a JSON data file.
-
-(One advantage of this architecture is that it will become easy to run
-the bug importers "by hand" while developing -- just keep a
-configuration file around, and run the import process, and look at the
-resulting JSON data.)
-
-There should be a management command within oh-mainline that can
-import this data file, a series of ParsedBug objects, into the Django
-database.
-
-It seems to me that this will result in a very clear set of boundaries
-between the two bits of code. It will also mean removing the
-data_transit callbacks.
-
-(As a side note: This change will also permit us to remove the
-TracTimeline model from the oh-mainline project. Instead, to implement
-caching this sort of intermedaite data generated while scraping,
-oh-bugimporters can have an optional filesystem cache. If this remark
-makes no sense to you, I (Asheesh) can explain it more.)
-
+Once per day, the live OpenHatch site exports its data into an input
+configuration file, and then it runs scrapy to actually download data
+from the bug trackers in question.

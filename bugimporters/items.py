@@ -5,6 +5,7 @@ class ParsedBug(scrapy.item.Item):
     # bug, but extra information that can be exported.
     _project_name = scrapy.item.Field()
     _tracker_name = scrapy.item.Field()
+    _deleted = scrapy.item.Field()
 
     # These fields correspond to bug data
     title = scrapy.item.Field()

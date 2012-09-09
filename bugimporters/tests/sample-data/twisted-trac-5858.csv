@@ -1,0 +1,6 @@
+id,summary,reporter,owner,description,type,status,priority,milestone,component,resolution,keywords,cc,branch,branch_author,launchpad_bug
+5858,Refactor twisted.trial.test.test_assertions to separate synchronous from asynchronous,exarkun,exarkun,"This test module covers a large portion of the helper methods provided by `TestCase`.  It tests both the synchronous helpers and the asynchronous helpers (such as `assertFailure` and `addCleanup`).
+
+To facilitate splitting up the implementation of these two categories of features, it would help to split up the tests for them as well.
+
+Split off of #5853",enhancement,closed,normal,,trial,fixed,,jml,branches/sync-async-split-5858,exarkun,

@@ -1,0 +1,492 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  
+
+  <head>
+        <meta name="ROBOTS" content="NOODP" />
+        <meta name="Description" content="An event-driven networking engine written in Python and MIT licensed." />
+        <link rel="stylesheet" href="/trac/chrome/common/css/bootstrap.min.css" />
+        <script type="text/javascript" src="/trac/chrome/common/js/jquery-1.7.1.min.js"></script>
+    <title>
+          #5858 (Refactor twisted.trial.test.test_assertions to separate synchronous from asynchronous)
+     – Twisted
+    </title>
+        <link rel="search" href="/trac/search" />
+        <link rel="prev" href="/trac/ticket/5857" title="Ticket #5857" />
+        <link rel="last" href="/trac/ticket/5956" title="Ticket #5956" />
+        <link rel="help" href="/trac/wiki/TracGuide" />
+        <link rel="alternate" href="/trac/ticket/5858?format=csv" type="text/csv" class="csv" title="Comma-delimited Text" /><link rel="alternate" href="/trac/ticket/5858?format=tab" type="text/tab-separated-values" class="tab" title="Tab-delimited Text" /><link rel="alternate" href="/trac/ticket/5858?format=rss" type="application/rss+xml" class="rss" title="RSS Feed" />
+        <link rel="next" href="/trac/ticket/5859" title="Ticket #5859" />
+        <link rel="start" href="/trac/wiki" />
+        <link rel="stylesheet" href="/trac/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/trac/chrome/common/css/ticket.css" type="text/css" />
+        <link rel="first" href="/trac/ticket/1" title="Ticket #1" />
+        <link rel="shortcut icon" href="/images/favicon.png" type="image/png" />
+        <link rel="icon" href="/images/favicon.png" type="image/png" />
+      <link type="application/opensearchdescription+xml" rel="search" href="/trac/search/opensearch" title="Search Twisted" />
+    <script type="text/javascript" src="/trac/chrome/common/js/trac.js"></script><script type="text/javascript" src="/trac/chrome/common/js/search.js"></script>
+    <!--[if lt IE 7]>
+    <script type="text/javascript" src="/trac/chrome/common/js/ie_pre7_hacks.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="/trac/chrome/common/js/wikitoolbar.js"></script><script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("div.description").find("h1,h2,h3,h4,h5,h6").addAnchor("Link to this section");
+        $("#changelog h3.change").addAnchor("Link to this change");
+        /* only enable control elements for the currently selected action */
+        var actions = $("#action input[name='action']");
+        function updateActionFields() {
+          actions.each(function () {
+            $(this).siblings().find("*[id]").enable($(this).checked());
+            $(this).siblings().filter("*[id]").enable($(this).checked());
+          });
+        }
+        actions.click(updateActionFields);
+        updateActionFields();
+      });
+    </script>
+        <script type="text/javascript" src="https://www.google.com/jsapi?key=ABQIAAAAJE-f7vmwI1-jxkmwRe4lUxTAs18ELyhzmLGaHoc1qJwmpJy3zhR3LMRRdwqg5PSY4tnVO684msUklQ"></script>
+        <script type="text/javascript" src="/trac/chrome/common/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/trac/chrome/common/js/twisted.js"></script>
+    </head>
+  <body>
+    <div id="banner">
+        <div id="top_grad"></div>
+        <div id="tab">
+            <a href="/trac/wiki">HOME</a>
+            <a href="/trac/wiki/FrequentlyAskedQuestions">FAQ</a>
+            <a href="/trac/wiki/Documentation">DOCS</a>
+            <a href="/trac/wiki/Downloads">DOWNLOAD</a>
+        </div>
+      <div id="header">
+        <a id="logo" href="/trac/"><img src="/trac/chrome/common/trac_banner.png" alt="Twisted" /></a>
+      </div>
+      <form id="search" action="/trac/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="/trac/login">Login</a></li><li><a href="/trac/prefs">Preferences</a></li><li><a href="/trac/reset_password">Forgot your password?</a></li><li class="last"><a href="/trac/register">Register</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="/trac/wiki">Wiki</a></li><li><a href="/trac/timeline">Timeline</a></li><li><a href="/trac/roadmap">Roadmap</a></li><li><a href="/trac/browser">Browse Source</a></li><li class="active"><a href="/trac/report">View Tickets</a></li><li class="last"><a href="/trac/search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+          <ul>
+              <li class="first"><span>&larr; <a class="prev" href="/trac/ticket/5857" title="Ticket #5857">Previous Ticket</a></span></li><li class="last"><span><a class="next" href="/trac/ticket/5859" title="Ticket #5859">Next Ticket</a> &rarr;</span></li>
+          </ul>
+        <hr />
+      </div>
+    <div id="content" class="ticket">
+      <h1>
+            <span class="title">
+              Ticket #5858
+      </span>
+            <span class="statuses">
+            <span class="type">enhancement</span>
+            <span class="status">closed</span>
+            <span class="resolution">fixed</span>
+        </span>
+        </h1>
+      <!-- Do not show the ticket (pre)view when the user first comes to the "New Ticket" page.
+           Wait until they hit preview. -->
+        <!-- Ticket Box (ticket fields along with description) -->
+        <div id="ticket">
+          <div class="date">
+            <p>Opened <a class="timeline" href="/trac/timeline?from=2012-08-13T08%3A57%3A53-0400&amp;precision=second" title="2012-08-13T08:57:53-0400 in Timeline">4 weeks</a> ago</p>
+            <p>Last modified <a class="timeline" href="/trac/timeline?from=2012-08-13T15%3A17%3A35-0400&amp;precision=second" title="2012-08-13T15:17:35-0400 in Timeline">4 weeks</a> ago</p>
+          </div>
+          <!-- use a placeholder if it's a new ticket -->
+          <h2 class="summary searchable">Refactor twisted.trial.test.test_assertions to separate synchronous from asynchronous</h2>
+          <table class="properties">
+            <tr>
+              <th id="h_reporter">Reported by:</th>
+              <td headers="h_reporter" class="searchable">exarkun</td>
+              <th id="h_owner">Owned by:</th>
+              <td headers="h_owner">exarkun
+              </td>
+            </tr>
+            <tr>
+                <th id="h_priority">
+                  Priority:
+                </th>
+                <td headers="h_priority">
+                      normal
+                </td>
+                <th id="h_milestone">
+                  Milestone:
+                </th>
+                <td headers="h_milestone">
+                      <a class="missing milestone"></a>
+                </td>
+            </tr><tr>
+                <th id="h_component">
+                  Component:
+                </th>
+                <td headers="h_component">
+                      trial
+                </td>
+                <th id="h_keywords">
+                  Keywords:
+                </th>
+                <td headers="h_keywords" class="searchable">
+                </td>
+            </tr><tr>
+                <th id="h_cc">
+                  Cc:
+                </th>
+                <td headers="h_cc" class="searchable">
+                      jml
+                </td>
+                <th id="h_branch">
+                  Branch:
+                </th>
+                <td headers="h_branch">
+                      branches/sync-async-split-5858
+                </td>
+            </tr><tr>
+                <th id="h_branch_author">
+                  Author:
+                </th>
+                <td headers="h_branch_author">
+                      exarkun
+                </td>
+                <th id="h_launchpad_bug">
+                  Launchpad Bug:
+                </th>
+                <td headers="h_launchpad_bug">
+                </td>
+            </tr>
+          </table>
+            <div class="description">
+              <h3 id="comment:description">
+                Description
+              </h3>
+              <div class="searchable">
+                <p>
+This test module covers a large portion of the helper methods provided by <tt>TestCase</tt>.  It tests both the synchronous helpers and the asynchronous helpers (such as <tt>assertFailure</tt> and <tt>addCleanup</tt>).
+</p>
+<p>
+To facilitate splitting up the implementation of these two categories of features, it would help to split up the tests for them as well.
+</p>
+<p>
+Split off of <a class="closed ticket" href="/trac/ticket/5853" title="enhancement: Add a TestCase which does not support asynchronous tests but which does ... (closed: fixed)">#5853</a>
+</p>
+
+              </div>
+            </div>
+        </div>
+          <h2>Change History</h2>
+          <div id="changelog">
+        <form method="get" action="#comment" class="printableform">
+            <a href="#comment:1">
+                <h2 class="comment-number">1</h2>
+            </a>
+            <div class="change">
+                <h3 class="change" id="comment:1">
+                    Changed <a class="timeline" href="/trac/timeline?from=2012-08-13T08%3A57%3A54-0400&amp;precision=second" title="2012-08-13T08:57:54-0400 in Timeline">4 weeks</a> ago by DefaultCC Plugin
+                </h3>
+      <ul class="changes">
+        <li>
+          <strong>cc</strong>
+            <em>jml</em> added
+        </li>
+      </ul>
+      <div class="comment searchable">
+        
+      </div>
+            </div>
+        </form><form method="get" action="#comment" class="printableform">
+            <a href="#comment:2">
+                <h2 class="comment-number">2</h2>
+            </a>
+            <div class="change">
+                <h3 class="change" id="comment:2">
+                    Changed <a class="timeline" href="/trac/timeline?from=2012-08-13T08%3A58%3A36-0400&amp;precision=second" title="2012-08-13T08:58:36-0400 in Timeline">4 weeks</a> ago by exarkun
+                </h3>
+      <ul class="changes">
+        <li>
+          <strong>branch</strong>
+              set to <em>branches/sync-async-split-5858</em>
+        </li><li>
+          <strong>branch_author</strong>
+              set to <em>exarkun</em>
+        </li>
+      </ul>
+      <div class="comment searchable">
+        <p>
+(In <a class="changeset" href="/trac/changeset/35167" title="Branching to 'sync-async-split-5858'">[35167]</a>) Branching to 'sync-async-split-5858'
+</p>
+
+      </div>
+            </div>
+        </form><form method="get" action="#comment" class="printableform">
+            <a href="#comment:3">
+                <h2 class="comment-number">3</h2>
+            </a>
+            <div class="change">
+                <h3 class="change" id="comment:3">
+                    Changed <a class="timeline" href="/trac/timeline?from=2012-08-13T09%3A10%3A48-0400&amp;precision=second" title="2012-08-13T09:10:48-0400 in Timeline">4 weeks</a> ago by exarkun
+                </h3>
+      <div class="comment searchable">
+        <p>
+(In <a class="changeset" href="/trac/changeset/35168" title="Factor sync and async tests into separate TestCases; also do a little more ...">[35168]</a>) Factor sync and async tests into separate TestCases; also do a little more explicit bootstrapping.
+</p>
+<p>
+refs <a class="closed ticket" href="/trac/ticket/5858" title="enhancement: Refactor twisted.trial.test.test_assertions to separate synchronous from ... (closed: fixed)">#5858</a>
+</p>
+
+      </div>
+            </div>
+        </form><form method="get" action="#comment" class="printableform">
+            <a href="#comment:4">
+                <h2 class="comment-number">4</h2>
+            </a>
+            <div class="change">
+                <h3 class="change" id="comment:4">
+                    Changed <a class="timeline" href="/trac/timeline?from=2012-08-13T09%3A25%3A37-0400&amp;precision=second" title="2012-08-13T09:25:37-0400 in Timeline">4 weeks</a> ago by exarkun
+                </h3>
+      <ul class="changes">
+        <li>
+          <strong>keywords</strong>
+            <em>review</em> added
+        </li><li>
+          <strong>owner</strong>
+            <em>exarkun</em> deleted
+        </li>
+      </ul>
+      <div class="comment searchable">
+        <p>
+Made the described changes.  Note that I did a little bit of refactoring to split tests for particular assertion methods (eg <tt>failIf</tt>/<tt>assertFalse</tt>) into individual <tt>TestCase</tt> subclasses.  I didn't refactor all of the tests this way though, as that would have made the patch rather large.  I think that eventually this is what should be done to the tests, though.  If desired I can file a ticket for that when landing this branch (and add a note to the source referring to it).
+</p>
+<p>
+<a class="ext-link" href="http://buildbot.twistedmatrix.com/boxes-supported?branch=/branches/sync-async-split-5858"><span class="icon"> </span>Build results</a>
+</p>
+
+      </div>
+            </div>
+        </form><form method="get" action="#comment" class="printableform">
+            <a href="#comment:5">
+                <h2 class="comment-number">5</h2>
+            </a>
+            <div class="change">
+                <h3 class="change" id="comment:5">
+                    Changed <a class="timeline" href="/trac/timeline?from=2012-08-13T09%3A52%3A55-0400&amp;precision=second" title="2012-08-13T09:52:55-0400 in Timeline">4 weeks</a> ago by Julian
+                </h3>
+      <ul class="changes">
+        <li>
+          <strong>owner</strong>
+            set to <em>Julian</em>
+        </li>
+      </ul>
+      <div class="comment searchable">
+        
+      </div>
+            </div>
+        </form><form method="get" action="#comment" class="printableform">
+            <a href="#comment:6">
+                <h2 class="comment-number">6</h2>
+            </a>
+            <div class="change">
+                <h3 class="change" id="comment:6">
+                    Changed <a class="timeline" href="/trac/timeline?from=2012-08-13T09%3A55%3A23-0400&amp;precision=second" title="2012-08-13T09:55:23-0400 in Timeline">4 weeks</a> ago by Julian
+                </h3>
+      <ul class="changes">
+        <li>
+          <strong>owner</strong>
+            changed from <em>Julian</em> to <em>exarkun</em>
+        </li><li>
+          <strong>keywords</strong>
+            <em>review</em> removed
+        </li>
+      </ul>
+      <div class="comment searchable">
+        <p>
+Hi :)!
+</p>
+<p>
+I think you have a build failure on 2.6, where the context manager form of <tt>assertRaises</tt> isn't present without using <tt>unittest2</tt>. Also, some of the docstrings on <tt>TestSyncronousAssertions</tt> are missing epytext markup in their docstrings, in case that matters.
+</p>
+
+      </div>
+            </div>
+        </form><form method="get" action="#comment" class="printableform">
+            <a href="#comment:7">
+                <h2 class="comment-number">7</h2>
+            </a>
+            <div class="change">
+                <h3 class="change" id="comment:7">
+                    Changed <a class="timeline" href="/trac/timeline?from=2012-08-13T10%3A13%3A42-0400&amp;precision=second" title="2012-08-13T10:13:42-0400 in Timeline">4 weeks</a> ago by exarkun
+                </h3>
+      <div class="comment searchable">
+        <p>
+(In <a class="changeset" href="/trac/changeset/35173" title="Avoid using unportable unittest.TestCase.assertRaises
+
+refs #5858
+">[35173]</a>) Avoid using unportable unittest.TestCase.assertRaises
+</p>
+<p>
+refs <a class="closed ticket" href="/trac/ticket/5858" title="enhancement: Refactor twisted.trial.test.test_assertions to separate synchronous from ... (closed: fixed)">#5858</a>
+</p>
+
+      </div>
+            </div>
+        </form><form method="get" action="#comment" class="printableform">
+            <a href="#comment:8">
+                <h2 class="comment-number">8</h2>
+            </a>
+            <div class="change">
+                <h3 class="change" id="comment:8">
+                    Changed <a class="timeline" href="/trac/timeline?from=2012-08-13T10%3A28%3A02-0400&amp;precision=second" title="2012-08-13T10:28:02-0400 in Timeline">4 weeks</a> ago by exarkun
+                </h3>
+      <ul class="changes">
+        <li>
+          <strong>keywords</strong>
+            <em>review</em> added
+        </li><li>
+          <strong>owner</strong>
+            <em>exarkun</em> deleted
+        </li>
+      </ul>
+      <div class="comment searchable">
+        <p>
+Thanks for the review, Julian!
+</p>
+<p>
+I fixed the <tt>assertRaises</tt> issue in the revision linked above.  I'm not too concerned about the missing epytext, as it seems to largely be in methods I'm just moving around in the file, not otherwise modifying.  Updating them would be fine, but I'm not going to take that on as part of this ticket. :)
+</p>
+<p>
+Thanks again for the review.
+</p>
+<p>
+Latest build results <a class="ext-link" href="http://buildbot.twistedmatrix.com/boxes-supported?branch=/branches/sync-async-split-5858"><span class="icon"> </span>will be here</a>.
+</p>
+
+      </div>
+            </div>
+        </form><form method="get" action="#comment" class="printableform">
+            <a href="#comment:9">
+                <h2 class="comment-number">9</h2>
+            </a>
+            <div class="change">
+                <h3 class="change" id="comment:9">
+                    Changed <a class="timeline" href="/trac/timeline?from=2012-08-13T10%3A32%3A05-0400&amp;precision=second" title="2012-08-13T10:32:05-0400 in Timeline">4 weeks</a> ago by itamar
+                </h3>
+      <ul class="changes">
+        <li>
+          <strong>keywords</strong>
+            <em>review</em> removed
+        </li><li>
+          <strong>owner</strong>
+            set to <em>exarkun</em>
+        </li>
+      </ul>
+      <div class="comment searchable">
+        <p>
+Looks good, merge if buildbot passes.
+</p>
+
+      </div>
+            </div>
+        </form><form method="get" action="#comment" class="printableform">
+            <a href="#comment:10">
+                <h2 class="comment-number">10</h2>
+            </a>
+            <div class="change">
+                <h3 class="change" id="comment:10">
+                    Changed <a class="timeline" href="/trac/timeline?from=2012-08-13T15%3A17%3A35-0400&amp;precision=second" title="2012-08-13T15:17:35-0400 in Timeline">4 weeks</a> ago by exarkun
+                </h3>
+      <ul class="changes">
+        <li>
+          <strong>status</strong>
+              changed from <em>new</em> to <em>closed</em>
+        </li><li>
+          <strong>resolution</strong>
+              set to <em>fixed</em>
+        </li>
+      </ul>
+      <div class="comment searchable">
+        <p>
+(In <a class="changeset" href="/trac/changeset/35177" title="Merge sync-async-split-5858 
+
+Author: exarkun
+Reviewer: Julian, itamar ...">[35177]</a>) Merge sync-async-split-5858 
+</p>
+<p>
+Author: exarkun
+Reviewer: Julian, itamar
+Fixes: <a class="closed ticket" href="/trac/ticket/5858" title="enhancement: Refactor twisted.trial.test.test_assertions to separate synchronous from ... (closed: fixed)">#5858</a>
+</p>
+<p>
+Divide the unit tests for most of the assertion helpers on <tt>twisted.trial.unittest.TestCase</tt>
+into separate classes, one for synchronous helpers and another for asynchronous helpers, as
+a step towards supporting a synchronous-only test case base class.
+</p>
+
+      </div>
+            </div>
+        </form>
+    </div>
+      <div id="help">
+        <strong>Note:</strong> See
+        <a href="/trac/wiki/TracTickets">TracTickets</a> for help on using
+        tickets.
+      </div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="/trac/ticket/5858?format=csv" class="csv">Comma-delimited Text</a>
+        </li><li>
+          <a rel="nofollow" href="/trac/ticket/5858?format=tab" class="tab">Tab-delimited Text</a>
+        </li><li class="last">
+          <a rel="nofollow" href="/trac/ticket/5858?format=rss" class="rss">RSS Feed</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en">
+        <div class="sitemeter">
+            <!--WEBBOT bot="HTMLMarkup" startspan ALT="Site Meter" -->
+            <!--
+            <script type="text/javascript" language="JavaScript">var site="sm7twistedmatrix"</script>
+            <script type="text/javascript" language="JavaScript1.2" src="http://sm7.sitemeter.com/js/counter.js?site=sm7twistedmatrix"></script>
+            <noscript>
+                -->
+                <a href="http://sm7.sitemeter.com/stats.asp?site=sm7twistedmatrix" target="_top">
+                    <img src="http://sm7.sitemeter.com/meter.asp?site=sm7twistedmatrix" alt="Site Meter" border="0" />
+                </a>
+            <!-- </noscript> -->
+            <!-- Copyright (c)2002 Site Meter -->
+            <!--WEBBOT bot="HTMLMarkup" Endspan -->
+            <!-- Google analytics, obviously. -->
+            <script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+            <script type="text/javascript">
+                _uacct = "UA-99018-6";
+                urchinTracker();
+            </script>
+        </div>
+        <div class="credits">
+            <p><a href="/trac/wiki/SiteCredits">Site design credits</a></p>
+        </div>
+        <div class="right">
+            <p></p>
+        </div>
+    </div>
+  </body>
+</html>

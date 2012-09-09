@@ -1,0 +1,2 @@
+id,summary,owner,type,status,priority,milestone
+5858,Refactor twisted.trial.test.test_assertions to separate synchronous from asynchronous,exarkun,enhancement,closed,normal,

@@ -22,10 +22,17 @@ setup_params = dict(
         'argparse',
         'mock',
         'PyYAML',
-        'importlib',
         'autoresponse>=0.2',
     ],
 )
+
+### Python 2.7 already has importlib. Because of that,
+### we can't put it in install_requires. We test for
+### that here; if needed, we add it.
+try:
+    import importlib
+except ImportError:
+    install_requires.append('importlib')
 
 
 if __name__ == '__main__':

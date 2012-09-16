@@ -21,6 +21,7 @@ import logging
 import lxml
 import re
 import urlparse
+import scrapy.http
 
 try:
     from unicodecsv import DictReader
@@ -36,66 +37,49 @@ class RoundupBugImporter(BugImporter):
 
     def __init__(self, *args, **kwargs):
         super(RoundupBugImporter, self).__init__(*args, **kwargs)
-        # Create a list to store bug ids obtained from queries.
-        self.bug_ids = []
         # Call the parent __init__.
 
     def process_queries(self, queries):
         # Add all the queries to the waiting list
         for query in queries:
             query_url = query.get_query_url()
-            self.add_url_to_waiting_list(
-                    url=query_url,
-                    callback=self.handle_query_csv)
-            query.last_polled = datetime.datetime.utcnow()
-            query.save()
+            yield scrapy.http.Request(url=query_url,
+                    callback=self.handle_query_csv_response)
 
-        # URLs are now all prepped, so start pushing them onto the reactor.
-        self.push_urls_onto_reactor()
+    def handle_query_csv_response(self, response):
+        return self.handle_query_csv(response.body)
 
     def handle_query_csv(self, query_csv):
         # Turn the string into a list so csv.DictReader can handle it.
         query_csv_list = query_csv.split('\n')
         dictreader = DictReader(query_csv_list)
-        self.bug_ids.extend([int(line['id']) for line in dictreader])
+        bug_ids = [int(line['id']) for line in dictreader]
+        return self.prepare_bug_urls(bug_ids)
 
-    def prepare_bug_urls(self):
+    def prepare_bug_urls(self, bug_ids):
         # Convert the obtained bug ids to URLs.
         bug_url_list = [urlparse.urljoin(self.tm.get_base_url(),
-                                "issue%d" % bug_id) for bug_id in self.bug_ids]
-
-        # Get the sub-list of URLs that are fresh.
-        fresh_bug_urls = self.data_transits['bug']['get_fresh_urls'](bug_url_list)
-
-        # Remove the fresh URLs to be let with stale or new URLs.
-        stale_bug_urls = [bug_url for bug_url in bug_url_list
-                          if bug_url not in fresh_bug_urls]
+                                "issue%d" % bug_id) for bug_id in bug_ids]
 
         # Put the bug list in the form required for process_bugs.
         # The second entry of the tuple is None as Roundup never supplies data
         # via queries.
-        bug_list = [(bug_url, None) for bug_url in stale_bug_urls]
+        bug_list = [(bug_url, None) for bug_url in bug_url_list]
 
         # And now go on to process the bug list
-        self.process_bugs(bug_list)
+        return self.process_bugs(bug_list)
 
     def process_bugs(self, bug_list):
-        # If there are no bug URLs, finish now.
-        if not bug_list:
-            self.determine_if_finished()
-            return
-
         for bug_url, _ in bug_list:
-            # Create a RoundupBugParser instance to store the bug data
-            rbp = RoundupBugParser(bug_url)
+            r = scrapy.http.Request(
+                url=bug_url,
+                callback=self.handle_bug_html_response)
+            yield r
 
-            self.add_url_to_waiting_list(
-                    url=rbp.bug_html_url,
-                    callback=self.handle_bug_html,
-                    c_args={'rbp': rbp})
-
-        # URLs are now all prepped, so start pushing them onto the reactor.
-        self.push_urls_onto_reactor()
+    def handle_bug_html_response(self, response):
+        # Create a RoundupBugParser instance to store the bug data
+        rbp = RoundupBugParser(response.request.url)
+        return self.handle_bug_html(response.body, rbp)
 
     def handle_bug_html(self, bug_html, rbp):
         # Pass the RoundupBugParser the HTML data.
@@ -105,18 +89,10 @@ class RoundupBugImporter(BugImporter):
         data = rbp.get_parsed_data_dict(self.tm)
         data.update({
             'canonical_bug_link': rbp.bug_url,
-            'tracker': self.tm
+            '_tracker_name': self.tm.tracker_name
         })
 
-        self.data_transits['bug']['update'](data)
-
-    def determine_if_finished(self):
-        # If we got here then there are no more URLs in the waiting list.
-        # So if self.bug_ids is also empty then we are done.
-        if self.bug_ids:
-            self.prepare_bug_urls()
-        else:
-            self.finish_import()
+        return bugimporters.items.ParsedBug(data)
 
 
 class RoundupBugParser(object):
@@ -228,10 +204,10 @@ class RoundupBugParser(object):
                    self.bug_html,
                    submitter_username),
                'people_involved': len(self.get_all_submitter_realname_pairs(self.bug_html)),
-               'date_reported': self.str2datetime_obj(date_reported),
-               'last_touched': self.str2datetime_obj(last_touched),
+               'date_reported': self.str2datetime_obj(date_reported).isoformat(),
+               'last_touched': self.str2datetime_obj(last_touched).isoformat(),
                'canonical_bug_link': self.bug_url,
-               'last_polled': datetime.datetime.utcnow(),
+               'last_polled': datetime.datetime.utcnow().isoformat(),
                '_project_name': tm.tracker_name,
                })
 

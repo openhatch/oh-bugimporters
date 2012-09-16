@@ -5,7 +5,8 @@ import autoresponse
 from bugimporters.tests import (ReactorManager, TrackerModel,
         HaskellTrackerModel)
 from bugimporters.base import printable_datetime
-from bugimporters.trac import TracBugImporter, TracBugParser, TracSpider
+from bugimporters.trac import TracBugImporter, TracBugParser
+import bugimporters.main
 from mock import Mock
 
 
@@ -37,7 +38,7 @@ class TestTracBugImporter(object):
                 data_transits=importer_data_transits)
 
     def test_top_to_bottom(self):
-        spider = TracSpider()
+        spider = bugimporters.main.BugImportSpider()
         self.tm.bugimporter = 'trac.TracBugImporter'
         self.tm.tracker_name = 'Twisted'
         self.tm.bitesized_type = ''

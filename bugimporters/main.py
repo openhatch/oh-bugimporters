@@ -4,6 +4,7 @@ import sys
 import yaml
 import mock
 import importlib
+import scrapy.spider
 
 def dict2obj(d):
     class Trivial(object):
@@ -82,6 +83,40 @@ def main_worker(data):
             bug['tracker'] = None
 
     return [dict(x) for x in all_bug_data]
+
+
+class BugImportSpider(scrapy.spider.BaseSpider):
+    name = "Spider for importing using oh-bugimporters"
+
+    def start_requests(self):
+        objs = []
+        for d in self.input_data:
+            objs.append(dict2obj(d))
+
+        for obj in objs:
+            module, class_name = obj.bugimporter.split('.', 1)
+            bug_import_module = importlib.import_module('bugimporters.%s' % (
+                    module,))
+            bug_import_class = getattr(bug_import_module, class_name)
+            bug_importer = bug_import_class(
+                obj, reactor_manager=None,
+                data_transits=None)
+            class StupidQuery(object):
+                def __init__(self, url):
+                    self.url = url
+                def get_query_url(self):
+                    return self.url
+                def save(*args, **kwargs):
+                    pass # FIXME: Hack
+            queries = [StupidQuery(q) for q in obj.queries]
+            for request in bug_importer.process_queries(queries):
+                yield request
+
+    def __init__(self, input_filename=None):
+        if input_filename is not None:
+            with open(input_filename) as f:
+                self.input_data = yaml.load(f)
+
 
 if __name__ == '__main__':
     main(sys.argv[1:])

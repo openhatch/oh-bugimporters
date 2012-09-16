@@ -30,7 +30,7 @@ use it to run the bug importers.
 If you have a virtualenv in which you have run "setup.py develop" for
 this code in env/, the following command will run a scrapy-based import::
 
-    env/bin/scrapy runspider bugimporters/trac.py  -a input_filename=/tmp/input-configuration.yaml  -s FEED_FORMAT=json -s FEED_URI=/tmp/results.json  -s LOG_FILE=/tmp/scrapy-log -s CONCURRENT_REQUESTS_PER_DOMAIN=1 -s CONCURRENT_REQUESTS=200
+    env/bin/scrapy runspider bugimporters/main.py  -a input_filename=/tmp/input-configuration.yaml  -s FEED_FORMAT=json -s FEED_URI=/tmp/results.json  -s LOG_FILE=/tmp/scrapy-log -s CONCURRENT_REQUESTS_PER_DOMAIN=1 -s CONCURRENT_REQUESTS=200
 
 Note that you must have a configuration file at /tmp/input-configuration.yaml
 for this command to work. If you need a sample configuration file, copy it

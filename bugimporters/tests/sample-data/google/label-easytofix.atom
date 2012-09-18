@@ -1,0 +1,878 @@
+<?xml version='1.0' encoding='UTF-8'?><feed xmlns='http://www.w3.org/2005/Atom' xmlns:openSearch='http://a9.com/-/spec/opensearch/1.1/' xmlns:gd='http://schemas.google.com/g/2005' xmlns:issues='http://schemas.google.com/projecthosting/issues/2009'><id>http://code.google.com/feeds/issues/p/sympy/issues/full</id><updated>2012-09-09T19:21:08.857Z</updated><title>Issues - sympy</title><subtitle>Issues - sympy</subtitle><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/list'/><link rel='http://schemas.google.com/g/2005#feed' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full'/><link rel='http://schemas.google.com/g/2005#post' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full?max-results=74&amp;can=open&amp;label=EasyToFix'/><generator version='1.0' uri='http://code.google.com/feeds/issues'>ProjectHosting</generator><openSearch:totalResults>74</openSearch:totalResults><openSearch:startIndex>1</openSearch:startIndex><openSearch:itemsPerPage>74</openSearch:itemsPerPage><entry gd:etag='W/&quot;A04FQ347eCl7ImA9WhVREk8.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/2987</id><published>2012-01-12T23:15:42.000Z</published><updated>2012-03-20T07:51:52.000Z</updated><title>Change the behaviour of the deprecated Plot()</title><content type='html'>Delete proxy_pyglet.py and correct all the docstrings.</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/2987/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=2987'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/2987'/><author><name>krastano...@gmail.com</name><uri>/u/100157245271348669141/</uri></author><issues:blockedOn><issues:id>2845</issues:id><issues:project>sympy</issues:project></issues:blockedOn><issues:id>2987</issues:id><issues:label>Type-Defect</issues:label><issues:label>Priority-Medium</issues:label><issues:label>Milestone-Release0.7.3</issues:label><issues:label>EasyToFix</issues:label><issues:stars>1</issues:stars><issues:state>open</issues:state><issues:status>Valid</issues:status></entry><entry gd:etag='W/&quot;A0IBRX47eCl7ImA9WhJVEU8.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/2845</id><published>2011-11-14T21:16:03.000Z</published><updated>2012-08-28T04:52:34.000Z</updated><title>Integrating the new plotting module</title><content type='html'>There is a new plotting module in pull request 673.
+
+It should be ready for the next release.</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/2845/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=2845'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/2845'/><author><name>krastano...@gmail.com</name><uri>/u/100157245271348669141/</uri></author><issues:blocking><issues:id>1314</issues:id><issues:project>sympy</issues:project></issues:blocking><issues:blocking><issues:id>2987</issues:id><issues:project>sympy</issues:project></issues:blocking><issues:cc><issues:uri>/u/112791612514943977027/</issues:uri><issues:username>catchmrb...@gmail.com</issues:username></issues:cc><issues:id>2845</issues:id><issues:label>Type-Enhancement</issues:label><issues:label>Priority-Medium</issues:label><issues:label>Plotting</issues:label><issues:label>EasyToFix</issues:label><issues:label>Documentation</issues:label><issues:label>DeprecationRemoval</issues:label><issues:label>Milestone-Release0.8.0</issues:label><issues:owner><issues:uri>/u/100157245271348669141/</issues:uri><issues:username>krastano...@gmail.com</issues:username></issues:owner><issues:stars>1</issues:stars><issues:state>open</issues:state><issues:status>Valid</issues:status></entry><entry gd:etag='W/&quot;AkQMQ347eCl7ImA9WhVaF08.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/2367</id><published>2011-05-12T08:09:31.000Z</published><updated>2012-06-15T02:46:22.000Z</updated><title>SymPy's readthedocs documentation is broken</title><content type='html'>See http://readthedocs.org/docs/sympy/en/latest/.  It just shows
+
+&amp;quot;&amp;quot;&amp;quot;
+This is an automaticaly generated API documentation from SymPy sources.
+
+Click the “modules” (Module Index) link in the top right corner to browse the modules.
+
+Or click the “index” to see an index of all SymPy functions, methods and classes.
+&amp;quot;&amp;quot;&amp;quot;
+
+and that's it.</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/2367/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=2367'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/2367'/><author><name>asmeurer@gmail.com</name><uri>/u/asmeurer@gmail.com/</uri></author><issues:cc><issues:uri>/u/104039945248245758823/</issues:uri><issues:username>ondrej.c...@gmail.com</issues:username></issues:cc><issues:id>2367</issues:id><issues:label>Type-Defect</issues:label><issues:label>Priority-High</issues:label><issues:label>Documentation</issues:label><issues:label>EasyToFix</issues:label><issues:label>CodeInCategory-Documentation</issues:label><issues:label>CodeInDifficulty-Easy</issues:label><issues:label>CodeInImportedIntoMelange</issues:label><issues:owner><issues:uri>/u/asmeurer@gmail.com/</issues:uri><issues:username>asmeurer@gmail.com</issues:username></issues:owner><issues:stars>4</issues:stars><issues:state>open</issues:state><issues:status>Valid</issues:status></entry><entry gd:etag='W/&quot;CUYBQ347eCl7ImA9WhdaFkg.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/694</id><published>2008-02-10T11:09:15.000Z</published><updated>2011-10-26T18:19:12.000Z</updated><title>Add tests from "Review of CAS mathematical capabilities", by Michael Wester</title><content type='html'>Go through the 1994 paper &amp;quot;Review of CAS mathematical capabilities&amp;quot;, by
+Michael Wester, available for example here:
+
+http://www.math.unm.edu/~wester/cas/book/Wester.pdf
+
+And write tests for each of the example in there if sympy can do it, or a
+new issue if it cannot. Together with fixing the issue 688, this should
+produce a nice documentation of how to do the ususal things in sympy.
+
+See also:
+
+http://www.sagemath.org/doc/html/ref/module-sage.calculus.wester.html</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/694/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=694'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/694'/><author><name>ondrej.c...@gmail.com</name><uri>/u/104039945248245758823/</uri></author><issues:cc><issues:uri>/u/104039945248245758823/</issues:uri><issues:username>ondrej.c...@gmail.com</issues:username></issues:cc><issues:id>694</issues:id><issues:label>Type-Defect</issues:label><issues:label>Priority-Medium</issues:label><issues:label>EasyToFix</issues:label><issues:stars>10</issues:stars><issues:state>open</issues:state><issues:status>Started</issues:status></entry><entry gd:etag='W/&quot;A04FQH47eCl7ImA9WhVREk8.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/702</id><published>2008-02-12T20:42:27.000Z</published><updated>2012-03-20T07:51:51.000Z</updated><title>Plot() should use standard kwarg syntax -- examples in docstrings don't work</title><content type='html'>Plot uses a weird syntax for specifying options:
+
+    Plot(1, 'mode=spherical; color=zfade4')
+
+It would be more consistent and familiar to use standard Python keyword
+arguments:
+
+    Plot(1, mode='spherical', color='zfade4')
+
+Now, the weird thing is that the Plot class documentation contradicts the
+real syntax. Plot.__doc__ actually gives docstring examples using standard
+keyword syntax:
+
+    &amp;gt;&amp;gt;&amp;gt; Plot(1*x, [], [x], mode='cylindrical')
+
+    &amp;gt;&amp;gt;&amp;gt; Plot(1, mode='spherical')
+
+But these don't work:
+
+&amp;gt;&amp;gt;&amp;gt; from sympy import *
+&amp;gt;&amp;gt;&amp;gt; var('x')
+x
+&amp;gt;&amp;gt;&amp;gt; Plot(1*x, [], [x], mode='cylindrical')
+Window initialization failed: __init__() got an unexpected keyword argument
+'mode'
+Exception in thread Thread-3:
+Traceback (most recent call last):
+  File &amp;quot;C:\Python25\lib\threading.py&amp;quot;, line 460, in __bootstrap
+    self.run()
+  File &amp;quot;C:\Python25\lib\threading.py&amp;quot;, line 440, in run
+    self.__target(*self.__args, **self.__kwargs)
+  File &amp;quot;C:\source\sympyhg\sympy\sympy\plotting\managed_window.py&amp;quot;, line 66,
+in _
+_event_loop__
+    super(ManagedWindow, self).close()
+  File
+&amp;quot;C:\source\sympyhg\sympy\sympy\thirdparty\pyglet\pyglet\window\win32\__in
+it__.py&amp;quot;, line 529, in close
+    super(Win32Window, self).close()
+  File
+&amp;quot;C:\source\sympyhg\sympy\sympy\thirdparty\pyglet\pyglet\window\__init__.p
+y&amp;quot;, line 789, in close
+    self._display._windows.remove(self)
+AttributeError: 'PlotWindow' object has no attribute '_display'
+
+[0]: x, 'mode=cartesian'
+</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/702/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=702'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/702'/><author><name>fredrik....@gmail.com</name><uri>/u/111502149103757882156/</uri></author><issues:id>702</issues:id><issues:label>Type-Defect</issues:label><issues:label>Priority-Medium</issues:label><issues:label>EasyToFix</issues:label><issues:stars>4</issues:stars><issues:state>open</issues:state><issues:status>Valid</issues:status></entry><entry gd:etag='W/&quot;D08MRX47eCl7ImA9WhVQGEg.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/1077</id><published>2008-09-04T12:27:27.000Z</published><updated>2012-04-08T03:31:24.000Z</updated><title>ask(pi, exp(rational), etc., Q.algebraic) should return False</title><content type='html'>See the Properties &amp;amp; Relations section in:
+
+http://reference.wolfram.com/mathematica/ref/Pi.html
+
+we should have a way of testing if pi belongs to algebraic numbers.</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/1077/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=1077'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/1077'/><author><name>ondrej.c...@gmail.com</name><uri>/u/104039945248245758823/</uri></author><issues:cc><issues:uri>/u/101069955704897915480/</issues:uri><issues:username>matt...@gmail.com</issues:username></issues:cc><issues:id>1077</issues:id><issues:label>Type-Enhancement</issues:label><issues:label>Priority-Medium</issues:label><issues:label>MathematicaDocs</issues:label><issues:label>EasyToFix</issues:label><issues:label>Polynomial</issues:label><issues:label>Assumptions</issues:label><issues:label>Documentation</issues:label><issues:stars>4</issues:stars><issues:state>open</issues:state><issues:status>Valid</issues:status></entry><entry gd:etag='W/&quot;C0YMQX47eCl7ImA9WhZRFk4.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/2269</id><published>2011-04-11T21:35:14.000Z</published><updated>2011-04-12T17:59:40.000Z</updated><title>Symplification of  transformation P applying to diagonal matrix.</title><content type='html'>
+At least in the rational number entries case, so that all the entries are integers.
+
+i.e., it does not matter if you choose v or a*v as your eigenvector, so you can just as easily have:
+
+In [1]: a = Matrix([[7, -4, 0], [8, -5, 0], [6, -6, 3]])
+
+In [2]: a.diagonalize()
+Out[2]: 
+⎛⎡2/3  1  0⎤, ⎡-1  0  0⎤⎞
+⎜⎢         ⎥  ⎢        ⎥⎟
+⎜⎢4/3  1  0⎥  ⎢0   3  0⎥⎟
+⎜⎢         ⎥  ⎢        ⎥⎟
+⎝⎣ 1   0  1⎦  ⎣0   0  3⎦⎠
+
+(this is what is returned now), as
+
+In [1]: a = Matrix([[7, -4, 0], [8, -5, 0], [6, -6, 3]])
+
+In [2]: a.diagonalize()
+Out[2]: 
+⎛⎡2  1  0⎤, ⎡-1  0  0⎤⎞
+⎜⎢       ⎥  ⎢        ⎥⎟
+⎜⎢4  1  0⎥  ⎢0   3  0⎥⎟
+⎜⎢       ⎥  ⎢        ⎥⎟
+⎝⎣3  0  1⎦  ⎣0   0  3⎦⎠
+
+what is needed.
+
+Algorithm might be like this: check if a column has rational 
+obtain lowest common multiple through the sympys &amp;quot;ilcm&amp;quot; function, and multiply column by it.</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/2269/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=2269'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/2269'/><author><name>pr...@goodok.ru</name><uri>/u/109448925098397033296/</uri></author><issues:cc><issues:uri>/u/102205339596128011626/</issues:uri><issues:username>ppn.onl...@me.com</issues:username></issues:cc><issues:id>2269</issues:id><issues:label>Type-Enhancement</issues:label><issues:label>Priority-Medium</issues:label><issues:label>Matrices</issues:label><issues:label>EasyToFix</issues:label><issues:owner><issues:uri>/u/109448925098397033296/</issues:uri><issues:username>pr...@goodok.ru</issues:username></issues:owner><issues:stars>4</issues:stars><issues:state>open</issues:state><issues:status>NeedsDecision</issues:status></entry><entry gd:etag='W/&quot;A04HRX47eCl7ImA9WhVREk8.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/564</id><published>2008-01-07T01:46:08.000Z</published><updated>2012-03-20T07:52:14.000Z</updated><title>series expansion of acosh and acoth</title><content type='html'>Those are series are calculated by SymPy now:
+
+assert acosh(x).series(x, 6) == pi*I/2 - I*x - 3*I*x**5/40 - I*x**3/6 + O(x**6)
+assert acoth(x).series(x, 6) == x + x**3/3 + x**5/5 + pi*I/2 + O(x**6)
+
+
+
+However, Maxima (Sage) returns the same series, but with I replaced by -I.
+Let's check what is correct. It probably depends on the definition of acosh
+and acoth (there are probably more options). Let's get this documented, in
+docstrings.</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/564/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=564'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/564'/><author><name>ondrej.c...@gmail.com</name><uri>/u/104039945248245758823/</uri></author><issues:id>564</issues:id><issues:label>Type-Defect</issues:label><issues:label>Priority-Medium</issues:label><issues:label>EasyToFix</issues:label><issues:label>WrongResult</issues:label><issues:label>Series</issues:label><issues:stars>3</issues:stars><issues:state>open</issues:state><issues:status>Valid</issues:status></entry><entry gd:etag='W/&quot;CE4CSH47eCl7ImA9WhVUFEU.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/805</id><published>2008-04-23T21:12:53.000Z</published><updated>2012-05-20T03:02:49.000Z</updated><title>missing docstrings in core</title><content type='html'>In [5]: x.evalf?
+Type:		instancemethod
+Base Class:	&amp;lt;type 'instancemethod'&amp;gt;
+String Form:	&amp;lt;bound method Symbol.evalf of x&amp;gt;
+Namespace:	Interactive
+File:		/home/ondra/sympy/sympy/core/basic.py
+Definition:	x.evalf(self, precision=None)
+Docstring:
+    &amp;lt;no docstring&amp;gt;
+
+In [1]: x.leadterm?
+Type:		instancemethod
+Base Class:	&amp;lt;type 'instancemethod'&amp;gt;
+String Form:	&amp;lt;bound method Symbol.leadterm of x&amp;gt;
+Namespace:	Interactive
+File:		/home/ondra/sympy/sympy/core/basic.py
+Definition:	x.leadterm(self, x)
+Docstring:
+    &amp;lt;no docstring&amp;gt;
+
+
+In [4]: x.nseries?
+Type:		instancemethod
+Base Class:	&amp;lt;type 'instancemethod'&amp;gt;
+String Form:	&amp;lt;bound method Symbol.nseries of x&amp;gt;
+Namespace:	Interactive
+File:		/home/ondra/sympy/sympy/core/basic.py
+Definition:	x.nseries(self, x, x0, n)
+Docstring:
+    &amp;lt;no docstring&amp;gt;
+
+In [6]: x.doit?
+Type:		instancemethod
+Base Class:	&amp;lt;type 'instancemethod'&amp;gt;
+String Form:	&amp;lt;bound method Symbol.doit of x&amp;gt;
+Namespace:	Interactive
+File:		/home/ondra/sympy/sympy/core/basic.py
+Definition:	x.doit(self, **hints)
+Docstring:
+    &amp;lt;no docstring&amp;gt;
+</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/805/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=805'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/805'/><author><name>ondrej.c...@gmail.com</name><uri>/u/104039945248245758823/</uri></author><issues:id>805</issues:id><issues:label>Type-Defect</issues:label><issues:label>Priority-Medium</issues:label><issues:label>EasyToFix</issues:label><issues:stars>3</issues:stars><issues:state>open</issues:state><issues:status>Valid</issues:status></entry><entry gd:etag='W/&quot;CUEBSX47eCl7ImA9WhVSGEo.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/1058</id><published>2008-08-28T15:14:52.000Z</published><updated>2012-03-16T04:54:18.000Z</updated><title>Classifying formulas</title><content type='html'>I've written some code for determining the &amp;quot;class&amp;quot; of a formula. The
+function classify(expr, x) walks the expression top-down and at each level
+classifies it as a function of x. It distinguishes between various classes
+of functions, including:
+
+* linear expressions
+* polynomials (degree &amp;gt; 1)
+* rational functions
+* algebraic roots
+* exponentials
+* logarithms
+* trigonometric functions
+* etc
+
+It then recursively classifies all subexpressions and returns the path with
+the &amp;quot;greatest&amp;quot; complexity. The following test outputs should hopefully make
+it more clear:
+
+pi []
+1 + 3*x [LINEAR]
+3*x + x**2 [POLYNOMIAL]
+(1 + pi)*(5 + 4*x) [LINEAR]
+(1 + pi)*(5 + E*(pi + 8*x)) [LINEAR]
+(1 + 2*x)*(5 + 4*x) [POLYNOMIAL]
+1/x [RATIONAL]
+1/(1 + 2*x) [RATIONAL]
+1/(2*x + x**2) [RATIONAL]
+(1 + x)/(1 - x) [RATIONAL]
+(4 + x)/(2*x + x**2) [RATIONAL]
+(4 + x)/(2*x + x**2) + x**2 [RATIONAL]
+x**2*(4 + x)/(2*x + x**2) [RATIONAL]
+(1 + 3*x)**(1/2) [ROOT, LINEAR]
+x**(3/2) [ROOT, LINEAR]
+x**pi [EXP, LINEAR, LOG]
+2*x + exp(1 + 2*x) + exp(4 + 3*x) [LINEAR, EXP, LINEAR]
+2*x + (exp(3*x) + exp(1 + x))/(1 + 5*x) [RATIONAL, EXP, LINEAR]
+2*x + sin(1 + 2*x)**2 + cos(4 + x)**4 [POLYNOMIAL, TRIGONOMETRIC, LINEAR]
+2*x + (sin(1 + 2*x)**2 + cos(4 + x)**4)/(1 + 5*x) [RATIONAL, TRIGONOMETRIC,
+LINEAR]
+2**x [EXP, LINEAR]
+x**x [EXP, LOG, LINEAR]
+(1 + 2*x)**x [EXP, LOG, LINEAR]
+(1 + acosh(x))**x [EXP, LOG, LINEAR, INVHYPERBOLIC, LINEAR]
+exp(exp(x)) [EXP, EXP, LINEAR]
+exp(exp(1/x)) [EXP, EXP, RATIONAL]
+exp(exp(x)) + exp(exp(1/x)) [LINEAR, EXP, EXP, RATIONAL]
+exp(gamma(x)**2) [EXP, POLYNOMIAL, NONELEMENTARY, LINEAR]
+
+(The trailing LINEAR for f(a*x+b) could perhaps be dropped when a*x+b is
+actually precisely x.)
+
+The classification gives an ordering roughly similar to (though more coarse
+than) that used in integral tables like Gradshteyn and Ryzhik. I think this
+could be used by various symbolic algorithms to decide which heuristic
+algorithms to try. For example, integrate could choose heuristics among
+these (and other) cases:
+
+[POLYNOMIAL] -- use a polynomial integrator
+[RATIONAL] -- use a rational integrator
+[LINEAR ROOT, LINEAR] -- try looking up a direct formula in a table
+[LINEAR, NONELEMENTARY, LINEAR] -- try looking up a formula in a table
+[POLYNOMIAL, TRIGONOMETRIC, LINEAR] -- try the integrator for trigonometric
+polynomials
+
+There is a clear advantage to the fact that only a single pass through the
+expression is required, instead of requiring every heuristic to &amp;quot;smell&amp;quot; the
+expression. So it becomes cheaper to have lots of special-purpose heuristics.
+
+The output can also be used to determine whether a function is elementary,
+transcendental, etc.
+
+What do you think? Where should the code go, does it need improvements,
+should the SYMBOLS perhaps be something else (e.g. strings)? Maybe return
+an object with __eq__, __le__ methods etc so that computed classifications
+can be compared more easily in terms of the complexity() measure?
+</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/1058/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=1058'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/1058'/><author><name>fredrik....@gmail.com</name><uri>/u/111502149103757882156/</uri></author><issues:cc><issues:uri>/u/101069955704897915480/</issues:uri><issues:username>matt...@gmail.com</issues:username></issues:cc><issues:cc><issues:uri>/u/117933771799683895267/</issues:uri><issues:username>smi...@gmail.com</issues:username></issues:cc><issues:id>1058</issues:id><issues:label>Type-Enhancement</issues:label><issues:label>Priority-Medium</issues:label><issues:label>CodeInCategory-Code</issues:label><issues:label>CodeInDifficulty-Easy</issues:label><issues:label>EasyToFix</issues:label><issues:label>CodeInImportedIntoMelange</issues:label><issues:label>NeedsReview</issues:label><issues:stars>3</issues:stars><issues:state>open</issues:state><issues:status>Started</issues:status></entry><entry gd:etag='W/&quot;A04HRX47eCl7ImA9WhVREk8.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/1232</id><published>2008-12-05T14:02:51.000Z</published><updated>2012-03-20T07:52:14.000Z</updated><title>add jython howto to our docs</title><content type='html'>From our feedback:
+
+OK.  Thanks.  I finally got it by using jython 2.50b rather
+than the production version of jython and then running
+the Windows installer of sympy and issuing 'jython setup.py'
+where setup.py is in sympy.  Suggest that an actual console
+session log showing the installation of jython and sympy be
+included in the installation documentation to clarify
+the steps, which versions of each component are required,
+etc.</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/1232/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=1232'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/1232'/><author><name>ondrej.c...@gmail.com</name><uri>/u/104039945248245758823/</uri></author><issues:id>1232</issues:id><issues:label>Type-Defect</issues:label><issues:label>Priority-Medium</issues:label><issues:label>EasyToFix</issues:label><issues:label>AlternatePython</issues:label><issues:stars>3</issues:stars><issues:state>open</issues:state><issues:status>Valid</issues:status></entry><entry gd:etag='W/&quot;A04FQH47eCl7ImA9WhVREk8.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/1456</id><published>2009-06-03T22:40:58.000Z</published><updated>2012-03-20T07:51:51.000Z</updated><title>use pyflakes to identify simple bugs in sympy and fix them</title><content type='html'>Example:
+
+sudo apt-get install pyflakes
+
+$ pyflakes sympy/integrals/
+sympy/integrals/rationaltools.py:3: 'div' imported but unused
+sympy/integrals/rationaltools.py:121: redefinition of unused 'symbols' from
+line 3
+sympy/integrals/risch.py:4: 'Pow' imported but unused
+sympy/integrals/risch.py:5: 'Function' imported but unused
+sympy/integrals/risch.py:7: 'Atom' imported but unused
+sympy/integrals/risch.py:8: 'Integer' imported but unused
+sympy/integrals/deltafunctions.py:2: 'Symbol' imported but unused
+sympy/integrals/deltafunctions.py:2: 'S' imported but unused
+sympy/integrals/deltafunctions.py:2: 'Wild' imported but unused
+sympy/integrals/integrals.py:2: 'Pow' imported but unused
+sympy/integrals/integrals.py:9: 'apart' imported but unused
+sympy/integrals/integrals.py:10: 'limit' imported but unused
+sympy/integrals/integrals.py:13: 'DiracDelta' imported but unused
+sympy/integrals/integrals.py:13: 'Heaviside' imported but unused
+sympy/integrals/integrals.py:111: redefinition of unused 'limit' from line 10
+sympy/integrals/__init__.py:8: 'integrate' imported but unused
+sympy/integrals/__init__.py:8: 'line_integrate' imported but unused
+sympy/integrals/__init__.py:8: 'Integral' imported but unused
+sympy/integrals/tests/test_rationaltools.py:4: 'log_to_atan' imported but
+unused
+sympy/integrals/tests/test_rationaltools.py:4: 'log_to_real' imported but
+unused
+sympy/integrals/tests/test_rationaltools.py:4: 'ratint_ratpart' imported
+but unused
+sympy/integrals/tests/test_lineintegrals.py:1: 'cos' imported but unused
+sympy/integrals/tests/test_lineintegrals.py:1: 'Integral' imported but unused
+sympy/integrals/tests/test_lineintegrals.py:1: 'sympify' imported but unused
+sympy/integrals/tests/test_lineintegrals.py:1: 'integrate' imported but unused
+sympy/integrals/tests/test_lineintegrals.py:1: 'diff' imported but unused
+sympy/integrals/tests/test_lineintegrals.py:1: 'pi' imported but unused
+sympy/integrals/tests/test_lineintegrals.py:1: 'sin' imported but unused
+sympy/integrals/tests/test_integrals.py:1: redefinition of unused 'atan'
+from line 1
+sympy/integrals/tests/test_integrals.py:1: 'I' imported but unused
+sympy/integrals/tests/test_integrals.py:5: 'skip' imported but unused
+sympy/integrals/tests/test_integrals.py:5: 'XFAIL' imported but unused
+
+
+it finds (among other things) that the Heaviside is imported but never
+used, so it should be removed.</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/1456/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=1456'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/1456'/><author><name>ondrej.c...@gmail.com</name><uri>/u/104039945248245758823/</uri></author><issues:blockedOn><issues:id>2371</issues:id><issues:project>sympy</issues:project></issues:blockedOn><issues:id>1456</issues:id><issues:label>Type-Defect</issues:label><issues:label>Priority-Medium</issues:label><issues:label>EasyToFix</issues:label><issues:label>CodeInCategory-QA</issues:label><issues:label>CodeInDifficulty-Medium</issues:label><issues:label>CodeInMultiple</issues:label><issues:label>CodeInImportedIntoMelange</issues:label><issues:stars>3</issues:stars><issues:state>open</issues:state><issues:status>Valid</issues:status></entry><entry gd:etag='W/&quot;DU4HRX47eCl7ImA9WhVXFU4.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/1784</id><published>2010-01-02T18:01:47.000Z</published><updated>2012-04-16T00:58:54.000Z</updated><title>((x - 2)**2).match((x - a)**2) fails</title><content type='html'>&amp;gt;&amp;gt;&amp;gt; a = Wild('a', exclude=[x])
+&amp;gt;&amp;gt;&amp;gt; r = (x - 2)**2
+&amp;gt;&amp;gt;&amp;gt; r.match((x - a)**2)
+&amp;lt; Returns None &amp;gt;
+&amp;gt;&amp;gt;&amp;gt; r
+(2 - x)**2
+
+The reason is simple, for even functions such as x**2, f(-x) == f(x), so (x - a)**2 == (a - x)**2.  
+Probably the solution is to have match be smart enough to recognize an even composite (is there an 
+assumption for this somewhere?  There should be) and check both f(x) and f(-x).  It should also 
+probably check for odd functions too:
+
+&amp;gt;&amp;gt;&amp;gt; s = (x - 2)**3
+&amp;gt;&amp;gt;&amp;gt; s.match((x - a)**3)
+&amp;lt; Returns None&amp;gt;
+
+That is, check both f(-x) and -f(x) in this case.
+
+I say even and odd functions instead of even and odd powers because the same thing might apply to 
+other even and odd functions, such as cos and sin.  </content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/1784/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=1784'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/1784'/><author><name>asmeurer@gmail.com</name><uri>/u/asmeurer@gmail.com/</uri></author><issues:blockedOn><issues:id>2444</issues:id><issues:project>sympy</issues:project></issues:blockedOn><issues:id>1784</issues:id><issues:label>Type-Defect</issues:label><issues:label>Priority-Medium</issues:label><issues:label>Matching</issues:label><issues:label>Assumptions</issues:label><issues:label>EasyToFix</issues:label><issues:owner><issues:uri>/u/asmeurer@gmail.com/</issues:uri><issues:username>asmeurer@gmail.com</issues:username></issues:owner><issues:stars>3</issues:stars><issues:state>open</issues:state><issues:status>Valid</issues:status></entry><entry gd:etag='W/&quot;DkIERH47eCl7ImA9WhJWGU4.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/2418</id><published>2011-05-24T05:35:30.000Z</published><updated>2012-08-25T22:41:45.000Z</updated><title>Interval.evalf() returns a mpmath interval</title><content type='html'>This was originally my idea, but I see now that it was probably a bad one.  We have:
+
+In [1]: Interval(S(1)/2, S(2)/3, True, False)
+Out[1]: (1/2, 2/3]
+
+In [2]: Interval(S(1)/2, S(2)/3, True, False).evalf()
+Out[2]: [0.5, 0.66666666666666662966]
+
+In [3]: type(Interval(S(1)/2, S(2)/3, True, False).evalf())
+Out[3]: &amp;lt;class 'sympy.mpmath.ctx_iv.ivmpf'&amp;gt;
+
+There should be a method to Interval to get a mpmath interval, but evalf() should not be it.  .evalf() should return a sympy type.  In this case, it should just evalf the arguments.  Also, notice how we lost the information about the open left end.  </content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/2418/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=2418'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/2418'/><author><name>asmeurer@gmail.com</name><uri>/u/asmeurer@gmail.com/</uri></author><issues:id>2418</issues:id><issues:label>Type-Defect</issues:label><issues:label>Priority-Medium</issues:label><issues:label>EasyToFix</issues:label><issues:owner><issues:uri>/u/asmeurer@gmail.com/</issues:uri><issues:username>asmeurer@gmail.com</issues:username></issues:owner><issues:stars>3</issues:stars><issues:state>open</issues:state><issues:status>NeedsDecision</issues:status></entry><entry gd:etag='W/&quot;AkANQX47eCl7ImA9WhVQFkw.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/2823</id><published>2011-11-04T15:26:48.000Z</published><updated>2012-04-05T09:39:50.000Z</updated><title>bug in fcode</title><content type='html'>Dear sympy
+
+fcode is missing parenthesis when converting a negative power, 
+see test case below. (this is sympy 0.7.1)
+
+V
+
+############
+
+Python 2.7.2 (default, Nov  4 2011, 10:53:11) 
+[GCC 4.1.2 20080704 (Red Hat 4.1.2-48)] on linux2
+Type &amp;quot;help&amp;quot;, &amp;quot;copyright&amp;quot;, &amp;quot;credits&amp;quot; or &amp;quot;license&amp;quot; for more information.
+&amp;gt;&amp;gt;&amp;gt; from sympy import fcode, symbols
+&amp;gt;&amp;gt;&amp;gt; x = symbols('x')
+&amp;gt;&amp;gt;&amp;gt; y = x**(-2.0)
+&amp;gt;&amp;gt;&amp;gt; print fcode(y,assign_to='y',source_format='free',human=True)
+y = x**-2.0d0
+
+</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/2823/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=2823'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/2823'/><author><name>valerywe...@hotmail.com</name><uri>/u/105512047732906470169/</uri></author><issues:id>2823</issues:id><issues:label>Type-Defect</issues:label><issues:label>Priority-Medium</issues:label><issues:label>EasyToFix</issues:label><issues:stars>3</issues:stars><issues:state>open</issues:state><issues:status>Valid</issues:status></entry><entry gd:etag='W/&quot;CEYASX47eCl7ImA9WhJVEko.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/3223</id><published>2012-04-13T17:24:44.000Z</published><updated>2012-08-29T20:29:08.000Z</updated><title>degree((x+1)**10000) takes too long</title><content type='html'>degree() should be able to return almost instantly, but something like degree((x+1)**10000) takes forever to run, because it expands the polynomial first.  The function should be rewritten to compute the degree recursively, without unnecessary expansion (similar to ode_order).
+
+Other polys functions, like LC, could do the same.  Actually, making LC work this way would be nice for getting degree() to work, because then you could avoid expansion even on an Add (otherwise, you have to, in case of cancelation).</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/3223/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=3223'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/3223'/><author><name>asmeurer@gmail.com</name><uri>/u/asmeurer@gmail.com/</uri></author><issues:id>3223</issues:id><issues:label>Type-Defect</issues:label><issues:label>Priority-Medium</issues:label><issues:label>Polynomial</issues:label><issues:label>EasyToFix</issues:label><issues:stars>3</issues:stars><issues:state>open</issues:state><issues:status>Valid</issues:status></entry><entry gd:etag='W/&quot;A04HRX47eCl7ImA9WhVREk8.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/909</id><published>2008-07-06T09:31:35.000Z</published><updated>2012-03-20T07:52:14.000Z</updated><title>Make docstrings rest (sphinx) compatible</title><content type='html'>One example to fix is the Poly class:
+
+http://docs.sympy.org/modules/polynomials.html#poly
+
+as you can see, it's a little messed up.
+
+Let's close this issue when all docstrings are sphinx compatible. This is
+easy to fix issue.</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/909/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=909'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/909'/><author><name>ondrej.c...@gmail.com</name><uri>/u/104039945248245758823/</uri></author><issues:id>909</issues:id><issues:label>Type-Defect</issues:label><issues:label>Priority-Medium</issues:label><issues:label>EasyToFix</issues:label><issues:stars>2</issues:stars><issues:state>open</issues:state><issues:status>Valid</issues:status></entry><entry gd:etag='W/&quot;A04BSX47eCl7ImA9WhVREk8.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/2115</id><published>2010-12-09T17:13:33.000Z</published><updated>2012-03-20T07:52:38.000Z</updated><title>Move stuff from the Google Code SVN to git</title><content type='html'>Everything from here http://code.google.com/p/sympy/source/browse/ needs to be moved either to the GitHub wiki or the main repo.  Details on how to checkout the files on your computer are here: http://code.google.com/p/sympy/source/checkout.  Does anyone know how to transfer svn to git without losing the history?
+
+By the way, this includes the Google Code wiki pages in it.  </content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/2115/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=2115'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/2115'/><author><name>asmeurer@gmail.com</name><uri>/u/asmeurer@gmail.com/</uri></author><issues:id>2115</issues:id><issues:label>Priority-Medium</issues:label><issues:label>Documentation</issues:label><issues:label>Type-Defect</issues:label><issues:label>CodeInCategory-Documentation</issues:label><issues:label>CodeInDifficulty-Easy</issues:label><issues:label>EasyToFix</issues:label><issues:label>CodeInImportedIntoMelange</issues:label><issues:stars>2</issues:stars><issues:state>open</issues:state><issues:status>Valid</issues:status></entry><entry gd:etag='W/&quot;DU8EQX47eCl7ImA9WhVQEE4.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/2440</id><published>2011-06-02T05:40:29.000Z</published><updated>2012-03-29T16:16:40.000Z</updated><title>Equal Integrals compare different when using different variables</title><content type='html'>
+&amp;gt;&amp;gt;&amp;gt; Integral(x, (x, 0, 1)) == Integral(y, (y, 0, 1))
+False
+
+Is this the desired behavior for any reason?</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/2440/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=2440'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/2440'/><author><name>renato.c...@gmail.com</name><uri>/u/115599828448622896355/</uri></author><issues:blockedOn><issues:id>2442</issues:id><issues:project>sympy</issues:project></issues:blockedOn><issues:blocking><issues:id>2566</issues:id><issues:project>sympy</issues:project></issues:blocking><issues:cc><issues:uri>/u/117933771799683895267/</issues:uri><issues:username>smi...@gmail.com</issues:username></issues:cc><issues:id>2440</issues:id><issues:label>Type-Defect</issues:label><issues:label>Priority-Medium</issues:label><issues:label>EasyToFix</issues:label><issues:label>Integration</issues:label><issues:label>Caching</issues:label><issues:owner><issues:uri>/u/115599828448622896355/</issues:uri><issues:username>renato.c...@gmail.com</issues:username></issues:owner><issues:stars>2</issues:stars><issues:state>open</issues:state><issues:status>Valid</issues:status></entry><entry gd:etag='W/&quot;A04BSX47eCl7ImA9WhVREk8.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/2679</id><published>2011-09-08T15:14:30.000Z</published><updated>2012-03-20T07:52:38.000Z</updated><title>Refactor GA* documentation to use doctests (or move it to examples/)</title><content type='html'>There are some .py files in doc/src/modules/galgebra/GA which have some strange indentation (and aren't valid Python source files either). Aaron also noticed this and they produce (harmless) errors when 2to3 is ran on them. I've finally had a chance to look at them and they seem to be included in the main GA module documentation, GAsympy.txt. In fact, they seem to be used like a doctest - the first part of the file (indented) are the comments that produce the second half of the file (not indented). These should be converted to be actual doctests. 
+
+Those files also haven't been touched since 2009 so it's not clear to me if anyone is even using this part of SymPy now, but fixing the docs shouldn't be too hard and can be a good introduction to SymPy for an interested developer (hence, I'm putting the EasyToFix tag here). Also, I don't think these files are ran as part of the doctest suite which means errors might be creeping in and we'd like to avoid this.
+
+For the record, here are the errors produced when 2to3 is ran on these files:
+
+RefactoringTool: Can't parse sympy-py3k/./doc/src/modules/galgebra/GA/reciprocalframeGAtest.py: ParseError: bad input: type=5, value='        ', context=('', (1, 0))
+RefactoringTool: Can't parse sympy-py3k/./doc/src/modules/galgebra/GA/headerGAtest.py: ParseError: bad input: type=0, value='', context=('\n', (26, 0))
+RefactoringTool: Can't parse sympy-py3k/./doc/src/modules/galgebra/GA/conformalgeometryGAtest.py: ParseError: bad input: type=5, value='        ', context=('', (1, 0))
+RefactoringTool: Can't parse sympy-py3k/./doc/src/modules/galgebra/GA/BasicGAtest.py: ParseError: bad input: type=5, value='        ', context=('', (1, 0))
+RefactoringTool: Can't parse sympy-py3k/./doc/src/modules/galgebra/GA/hyperbolicGAtest.py: ParseError: bad input: type=5, value='        ', context=('', (1, 0))</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/2679/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=2679'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/2679'/><author><name>vlada.pe...@gmail.com</name><uri>/u/108713607268198052411/</uri></author><issues:cc><issues:uri>/u/100789173971217230647/</issues:uri><issues:username>abro...@verizon.net</issues:username></issues:cc><issues:id>2679</issues:id><issues:label>Type-Defect</issues:label><issues:label>Priority-Medium</issues:label><issues:label>Documentation</issues:label><issues:label>EasyToFix</issues:label><issues:label>CodeInCategory-Documentation</issues:label><issues:label>CodeInDifficulty-Easy</issues:label><issues:label>CodeInImportedIntoMelange</issues:label><issues:stars>2</issues:stars><issues:state>open</issues:state><issues:status>Valid</issues:status></entry><entry gd:etag='W/&quot;A04BSX47eCl7ImA9WhVREk8.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/2683</id><published>2011-09-11T19:50:29.000Z</published><updated>2012-03-20T07:52:38.000Z</updated><title>det() is called when inverting matrix through GE</title><content type='html'>As noted at http://groups.google.com/group/sympy/browse_thread/thread/ba37b597b851df7c#, det() is called when inverting a Matrix with the GE method.  This is used only the check if it is non-degenerate.  This should instead be checked by the output of rref().</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/2683/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=2683'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/2683'/><author><name>asmeurer@gmail.com</name><uri>/u/asmeurer@gmail.com/</uri></author><issues:cc><issues:uri>/u/117933771799683895267/</issues:uri><issues:username>smi...@gmail.com</issues:username></issues:cc><issues:id>2683</issues:id><issues:label>Type-Defect</issues:label><issues:label>Priority-Medium</issues:label><issues:label>Matrices</issues:label><issues:label>EasyToFix</issues:label><issues:label>CodeInDifficulty-Easy</issues:label><issues:label>CodeInCategory-Code</issues:label><issues:label>CodeInImportedIntoMelange</issues:label><issues:stars>2</issues:stars><issues:state>open</issues:state><issues:status>Valid</issues:status></entry><entry gd:etag='W/&quot;A04BSX47eCl7ImA9WhVREk8.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/2763</id><published>2011-10-23T21:36:30.000Z</published><updated>2012-03-20T07:52:38.000Z</updated><title>Fix the SymPy Logo</title><content type='html'>The original logo is found at http://code.google.com/p/sympy/source/browse/#svn%2Fmaterials%2Flogo.  The problem is that the transparency is not done correctly on the tail, so that it does not look good unless the background is white.  We need to fix it so that it uses the correct kind of alpha channel, so that it looks good everywhere.  There is a svg image there, though I didn't have much luck with it.</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/2763/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=2763'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/2763'/><author><name>asmeurer@gmail.com</name><uri>/u/asmeurer@gmail.com/</uri></author><issues:id>2763</issues:id><issues:label>Type-Defect</issues:label><issues:label>Priority-Medium</issues:label><issues:label>CodeInCategory-Outreach</issues:label><issues:label>CodeInDifficulty-Easy</issues:label><issues:label>EasyToFix</issues:label><issues:label>CodeInImportedIntoMelange</issues:label><issues:label>NeedsReview</issues:label><issues:stars>2</issues:stars><issues:state>open</issues:state><issues:status>Valid</issues:status></entry><entry gd:etag='W/&quot;A04BSX47eCl7ImA9WhVREk8.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/2769</id><published>2011-10-23T22:30:40.000Z</published><updated>2012-03-20T07:52:38.000Z</updated><title>Make video tutorials for SymPy</title><content type='html'>We can have several Code-In tasks for this.  Create some video tutorials for SymPy, and upload them to some SymPy channel on YouTube.</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/2769/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=2769'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/2769'/><author><name>asmeurer@gmail.com</name><uri>/u/asmeurer@gmail.com/</uri></author><issues:id>2769</issues:id><issues:label>Type-Enhancement</issues:label><issues:label>Priority-Medium</issues:label><issues:label>CodeInCategory-Training</issues:label><issues:label>CodeInDifficulty-Easy</issues:label><issues:label>CodeInMultiple</issues:label><issues:label>EasyToFix</issues:label><issues:label>CodeInImportedIntoMelange</issues:label><issues:stars>2</issues:stars><issues:state>open</issues:state><issues:status>Valid</issues:status></entry><entry gd:etag='W/&quot;A04BSX47eCl7ImA9WhVREk8.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/2774</id><published>2011-10-24T06:45:05.000Z</published><updated>2012-03-20T07:52:38.000Z</updated><title>``See Also`` feature in Number Theory</title><content type='html'>Edit the doc-string to add list of other function that are closely related to the query.
+
+Ex. 
+
+&amp;gt;&amp;gt;&amp;gt; prime?
+Docstring:
+    Return the nth prime, with the primes indexed as prime(1) = 2,
+    prime(2) = 3, etc.... The nth prime is approximately n*log(n) and
+    can never be larger than 2**n.
+    
+    Reference: http://primes.utm.edu/glossary/xpage/BertrandsPostulate.html
+
+## This is the present doc-string. One needs to add the following line
+
+    See also : isprime, primerange, primepi</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/2774/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=2774'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/2774'/><author><name>hector1...@gmail.com</name><uri>/u/113469880675233906987/</uri></author><issues:id>2774</issues:id><issues:label>Type-Enhancement</issues:label><issues:label>Priority-Medium</issues:label><issues:label>CodeInCategory-Documentation</issues:label><issues:label>CodeInDifficulty-Easy</issues:label><issues:label>EasyToFix</issues:label><issues:label>CodeInImportedIntoMelange</issues:label><issues:stars>2</issues:stars><issues:state>open</issues:state><issues:status>Valid</issues:status></entry><entry gd:etag='W/&quot;CkcASH47eCl7ImA9WhVREk4.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/2797</id><published>2011-10-26T18:48:56.000Z</published><updated>2012-03-20T07:54:09.000Z</updated><title>Translate our webpage</title><content type='html'>Our webpage can be translated to other languages. Note that this is connected with issue #2764, about improving our webpage: if someone is working on that, there's likely no point in translating the page as it'll change.</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/2797/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=2797'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/2797'/><author><name>vlada.pe...@gmail.com</name><uri>/u/108713607268198052411/</uri></author><issues:id>2797</issues:id><issues:label>Type-Defect</issues:label><issues:label>Priority-Medium</issues:label><issues:label>CodeInCategory-Translation</issues:label><issues:label>CodeInDifficulty-Easy</issues:label><issues:label>CodeInMultiple</issues:label><issues:label>EasyToFix</issues:label><issues:label>CodeInImportedIntoMelange</issues:label><issues:stars>2</issues:stars><issues:state>open</issues:state><issues:status>Valid</issues:status></entry><entry gd:etag='W/&quot;CU8MQH47eCl7ImA9WhVTF04.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/2842</id><published>2011-11-13T04:18:00.000Z</published><updated>2012-03-03T00:18:01.000Z</updated><title>Fix evalf documentation</title><content type='html'>evalf assumes in a few places that it is dealing with numbers so it expands or uses conjugate, 
+
+&amp;gt;&amp;gt;&amp;gt; ((x - 1)*((1 - x))**2).n()
+x**3 - 3*x**2 + 3*x - 1
+&amp;gt;&amp;gt;&amp;gt; (1/((x - 1)*((1 - x))**2)).n()
+
+conjugate(x)**3/((x*conjugate(x) - x - conjugate(x) +
+1)*(x**2*conjugate(x)**2 - 2*x**2*conjugate(x) + x**2 -
+2*x*conjugate(x)**2 + 4*x*conjugate(x) - 2*x +
+conjugate(x)**2 - 2*conjugate(x) + 1)) -
+3*conjugate(x)**2/((x*conjugate(x) - x - conjugate(x) +
+1)*(x**2*conjugate(x)**2 - 2*x**2*conjugate(x) + x**2 -
+2*x*conjugate(x)**2 + 4*x*conjugate(x) - 2*x +
+conjugate(x)**2 - 2*conjugate(x) + 1)) +
+3*conjugate(x)/((x*conjugate(x) - x - conjugate(x) +
+1)*(x**2*conjugate(x)**2 - 2*x**2*conjugate(x) + x**2 -
+2*x*conjugate(x)**2 + 4*x*conjugate(x) - 2*x +
+conjugate(x)**2 - 2*conjugate(x) + 1)) - 1/((x*conjugate(x)
+- x - conjugate(x) + 1)*(x**2*conjugate(x)**2 -
+2*x**2*conjugate(x) + x**2 - 2*x*conjugate(x)**2 +
+4*x*conjugate(x) - 2*x + conjugate(x)**2 - 2*conjugate(x) +
+1))
+
+With a few tweaks this becomes:
+
+&amp;gt;&amp;gt;&amp;gt; ((x - 1)*((1 - x))**2).n()
+(-x + 1.0)**2*(x - 1.0)
+&amp;gt;&amp;gt;&amp;gt; (1/((x - 1)*((1 - x))**2)).n()
+1/((-x + 1.0)**2*(x - 1.0))
+</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/2842/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=2842'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/2842'/><author><name>smi...@gmail.com</name><uri>/u/117933771799683895267/</uri></author><issues:cc><issues:uri>/u/117933771799683895267/</issues:uri><issues:username>smi...@gmail.com</issues:username></issues:cc><issues:id>2842</issues:id><issues:label>Type-Defect</issues:label><issues:label>Priority-Medium</issues:label><issues:label>Documentation</issues:label><issues:label>EasyToFix</issues:label><issues:stars>2</issues:stars><issues:state>open</issues:state><issues:status>Started</issues:status></entry><entry gd:etag='W/&quot;A04BSX47eCl7ImA9WhVREk8.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/2903</id><published>2011-12-07T14:47:52.000Z</published><updated>2012-03-20T07:52:38.000Z</updated><title>Better documentation for g-function formulae</title><content type='html'>Part of my gsoc project created relatively extensive documentation for many new special functions in sympy. I have also been working on integration, in conjunction of which there are various tables documenting certain formulae (this will get clearer when the code is pushed; see the integrals internals documentation on g-functions; see also the internals documentation on hyperexpand).
+
+One idea would be that these tables should contain hyperlinks to the documentation of the relevant special functions.</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/2903/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=2903'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/2903'/><author><name>ness...@gmail.com</name><uri>/u/104531927090589914088/</uri></author><issues:cc><issues:uri>/u/asmeurer@gmail.com/</issues:uri><issues:username>asmeurer@gmail.com</issues:username></issues:cc><issues:id>2903</issues:id><issues:label>Type-Defect</issues:label><issues:label>Priority-Medium</issues:label><issues:label>EasyToFix</issues:label><issues:owner><issues:uri>/u/104531927090589914088/</issues:uri><issues:username>ness...@gmail.com</issues:username></issues:owner><issues:stars>2</issues:stars><issues:state>open</issues:state><issues:status>Valid</issues:status></entry><entry gd:etag='W/&quot;A04BSX47eCl7ImA9WhVREk8.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/2958</id><published>2012-01-04T11:37:31.000Z</published><updated>2012-03-20T07:52:38.000Z</updated><title>Implement series expansions error_functions.py</title><content type='html'>Series expansions about finite points work for the trigonometric integrals Si, Ci, etc. They are not implemented/tested for exponential integrals E1, Ei, expint. It would be necessary to figure out where reasonable series expansions exist and see if sympy produces them; if not why not. This should not be hard.
+
+Additionally, for limits we need to implement asymptotic series (that is, &amp;quot;series expansions around infinity&amp;quot;) and, in cases where there are essential singularities at infinity, helpers which expose these in terms of exponential functions (c/f the rewrite_as_tractable implementation in gammazeta.py). This might be somewhat harder.</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/2958/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=2958'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/2958'/><author><name>ness...@gmail.com</name><uri>/u/104531927090589914088/</uri></author><issues:id>2958</issues:id><issues:label>Type-Defect</issues:label><issues:label>Priority-Medium</issues:label><issues:label>EasyToFix</issues:label><issues:owner><issues:uri>/u/107490137238222069432/</issues:uri><issues:username>someb...@bluewin.ch</issues:username></issues:owner><issues:stars>2</issues:stars><issues:state>open</issues:state><issues:status>Valid</issues:status></entry><entry gd:etag='W/&quot;DkYNSX47eCl7ImA9WhVbFE4.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/3275</id><published>2012-05-31T03:16:38.000Z</published><updated>2012-05-31T03:16:38.000Z</updated><title>qapply of Rotation operator to spin states</title><content type='html'>The rotation operator currently does not have the '_apply_operator_*' methods for qapply to apply the operators to states.This should not be too hard, since the matrix elements are already calculated by 'Rotation.D', it's just adding the _apply methods and some tests. I'll get to this eventually if nobody else does. This would need to work with both numerical and symbolic states, for example:
+
+&amp;gt;&amp;gt;&amp;gt; qapply(Rotation(0, pi/2, 0) * JzKet(1, 1)).doit()
+JzKet(1, 1)/2 - sqrt(2) * JzKet(1, 0)/2 + JzKet(1, -1)/2
+&amp;gt;&amp;gt;&amp;gt; qapply(Rotation(a, b, g) * JzKet(1, 1))
+Rotation.D(1,1,1,a,b,g) * JzKet(1,1) + Rotation.D(1,1,0,a,b,g) * JzKet(1,0) + Rotation.D(1,1,-1,a,b,g) * JzKet(1,-1)
+&amp;gt;&amp;gt;&amp;gt; qapply(Rotation(a, b, g) * JzKet(j, m)
+Sum(Rotation.D(j, m, mp, a, b, g) * JzKet(j, mp), (mp, -j, j))</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/3275/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=3275'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/3275'/><author><name>sean.v....@gmail.com</name><uri>/u/113046012287564521760/</uri></author><issues:id>3275</issues:id><issues:label>Type-Enhancement</issues:label><issues:label>Priority-Medium</issues:label><issues:label>Quantum</issues:label><issues:label>Physics</issues:label><issues:label>EasyToFix</issues:label><issues:stars>2</issues:stars><issues:state>open</issues:state><issues:status>Valid</issues:status></entry><entry gd:etag='W/&quot;C04FQn47eCl7ImA9WhJXFEU.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/3287</id><published>2012-06-10T20:22:24.000Z</published><updated>2012-08-09T03:11:53.000Z</updated><title>Merge DeferredVector and MatrixSymbol</title><content type='html'>Their semantics are a little different (X[i] returns different objects) however I think that the one in DeferredVector are preferable.
+
+I am marking it as DecisionNeeded and milestone for the next release as it concerns api changes to something that was introduced before the last release.</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/3287/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=3287'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/3287'/><author><name>krastano...@gmail.com</name><uri>/u/100157245271348669141/</uri></author><issues:cc><issues:uri>/u/109882876523836932473/</issues:uri><issues:username>MRock...@gmail.com</issues:username></issues:cc><issues:id>3287</issues:id><issues:label>Type-Defect</issues:label><issues:label>Priority-Medium</issues:label><issues:label>EasyToFix</issues:label><issues:stars>2</issues:stars><issues:state>open</issues:state><issues:status>NeedsDecision</issues:status></entry><entry gd:etag='W/&quot;A04MQn47eCl7ImA9WhVREk8.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/716</id><published>2008-02-17T10:09:52.000Z</published><updated>2012-03-20T07:53:03.000Z</updated><title>Ellipse.tangent_lines needs to be more robust</title><content type='html'>In [1]: e = Ellipse(Point(0,0), 3, 2)
+
+In [2]: t = e.tangent_line(e.random_point())
+
+In [3]: e.is_tangent(t)
+Out[3]: False
+
+
+Obviously [2] and [3] are in contradiction. By plotting the result, [2] is
+most probably right, so [3] is wrong.</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/716/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=716'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/716'/><author><name>ondrej.c...@gmail.com</name><uri>/u/104039945248245758823/</uri></author><issues:id>716</issues:id><issues:label>Type-Defect</issues:label><issues:label>Priority-Medium</issues:label><issues:label>EasyToFix</issues:label><issues:label>CodeInCategory-Code</issues:label><issues:label>CodeInDifficulty-Medium</issues:label><issues:label>CodeInImportedIntoMelange</issues:label><issues:stars>1</issues:stars><issues:state>open</issues:state><issues:status>Valid</issues:status></entry><entry gd:etag='W/&quot;DUMHQ347eCl7ImA9WxBaGUs.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/1242</id><published>2008-12-16T18:29:43.000Z</published><updated>2010-03-30T16:43:52.000Z</updated><title>Simplifying of complex exponentials</title><content type='html'>I was toying around with the idea of converting trig functions to exponentials for the purposes of 
+simplification, however the results of simplify appear to be non-optimal:
+&amp;gt;&amp;gt;&amp;gt; x = Symbol('x')
+&amp;gt;&amp;gt;&amp;gt; c = cos(x)._eval_rewrite_as_exp(x)
+&amp;gt;&amp;gt;&amp;gt; t = tan(x)._eval_rewrite_as_exp(x)
+&amp;gt;&amp;gt;&amp;gt; c * t
+I*(1/2*exp(I*x) + 1/2*exp(-I*x))*(-exp(I*x) + exp(-I*x))/(exp(I*x) + exp(-I*x))
+&amp;gt;&amp;gt;&amp;gt; simplify(_)
+&amp;gt;&amp;gt;&amp;gt; (2*I*exp(I*x) - 2*I*exp(5*I*x))/(4*exp(2*I*x) + 4*exp(4*I*x))
+
+Although the simplification is valid, it is not the expected result. t * c can be reduced quite 
+simply by hand if you first combine 1/2*exp(I*x) + 1/2*exp(-I*x) to give:
+1/2*(exp(I*x) + exp(-I*x));
+take the 1/2 'down' to give
+I*(exp(I*x) + exp(-I*x))*(-exp(I*x) + exp(-I*x))/(2*(exp(I*x) + exp(-I*x)));
+cancel exp(I*x) + exp(-I*x)
+(I*(-exp(I*x) + exp(-I*x))) / 2;
+which is our good old friend sin(x).
+
+I am not sure exactly how the current simplify function works, but it would be good if it could 
+'pick-up' on this case (and others similar).
+
+</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/1242/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=1242'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/1242'/><author><name>fred...@witherden.org</name><uri>/u/111560553046880738986/</uri></author><issues:id>1242</issues:id><issues:label>Type-Defect</issues:label><issues:label>Priority-Medium</issues:label><issues:label>EasyToFix</issues:label><issues:stars>1</issues:stars><issues:state>open</issues:state><issues:status>Started</issues:status></entry><entry gd:etag='W/&quot;A04MQn47eCl7ImA9WhVREk8.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/1284</id><published>2009-02-04T00:30:07.000Z</published><updated>2012-03-20T07:53:03.000Z</updated><title>more tests for the solvers module</title><content type='html'>We need more tests for the solvers module.(sympy.solvers.tests.test_solvers)
+
+It is a very important feature and most parts have very few tests.</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/1284/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=1284'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/1284'/><author><name>fabian.s...@gmail.com</name><uri>/u/103948515893177094863/</uri></author><issues:id>1284</issues:id><issues:label>Type-Defect</issues:label><issues:label>Priority-Medium</issues:label><issues:label>EasyToFix</issues:label><issues:stars>1</issues:stars><issues:state>open</issues:state><issues:status>Valid</issues:status></entry><entry gd:etag='W/&quot;A04MQn47eCl7ImA9WhVREk8.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/1464</id><published>2009-06-08T19:06:53.000Z</published><updated>2012-03-20T07:53:03.000Z</updated><title>docs: adding instructions how to get stuff working on windows</title><content type='html'>See this thread for more info:
+
+http://groups.google.com/group/sympy/browse_thread/thread/de26d886c983fbec</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/1464/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=1464'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/1464'/><author><name>ondrej.c...@gmail.com</name><uri>/u/104039945248245758823/</uri></author><issues:blocking><issues:id>707</issues:id><issues:project>sympy</issues:project></issues:blocking><issues:id>1464</issues:id><issues:label>Type-Defect</issues:label><issues:label>Priority-Medium</issues:label><issues:label>EasyToFix</issues:label><issues:label>Documentation</issues:label><issues:stars>1</issues:stars><issues:state>open</issues:state><issues:status>Valid</issues:status></entry><entry gd:etag='W/&quot;A04MRX47eCl7ImA9WhVREk8.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/1604</id><published>2009-08-16T02:27:47.000Z</published><updated>2012-03-20T07:53:04.000Z</updated><title>Misapplication of integration by parts</title><content type='html'> &amp;gt;&amp;gt;&amp;gt; integrate(exp(x)*g(x), x)
+exp(x)*g(x) - D(g(x), x)*exp(x)
+
+This is clearly wrong.  It should return Integral(exp(x)*g(x), x)</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/1604/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=1604'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/1604'/><author><name>asmeurer@gmail.com</name><uri>/u/asmeurer@gmail.com/</uri></author><issues:blocking><issues:id>1888</issues:id><issues:project>sympy</issues:project></issues:blocking><issues:id>1604</issues:id><issues:label>Type-Defect</issues:label><issues:label>Priority-Medium</issues:label><issues:label>Integration</issues:label><issues:label>EasyToFix</issues:label><issues:owner><issues:uri>/u/asmeurer@gmail.com/</issues:uri><issues:username>asmeurer@gmail.com</issues:username></issues:owner><issues:stars>1</issues:stars><issues:state>open</issues:state><issues:status>Valid</issues:status></entry><entry gd:etag='W/&quot;A04MRX47eCl7ImA9WhVREk8.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/1743</id><published>2009-12-04T06:19:11.000Z</published><updated>2012-03-20T07:53:04.000Z</updated><title>Make a subs() function</title><content type='html'>The following should work:
+
+In [8]: s = x*pi
+
+In [9]: s.subs(x, range(10))
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+
+/Users/aaronmeurer/Documents/Python/sympy/sympy/&amp;lt;ipython console&amp;gt; in &amp;lt;module&amp;gt;()
+
+/Users/aaronmeurer/Documents/Python/sympy/sympy/sympy/core/basic.pyc in subs(self, *args)
+   1079         elif len(args) == 2:
+   1080             old, new = args
+-&amp;gt; 1081             return self._subs_old_new(old, new)
+   1082         else:
+   1083             raise TypeError(&amp;quot;subs accepts either 1 or 2 arguments&amp;quot;)
+
+/Users/aaronmeurer/Documents/Python/sympy/sympy/sympy/core/cache.pyc in wrapper(*args, **kw_args)
+     80             k = args
+     81         try:
+---&amp;gt; 82             return func_cache_it_cache[k]
+     83         except KeyError:
+     84             pass
+
+TypeError: unhashable type: 'list'
+
+It is easy to vectorize a function, just add the decorator to the top of the function def, like with expand().  
+
+Also, do you think we should have a dummy function subs() that calls the subs method, like we do with N() for 
+evalf?
+
+In [10]: subs(s, {x:12})
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+
+/Users/aaronmeurer/Documents/Python/sympy/sympy/&amp;lt;ipython console&amp;gt; in &amp;lt;module&amp;gt;()
+
+NameError: name 'subs' is not defined</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/1743/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=1743'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/1743'/><author><name>asmeurer@gmail.com</name><uri>/u/asmeurer@gmail.com/</uri></author><issues:id>1743</issues:id><issues:label>Type-Defect</issues:label><issues:label>Priority-Medium</issues:label><issues:label>EasyToFix</issues:label><issues:stars>1</issues:stars><issues:state>open</issues:state><issues:status>Valid</issues:status></entry><entry gd:etag='W/&quot;A04MRX47eCl7ImA9WhVREk8.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/1888</id><published>2010-04-07T04:30:36.000Z</published><updated>2012-03-20T07:53:04.000Z</updated><title>integrate(f(x).diff(x)**2, x) gives some strange answer</title><content type='html'>In [15]: a = integrate(f(x).diff(x)**2, x)
+
+In [16]: a
+Out[16]: 
+                         2                         2
+  d                     d                  d        
+2⋅──(f(x))⋅f(x)   2⋅x⋅─────(f(x))⋅f(x)   x⋅──(f(x)) 
+  dx                  dx dx                dx       
+─────────────── - ──────────────────── + ───────────
+       3                   3                  3     
+
+This is clearly not right.  Differentiating confirms.
+
+In [17]: a.diff(x)
+Out[17]: 
+          3                          
+         d                           
+  2⋅x⋅────────(f(x))⋅f(x)           2
+      dx dx dx              d        
+- ─────────────────────── + ──(f(x)) 
+             3              dx       
+
+
+Strangely enough, we can solve that differential equation:
+
+In [18]: dsolve(a, f(x))
+Out[18]: 
+                2       4
+f(x) = C₁ + C₂⋅x  + C₃⋅x 
+
+So this is clearly a contradiction (f(x) is arbitrary, not C1 + C2*x**2 + C3*x**4).  
+
+There is no possible closed form solution of this.  It should just return unevaluated.  By the way, I 
+suspect that this might be related to issue 1604.  </content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/1888/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=1888'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/1888'/><author><name>asmeurer@gmail.com</name><uri>/u/asmeurer@gmail.com/</uri></author><issues:blockedOn><issues:id>1604</issues:id><issues:project>sympy</issues:project></issues:blockedOn><issues:id>1888</issues:id><issues:label>Type-Defect</issues:label><issues:label>Priority-Medium</issues:label><issues:label>EasyToFix</issues:label><issues:label>Integration</issues:label><issues:owner><issues:uri>/u/asmeurer@gmail.com/</issues:uri><issues:username>asmeurer@gmail.com</issues:username></issues:owner><issues:stars>1</issues:stars><issues:state>open</issues:state><issues:status>Valid</issues:status></entry><entry gd:etag='W/&quot;A0UMRn47eCl7ImA9WhZXFEg.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/1991</id><published>2010-07-20T06:52:42.000Z</published><updated>2011-05-03T21:48:07.000Z</updated><title>Don't use assert in the library code when an exception would be better</title><content type='html'>Basically, you should rewrite it to use an if construct and a proper exception (ValueError, TypeError, NotImplementedError, or a special error for the module are the usual suspects).  
+
+$ git grep assert | grep -v test
+
+Will show most offending lines.  I have already fixed matrices.py in my integration3 branch.  </content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/1991/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=1991'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/1991'/><author><name>asmeurer@gmail.com</name><uri>/u/asmeurer@gmail.com/</uri></author><issues:id>1991</issues:id><issues:label>Type-Defect</issues:label><issues:label>Priority-Medium</issues:label><issues:label>EasyToFix</issues:label><issues:owner><issues:uri>/u/asmeurer@gmail.com/</issues:uri><issues:username>asmeurer@gmail.com</issues:username></issues:owner><issues:stars>1</issues:stars><issues:state>open</issues:state><issues:status>Started</issues:status></entry><entry gd:etag='W/&quot;CkcEQn47eCl7ImA9WhVREk4.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/2198</id><published>2011-02-23T03:53:02.000Z</published><updated>2012-03-20T07:53:23.000Z</updated><title>gotcha addons</title><content type='html'>Just so this doesn't get forgotten...
+
+x**(a+b).expand() -- gotcha: you are expanding a+b not (x**(a+b))
+
+powsimp(x**A*x**B) != x**(A+B) when A and B are non-commutative</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/2198/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=2198'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/2198'/><author><name>smi...@gmail.com</name><uri>/u/117933771799683895267/</uri></author><issues:id>2198</issues:id><issues:label>Type-Defect</issues:label><issues:label>Priority-Medium</issues:label><issues:label>Documentation</issues:label><issues:label>EasyToFix</issues:label><issues:label>NonCommutative</issues:label><issues:owner><issues:uri>/u/117933771799683895267/</issues:uri><issues:username>smi...@gmail.com</issues:username></issues:owner><issues:stars>1</issues:stars><issues:state>open</issues:state><issues:status>Valid</issues:status></entry><entry gd:etag='W/&quot;CkcEQn47eCl7ImA9WhVREk4.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/2235</id><published>2011-03-25T22:34:19.000Z</published><updated>2012-03-20T07:53:23.000Z</updated><title>Default order of hints to dsolve()</title><content type='html'>The default order of hints to dsolve() is given by the allhints variable in ode.py.  Here is an excerpt from the code:
+
+
+# This is a list of hints in the order that they should be applied.  That means
+# that, in general, hints earlier in the list should produce simpler results
+# than those later for ODEs that fit both.  This is just based on my own
+# empirical observations, so if you find that *in general*, a hint later in
+# the list is better than one before it, fell free to modify the list.  Note
+# however that you can easily override the hint used in dsolve() for a specific ODE
+# (see the docstring).  In general, &amp;quot;_Integral&amp;quot; hints should be grouped
+# at the end of the list, unless there is a method that returns an unevaluatable
+# integral most of the time (which should surely go near the end of the list
+# anyway).
+# &amp;quot;default&amp;quot;, &amp;quot;all&amp;quot;, &amp;quot;best&amp;quot;, and &amp;quot;all_Integral&amp;quot; meta-hints should not be
+# included in this list, but &amp;quot;_best&amp;quot; and &amp;quot;_Integral&amp;quot; hints should be included.
+allhints = (&amp;quot;separable&amp;quot;, &amp;quot;1st_exact&amp;quot;, &amp;quot;1st_linear&amp;quot;, &amp;quot;Bernoulli&amp;quot;,
+&amp;quot;1st_homogeneous_coeff_best&amp;quot;, &amp;quot;1st_homogeneous_coeff_subs_indep_div_dep&amp;quot;,
+&amp;quot;1st_homogeneous_coeff_subs_dep_div_indep&amp;quot;, &amp;quot;nth_linear_constant_coeff_homogeneous&amp;quot;,
+&amp;quot;nth_linear_constant_coeff_undetermined_coefficients&amp;quot;,
+&amp;quot;nth_linear_constant_coeff_variation_of_parameters&amp;quot;,
+&amp;quot;Liouville&amp;quot;, &amp;quot;separable_Integral&amp;quot;, &amp;quot;1st_exact_Integral&amp;quot;, &amp;quot;1st_linear_Integral&amp;quot;,
+&amp;quot;Bernoulli_Integral&amp;quot;, &amp;quot;1st_homogeneous_coeff_subs_indep_div_dep_Integral&amp;quot;,
+&amp;quot;1st_homogeneous_coeff_subs_dep_div_indep_Integral&amp;quot;,
+&amp;quot;nth_linear_constant_coeff_variation_of_parameters_Integral&amp;quot;,
+&amp;quot;Liouville_Integral&amp;quot;)
+
+I think the 1st_linear and Bernoulli hints should come before separable and 1st_exact, since they always return solution that are solved for f(x).  </content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/2235/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=2235'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/2235'/><author><name>asmeurer@gmail.com</name><uri>/u/asmeurer@gmail.com/</uri></author><issues:id>2235</issues:id><issues:label>Type-Defect</issues:label><issues:label>Priority-Medium</issues:label><issues:label>Solvers</issues:label><issues:label>EasyToFix</issues:label><issues:owner><issues:uri>/u/asmeurer@gmail.com/</issues:uri><issues:username>asmeurer@gmail.com</issues:username></issues:owner><issues:stars>1</issues:stars><issues:state>open</issues:state><issues:status>Valid</issues:status></entry><entry gd:etag='W/&quot;CUcDSH47eCl7ImA9WhVRF0U.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/2275</id><published>2011-04-13T10:28:40.000Z</published><updated>2012-03-26T17:31:19.000Z</updated><title>is_upper and is_lower should imply that the matrix is square</title><content type='html'>I assume upper and lower are short forms for upper triangular matrix and lower triangular matrix.
+If that is the case, then A.is_upper should either return False or an Error, when A is not square. In my opinion, it should return False.
+
+Currently,
+
+In [53]: A = Matrix((1,2,3))
+
+In [54]: A
+Out[54]: 
+⎡1⎤
+⎢ ⎥
+⎢2⎥
+⎢ ⎥
+⎣3⎦
+
+In [55]: A.is_lower()
+Out[55]: True
+
+Opinions ?
+</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/2275/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=2275'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/2275'/><author><name>sherjilo...@gmail.com</name><uri>/u/107298455532294735855/</uri></author><issues:id>2275</issues:id><issues:label>Type-Defect</issues:label><issues:label>Priority-Medium</issues:label><issues:label>Matrices</issues:label><issues:label>EasyToFix</issues:label><issues:label>Documentation</issues:label><issues:owner><issues:uri>/u/107298455532294735855/</issues:uri><issues:username>sherjilo...@gmail.com</issues:username></issues:owner><issues:stars>1</issues:stars><issues:state>open</issues:state><issues:status>Valid</issues:status></entry><entry gd:etag='W/&quot;CkcEQn47eCl7ImA9WhVREk4.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/2276</id><published>2011-04-13T21:16:22.000Z</published><updated>2012-03-20T07:53:23.000Z</updated><title>integrate() should use the ode module's undetermined coefficients solver when possible</title><content type='html'>So my comment 8 from issue 2219 made me realize something.  Consider the following:
+
+In [242]: integrate(x**2*exp(x)*sin(x), x)
+Out[242]: 
+   x           2  x                  x                  2         x
+  ℯ ⋅sin(x)   x ⋅ℯ ⋅sin(x)   cos(x)⋅ℯ              x   x ⋅cos(x)⋅ℯ 
+- ───────── + ──────────── - ───────── + x⋅cos(x)⋅ℯ  - ────────────
+      2            2             2                          2      
+
+In [245]: dsolve(f(x).diff(x) - x**2*exp(x)*sin(x), f(x), hint='nth_linear_constant_coeff_undetermined_coefficients')
+Out[245]: 
+             x           2  x                  x                  2         x
+            ℯ ⋅sin(x)   x ⋅ℯ ⋅sin(x)   cos(x)⋅ℯ              x   x ⋅cos(x)⋅ℯ 
+f(x) = C₁ - ───────── + ──────────── - ───────── + x⋅cos(x)⋅ℯ  - ────────────
+                2            2             2                          2      
+
+In [246]: %timeit integrate(x**2*exp(x)*sin(x), x)
+1 loops, best of 3: 10.7 s per loop
+
+In [247]: %timeit dsolve(f(x).diff(x) - x**2*exp(x)*sin(x), f(x), hint='nth_linear_constant_coeff_undetermined_coefficients')
+1 loops, best of 3: 232 ms per loop
+
+dsolve() is way faster because it just computes the necessary form of the integral and solves for the undetermined coefficients.  No complicated integration algorithm is needed.  
+
+So I think if the integral has the correct form, that internally integrate(expr, x, x, ...) should use dsolve's internal undetermined coefficient algorithms for solving f(x).diff(x, x, …) - expr.  All the necessary stuff is already in ode.py, including the function that checks if expr is of the correct form.</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/2276/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=2276'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/2276'/><author><name>asmeurer@gmail.com</name><uri>/u/asmeurer@gmail.com/</uri></author><issues:id>2276</issues:id><issues:label>Type-Defect</issues:label><issues:label>Priority-Medium</issues:label><issues:label>Integration</issues:label><issues:label>EasyToFix</issues:label><issues:label>Solvers</issues:label><issues:label>CodeInCategory-Code</issues:label><issues:label>CodeInDifficulty-Easy</issues:label><issues:label>CodeInImportedIntoMelange</issues:label><issues:stars>1</issues:stars><issues:state>open</issues:state><issues:status>Valid</issues:status></entry><entry gd:etag='W/&quot;DE8HQ347eCl7ImA9WhZQEkU.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/2285</id><published>2011-04-17T19:56:47.000Z</published><updated>2011-04-20T08:07:12.000Z</updated><title>Orthonormal Eigenvectors required</title><content type='html'>The .diagonalize method and/or .eigenvects should have a flag, that makes it return orthonormal eignenvectors. As eigenvectors are arbitrary with respect to a multiplicative constant and thus there is a vagueness, as to which eigenvector is 'standard'. One solution given by Alexey(goodok) is to have eigenvectors with values in Integers. But its not very elegant. My suggestion is to return normalized orthonormal eigenvectors. We can decide if we want to make this behavior default or change it through a flag.
+
+Currently, eigenvects works like this
+
+
+In [40]: A = Matrix(((1,1),(0,2)))
+
+In [41]: A.eigenvects()
+Out[41]: 
+⎡⎛1, 1, ⎡⎡1⎤⎤⎞, ⎛2, 1,  ⎡⎡1⎤⎤⎞⎤
+⎢⎜          ⎢⎢ ⎥⎥ ⎟   ⎜         ⎢⎢  ⎥⎥ ⎥⎥
+⎣⎝          ⎣⎣0⎦⎦⎠  ⎝          ⎣⎣1⎦⎦⎠⎦
+
+But, if orthonormal is default behavior, it will return Matrix((1/sqrt(2), 1/sqrt(2))) instead of Matrix((1,1)) as the second eigenvector.</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/2285/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=2285'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/2285'/><author><name>sherjilo...@gmail.com</name><uri>/u/107298455532294735855/</uri></author><issues:id>2285</issues:id><issues:label>Type-Enhancement</issues:label><issues:label>Priority-Medium</issues:label><issues:label>Matrices</issues:label><issues:label>EasyToFix</issues:label><issues:label>NeedsReview</issues:label><issues:label>sherjilozair</issues:label><issues:owner><issues:uri>/u/107298455532294735855/</issues:uri><issues:username>sherjilo...@gmail.com</issues:username></issues:owner><issues:stars>1</issues:stars><issues:state>open</issues:state><issues:status>Started</issues:status></entry><entry gd:etag='W/&quot;CUUFRX47eCl7ImA9WhVUEUw.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/2339</id><published>2011-05-05T04:39:48.000Z</published><updated>2012-05-15T20:20:14.000Z</updated><title>test_code_quality and strip_whitespace should enforce exactly one newline at the end of a file</title><content type='html'>test_code_quality and strip_whitespace already take care of no newline at the end of a file, but git doesn't like more than one newline at the end of the file either, so I think they should enforce exactly one newline at the end of the file.</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/2339/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=2339'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/2339'/><author><name>asmeurer@gmail.com</name><uri>/u/asmeurer@gmail.com/</uri></author><issues:id>2339</issues:id><issues:label>Type-Defect</issues:label><issues:label>Priority-Medium</issues:label><issues:label>Testing</issues:label><issues:label>EasyToFix</issues:label><issues:label>NeedsReview</issues:label><issues:owner><issues:uri>/u/asmeurer@gmail.com/</issues:uri><issues:username>asmeurer@gmail.com</issues:username></issues:owner><issues:stars>1</issues:stars><issues:state>open</issues:state><issues:status>Started</issues:status></entry><entry gd:etag='W/&quot;CEMHSX47eCl7ImA9WhJTF0s.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/2427</id><published>2011-05-26T04:13:20.000Z</published><updated>2012-06-27T02:00:38.000Z</updated><title>use free_symbols, not .atoms() or .atoms(Symbol)</title><content type='html'>If any code wants to know if there are variables that are free like x but not y in Integral(y, (y, 1, x)) then it should use expr.free_symbols, not .atoms(Symbol) (since that would have given x and y for the example given). The code should be checked for instances of .atoms(Symbol) to see what the author intended and corrected if necessary.</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/2427/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=2427'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/2427'/><author><name>smi...@gmail.com</name><uri>/u/117933771799683895267/</uri></author><issues:blockedOn><issues:id>3309</issues:id><issues:project>sympy</issues:project></issues:blockedOn><issues:id>2427</issues:id><issues:label>Type-Defect</issues:label><issues:label>Priority-Medium</issues:label><issues:label>CodeInCategory-Code</issues:label><issues:label>CodeInDifficulty-Easy</issues:label><issues:label>EasyToFix</issues:label><issues:label>CodeInImportedIntoMelange</issues:label><issues:owner><issues:uri>/u/117933771799683895267/</issues:uri><issues:username>smi...@gmail.com</issues:username></issues:owner><issues:stars>1</issues:stars><issues:state>open</issues:state><issues:status>Valid</issues:status></entry><entry gd:etag='W/&quot;CkcASX47eCl7ImA9WhVREk4.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/2570</id><published>2011-07-19T02:46:07.000Z</published><updated>2012-03-20T07:54:08.000Z</updated><title>Remove bare except statements</title><content type='html'>If you do git grep &amp;quot;except:&amp;quot; you will see that there are several places in the code with bare except statements that should be rewritten to catch explicit exceptions.  To quote the Zen of Python:
+
+Errors should never pass silently.
+Unless explicitly silenced.
+
+And to quite PEP 8:
+
+- When catching exceptions, mention specific exceptions
+      whenever possible instead of using a bare 'except:' clause.
+
+      For example, use:
+
+          try:
+              import platform_specific_module
+          except ImportError:
+              platform_specific_module = None
+
+      A bare 'except:' clause will catch SystemExit and KeyboardInterrupt
+      exceptions, making it harder to interrupt a program with Control-C,
+      and can disguise other problems.  If you want to catch all
+      exceptions that signal program errors, use 'except Exception:'.
+
+      A good rule of thumb is to limit use of bare 'except' clauses to two
+      cases:
+
+         1) If the exception handler will be printing out or logging
+            the traceback; at least the user will be aware that an
+            error has occurred.
+
+         2) If the code needs to do some cleanup work, but then lets
+            the exception propagate upwards with 'raise'.
+            'try...finally' is a better way to handle this case.
+
+To be sure, some of the bare except cases in the code are correct by the above (like the ones in the test runner), but many are not.</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/2570/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=2570'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/2570'/><author><name>asmeurer@gmail.com</name><uri>/u/asmeurer@gmail.com/</uri></author><issues:id>2570</issues:id><issues:label>Type-Defect</issues:label><issues:label>Priority-Medium</issues:label><issues:label>CodeInCategory-Code</issues:label><issues:label>CodeInDifficulty-Easy</issues:label><issues:label>EasyToFix</issues:label><issues:label>CodeInImportedIntoMelange</issues:label><issues:owner><issues:uri>/u/asmeurer@gmail.com/</issues:uri><issues:username>asmeurer@gmail.com</issues:username></issues:owner><issues:stars>1</issues:stars><issues:state>open</issues:state><issues:status>Valid</issues:status></entry><entry gd:etag='W/&quot;DUMERn47eCl7ImA9WhRREkU.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/2583</id><published>2011-07-21T06:35:01.000Z</published><updated>2011-11-26T06:03:27.000Z</updated><title>Poly kills SymPy Live</title><content type='html'>If you enter any kind of Poly at live.sympy.org, it stops executing any further expressions.</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/2583/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=2583'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/2583'/><author><name>asmeurer@gmail.com</name><uri>/u/asmeurer@gmail.com/</uri></author><issues:id>2583</issues:id><issues:label>Type-Defect</issues:label><issues:label>Priority-Medium</issues:label><issues:label>Live</issues:label><issues:label>NeedsReview</issues:label><issues:label>EasyToFix</issues:label><issues:owner><issues:uri>/u/101069955704897915480/</issues:uri><issues:username>matt...@gmail.com</issues:username></issues:owner><issues:stars>1</issues:stars><issues:state>open</issues:state><issues:status>Started</issues:status></entry><entry gd:etag='W/&quot;Dk8GQ347eCl7ImA9WhVQEE8.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/2740</id><published>2011-10-17T17:54:44.000Z</published><updated>2012-03-29T12:40:22.000Z</updated><title>Some Poly docstrings should be moved out of the internals</title><content type='html'>As noted in issue 2739, some of the docstrings in the polys are really good, but they are buried in the internals.  The docstring of dup_decompose is an example of this (compare it to the docstring of Poly.decompose).  </content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/2740/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=2740'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/2740'/><author><name>asmeurer@gmail.com</name><uri>/u/asmeurer@gmail.com/</uri></author><issues:id>2740</issues:id><issues:label>Type-Defect</issues:label><issues:label>Priority-Medium</issues:label><issues:label>Polynomial</issues:label><issues:label>Documentation</issues:label><issues:label>EasyToFix</issues:label><issues:owner><issues:uri>/u/asmeurer@gmail.com/</issues:uri><issues:username>asmeurer@gmail.com</issues:username></issues:owner><issues:stars>1</issues:stars><issues:state>open</issues:state><issues:status>Valid</issues:status></entry><entry gd:etag='W/&quot;CkcASH47eCl7ImA9WhVREk4.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/2775</id><published>2011-10-24T08:37:15.000Z</published><updated>2012-03-20T07:54:09.000Z</updated><title>``See Also`` feature in Combinatorics </title><content type='html'>Edit the doc-string to add list of other function that are closely related to the query.
+
+
+This is the list of .py files which contains the functions.
+
+sympy/combinatorics/generators.py  
+sympy/combinatorics/prufer.py
+sympy/combinatorics/graycode.py
+sympy/combinatorics/permutations.py  
+sympy/combinatorics/subsets.py
+
+There are around 98(at max) functions which one needs to understand (the input parameters and final result and not the code) to interrelate them.
+
+
+</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/2775/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=2775'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/2775'/><author><name>hector1...@gmail.com</name><uri>/u/113469880675233906987/</uri></author><issues:id>2775</issues:id><issues:label>Type-Defect</issues:label><issues:label>Priority-Medium</issues:label><issues:label>CodeInCategory-Documentation</issues:label><issues:label>CodeInDifficulty-Easy</issues:label><issues:label>EasyToFix</issues:label><issues:label>CodeInImportedIntoMelange</issues:label><issues:label>Combinatorics</issues:label><issues:stars>1</issues:stars><issues:state>open</issues:state><issues:status>Valid</issues:status></entry><entry gd:etag='W/&quot;CkcASH47eCl7ImA9WhVREk4.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/2777</id><published>2011-10-24T09:11:20.000Z</published><updated>2012-03-20T07:54:09.000Z</updated><title>``See Also`` feature in functions</title><content type='html'>Edit the doc-string to add list of other function that are closely related to the query.
+
+
+This is the list of .py files which contains the functions.
+
+sympy/functions/combinatorial/factorials.py
+sympy/functions/combinatorial/numbers.py
+sympy/functions/elementary/trigonometric.py  
+sympy/functions/elementary/integers.py
+sympy/functions/elementary/exponential.py
+sympy/functions/elementary/piecewise.py
+sympy/functions/elementary/complexes.py
+sympy/functions/elementary/miscellaneous.py
+sympy/functions/elementary/hyperbolic.py
+
+There are around 52 functions which one needs to understand (the input parameters and final result and not the code) to interrelate them.</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/2777/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=2777'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/2777'/><author><name>hector1...@gmail.com</name><uri>/u/113469880675233906987/</uri></author><issues:id>2777</issues:id><issues:label>Type-Enhancement</issues:label><issues:label>Priority-Medium</issues:label><issues:label>CodeInCategory-Documentation</issues:label><issues:label>CodeInDifficulty-Easy</issues:label><issues:label>EasyToFix</issues:label><issues:label>CodeInImportedIntoMelange</issues:label><issues:stars>1</issues:stars><issues:state>open</issues:state><issues:status>Valid</issues:status></entry><entry gd:etag='W/&quot;CkcASH47eCl7ImA9WhVREk4.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/2778</id><published>2011-10-24T09:18:28.000Z</published><updated>2012-03-20T07:54:09.000Z</updated><title>``See Also`` feature in functions/special</title><content type='html'>Edit the doc-string to add list of other function that are closely related to the query.
+
+
+This is the list of .py files which contains the functions.
+
+sympy/functions/special/zeta_functions.py
+sympy/functions/special/delta_functions.py
+sympy/functions/special/tensor_functions.py
+sympy/functions/special/hyper.py
+sympy/functions/special/bsplines.py
+sympy/functions/special/spherical_harmonics.py
+sympy/functions/special/gamma_functions.py
+sympy/functions/special/bessel.py
+sympy/functions/special/polynomials.py
+sympy/functions/special/error_functions.py
+
+There are around 62 functions which one needs to understand (the input parameters and final result and not the code) to interrelate them.</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/2778/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=2778'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/2778'/><author><name>hector1...@gmail.com</name><uri>/u/113469880675233906987/</uri></author><issues:id>2778</issues:id><issues:label>Type-Enhancement</issues:label><issues:label>Priority-Medium</issues:label><issues:label>CodeInCategory-Documentation</issues:label><issues:label>CodeInDifficulty-Easy</issues:label><issues:label>EasyToFix</issues:label><issues:label>CodeInImportedIntoMelange</issues:label><issues:stars>1</issues:stars><issues:state>open</issues:state><issues:status>Valid</issues:status></entry><entry gd:etag='W/&quot;CkcASH47eCl7ImA9WhVREk4.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/2780</id><published>2011-10-24T09:30:44.000Z</published><updated>2012-03-20T07:54:09.000Z</updated><title>``See Also`` feature in Matrices</title><content type='html'>Edit the doc-string to add list of other function that are closely related to the query.
+
+This is the list of .py files which contains the functions.
+
+sympy/matrices.py
+
+There are around 69 functions which one needs to understand (the input parameters and final result and not the code) to interrelate them.
+</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/2780/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=2780'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/2780'/><author><name>hector1...@gmail.com</name><uri>/u/113469880675233906987/</uri></author><issues:id>2780</issues:id><issues:label>Type-Enhancement</issues:label><issues:label>Priority-Medium</issues:label><issues:label>CodeInCategory-Documentation</issues:label><issues:label>CodeInDifficulty-Easy</issues:label><issues:label>EasyToFix</issues:label><issues:label>CodeInImportedIntoMelange</issues:label><issues:label>Matrices</issues:label><issues:stars>1</issues:stars><issues:state>open</issues:state><issues:status>Valid</issues:status></entry><entry gd:etag='W/&quot;CkcASH47eCl7ImA9WhVREk4.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/2800</id><published>2011-10-26T22:04:54.000Z</published><updated>2012-03-20T07:54:09.000Z</updated><title>Flesh out the SymPy Papers wiki page</title><content type='html'>We have a page on the wiki[1] that should list (scientific) papers mentioning SymPy, but it's currently empty. Populating this would be interesting and could also persuade other academics to try out/use SymPy. Google Scholar can be used to track down papers. See also the thread which originally asked about this[2].
+
+
+[1] https://github.com/sympy/sympy/wiki/SymPy-Papers
+[2] https://groups.google.com/group/sympy/browse_thread/thread/34443bd5708310f2/71c0cc0ba21a19e1?hl=en</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/2800/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=2800'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/2800'/><author><name>vlada.pe...@gmail.com</name><uri>/u/108713607268198052411/</uri></author><issues:id>2800</issues:id><issues:label>Type-Defect</issues:label><issues:label>Priority-Medium</issues:label><issues:label>CodeInCategory-Outreach</issues:label><issues:label>CodeInDifficulty-Easy</issues:label><issues:label>EasyToFix</issues:label><issues:label>CodeInImportedIntoMelange</issues:label><issues:stars>1</issues:stars><issues:state>open</issues:state><issues:status>Valid</issues:status></entry><entry gd:etag='W/&quot;CkcASH47eCl7ImA9WhVREk4.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/2817</id><published>2011-11-01T23:45:00.000Z</published><updated>2012-03-20T07:54:09.000Z</updated><title>Make sure all the built-in __methods__ are defined</title><content type='html'>At http://docs.python.org/reference/datamodel.html, it lists all the __methods__ that Python works with (like __int__, __contains__, etc.).  We should go through all of these and make sure they are all defined on Basic, Expr, or whatever relevant subclass, so that we don't have simple bugs like
+
+In [72]: long(Integer(3))
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+/Users/aaronmeurer/Documents/python/sympy/sympy/&amp;lt;ipython-input-72-5fff10d216fd&amp;gt; in &amp;lt;module&amp;gt;()
+----&amp;gt; 1 long(Integer(3))
+
+TypeError: long() argument must be a string or a number, not 'Integer'
+
+Regarding where they should be defined, stuff that makes sense for any object should go on Basic, stuff that makes sense only on mathematical objects (like __add__ for example) should go on Expr, and stuff that makes sense only for numbers (like __int__) should go in Number.</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/2817/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=2817'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/2817'/><author><name>asmeurer@gmail.com</name><uri>/u/asmeurer@gmail.com/</uri></author><issues:id>2817</issues:id><issues:label>Type-Defect</issues:label><issues:label>Priority-Medium</issues:label><issues:label>CodeInCategory-Code</issues:label><issues:label>CodeInDifficulty-Easy</issues:label><issues:label>EasyToFix</issues:label><issues:label>CodeInImportedIntoMelange</issues:label><issues:stars>1</issues:stars><issues:state>open</issues:state><issues:status>Valid</issues:status></entry><entry gd:etag='W/&quot;CkcASH47eCl7ImA9WhVREk4.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/2830</id><published>2011-11-07T05:39:30.000Z</published><updated>2012-03-20T07:54:09.000Z</updated><title>checkodesol needs to use force</title><content type='html'>&amp;gt; @@ -542,7 +542,11 @@ def test_1st_homogeneous_coeff_ode_check3():
+&amp;gt;      # (False, x*(log(exp(-LambertW(C1*x))) + LambertW(C1*x))*exp(-LambertW(C1*x) + 1))
+&amp;gt;      eq3 = f(x) + (x*log(f(x)/x) - 2*x)*diff(f(x),x)
+&amp;gt;      sol3 = Eq(f(x), x*exp(1 - LambertW(C1*x)))
+&amp;gt; -    assert checkodesol(eq3, sol3, solve_for_func=False)[0]
+&amp;gt; +    assert checkodesol(eq3, sol3, solve_for_func=True)[0]
+&amp;gt; +    # and without an assumption about x and f(x), the implicit form doesn't resolve, either:
+&amp;gt; +    # (False, (log(f(x)/x) + log(x/f(x)))*f(x))
+
+So checkodesol() needs to be more aggressive, since dsolve() obtains these logarithms by calling logcombine(force=True). An expand with force=True should be used on expressions being tested or else (as shown above) terms which should go to zero, don't:
+
+&amp;gt;&amp;gt;&amp;gt; log(f(x)/x) + log(x/f(x))
+log(f(x)/x) + log(x/f(x))
+&amp;gt;&amp;gt;&amp;gt; _.expand(force=True)
+0
+
+</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/2830/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=2830'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/2830'/><author><name>smi...@gmail.com</name><uri>/u/117933771799683895267/</uri></author><issues:id>2830</issues:id><issues:label>Type-Defect</issues:label><issues:label>Priority-Medium</issues:label><issues:label>CodeInCategory-Code</issues:label><issues:label>CodeInDifficulty-Easy</issues:label><issues:label>EasyToFix</issues:label><issues:label>CodeInImportedIntoMelange</issues:label><issues:stars>1</issues:stars><issues:state>open</issues:state><issues:status>Valid</issues:status></entry><entry gd:etag='W/&quot;DEYESH47eCl7ImA9WhVbFEQ.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/2892</id><published>2011-12-01T22:07:13.000Z</published><updated>2012-05-31T20:28:29.000Z</updated><title>clean up the new releases wiki page</title><content type='html'>During GCI the page got to big and badly formated.
+https://github.com/sympy/sympy/wiki/New-Release</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/2892/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=2892'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/2892'/><author><name>krastano...@gmail.com</name><uri>/u/100157245271348669141/</uri></author><issues:cc><issues:uri>/u/109448925098397033296/</issues:uri><issues:username>pr...@goodok.ru</issues:username></issues:cc><issues:id>2892</issues:id><issues:label>Type-Defect</issues:label><issues:label>Priority-Medium</issues:label><issues:label>EasyToFix</issues:label><issues:label>Documentation</issues:label><issues:stars>1</issues:stars><issues:state>open</issues:state><issues:status>Valid</issues:status></entry><entry gd:etag='W/&quot;CkcMRH47eCl7ImA9WhVREk4.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/2914</id><published>2011-12-12T22:12:07.000Z</published><updated>2012-03-20T07:54:45.000Z</updated><title>Pretty printing for lerchphi, polylog</title><content type='html'>The gsoc-3 branch adds various new special functions, some of which might profit from pretty printing. In particular: lerchphi, polylog.
+
+I did not add pretty printing for lerchphi, since printing it as a capital phi seemed like a potential source of confusion to me (e.g. the distribution function of the standard normal random variable is also often written as capital phi).
+
+I did not add printing for polylog since this typically written with one of the variables as subscript (i.e. there is some non-trivial work to do for printing).
+
+None of this should be difficult, once it has been decided what to print how.</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/2914/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=2914'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/2914'/><author><name>ness...@gmail.com</name><uri>/u/104531927090589914088/</uri></author><issues:id>2914</issues:id><issues:label>Type-Defect</issues:label><issues:label>Priority-Medium</issues:label><issues:label>EasyToFix</issues:label><issues:stars>1</issues:stars><issues:state>open</issues:state><issues:status>Valid</issues:status></entry><entry gd:etag='W/&quot;CkcMR347eCl7ImA9WhVREk4.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/2968</id><published>2012-01-06T14:31:34.000Z</published><updated>2012-03-20T07:54:46.000Z</updated><title>partial fraction decomposition should be able to return structured result</title><content type='html'>Some algorithms internally use partial fraction decomposition. For these it would be helpful if apart could optionally return a list of (numerator, denoma, denomb, exponent) denoting a sum of numerator/(denoma*x + denombb)**exponent terms.
+
+This would in particular be helpful for hyperexpand (lerch phi expansion) where this data is currently assembeled by hand from the return Expr instance.</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/2968/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=2968'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/2968'/><author><name>ness...@gmail.com</name><uri>/u/104531927090589914088/</uri></author><issues:blocking><issues:id>3037</issues:id><issues:project>sympy</issues:project></issues:blocking><issues:id>2968</issues:id><issues:label>Type-Defect</issues:label><issues:label>Priority-Medium</issues:label><issues:label>Polynomial</issues:label><issues:label>EasyToFix</issues:label><issues:stars>1</issues:stars><issues:state>open</issues:state><issues:status>Valid</issues:status></entry><entry gd:etag='W/&quot;DUEARn47eCl7ImA9WhVVE0s.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/3172</id><published>2012-03-21T06:34:55.000Z</published><updated>2012-05-07T05:14:07.000Z</updated><title>KroneckerDelta contains secondquant-specific stuff</title><content type='html'>I think it would be better if sympy.functions didn't have any secondquant-specific code. So, secondquant should subclass KroneckerDelta (maybe it's OK to give the subclass the same name?) and all the secondquant methods like is_above_fermi, _get_preferred_index, etc. should be moved there.</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/3172/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=3172'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/3172'/><author><name>Ronan.L...@gmail.com</name><uri>/u/101272611947379421629/</uri></author><issues:id>3172</issues:id><issues:label>Type-Defect</issues:label><issues:label>Priority-Medium</issues:label><issues:label>Quantum</issues:label><issues:label>EasyToFix</issues:label><issues:stars>1</issues:stars><issues:state>open</issues:state><issues:status>Accepted</issues:status></entry><entry gd:etag='W/&quot;CE4GRn47eCl7ImA9WhVXEUU.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/3189</id><published>2012-03-25T00:36:22.000Z</published><updated>2012-04-11T22:22:07.000Z</updated><title>Calculate eigenvectors numerically if it is impossible to calculate them symbolically</title><content type='html'>Try to calculate eigenvectors numericly, if it impossible calculate symbolical.
+
+As there are cases when
+http://code.google.com/p/sympy/issues/detail?id=2193</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/3189/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=3189'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/3189'/><author><name>pr...@goodok.ru</name><uri>/u/109448925098397033296/</uri></author><issues:id>3189</issues:id><issues:label>Type-Defect</issues:label><issues:label>Priority-Medium</issues:label><issues:label>Matrices</issues:label><issues:label>EasyToFix</issues:label><issues:stars>1</issues:stars><issues:state>open</issues:state><issues:status>Accepted</issues:status></entry><entry gd:etag='W/&quot;DEYHQn47eCl7ImA9WhVQEU4.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/3202</id><published>2012-03-28T23:35:47.000Z</published><updated>2012-03-30T19:35:33.000Z</updated><title>divmod() should work for polynomial expressions</title><content type='html'>We have:
+
+In [306]: divmod(Poly(x**2 + 1), Poly(x))
+Out[306]: (Poly(x, x, domain='ZZ'), Poly(1, x, domain='ZZ'))
+
+In [307]: divmod(x**2 + 1, x)
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+/Users/aaronmeurer/Documents/Python/sympy/sympy/&amp;lt;ipython-input-307-e54fef570ce4&amp;gt; in &amp;lt;module&amp;gt;()
+----&amp;gt; 1 divmod(x**2 + 1, x)
+
+TypeError: unsupported operand type(s) for divmod(): 'Add' and 'Symbol'
+
+The latter should return (x, 1).</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/3202/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=3202'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/3202'/><author><name>asmeurer@gmail.com</name><uri>/u/asmeurer@gmail.com/</uri></author><issues:id>3202</issues:id><issues:label>Type-Enhancement</issues:label><issues:label>Priority-Medium</issues:label><issues:label>Polynomial</issues:label><issues:label>EasyToFix</issues:label><issues:stars>1</issues:stars><issues:state>open</issues:state><issues:status>NeedsDecision</issues:status></entry><entry gd:etag='W/&quot;Ak8BRH47eCl7ImA9WhVQEE4.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/3204</id><published>2012-03-29T09:10:21.000Z</published><updated>2012-03-29T16:34:15.000Z</updated><title>Simplifying of the sum of tan(x) and cot(x)**-1.</title><content type='html'>Simplifying the sum of tan(x) and cot(x)**-1.
+
+trigsimp must handle the linear combination of tan(x) and 1/cot(x).
+
+The same and for the hyperblic tanh and coth.
+
+Desired:
+
+&amp;gt;&amp;gt;&amp;gt; trigsimp(tan(x) - 1/cot(x))
+0
+&amp;gt;&amp;gt;&amp;gt; trigsimp(3*tanh(x)**7 - 2/coth(x)**7)
+tanh(x)**7</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/3204/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=3204'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/3204'/><author><name>pr...@goodok.ru</name><uri>/u/109448925098397033296/</uri></author><issues:id>3204</issues:id><issues:label>Type-Enhancement</issues:label><issues:label>Priority-Medium</issues:label><issues:label>Simplify</issues:label><issues:label>EasyToFix</issues:label><issues:stars>1</issues:stars><issues:state>open</issues:state><issues:status>Valid</issues:status></entry><entry gd:etag='W/&quot;DUcHQn47eCl7ImA9WhVXEU8.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/3221</id><published>2012-04-11T06:50:33.000Z</published><updated>2012-04-11T06:50:33.000Z</updated><title>Matrix.charpoly() should include minus sign for odd order matrices</title><content type='html'>The leading term of the characteristic polynomial of a n by n matrix should be (-1)**n.  But Matrix.charpoly() always returns a monic polynomial.  This should be fixed.</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/3221/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=3221'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/3221'/><author><name>asmeurer@gmail.com</name><uri>/u/asmeurer@gmail.com/</uri></author><issues:id>3221</issues:id><issues:label>Type-Defect</issues:label><issues:label>Priority-Medium</issues:label><issues:label>WrongResult</issues:label><issues:label>Matrices</issues:label><issues:label>EasyToFix</issues:label><issues:stars>1</issues:stars><issues:state>open</issues:state><issues:status>Valid</issues:status></entry><entry gd:etag='W/&quot;DU4BQn47eCl7ImA9WhVWE0g.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/3242</id><published>2012-04-25T00:24:47.000Z</published><updated>2012-04-25T12:45:53.000Z</updated><title>combsimp and binomial coefficients</title><content type='html'>In [161]: summation( binomial(n,k)**2, (k,0,oo))
+Out[161]: 
+Γ(2⋅n + 1)
+──────────
+        2 
+Γ(n + 1)  
+
+In [162]: combsimp(summation( binomial(n,k)**2, (k,0,oo)))
+Out[162]: 
+ 2⋅n + 1           
+2       ⋅Γ(n + 1/2)
+───────────────────
+      ___          
+  2⋅╲╱ π ⋅Γ(n + 1) 
+
+First off, I have n defined as an integer, so IMHO gamma should reduce to factorial in that case.
+
+Second, this is just binomial(2*n, n).
+
+Third, why doesn't this work:
+
+In [165]: summation( binomial(n,k)**2, (k,0,oo)).rewrite(factorial)
+Out[165]: 
+Γ(2⋅n + 1)
+──────────
+        2 
+Γ(n + 1)  </content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/3242/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=3242'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/3242'/><author><name>asmeurer@gmail.com</name><uri>/u/asmeurer@gmail.com/</uri></author><issues:cc><issues:uri>/u/104531927090589914088/</issues:uri><issues:username>ness...@gmail.com</issues:username></issues:cc><issues:id>3242</issues:id><issues:label>Type-Defect</issues:label><issues:label>Priority-Medium</issues:label><issues:label>Simplify</issues:label><issues:label>Concrete</issues:label><issues:label>EasyToFix</issues:label><issues:stars>1</issues:stars><issues:state>open</issues:state><issues:status>Valid</issues:status></entry><entry gd:etag='W/&quot;CEUNSH47eCl7ImA9WhVaFkw.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/3289</id><published>2012-06-11T09:29:21.000Z</published><updated>2012-06-13T18:31:39.000Z</updated><title>substitute warnings for print statements</title><content type='html'>There are some places in the code where print statements are used instead of warnings (eg in solve). This should probably be corrected.</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/3289/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=3289'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/3289'/><author><name>krastano...@gmail.com</name><uri>/u/100157245271348669141/</uri></author><issues:id>3289</issues:id><issues:label>Type-Defect</issues:label><issues:label>Priority-Medium</issues:label><issues:label>EasyToFix</issues:label><issues:stars>1</issues:stars><issues:state>open</issues:state><issues:status>Valid</issues:status></entry><entry gd:etag='W/&quot;DEAASX47eCl7ImA9WhVaGEg.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/3296</id><published>2012-06-16T14:25:48.000Z</published><updated>2012-06-16T14:25:48.000Z</updated><title>use the old plotting module as an optional backend for the new one</title><content type='html'>I am marking it as easy to fix as it requires just a few lines of code for an initial working solution (creating a new backend subclass for the new module)</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/3296/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=3296'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/3296'/><author><name>krastano...@gmail.com</name><uri>/u/100157245271348669141/</uri></author><issues:id>3296</issues:id><issues:label>Type-Enhancement</issues:label><issues:label>Priority-Medium</issues:label><issues:label>Plotting</issues:label><issues:label>EasyToFix</issues:label><issues:stars>1</issues:stars><issues:state>open</issues:state><issues:status>Valid</issues:status></entry><entry gd:etag='W/&quot;DkIBR347eCl7ImA9WhJTE0s.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/3300</id><published>2012-06-21T20:30:42.000Z</published><updated>2012-06-22T11:29:16.000Z</updated><title>simplify should call doit() on Subs instances</title><content type='html'>
+&amp;gt;&amp;gt;&amp;gt; simplify(x0*Derivative(f(x0, y0), y0) - x0*Subs(Derivative(f(x0, _xi_2), _xi_2), (_xi_2,), (y0,)))
+nothing changes
+
+
+&amp;gt;&amp;gt;&amp;gt; (x0*Derivative(f(x0, y0), y0) - x0*Subs(Derivative(f(x0, _xi_2), _xi_2), (_xi_2,), (y0,))).doit()
+returns 0 as it should</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/3300/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=3300'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/3300'/><author><name>krastano...@gmail.com</name><uri>/u/100157245271348669141/</uri></author><issues:id>3300</issues:id><issues:label>Type-Enhancement</issues:label><issues:label>Priority-Medium</issues:label><issues:label>Simplify</issues:label><issues:label>EasyToFix</issues:label><issues:stars>1</issues:stars><issues:state>open</issues:state><issues:status>Valid</issues:status></entry><entry gd:etag='W/&quot;A0MNSH47eCl7ImA9WhJUEU4.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/3394</id><published>2012-09-06T12:58:52.000Z</published><updated>2012-09-08T21:24:59.000Z</updated><title>Symbol called lambda causes syntax error in code from python()</title><content type='html'>The code generated by python() should know that lambda is a keyword in Python, and change the variable name:
+
+exec(python(Symbol('lambda')))
+  File &amp;quot;&amp;lt;string&amp;gt;&amp;quot;, line 1
+    lambda = Symbol('lambda')
+           ^
+SyntaxError: invalid syntax
+
+There are probably other examples of symbol names that cause problems.</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/3394/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=3394'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/3394'/><author><name>r.lup...@gmail.com</name><uri>/u/105767089042807008718/</uri></author><issues:id>3394</issues:id><issues:label>Type-Defect</issues:label><issues:label>Priority-Medium</issues:label><issues:label>Printing</issues:label><issues:label>EasyToFix</issues:label><issues:stars>1</issues:stars><issues:state>open</issues:state><issues:status>Started</issues:status></entry><entry gd:etag='W/&quot;Ck4FQH47eCl7ImA9WhVREks.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/985</id><published>2008-08-02T10:10:25.000Z</published><updated>2012-03-20T16:28:31.000Z</updated><title>add examples about oscillatory quadrature into our docs</title><content type='html'>see the issue 981 for examples of usage.</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/985/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=985'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/985'/><author><name>ondrej.c...@gmail.com</name><uri>/u/104039945248245758823/</uri></author><issues:id>985</issues:id><issues:label>Type-Defect</issues:label><issues:label>Priority-Medium</issues:label><issues:label>EasyToFix</issues:label><issues:label>Documentation</issues:label><issues:stars>0</issues:stars><issues:state>open</issues:state><issues:status>Valid</issues:status></entry><entry gd:etag='W/&quot;D0YHSH47eCl7ImA9WhdSFEs.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/1575</id><published>2009-08-04T04:31:08.000Z</published><updated>2011-07-23T23:52:19.000Z</updated><title>help(module) contains a bunch of irrelevant stuff</title><content type='html'>Doing &amp;gt;&amp;gt;&amp;gt; help(module) often returns stuff that is not relevant to the user.  For example, help(solvers) 
+returns the following, in addition to the actual useful docstrings:
+FUNCTIONS
+    all(...)
+        all(iterable) -&amp;gt; bool
+        
+        Return True if bool(x) is True for all values x in the iterable.
+    
+    any(...)
+        any(iterable) -&amp;gt; bool
+        
+        Return True if bool(x) is True for any x in the iterable.
+    
+    ...
+
+    warn(...)
+        Issue a warning, or maybe ignore it or raise an exception.
+
+...
+...
+DATA
+    GS_POLY = 0
+    GS_POLY_CV_1 = 2
+    GS_POLY_CV_2 = 3
+    GS_RATIONAL = 1
+    GS_RATIONAL_CV_1 = 4
+    GS_TRANSCENDENTAL = 5
+    S = S
+    a = a_
+    b = b_
+    c = c_
+    d = d_
+    e = e_
+    f = f_
+    g = g_
+    h = h_
+    patterns = None
+    t = 'h'
+    x = _x
+
+
+It looks like Python automatically ignores anything that starts with an underscore, but any global variables are 
+included in DATA, and it looks like imported all() and any() functions appear there too.  It includes more than 
+just what is in __init__.py, which is nice, because the user can see docstrings for helper functions that may not 
+be imported into the global namespace, or are imported using a wrapper.
+
+The solution is easy:  just add a del statement at the end of the file deleting anything that should not be in 
+help() that doesn't start with an underscore.  
+
+For example, you could add the following to solvers.py:
+
+del all, any, warn, GS_POLY, GS_POLY_CV_1, GS_POLY_CV_2, GS_RATIONAL, GS_RATIONAL_CV_1, 
+GS_TRANSCENDENTAL, S, a, b, c, d, e, f, g, h, patterns, t, x
+
+Doing this is a good idea anyway.  Consider for example issue 1454, where all Basic objects had an attribute 
+&amp;quot;.k&amp;quot; because k was used as a global variable in basic.py.  
+
+I do not know if this would break anything because of some kind of global variable hack.  </content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/1575/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=1575'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/1575'/><author><name>asmeurer@gmail.com</name><uri>/u/asmeurer@gmail.com/</uri></author><issues:id>1575</issues:id><issues:label>Type-Defect</issues:label><issues:label>Priority-Low</issues:label><issues:label>EasyToFix</issues:label><issues:label>Documentation</issues:label><issues:owner><issues:uri>/u/asmeurer@gmail.com/</issues:uri><issues:username>asmeurer@gmail.com</issues:username></issues:owner><issues:stars>3</issues:stars><issues:state>open</issues:state><issues:status>Started</issues:status></entry><entry gd:etag='W/&quot;Ck4FQH47eCl7ImA9WhVREks.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/2992</id><published>2012-01-13T20:12:29.000Z</published><updated>2012-03-20T16:28:31.000Z</updated><title>add removable_discontinuity flag to 'solve' because check=False produces wrong answers</title><content type='html'>I may have misunderstood the idea behind check=False. In this case just mark as WontFix
+
+What I think it should be:
+solve(sin(x)/x) &amp;gt;&amp;gt; []
+solve(sin(x)/x, check=False) &amp;gt;&amp;gt; [] # in master this wrongly gives [0]
+solve(sin(x)/x - 1) &amp;gt;&amp;gt; [] # NotImplemented (ok)
+solve(sin(x)/x - 1, check=False) &amp;gt;&amp;gt; [0] # NotImplemented (ok)
+
+At the moment check=True produces correct answers (near the zero) if expr=O(x)/O(1). check=False helps to find correct answers when expr=O(x**p)/O(x**q) if p&amp;gt;q but produces incorrect answers if p&amp;lt;=q.
+
+check also issue 2981</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/2992/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=2992'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/2992'/><author><name>krastano...@gmail.com</name><uri>/u/100157245271348669141/</uri></author><issues:id>2992</issues:id><issues:label>Type-Enhancement</issues:label><issues:label>Priority-Low</issues:label><issues:label>Solvers</issues:label><issues:label>EasyToFix</issues:label><issues:stars>1</issues:stars><issues:state>open</issues:state><issues:status>Valid</issues:status></entry><entry gd:etag='W/&quot;D0QMQn47eCl7ImA9WhVbGEk.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/3278</id><published>2012-06-04T21:29:43.000Z</published><updated>2012-06-04T21:29:43.000Z</updated><title>make a cheatsheet for the solvers</title><content type='html'>This a task appropriate for something like GoogleCodeIn or for somebody wanting to start contributing to sympy.
+
+SymPy implements a number of different solvers (algebraic, recurrent, ODE), however the input and output semantics are very different between them (and even in a single solver there are many different possibilities). Documenting these in the form of a cheatsheet would be useful.</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/3278/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=3278'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/3278'/><author><name>krastano...@gmail.com</name><uri>/u/100157245271348669141/</uri></author><issues:id>3278</issues:id><issues:label>Type-Enhancement</issues:label><issues:label>Priority-Low</issues:label><issues:label>Solvers</issues:label><issues:label>EasyToFix</issues:label><issues:label>Documentation</issues:label><issues:stars>1</issues:stars><issues:state>open</issues:state><issues:status>Valid</issues:status></entry><entry gd:etag='W/&quot;CkUER347eCl7ImA9WhVaE08.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/3285</id><published>2012-06-10T09:23:26.000Z</published><updated>2012-06-10T09:23:26.000Z</updated><title>refactor long functions and long files.</title><content type='html'>This is for a future GoogleCodeIn if we ever participate (or for everybody that wants to start contributing).
+
+Find a function that is long (eg more than 200 lines of code without the comments and docstrings) and refactor it in smaller private function (each with its own docstring and possibly a doctest). Probably you will also need to move the function to another file (very long files (eg more than 1000~2000 lines) are just as bad as long functions).
+
+I have made this report after seeing solve and _solve with all their nested conditionals. Even if someone is against specifically refactoring solve there are plenty other functions that need such refactoring.</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/3285/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=3285'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/3285'/><author><name>krastano...@gmail.com</name><uri>/u/100157245271348669141/</uri></author><issues:id>3285</issues:id><issues:label>Type-Enhancement</issues:label><issues:label>Priority-Low</issues:label><issues:label>EasyToFix</issues:label><issues:stars>1</issues:stars><issues:state>open</issues:state><issues:status>Valid</issues:status></entry><entry gd:etag='W/&quot;AkcAQX47eCl7ImA9WhJQEUs.&quot;'><id>http://code.google.com/feeds/issues/p/sympy/issues/full/3331</id><published>2012-07-24T13:03:31.000Z</published><updated>2012-07-24T22:14:00.000Z</updated><title>use unicode names instead of hex encoding</title><content type='html'>The code will be much more readable if we use unicode names in literal. It is all done on compile time:
+
+&amp;gt;&amp;gt;&amp;gt; u&amp;quot;\N{NUMERO SIGN}&amp;quot;
+u'\u2116'
+</content><link rel='replies' type='application/atom+xml' href='http://code.google.com/feeds/issues/p/sympy/issues/3331/comments/full'/><link rel='alternate' type='text/html' href='http://code.google.com/p/sympy/issues/detail?id=3331'/><link rel='self' type='application/atom+xml' href='https://code.google.com/feeds/issues/p/sympy/issues/full/3331'/><author><name>krastano...@gmail.com</name><uri>/u/100157245271348669141/</uri></author><issues:id>3331</issues:id><issues:label>Type-Enhancement</issues:label><issues:label>Priority-Low</issues:label><issues:label>Printing</issues:label><issues:label>EasyToFix</issues:label><issues:stars>1</issues:stars><issues:state>open</issues:state><issues:status>Valid</issues:status></entry></feed>

@@ -1,11 +1,12 @@
 import datetime
 import os
 import mock
-import twisted
 
-from bugimporters.tests import (Bug, ReactorManager, TrackerModel,
-        FakeGetPage, ObjectFromDict)
+from bugimporters.tests import Bug, ObjectFromDict
 from bugimporters.google import GoogleBugParser
+import bugimporters.trac
+import bugimporters.main
+import autoresponse
 from mock import Mock
 
 
@@ -49,6 +50,30 @@ class TestGoogleBugImport(object):
     def assertEqual(x, y):
         assert x == y
 
+    def test_top_to_bottom(self):
+        spider = bugimporters.main.BugImportSpider()
+        spider.input_data = [dict(
+                    tracker_name='SymPy',
+                    google_name='sympy',
+                    bitesized_type='label',
+                    bitesized_text='EasyToFix',
+                    documentation_type='label',
+                    documentation_text='Documentation',
+                    bugimporter = 'google.GoogleBugImporter',
+                    queries=[
+                    'https://code.google.com/feeds/issues/p/sympy/issues/full?can=open&max-results=10000' +
+                    '&label=EasyToFix']
+                    )]
+        url2filename = {
+            'https://code.google.com/feeds/issues/p/sympy/issues/full?can=open&max-results=10000&label=EasyToFix':
+                os.path.join(HERE, 'sample-data', 'google',
+                             'label-easytofix.atom'),
+            }
+        ar = autoresponse.Autoresponder(url2filename=url2filename,
+                                        url2errors={})
+        items = ar.respond_recursively(spider.start_requests())
+        assert len(items) == 74
+
     def test_create_google_data_dict_with_everything(self):
         atom_dict = {
                 'id': {'text': 'http://code.google.com/feeds/issues/p/sympy/issues/full/1215'},
@@ -85,8 +110,10 @@ I don't see for example the solvers module""",
                   'status': 'Fixed',
                   'importance': 'Critical',
                   'people_involved': 3,
-                  'date_reported': datetime.datetime(2008, 11, 24, 11, 15, 58),
-                  'last_touched': datetime.datetime(2009, 12, 06, 23, 01, 11),
+                  'date_reported': (
+                datetime.datetime(2008, 11, 24, 11, 15, 58).isoformat()),
+                  'last_touched': (
+                datetime.datetime(2009, 12, 06, 23, 01, 11).isoformat()),
                   'looks_closed': True,
                   'submitter_username': 'fabian.seoane',
                   'submitter_realname': '',
@@ -133,8 +160,10 @@ I don't see for example the solvers module""",
                   'status': 'Fixed',
                   'importance': 'Critical',
                   'people_involved': 3,
-                  'date_reported': datetime.datetime(2008, 11, 24, 11, 15, 58),
-                  'last_touched': datetime.datetime(2009, 12, 06, 23, 01, 11),
+                  'date_reported': (
+                datetime.datetime(2008, 11, 24, 11, 15, 58).isoformat()),
+                  'last_touched': (
+                datetime.datetime(2009, 12, 06, 23, 01, 11).isoformat()),
                   'looks_closed': True,
                   'submitter_username': 'fabian.seoane',
                   'submitter_realname': '',
@@ -181,8 +210,10 @@ I don't see for example the solvers module""",
                   'status': 'Fixed',
                   'importance': 'Critical',
                   'people_involved': 3,
-                  'date_reported': datetime.datetime(2008, 11, 24, 11, 15, 58),
-                  'last_touched': datetime.datetime(2009, 12, 06, 23, 01, 11),
+                  'date_reported': (
+                datetime.datetime(2008, 11, 24, 11, 15, 58).isoformat()),
+                  'last_touched': (
+                datetime.datetime(2009, 12, 06, 23, 01, 11).isoformat()),
                   'looks_closed': True,
                   'submitter_username': 'fabian.seoane',
                   'submitter_realname': '',
@@ -229,8 +260,10 @@ I don't see for example the solvers module""",
                   'status': '',
                   'importance': 'Critical',
                   'people_involved': 3,
-                  'date_reported': datetime.datetime(2008, 11, 24, 11, 15, 58),
-                  'last_touched': datetime.datetime(2009, 12, 06, 23, 01, 11),
+                  'date_reported': (
+                datetime.datetime(2008, 11, 24, 11, 15, 58).isoformat()),
+                  'last_touched': (
+                datetime.datetime(2009, 12, 06, 23, 01, 11).isoformat()),
                   'looks_closed': True,
                   'submitter_username': 'fabian.seoane',
                   'submitter_realname': '',

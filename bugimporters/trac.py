@@ -260,7 +260,7 @@ class TracBugParser(object):
         key_ths = doc.cssselect('table.properties th')
         for key_th in key_ths:
             key = key_th.text
-            value = key_th.itersiblings().next().text
+            value = key_th.itersiblings().next().text_content()
             if value is not None:
                 ret[key.strip()] = value.strip()
         return ret
@@ -384,12 +384,12 @@ class TracBugParser(object):
 
         all_people = set(TracBugParser.all_people_in_changes(self.bug_html))
         all_people.add(page_metadata['Reported by:'])
-        all_people.update(
-            map(lambda x: x.strip(),
-                page_metadata.get('Cc', '').split(',')))
-        all_people.update(
-            map(lambda x: x.strip(),
-                page_metadata.get('Cc:', '').split(',')))
+        if 'Cc' in page_metadata:
+            all_people.update(
+                map(lambda x: x.strip(), page_metadata['Cc'].split(',')))
+        if 'Cc:' in page_metadata:
+            all_people.update(
+                map(lambda x: x.strip(), page_metadata['Cc:'].split(',')))
         try:
             assignee = page_metadata['Assigned to:']
         except KeyError:

@@ -1,0 +1,8 @@
+id,summary,description,status,reporter,component,keywords
+18937,"Use modern Python packaging metadata standard (1.2, PEP 345)","Add a PKG-INFO file as fitting with [http://www.python.org/dev/peps/pep-0345/ PEP 345].
+
+See [http://blog.ziade.org/2012/09/10/dear-django-help-python-packaging/ this blog post] for reference.
+
+Seems to me we can add this metadata file without too much difficulty and make new packaging happy :D
+
+",new,mjtamlyn,Core (Other),

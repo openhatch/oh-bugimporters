@@ -1,0 +1,670 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  <head>
+    <title>
+      #18937 (Use modern Python packaging metadata standard (1.2, PEP 345))
+     – Django
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+        <link rel="search" href="/search" />
+        <link rel="prev" href="/ticket/18934" title="Ticket #18934" />
+        <link rel="last" href="/ticket/18979" title="Ticket #18979" />
+        <link rel="help" href="/wiki/TracGuide" />
+        <link rel="alternate" href="/ticket/18937?format=csv" type="text/csv" class="csv" title="Comma-delimited Text" /><link rel="alternate" href="/ticket/18937?format=tab" type="text/tab-separated-values" class="tab" title="Tab-delimited Text" /><link rel="alternate" href="/ticket/18937?format=rss" type="application/rss+xml" class="rss" title="RSS Feed" />
+        <link rel="next" href="/ticket/18938" title="Ticket #18938" />
+        <link rel="start" href="/wiki" />
+        <link rel="stylesheet" href="/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/chrome/common/css/ticket.css" type="text/css" />
+        <link rel="first" href="/ticket/1" title="Ticket #1" />
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+      <link type="application/opensearchdescription+xml" rel="search" href="/search/opensearch" title="Search Django" />
+    <script type="text/javascript">
+      var auto_preview_timeout=2.0;
+      var form_token="64ffd4423f6ee3cb1ef9eb15";
+      var comments_prefs={"comments_only":"false","comments_order":"oldest"};
+    </script>
+      <script type="text/javascript" charset="utf-8" src="/chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/chrome/common/js/folding.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/chrome/common/js/wikitoolbar.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/chrome/common/js/resizer.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/chrome/common/js/auto_preview.js"></script>
+    <script type="text/javascript" src="/chrome/common/js/threaded_comments.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("div.description").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $(".foldable").enableFolding(false, true);
+      /*<![CDATA[*/
+        $("#attachments").toggleClass("collapsed");
+        $("#trac-up-attachments").click(function () {
+          $("#attachments").removeClass("collapsed");
+          return true;
+        });
+        $("#modify").parent().toggleClass("collapsed");
+        /* only enable control elements for the currently selected action */
+        var actions = $("#action input[name='action']");
+        function updateActionFields() {
+          actions.each(function () {
+            $(this).siblings().find("*[id]").enable($(this).checked());
+            $(this).siblings().filter("*[id]").enable($(this).checked());
+          });
+        }
+        actions.click(updateActionFields);
+        updateActionFields();
+        function setRevertHandler() {
+          $("button.trac-revert").click(function() {
+            var div = $("div", this);
+            var field_name = div[0].id.substr(7);
+            var field_value = div.text();
+            var input = $("#propertyform *[name=field_" + field_name + "]");
+            if (input.length > 0) {
+              if (input.filter("input[type=radio]").length > 0) {
+                input.val([field_value]);
+              } else if (input.filter("input[type=checkbox]").length > 0) {
+                input.val(field_value == "1" ? [field_value] : []);
+              } else {
+                input.val(field_value);
+              }
+            } else { // Special case for CC checkbox
+              input = $("#propertyform input[name=cc_update]").val([]);
+            }
+            input.change();
+            $(this).closest("li").remove();
+            return false;
+          });
+        }
+        setRevertHandler();
+        var comment_focused = false;
+        $("#comment").focus(function() { comment_focused = true; })
+                     .blur(function() { comment_focused = false; });
+        $("#propertyform").autoSubmit({preview: '1'}, function(data, reply) {
+          var items = $(reply);
+          // Update ticket box
+          $("#ticket").replaceWith(items.filter('#ticket'));
+          // Unthread, unrevert and update changelog
+          if (!$('#trac-comments-oldest').checked())
+            $('#trac-comments-oldest').click().change();
+          $("#changelog").replaceWith(items.filter("#changelog"));
+          if ($('#trac-comments-only-toggle').attr('checked'))
+            $('#trac-comments-only-toggle').click().attr('checked', true);
+          // Show warning
+          var new_changes = $("#changelog .trac-new");
+          $("#trac-edit-warning").toggle(new_changes.length != 0);
+          if (new_changes.length != 0)
+            $("#changelog").parent().show().removeClass("collapsed");
+          // Update view time
+          $("#propertyform input[name='view_time']").replaceWith(items.filter("input[name='view_time']"));
+          // Update preview
+          var preview = $("#ticketchange").html(items.filter('#preview').children());
+          var show_preview = preview.children().length != 0;
+          $("#ticketchange").toggle(show_preview);
+          setRevertHandler();
+          // Collapse property form if comment editor has focus
+          if (show_preview && comment_focused)
+            $("#modify").parent().addClass("collapsed");
+        }, "#ticketchange .trac-loading");
+        $("#trac-comment-editor").autoSubmit({preview_comment: '1'}, function(data, reply) {
+          var comment = $("#trac-comment-editor").next("div.comment").html(reply);
+          comment.toggle(comment.children().length != 0);
+        }, "#changelog .trac-loading");
+        /*]]>*/
+      });
+    </script>
+    <link rel="stylesheet" type="text/css" href="/chrome/site/style.css" />
+      <script type="text/javascript" src="/chrome/site/tickethacks.js"></script>
+  </head>
+  <body>
+    <div id="django-code">
+      <div id="django-container">
+        <div id="django-header">
+          <h1 id="django-logo"><a href="https://www.djangoproject.com/"><img src="https://www.djangoproject.com/m/img/site/hdr_logo.gif" alt="Django" /></a></h1>
+          <ul id="django-nav-global">
+            <li><a href="https://www.djangoproject.com/">Home</a></li>
+            <li><a href="https://www.djangoproject.com/download/">Download</a></li>
+            <li><a href="https://docs.djangoproject.com/">Documentation</a></li>
+            <li><a href="https://www.djangoproject.com/weblog/">Weblog</a></li>
+            <li><a href="https://www.djangoproject.com/community/">Community</a></li>
+            <li id="django-active-nav"><a href="/">Code</a></li>
+          </ul>
+        </div>
+        <div id="django-billboard"><h2><a href="/">Code</a></h2></div>
+        <div id="django-columnwrap">
+          <div id="django-content-main">
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="https://www.djangoproject.com/"><img src="https://www.djangoproject.com/m/img/site/hdr_logo.gif" alt="Django" /></a>
+      </div>
+      <form id="search" action="/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="/login">Login</a></li><li><a href="https://www.djangoproject.com/accounts/register/">Register</a></li><li><a href="/prefs">Preferences</a></li><li class="last"><a href="https://www.djangoproject.com/accounts/password/reset/">Forgot your password?</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="/wiki">Wiki</a></li><li><a href="/timeline">Timeline</a></li><li><a href="/wiki/Reports">Reports</a></li><li class="active"><a href="/query">View Tickets</a></li><li><a href="/newticket">New Ticket</a></li><li class="last"><a href="/search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li class="first"><span>&larr; <a class="prev" href="/ticket/18934" title="Ticket #18934">Previous Ticket</a></span></li><li class="last"><span><a class="next" href="/ticket/18938" title="Ticket #18938">Next Ticket</a> &rarr;</span></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="ticket">
+        <div id="ticket" class="trac-content ">
+  <div class="date">
+    <p>Opened <a class="timeline" href="/timeline?from=2012-09-10T03%3A17%3A54-07%3A00&amp;precision=second" title="See timeline at 09/10/12 03:17:54">8 days ago</a></p>
+    <p>Last modified <a class="timeline" href="/timeline?from=2012-09-10T03%3A27%3A13-07%3A00&amp;precision=second" title="See timeline at 09/10/12 03:27:13">8 days ago</a></p>
+  </div>
+  <h2>
+    <a href="/ticket/18937" class="trac-id">#18937</a>
+    <span class="trac-status">
+      <a href="/query?status=new">new</a>
+    </span>
+    <span class="trac-type">
+      <a href="/query?status=!closed&amp;type=New+feature">New feature</a>
+    </span>
+  </h2>
+  <h1 id="trac-ticket-title" class="searchable">
+    <span class="summary">Use modern Python packaging metadata standard (1.2, PEP 345)</span>
+  </h1>
+  <table class="properties">
+    <tr>
+      <th id="h_reporter">Reported by:</th>
+      <td headers="h_reporter" class="searchable"><a href="/query?status=!closed&amp;reporter=mjtamlyn">mjtamlyn</a></td>
+      <th id="h_owner">Owned by:</th>
+      <td headers="h_owner"><a href="/query?status=!closed&amp;owner=nobody">nobody</a></td>
+    </tr>
+    <tr>
+        <th id="h_component">
+          Component:
+        </th>
+        <td headers="h_component">
+              <a href="/query?status=!closed&amp;component=Core+(Other)">Core (Other)</a>
+        </td>
+        <th id="h_version">
+          Version:
+        </th>
+        <td headers="h_version">
+              <a href="/query?status=!closed&amp;version=master">master</a>
+        </td>
+    </tr><tr>
+        <th id="h_severity">
+          Severity:
+        </th>
+        <td headers="h_severity">
+              <a href="/query?status=!closed&amp;severity=Normal">Normal</a>
+        </td>
+        <th id="h_keywords" class="missing">
+          Keywords:
+        </th>
+        <td headers="h_keywords" class="searchable">
+        </td>
+    </tr><tr>
+        <th id="h_cc" class="missing">
+          Cc:
+        </th>
+        <td headers="h_cc" class="searchable">
+        </td>
+        <th id="h_stage">
+          Triage Stage:
+        </th>
+        <td headers="h_stage">
+              <a href="/query?status=!closed&amp;stage=Accepted">Accepted</a>
+        </td>
+    </tr><tr>
+        <th id="h_has_patch">
+          Has patch:
+        </th>
+        <td headers="h_has_patch">
+              <a href="/query?status=!closed&amp;has_patch=0">no</a>
+        </td>
+        <th id="h_needs_docs">
+          Needs documentation:
+        </th>
+        <td headers="h_needs_docs">
+              <a href="/query?status=!closed&amp;needs_docs=0">no</a>
+        </td>
+    </tr><tr>
+        <th id="h_needs_tests">
+          Needs tests:
+        </th>
+        <td headers="h_needs_tests">
+              <a href="/query?status=!closed&amp;needs_tests=0">no</a>
+        </td>
+        <th id="h_needs_better_patch">
+          Patch needs improvement:
+        </th>
+        <td headers="h_needs_better_patch">
+              <a href="/query?status=!closed&amp;needs_better_patch=0">no</a>
+        </td>
+    </tr><tr>
+        <th id="h_easy">
+          Easy pickings:
+        </th>
+        <td headers="h_easy">
+              <a href="/query?status=!closed&amp;easy=0">no</a>
+        </td>
+        <th id="h_ui_ux">
+          UI/UX:
+        </th>
+        <td headers="h_ui_ux">
+              <a href="/query?status=!closed&amp;ui_ux=0">no</a>
+        </td>
+    </tr>
+  </table>
+  <div class="description">
+    <h3 id="comment:description">
+      Description
+    </h3>
+    <form id="addreply" method="get" action="#comment">
+      <div class="inlinebuttons">
+        <input type="hidden" name="replyto" value="description" />
+        <input type="submit" name="reply" value="↳ Reply" title="Reply, quoting this description" />
+      </div>
+    </form>
+    <div class="searchable">
+      <p>
+Add a PKG-INFO file as fitting with <a class="ext-link" href="http://www.python.org/dev/peps/pep-0345/"><span class="icon">​</span>PEP 345</a>.<br />
+</p>
+<p>
+See <a class="ext-link" href="http://blog.ziade.org/2012/09/10/dear-django-help-python-packaging/"><span class="icon">​</span>this blog post</a> for reference.<br />
+</p>
+<p>
+Seems to me we can add this metadata file without too much difficulty and make new packaging happy :D<br />
+</p>
+
+    </div>
+  </div>
+</div>
+          
+    <div id="attachments">
+        <h3 class="foldable">Attachments <span class="trac-count">(0)</span></h3>
+        <div class="attachments">
+          <form method="get" action="/attachment/ticket/18937/" id="attachfile">
+  <div>
+    <input type="hidden" name="action" value="new" />
+    <input type="submit" name="attachfilebutton" value="Attach file" />
+  </div>
+</form>
+        </div>
+    </div>
+
+        <div>
+          <div style="position: relative">
+            <form id="prefs" method="get" action="/prefs" style="position: absolute; right: 0">
+              <div id="trac-comments-order">
+                <input type="radio" id="trac-comments-oldest" name="trac-comments-order" value="oldest" checked="checked" />
+                <label for="trac-comments-oldest">Oldest first</label>
+                <input type="radio" id="trac-comments-newest" name="trac-comments-order" value="newest" />
+                <label for="trac-comments-newest">Newest first</label>
+                <span id="trac-threaded-toggle" style="display: none">
+                  <input type="radio" id="trac-comments-threaded" name="trac-comments-order" value="threaded" />
+                  <label for="trac-comments-threaded">Threaded</label>
+                </span>
+              </div>
+              <div>
+                <input id="trac-comments-only-toggle" type="checkbox" />
+                <label for="trac-comments-only-toggle">Comments only</label>
+              </div>
+            </form>
+          </div>
+          <h3 class="foldable">Change History <span class="trac-count">(2)</span></h3>
+          <div id="changelog">
+              <div class="change" id="trac-change-1-1347272816771717">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:1" class="cnum">
+    <a href="#comment:1">comment:1</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/timeline?from=2012-09-10T03%3A26%3A56-07%3A00&amp;precision=second" title="See timeline at 09/10/12 03:26:56">8 days ago</a> by jezdez
+  </h3>
+  <div class="trac-ticket-buttons">
+    <form id="reply-to-comment-1" method="get" action="#comment">
+      <div class="inlinebuttons">
+        <input type="hidden" name="replyto" value="1" />
+        <input type="submit" value="↳ Reply" title="Reply to comment 1" />
+      </div>
+    </form>
+  </div>
+  <ul class="changes">
+    <li class="trac-field-needs_docs">
+      <strong class="trac-field-needs_docs">Needs documentation</strong>
+        unset
+    </li><li class="trac-field-needs_tests">
+      <strong class="trac-field-needs_tests">Needs tests</strong>
+        unset
+    </li><li class="trac-field-needs_better_patch">
+      <strong class="trac-field-needs_better_patch">Patch needs improvement</strong>
+        unset
+    </li><li class="trac-field-summary">
+      <strong class="trac-field-summary">Summary</strong>
+        changed from <em>PEP 345</em> to <em>Use modern Python packaging metadata standard (1.2, PEP 345)</em>
+    </li><li class="trac-field-stage">
+      <strong class="trac-field-stage">Triage Stage</strong>
+        changed from <em>Unreviewed</em> to <em>Accepted</em>
+    </li>
+  </ul>
+    <div class="comment searchable">
+      <p>
+FWIW, PEP345 is just the metadata standard, not really the carrier of the data. But it's easy enough to put the info in a setup.cfg as it's implemented by distutils2/packaging (<a class="ext-link" href="http://alexis.notmyidea.org/distutils2/setupcfg.html"><span class="icon">​</span>http://alexis.notmyidea.org/distutils2/setupcfg.html</a>).<br />
+</p>
+<p>
+We could use wrappers like d2to1 (<a class="ext-link" href="http://pypi.python.org/pypi/d2to1"><span class="icon">​</span>http://pypi.python.org/pypi/d2to1</a>) to maintain only one file with the data but would still be forward-compatible.<br />
+</p>
+<p>
+On the other hand as long as distutils2/packaging isn't officiall released/included in Python 3.X it may be senseless to do so.<br />
+</p>
+
+    </div>
+
+              </div>
+              <div class="change" id="trac-change-2-1347272833210276">
+                
+  <h3 class="change">
+    <span class="threading">
+      <span id="comment:2" class="cnum">
+    <a href="#comment:2">comment:2</a>
+  </span>
+    </span>
+        Changed <a class="timeline" href="/timeline?from=2012-09-10T03%3A27%3A13-07%3A00&amp;precision=second" title="See timeline at 09/10/12 03:27:13">8 days ago</a> by jezdez
+  </h3>
+  <div class="trac-ticket-buttons">
+    <form id="reply-to-comment-2" method="get" action="#comment">
+      <div class="inlinebuttons">
+        <input type="hidden" name="replyto" value="2" />
+        <input type="submit" value="↳ Reply" title="Reply to comment 2" />
+      </div>
+    </form>
+  </div>
+  <ul class="changes">
+    <li class="trac-field-component">
+      <strong class="trac-field-component">Component</strong>
+        changed from <em>Python 3</em> to <em>Core (Other)</em>
+    </li>
+  </ul>
+
+              </div>
+          </div>
+        </div>
+      <form method="post" id="propertyform" action="/ticket/18937#trac-add-comment"><div><input type="hidden" name="__FORM_TOKEN" value="64ffd4423f6ee3cb1ef9eb15" /></div>
+        <div id="trac-add-comment" class="field">
+          <h3 class="foldable" id="edit">Add Comment</h3>
+          <div>
+            <div id="trac-edit-warning" class="warning system-message" style="display: none">This ticket has been modified since you started editing. You should review the
+              <em class="trac-new">other modifications</em> which have been appended above,
+              and any <em class="trac-conflict">conflicts</em> shown in the preview below.
+              You can nevertheless proceed and submit your changes if you wish so.</div>
+            <fieldset>
+              <label for="comment">You may use
+                <a tabindex="42" href="/wiki/WikiFormatting">WikiFormatting</a>
+                here.</label>
+              <textarea id="comment" name="comment" class="wikitext trac-resizable" rows="10" cols="78">
+</textarea>
+            </fieldset>
+          </div>
+        </div>
+        <div>
+          <h3 class="foldable">Modify Ticket</h3>
+          <div id="modify">
+            <fieldset id="properties">
+              <legend>
+                  Change Properties
+              </legend>
+              <table>
+                <tr>
+                  <th><label for="field-summary">Summary:</label></th>
+                  <td class="fullrow" colspan="3">
+                    <input type="text" id="field-summary" name="field_summary" value="Use modern Python packaging metadata standard (1.2, PEP 345)" size="70" />
+                  </td>
+                </tr>
+                <tr>
+                    <th class="col1">
+                      <label for="field-type">Type:</label>
+                    </th>
+                    <td class="col1">
+                        <select id="field-type" name="field_type">
+                          <option value="Uncategorized">Uncategorized</option><option value="Bug">Bug</option><option selected="selected" value="New feature">New feature</option><option value="Cleanup/optimization">Cleanup/optimization</option>
+                        </select>
+                    </td>
+                    <th class="col2">
+                      <label for="field-component">Component:</label>
+                    </th>
+                    <td class="col2">
+                        <select id="field-component" name="field_component">
+                          <option value="contrib.admin">contrib.admin</option><option value="contrib.admindocs">contrib.admindocs</option><option value="contrib.auth">contrib.auth</option><option value="contrib.comments">contrib.comments</option><option value="contrib.contenttypes">contrib.contenttypes</option><option value="contrib.csrf">contrib.csrf</option><option value="contrib.databrowse">contrib.databrowse</option><option value="contrib.flatpages">contrib.flatpages</option><option value="contrib.formtools">contrib.formtools</option><option value="contrib.humanize">contrib.humanize</option><option value="contrib.localflavor">contrib.localflavor</option><option value="contrib.markup">contrib.markup</option><option value="contrib.messages">contrib.messages</option><option value="contrib.redirects">contrib.redirects</option><option value="contrib.sessions">contrib.sessions</option><option value="contrib.sitemaps">contrib.sitemaps</option><option value="contrib.sites">contrib.sites</option><option value="contrib.staticfiles">contrib.staticfiles</option><option value="contrib.syndication">contrib.syndication</option><option value="contrib.webdesign">contrib.webdesign</option><option value="Core (Cache system)">Core (Cache system)</option><option value="Core (Mail)">Core (Mail)</option><option value="Core (Management commands)">Core (Management commands)</option><option selected="selected" value="Core (Other)">Core (Other)</option><option value="Core (Serialization)">Core (Serialization)</option><option value="Core (URLs)">Core (URLs)</option><option value="Database layer (models, ORM)">Database layer (models, ORM)</option><option value="Djangoproject.com Web site">Djangoproject.com Web site</option><option value="Documentation">Documentation</option><option value="File uploads/storage">File uploads/storage</option><option value="Forms">Forms</option><option value="Generic views">Generic views</option><option value="GIS">GIS</option><option value="HTTP handling">HTTP handling</option><option value="Internationalization">Internationalization</option><option value="ORM aggregation">ORM aggregation</option><option value="Python 2">Python 2</option><option value="Python 3">Python 3</option><option value="Template system">Template system</option><option value="Testing framework">Testing framework</option><option value="Translations">Translations</option><option value="Uncategorized">Uncategorized</option>
+                        </select>
+                    </td>
+                </tr><tr>
+                    <th class="col1">
+                      <label for="field-version">Version:</label>
+                    </th>
+                    <td class="col1">
+                        <select id="field-version" name="field_version">
+                          <option></option>
+                          <option value="1.4-rc-2">1.4-rc-2</option><option value="1.4-rc-1">1.4-rc-1</option><option value="1.3-beta">1.3-beta</option><option value="1.3-alpha">1.3-alpha</option><option value="1.2-beta">1.2-beta</option><option value="1.2-alpha">1.2-alpha</option><option value="1.2">1.2</option><option value="1.1-beta-1">1.1-beta-1</option><option value="1.1">1.1</option><option value="1.0-beta-1">1.0-beta-1</option><option value="1.0-alpha-2">1.0-alpha-2</option><option value="1.0-alpha">1.0-alpha</option><option value="1.0">1.0</option><option value="0.96">0.96</option><option value="0.95">0.95</option><option selected="selected" value="master">master</option><option value="1.4">1.4</option><option value="1.4-beta-1">1.4-beta-1</option><option value="1.4-alpha-1">1.4-alpha-1</option><option value="1.3">1.3</option><option value="1.3-rc1">1.3-rc1</option>
+                        </select>
+                    </td>
+                    <th class="col2">
+                      <label for="field-severity">Severity:</label>
+                    </th>
+                    <td class="col2">
+                        <select id="field-severity" name="field_severity">
+                          <option selected="selected" value="Normal">Normal</option><option value="Release blocker">Release blocker</option>
+                        </select>
+                    </td>
+                </tr><tr>
+                    <th class="col1">
+                      <label for="field-keywords">Keywords:</label>
+                    </th>
+                    <td class="col1">
+                            <input type="text" id="field-keywords" name="field_keywords" value="" />
+                    </td>
+                    <th class="col2">
+                      <label for="field-cc">Add/Remove from Cc:</label>
+                    </th>
+                    <td class="col2">
+                            <span>
+                              <em>&lt;Author field&gt;</em>
+                              <input type="checkbox" id="field-cc" name="cc_update" title="This checkbox allows you to add or remove yourself from the CC list." />
+                            </span>
+                    </td>
+                </tr><tr>
+                    <th class="col1">
+                      <label for="field-stage">Triage Stage:</label>
+                    </th>
+                    <td class="col1">
+                        <select id="field-stage" name="field_stage">
+                          <option value="Unreviewed">Unreviewed</option><option value="Design decision needed">Design decision needed</option><option selected="selected" value="Accepted">Accepted</option><option value="Ready for checkin">Ready for checkin</option><option value="Someday/Maybe">Someday/Maybe</option><option value="Fixed on a branch">Fixed on a branch</option>
+                        </select>
+                    </td>
+                    <th class="col2">
+                      <label for="field-has_patch">Has patch:</label>
+                    </th>
+                    <td class="col2">
+                        <span>
+                          <input type="checkbox" id="field-has_patch" name="field_has_patch" value="1" />
+                          <input type="hidden" name="field_checkbox_has_patch" value="1" />
+                        </span>
+                    </td>
+                </tr><tr>
+                    <th class="col1">
+                      <label for="field-needs_docs">Needs documentation:</label>
+                    </th>
+                    <td class="col1">
+                        <span>
+                          <input type="checkbox" id="field-needs_docs" name="field_needs_docs" value="1" />
+                          <input type="hidden" name="field_checkbox_needs_docs" value="1" />
+                        </span>
+                    </td>
+                    <th class="col2">
+                      <label for="field-needs_tests">Needs tests:</label>
+                    </th>
+                    <td class="col2">
+                        <span>
+                          <input type="checkbox" id="field-needs_tests" name="field_needs_tests" value="1" />
+                          <input type="hidden" name="field_checkbox_needs_tests" value="1" />
+                        </span>
+                    </td>
+                </tr><tr>
+                    <th class="col1">
+                      <label for="field-needs_better_patch">Patch needs improvement:</label>
+                    </th>
+                    <td class="col1">
+                        <span>
+                          <input type="checkbox" id="field-needs_better_patch" name="field_needs_better_patch" value="1" />
+                          <input type="hidden" name="field_checkbox_needs_better_patch" value="1" />
+                        </span>
+                    </td>
+                    <th class="col2">
+                      <label for="field-easy">Easy pickings:</label>
+                    </th>
+                    <td class="col2">
+                        <span>
+                          <input type="checkbox" id="field-easy" name="field_easy" value="1" />
+                          <input type="hidden" name="field_checkbox_easy" value="1" />
+                        </span>
+                    </td>
+                </tr><tr>
+                    <th class="col1">
+                      <label for="field-ui_ux">UI/UX:</label>
+                    </th>
+                    <td class="col1">
+                        <span>
+                          <input type="checkbox" id="field-ui_ux" name="field_ui_ux" value="1" />
+                          <input type="hidden" name="field_checkbox_ui_ux" value="1" />
+                        </span>
+                    </td>
+                    <th class="col2">
+                    </th>
+                    <td class="col2">
+                    </td>
+                </tr>
+              </table>
+            </fieldset>
+                <fieldset id="action">
+                  <legend>Action</legend>
+                  <div>
+                      <input type="radio" id="action_leave" name="action" value="leave" checked="checked" />
+                      <label for="action_leave">leave</label>
+                      as new
+                      <span class="hint"></span>
+                  </div><div>
+                      <input type="radio" id="action_resolve" name="action" value="resolve" />
+                      <label for="action_resolve">resolve</label>
+                      as <select name="action_resolve_resolve_resolution" id="action_resolve_resolve_resolution"><option selected="selected" value="fixed">fixed</option><option value="invalid">invalid</option><option value="wontfix">wontfix</option><option value="duplicate">duplicate</option><option value="worksforme">worksforme</option><option value="needsinfo">needsinfo</option></select>
+                      <span class="hint">The resolution will be set. Next status will be 'closed'</span>
+                  </div><div>
+                      <input type="radio" id="action_reassign" name="action" value="reassign" />
+                      <label for="action_reassign">reassign</label>
+                      to <input type="text" name="action_reassign_reassign_owner" value="anonymous" id="action_reassign_reassign_owner" />
+                      <span class="hint">The owner will be changed from nobody. Next status will be 'new'</span>
+                  </div><div>
+                      <input type="radio" id="action_accept" name="action" value="accept" />
+                      <label for="action_accept">accept</label>
+                      <span class="hint">The owner will be changed from nobody to anonymous. Next status will be 'assigned'</span>
+                  </div>
+                </fieldset>
+          </div>
+        </div>
+        <div id="ticketchange" class="ticketdraft" style="display: none">
+          
+  <h3 class="change">
+    <span class="threading">
+    </span>
+        Changed by anonymous
+    <span class="trac-loading"></span>
+  </h3>
+  <div class="trac-ticket-buttons">
+  </div>
+
+        </div>
+        <div class="field">
+          <fieldset>
+            <legend>Author</legend>
+            <table>
+              <tr>
+                <th>
+                  <label for="author">Your email or username:</label><br />
+                </th>
+                <td>
+                  <input type="text" id="author" name="author" size="40" value="anonymous" />
+                  <br />
+                </td>
+              </tr>
+            </table>
+            <p class="hint">
+              E-mail address and user name can be saved in the <a href="/prefs">Preferences</a>.
+            </p>
+          </fieldset>
+        </div>
+        <div class="trac-nav">
+          <a href="#attachments" id="trac-up-attachments" title="Go to the list of attachments">Attachments</a> ↑
+        </div>
+        <div class="buttons">
+            <input type="hidden" name="start_time" value="1347272833210276" />
+            <input type="hidden" name="view_time" value="1347272833210276" />
+            <input type="hidden" name="replyto" />
+          <input type="submit" name="preview" value="Preview" /> 
+          <input type="submit" name="submit" value="Submit changes" />
+        </div>
+      </form>
+      <div id="help"><strong>Note:</strong> See
+        <a href="/wiki/TracTickets">TracTickets</a> for help on using
+        tickets.</div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="/ticket/18937?format=csv" class="csv">Comma-delimited Text</a>
+        </li><li>
+          <a rel="nofollow" href="/ticket/18937?format=tab" class="tab">Tab-delimited Text</a>
+        </li><li class="last">
+          <a rel="nofollow" href="/ticket/18937?format=rss" class="rss">RSS Feed</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="/chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="/about"><strong>Trac 1.0</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right"></p>
+    </div>
+          </div>
+        </div>
+        <div id="django-footer">
+          <p>© 2005-2012 <a href="https://www.djangoproject.com/foundation/">Django Software Foundation</a> unless otherwise noted. Django is a registered trademark of the Django Software Foundation.
+          <a href="http://mediatemple.net/">Linux Web hosting</a> graciously provided by Media Temple.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

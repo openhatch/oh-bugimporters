@@ -92,6 +92,7 @@ class GitHubBugParser(object):
             'looks_closed': (issue['state'] == 'closed'),
             'last_polled': printable_datetime(),
             '_project_name': self.tm.tracker_name,
+            '_tracker_name': self.tm.tracker_name,
         })
 
         issue_labels = set([

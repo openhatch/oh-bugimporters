@@ -278,7 +278,8 @@ class TracBugParser(object):
     def page2date_opened(doc):
         span_or_a = doc.cssselect(
             '''.date p:contains("Opened") span,
-            .date p:contains("Opened") a''')
+            .date p:contains("Opened") a,
+            a.timeline''') # in some cases, the div with date class is missing, so check for .timeline
         if span_or_a:
             tag = span_or_a[0]
         else:

@@ -187,6 +187,38 @@ class TestTracBugImporter(object):
                     good_for_newcomers because the value of the difficulty
                     field is: "Easy (less than 1 hour)"'''
 
+    def test_get_opened_date_with_timeline_class(self):
+        '''This test case is for input that has the reported date of the bug inside 
+        an a tag with class "timeline" and the div with "date" class is missing''' 
+        tbp = TracBugParser(
+                bug_url='https://projects.forum.nokia.com/ndg/ticket/92')
+
+        # Add data to avoid the network hit
+        # (This is a file you can get by calling 'wget' on the above ticket URL.)
+        # (You might have to add --no-check-certificate to override the certificate common name error)
+        cached_html_filename = os.path.join(HERE, 'sample-data',
+                'ndg-ticket-92')
+        tbp.set_bug_html_data(unicode(
+            open(cached_html_filename).read(), 'utf-8'))
+
+        # This CSV data comes from visiting
+        # https://projects.forum.nokia.com/ndg/ticket/92 and clicking
+        # "Comma-delimited text" at the bottom.
+        tbp.set_bug_csv_data(open(os.path.join(HERE, 'sample-data',
+                'ndg-ticket-92.csv')).read())
+
+        # Provide a fake "tracker model", which is a little bit of data that
+        # corresponds to information about the open source project in question
+        # and how its bug tracker is configured.
+        tm = TrackerModel()
+
+        # Now, actually look at the data returned by the BugParser object
+        # and verify its output through assertions.
+        returned_data = tbp.get_parsed_data_dict(tm)
+        assert returned_data['title'] == 'Enhanced GPS setting'
+        assert returned_data['date_reported']
+
+
 class TestTracBugParser(object):
     @staticmethod
     def assertEqual(x, y):

@@ -1,0 +1,3 @@
+id,summary,reporter,owner,description,type,status,priority,milestone,component,version,resolution,keywords,cc
+92,Enhanced GPS setting,SannaEskelinen on behalf of Metsähallitus,frodla,"Now when using the phone GPS the accuracy of the saved information is (based on small test) between 2-30m. Would it be possible to add a setting feature to the mobile client where the user can say that ""save coordinates only when the accuracy is high enough (e.g. <20m or <10m)?
+",defect,new,trivial,,Mobile Client,,,,

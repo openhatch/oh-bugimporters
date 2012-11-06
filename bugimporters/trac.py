@@ -56,10 +56,9 @@ class TracBugImporter(BugImporter):
 
         # Add all the queries to the waiting list
         for query in queries:
-            query_url = query.get_query_url()
-            print query_url
+            print query
             yield scrapy.http.Request(
-                url=query_url,
+                url=query,
                 callback=self.handle_query_csv_response)
 
     def handle_timeline_rss(self, timeline_rss):

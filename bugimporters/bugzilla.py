@@ -41,9 +41,7 @@ class BugzillaBugImporter(BugImporter):
 
     def process_queries(self, queries):
         # Add all the queries to the waiting list.
-        for query in queries:
-            # Get the query URL.
-            query_url = query.get_query_url()
+        for query_url in queries:
             # Get the query type and set the callback.
             query_type = query.query_type
             if query_type == 'xml':

@@ -55,11 +55,9 @@ class LaunchpadBugImporter(BugImporter):
 
     def process_queries(self, queries):
         for query in queries:
-            url = query.get_query_url()
-
-            logging.debug('querying %s', url)
+            logging.debug('querying %s', query)
             self.add_url_to_waiting_list(
-                url=url,
+                url=query,
                 callback=self.handle_bug_list)
             query.last_polled = datetime.datetime.utcnow()
             query.save()

@@ -39,7 +39,7 @@ class GoogleBugImporter(BugImporter):
         # Add all the queries to the waiting list
         for query in queries:
             r = scrapy.http.Request(
-                url=query.get_query_url(),
+                url=query,
                 callback=self.handle_query_atom_response)
             yield r
 

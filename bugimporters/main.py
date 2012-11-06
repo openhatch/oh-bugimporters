@@ -91,14 +91,7 @@ def main_worker(data):
                     'get_timeline_url': mock.Mock(),
                     'update_timeline': mock.Mock()
                     }})
-        class StupidQuery(object):
-            def __init__(self, url):
-                self.url = url
-            def get_query_url(self):
-                return self.url
-            def save(*args, **kwargs):
-                pass # FIXME: Hack
-        queries = [StupidQuery(q) for q in obj.queries]
+        queries = obj.queries
         bug_importer.process_queries(queries)
         all_bug_data.extend(bug_data)
 
@@ -139,15 +132,7 @@ class BugImportSpider(scrapy.spider.BaseSpider):
             bug_importer = bug_import_class(
                 obj, reactor_manager=None,
                 data_transits=None)
-            class StupidQuery(object):
-                def __init__(self, url):
-                    self.url = url
-                def get_query_url(self):
-                    return self.url
-                def save(*args, **kwargs):
-                    pass # FIXME: Hack
-            queries = [StupidQuery(q) for q in obj.queries]
-            for request in bug_importer.process_queries(queries):
+            for request in bug_importer.process_queries(obj.queries):
                 yield request
 
             bug_urls = getattr(obj, 'bug_urls', [])

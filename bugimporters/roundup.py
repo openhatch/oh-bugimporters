@@ -42,7 +42,7 @@ class RoundupBugImporter(BugImporter):
     def process_queries(self, queries):
         # Add all the queries to the waiting list
         for query in queries:
-            query_url = query.get_query_url()
+            query_url = query
             yield scrapy.http.Request(url=query_url,
                     callback=self.handle_query_csv_response)
 

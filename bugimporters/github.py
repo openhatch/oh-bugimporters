@@ -27,10 +27,8 @@ from bugimporters.helpers import string2naive_datetime
 class GitHubBugImporter(BugImporter):
     def process_queries(self, queries):
         for query in queries:
-            url = query.get_query_url()
-
             yield scrapy.http.Request(
-                url=url,
+                url=query,
                 callback=self.handle_bug_list_response)
 
     def handle_bug_list_response(self, response):

@@ -37,7 +37,53 @@ class TestTracBugImporter(object):
         cls.im = TracBugImporter(cls.tm, ReactorManager(),
                 data_transits=importer_data_transits)
 
+    def test_provide_existing_bug_urls(self):
+        self.setup_class()
+        # Create spider
+        spider = bugimporters.main.BugImportSpider()
+
+        # Provide metadata about the tracker
+        self.tm.bugimporter = 'trac.TracBugImporter'
+        self.tm.tracker_name = 'Twisted'
+        self.tm.bitesized_type = ''
+        self.tm.documentation_type = ''
+        self.tm.base_url = 'http://twistedmatrix.com/trac/'
+        # Make 'queries' empty, because we are only interested in
+        # ohw it handles the existing_bug_urls list
+        self.tm.queries = []
+        self.tm.existing_bug_urls = [
+            'http://twistedmatrix.com/trac/ticket/5858',
+            'http://twistedmatrix.com/trac/ticket/4298',
+            ]
+        # Convert the trackermodel into data for the spider
+        spider.input_data = [self.tm.__dict__]
+
+        # Provide sample data
+        url2filename = {'http://twistedmatrix.com/trac/query?id=5858&format=csv':
+                            os.path.join(HERE, 'sample-data', 'twisted-trac-query-for-id=5858.csv'),
+                        'http://twistedmatrix.com/trac/ticket/5858?format=csv':
+                            os.path.join(HERE, 'sample-data', 'twisted-trac-5858.csv'),
+                        'http://twistedmatrix.com/trac/ticket/5858':
+                            os.path.join(HERE, 'sample-data', 'twisted-trac-5858.html'),
+                        'http://twistedmatrix.com/trac/ticket/4298?format=csv':
+                            os.path.join(HERE, 'sample-data', 'twisted-trac-4298-csv-export'),
+                        'http://twistedmatrix.com/trac/ticket/4298':
+                            os.path.join(HERE, 'sample-data', 'twisted-trac-4298-on-2010-04-02.html'),
+                        }
+
+        # Get all the data the spider will get
+        ar = autoresponse.Autoresponder(url2filename=url2filename,
+                                        url2errors={})
+        items = ar.respond_recursively(spider.start_requests())
+
+        # And make sure it pulls out the right two bugs
+        assert len(items) == 2
+        urls_we_want_to_see  = set(self.tm.existing_bug_urls)
+        urls_we_found = set([x['canonical_bug_link'] for x in items])
+        assert urls_we_found == urls_we_want_to_see
+
     def test_top_to_bottom(self):
+        self.setup_class()
         spider = bugimporters.main.BugImportSpider()
         self.tm.bugimporter = 'trac.TracBugImporter'
         self.tm.tracker_name = 'Twisted'
@@ -62,6 +108,7 @@ class TestTracBugImporter(object):
             'http://twistedmatrix.com/trac/ticket/5858')
 
     def test_handle_query_csv(self):
+        self.setup_class()
         self.im.bug_ids = []
         cached_csv_filename = os.path.join(HERE, 'sample-data',
                 'twisted-trac-query-easy-bugs-on-2011-04-13.csv')

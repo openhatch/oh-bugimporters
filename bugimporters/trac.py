@@ -20,7 +20,6 @@ import cgi
 import csv
 import datetime
 import feedparser
-import importlib
 import lxml
 import lxml.html
 import twisted.web.error
@@ -31,7 +30,6 @@ import urllib2
 import StringIO
 import scrapy.http
 import scrapy.spider
-import yaml
 
 
 from bugimporters.base import BugImporter, printable_datetime
@@ -156,7 +154,6 @@ class TracBugImporter(BugImporter):
     def process_bugs(self, bug_list):
         # If there are no bug URLs, finish now.
         if not bug_list:
-            self.determine_if_finished()
             return
 
         for bug_url, _ in bug_list:
@@ -232,14 +229,6 @@ class TracBugImporter(BugImporter):
     def generate_bug_project_name(self, tbp):
         return self.tm.bug_project_name_format.format(
                 tracker_name=self.tm.tracker_name, component=tbp.component)
-
-    def determine_if_finished(self):
-        # If we got here then there are no more URLs in the waiting list.
-        # So if self.bug_ids is also empty then we are done.
-        if self.bug_ids:
-            self.prepare_bug_urls()
-        else:
-            self.finish_import()
 
 class SynchronousTracBugImporter(TracBugImporter):
     def add_url_to_waiting_list(self, url, callback, c_args={}, errback=None, e_args={}):

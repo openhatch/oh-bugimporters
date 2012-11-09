@@ -135,11 +135,20 @@ class BugImportSpider(scrapy.spider.BaseSpider):
             for request in bug_importer.process_queries(obj.queries):
                 yield request
 
+            older_bug_data_url = getattr(
+                obj, 'get_older_bug_data', '')
+            if older_bug_data_url:
+                kwargs = {'older_bug_data_url': older_bug_data_url}
+            else:
+                kwargs = {}
+
             bug_urls = getattr(obj, 'existing_bug_urls', [])
             if hasattr(bug_importer, 'process_bugs'):
-                for request in bug_importer.process_bugs([
-                        (url, None) for url in bug_urls]):
-                    yield request
+                if bug_urls:
+                    for request in bug_importer.process_bugs(
+                        [(url, None) for url in bug_urls],
+                        **kwargs):
+                        yield request
             else:
                 logging.error("FYI, this bug importer does not support "
                               "process_bugs(). Fix it.")

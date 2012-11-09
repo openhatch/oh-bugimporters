@@ -1,0 +1,216 @@
+[
+  {
+    "updated_at": "2012-09-22T15:14:39Z",
+    "milestone": null,
+    "state": "open",
+    "labels": [
+
+    ],
+    "created_at": "2012-05-23T08:58:04Z",
+    "comments": 2,
+    "url": "https://api.github.com/repos/acm-uiuc/mango-django/issues/17",
+    "body": "We talked that we might take the carousel down since it's too difficult to make it stay even in height with the text box next to it, and it doesn't add much to the page anyway.\n\nI'm fine with taking it down, even though I like the idea of having pictures.\n\nOther option is to find a way to make the carousel contribute something to the page. Personally, I despise the way Twitter Bootstrap carousels look by default because there's no preview or other motivating reason why someone would click to see the other images.\n\nI'm a big fan of the image \"slider\" at the top of the Art Institute's website, http://www.artic.edu/aic/ , because it gives you the choice to click a caption and image title to see the corresponding picture. It also serves as a sort of navbar because you can double click to see the page on the topic pictured. Another enormous advantage of the design is that excess image fades behind the text box, so any image size, shape, or orientation can be used. That being said, I have no idea how difficult it would be to do something like this, or if it would even work for our purposes.\n\nAnother option to incorporate pictures and possibly solve the issue of color balance we discussed would be to find a way to put a series of photos with function on the page or along the bottom of the page, sort of like here http://voicesforthelake.org/ . But I don't think that will work very well design-wise with what we have right now, and would be very tedious to try to make clean-looking.\n\nEasiest option (and definitely best for now) is just to take the carousel down. ...in which case, could that please be changed soon? It drives me nuts that the boxes are uneven. O:)",
+    "pull_request": {
+      "patch_url": null,
+      "diff_url": null,
+      "html_url": null
+    },
+    "closed_at": null,
+    "assignee": null,
+    "user": {
+      "gravatar_id": "089c31ec180daaa0fba931770276ebd7",
+      "avatar_url": "https://secure.gravatar.com/avatar/089c31ec180daaa0fba931770276ebd7?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "login": "cmr1347",
+      "url": "https://api.github.com/users/cmr1347",
+      "id": 1612626
+    },
+    "title": "Carousel design",
+    "id": 4707360,
+    "html_url": "https://github.com/acm-uiuc/mango-django/issues/17",
+    "number": 17
+  },
+  {
+    "updated_at": "2012-09-22T12:53:30Z",
+    "milestone": null,
+    "state": "open",
+    "labels": [
+
+    ],
+    "created_at": "2012-04-23T02:31:49Z",
+    "comments": 1,
+    "url": "https://api.github.com/repos/acm-uiuc/mango-django/issues/15",
+    "body": "In the list of links to pages provided when in phone screen-size view, there is more space between \"contact\" and \"acm@uiuc\" than between all the other page names. If this was done unintentionally, the spacing should be decreased. If it was done intentionally, the spacing should be increased so that it looks intentional.",
+    "pull_request": {
+      "patch_url": null,
+      "diff_url": null,
+      "html_url": null
+    },
+    "closed_at": null,
+    "assignee": null,
+    "user": {
+      "gravatar_id": "089c31ec180daaa0fba931770276ebd7",
+      "avatar_url": "https://secure.gravatar.com/avatar/089c31ec180daaa0fba931770276ebd7?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "login": "cmr1347",
+      "url": "https://api.github.com/users/cmr1347",
+      "id": 1612626
+    },
+    "title": "List spacing",
+    "id": 4233796,
+    "html_url": "https://github.com/acm-uiuc/mango-django/issues/15",
+    "number": 15
+  },
+  {
+    "updated_at": "2012-09-22T12:55:29Z",
+    "milestone": null,
+    "state": "open",
+    "labels": [
+
+    ],
+    "created_at": "2012-04-12T01:13:17Z",
+    "comments": 1,
+    "url": "https://api.github.com/repos/acm-uiuc/mango-django/issues/13",
+    "body": "When the navbar switches from the menu list to the collapsed menu, it changes its height because of the running man logo.  We gotta go in and fix the margins around the running man to make it consistent with the height of the menu when the tabs are visible.  It shouldn't involve anything other than fixing margins around the logo I don't think.",
+    "pull_request": {
+      "patch_url": null,
+      "diff_url": null,
+      "html_url": null
+    },
+    "closed_at": null,
+    "assignee": null,
+    "user": {
+      "gravatar_id": "c2948cdb6e27f326c00d39524807d0db",
+      "avatar_url": "https://secure.gravatar.com/avatar/c2948cdb6e27f326c00d39524807d0db?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "login": "chorn21",
+      "url": "https://api.github.com/users/chorn21",
+      "id": 835518
+    },
+    "title": "Navbar height",
+    "id": 4076854,
+    "html_url": "https://github.com/acm-uiuc/mango-django/issues/13",
+    "number": 13
+  },
+  {
+    "updated_at": "2012-09-22T16:39:17Z",
+    "milestone": null,
+    "state": "open",
+    "labels": [
+
+    ],
+    "created_at": "2012-04-08T16:09:37Z",
+    "comments": 5,
+    "url": "https://api.github.com/repos/acm-uiuc/mango-django/issues/11",
+    "body": "I got the impression that we all feel the red links are ok but not great, so let's try to keep it in the back of our minds in case a new idea comes up. I don't think we ever tried the goldenrod that Cole recommended, which could work out.",
+    "pull_request": {
+      "patch_url": null,
+      "diff_url": null,
+      "html_url": null
+    },
+    "closed_at": null,
+    "assignee": null,
+    "user": {
+      "gravatar_id": "089c31ec180daaa0fba931770276ebd7",
+      "avatar_url": "https://secure.gravatar.com/avatar/089c31ec180daaa0fba931770276ebd7?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "login": "cmr1347",
+      "url": "https://api.github.com/users/cmr1347",
+      "id": 1612626
+    },
+    "title": "Link Colors",
+    "id": 4021924,
+    "html_url": "https://github.com/acm-uiuc/mango-django/issues/11",
+    "number": 11
+  },
+  {
+    "updated_at": "2012-09-23T01:19:26Z",
+    "milestone": null,
+    "state": "open",
+    "labels": [
+
+    ],
+    "created_at": "2012-04-08T04:32:37Z",
+    "comments": 6,
+    "url": "https://api.github.com/repos/acm-uiuc/mango-django/issues/10",
+    "body": "The icon for the website that shows up on tabs should be changed to the running man.",
+    "pull_request": {
+      "patch_url": null,
+      "diff_url": null,
+      "html_url": null
+    },
+    "closed_at": null,
+    "assignee": null,
+    "user": {
+      "gravatar_id": "089c31ec180daaa0fba931770276ebd7",
+      "avatar_url": "https://secure.gravatar.com/avatar/089c31ec180daaa0fba931770276ebd7?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "login": "cmr1347",
+      "url": "https://api.github.com/users/cmr1347",
+      "id": 1612626
+    },
+    "title": "Tabs",
+    "id": 4019467,
+    "html_url": "https://github.com/acm-uiuc/mango-django/issues/10",
+    "number": 10
+  },
+  {
+    "updated_at": "2012-09-22T12:56:31Z",
+    "milestone": null,
+    "state": "open",
+    "labels": [
+
+    ],
+    "created_at": "2012-04-06T21:32:14Z",
+    "comments": 1,
+    "url": "https://api.github.com/repos/acm-uiuc/mango-django/issues/6",
+    "body": "We want to think of something to balance the grey in the navbar with the rest of the page.  Any suggestions as to how we could incorporate grey in the footer?",
+    "pull_request": {
+      "patch_url": null,
+      "diff_url": null,
+      "html_url": null
+    },
+    "closed_at": null,
+    "assignee": null,
+    "user": {
+      "gravatar_id": "c2948cdb6e27f326c00d39524807d0db",
+      "avatar_url": "https://secure.gravatar.com/avatar/c2948cdb6e27f326c00d39524807d0db?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "login": "chorn21",
+      "url": "https://api.github.com/users/chorn21",
+      "id": 835518
+    },
+    "title": "Ideas for balancing the page",
+    "id": 4010175,
+    "html_url": "https://github.com/acm-uiuc/mango-django/issues/6",
+    "number": 6
+  },
+  {
+    "updated_at": "2012-09-22T12:55:56Z",
+    "milestone": null,
+    "state": "open",
+    "labels": [
+      {
+        "color": "fc2929",
+        "url": "https://api.github.com/repos/acm-uiuc/mango-django/labels/bug",
+        "name": "bug"
+      }
+    ],
+    "created_at": "2012-04-05T20:00:16Z",
+    "comments": 1,
+    "url": "https://api.github.com/repos/acm-uiuc/mango-django/issues/3",
+    "body": "The image carousel won't wrap.  When you get to the last image and click next, it won't automatically go to the beginning of the carousel, and when you're on the first image (the one of Nikoli), and press the back button, nothing happens.  I'm pretty sure Bootstrap would allow for them to wrap, so I'm not sure if I tweaked a tag or something, but if anyone wants to take a look then that'd be great.  Thanks!",
+    "pull_request": {
+      "patch_url": null,
+      "diff_url": null,
+      "html_url": null
+    },
+    "closed_at": null,
+    "assignee": null,
+    "user": {
+      "gravatar_id": "c2948cdb6e27f326c00d39524807d0db",
+      "avatar_url": "https://secure.gravatar.com/avatar/c2948cdb6e27f326c00d39524807d0db?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "login": "chorn21",
+      "url": "https://api.github.com/users/chorn21",
+      "id": 835518
+    },
+    "title": "Carousel issues",
+    "id": 3994851,
+    "html_url": "https://github.com/acm-uiuc/mango-django/issues/3",
+    "number": 3
+  }
+]

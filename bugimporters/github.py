@@ -37,12 +37,21 @@ class GitHubBugImporter(BugImporter):
         for bug in issue_list:
             yield self.handle_bug(bug)
 
-    def process_bugs(self, bug_list):
-        for bug_url, bug_data in bug_list:
-            r = scrapy.http.Request(
-                url=bug_url,
-                callback=self.handle_bug_show_response)
-            yield r
+    def process_bugs(self, bug_list, older_bug_data_url):
+        r = scrapy.http.Request(
+            url=older_bug_data_url,
+            callback=self.handle_old_bug_query)
+        # For historical reasons, bug_list is a tuple of (url, data).
+        # We just want the URLs.
+        r.meta['bug_list'] = [url for (url, data) in bug_list]
+        yield r
+
+    def handle_old_bug_query(self, response):
+        bugs_we_care_about = response.meta['bug_list']
+        bugs_from_response = json.loads(response.body)
+        for bug in bugs_from_response:
+            if bug['html_url'] in bugs_we_care_about:
+                yield self.handle_bug(bug)
 
     def handle_bug_show_response(self, response):
         bug_data = json.loads(response.body)

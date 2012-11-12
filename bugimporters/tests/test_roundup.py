@@ -34,6 +34,7 @@ class TestRoundupBugImporter(object):
             data_transits=None)
 
     def test_bug_import_works_with_comma_separated_closed_status(self):
+        self.setup_class()
         # First, change the environment -- pretend the user on the web interface
         # said that there are two status values that mean 'closed' for
         # the Mercurial project.
@@ -43,7 +44,34 @@ class TestRoundupBugImporter(object):
         item = self.test_new_mercurial_bug_import()
         assert item['looks_closed'] == True
 
+    def test_process_existing_bug_urls(self):
+        # Reset test state
+        self.setup_class()
+
+        # Remove 'queries', and add a bug to existing_bug_urls
+        self.tm.queries = []
+        self.tm.existing_bug_urls = [
+            'http://mercurial.selenic.com/bts/issue1550',
+            ]
+
+        # Create the bug spider
+        spider = bugimporters.main.BugImportSpider()
+        spider.input_data = [self.tm.__dict__]
+
+        # Configure URL<->filename mapping for offline crawling
+        url2filename = {
+            'http://mercurial.selenic.com/bts/issue1550':
+                os.path.join(HERE, 'sample-data', 'closed-mercurial-bug.html'),
+            }
+
+        ar = autoresponse.Autoresponder(url2filename=url2filename,
+                                        url2errors={})
+        items = ar.respond_recursively(spider.start_requests())
+        assert len(items) == 1
+        assert items[0]['canonical_bug_link'] == url2filename.keys()[0]
+
     def test_top_to_bottom(self):
+        self.setup_class()
         spider = bugimporters.main.BugImportSpider()
         spider.input_data = [self.tm.__dict__]
         url2filename = {'http://mercurial.selenic.com/bts/issue?@action=export_csv&@columns=id,activity,title,creator,status&@sort=-activity&@group=priority&@filter=status,assignedto&@pagesize=50&@startwith=0&status=-1,1,2,3,4,5,6,7,9,10':
@@ -60,6 +88,7 @@ class TestRoundupBugImporter(object):
             'http://mercurial.selenic.com/bts/issue1550')
 
     def test_new_mercurial_bug_import(self):
+        self.setup_class()
         # Check the number of Bugs present.
         rbp = bugimporters.roundup.RoundupBugParser(
                 bug_url='http://mercurial.selenic.com/bts/issue1550')
@@ -101,6 +130,7 @@ the module to the output. (Long live lambda.)""")
         return bug
 
     def test_reimport_same_bug_works(self):
+        self.setup_class()
         bug1 = self.test_new_mercurial_bug_import()
         bug2 = self.test_new_mercurial_bug_import()
         assert bug2['last_polled'] > bug1['last_polled']

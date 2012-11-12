@@ -23,7 +23,7 @@ setup_params = dict(
         'argparse',
         'mock',
         'PyYAML',
-        'autoresponse>=0.2',
+        'autoresponse>=0.3.1',
     ],
 )
 

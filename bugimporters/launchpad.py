@@ -19,6 +19,7 @@ import json
 import datetime
 import dateutil.parser
 import logging
+import scrapy.http
 
 import bugimporters.items
 from bugimporters.base import BugImporter
@@ -56,12 +57,13 @@ class LaunchpadBugImporter(BugImporter):
     def process_queries(self, queries):
         for query in queries:
             logging.debug('querying %s', query)
-            self.add_url_to_waiting_list(
+            r = scrapy.http.Request(
                 url=query,
-                callback=self.handle_bug_list)
-            query.last_polled = datetime.datetime.utcnow()
-            query.save()
-        self.push_urls_onto_reactor()
+                callback=self.handle_bug_list_response)
+            yield r
+
+    def handle_bug_list_response(self, response):
+        return self.handle_bug_list(response.body)
 
     def handle_bug_list(self, data):
         """
@@ -71,16 +73,16 @@ class LaunchpadBugImporter(BugImporter):
         bug_collection = json.loads(data)
         url = bug_collection.get('next_collection_link')
         if url:  # Get the next page
-            self.add_url_to_waiting_list(
+            yield scrapy.http.Request(
                 url=url,
-                callback=self.handle_bug_list)
-            self.push_urls_onto_reactor()
+                callback=self.handle_bug_list_response)
 
         # The bug data that show up in bug_collection['entries']
         # is equivalent to what we get back if we asked for the
         # data on that bug explicitly.
-        self.process_bugs([(bug['web_link'], bug) for
+        next_request = self.process_bugs([(bug['web_link'], bug) for
             bug in bug_collection['entries']])
+        yield next_request
 
     def _convert_web_to_api(self, url):
         parts = url.split('/')
@@ -93,19 +95,19 @@ class LaunchpadBugImporter(BugImporter):
     def process_bugs(self, bug_list):
         logging.debug('process_bugs')
         if not bug_list:
-            self.determine_if_finished()
             return
+
         for bug_url, task_data in bug_list:
             lp_bug = LaunchpadBug(self.tm)
             if task_data:
-                self.handle_task_data_json(task_data, lp_bug)
+                return self.handle_task_data_json(task_data, lp_bug)
             else:
                 bug_api_url = self._convert_web_to_api(bug_url)
-                self.add_url_to_waiting_list(
-                        url=bug_api_url,
-                        callback=self.handle_task_data,
-                        c_args={'lp_bug': lp_bug})
-                self.push_urls_onto_reactor()
+                r = scrapy.http.Request(
+                    url=bug_api_url,
+                    callback=self.handle_task_data)
+                r.meta['lp_bug'] = lp_bug
+                return r
 
     def handle_task_data(self, task_data, lp_bug):
         """
@@ -128,11 +130,15 @@ class LaunchpadBugImporter(BugImporter):
 
         bug_url = data['bug_link']
 
-        self.add_url_to_waiting_list(
-                url=bug_url,
-                callback=self.handle_bug_data,
-                c_args={'lp_bug': lp_bug})
-        self.push_urls_onto_reactor()
+        r = scrapy.http.Request(
+            url=bug_url,
+            callback=self.handle_bug_data_response)
+        r.meta['lp_bug'] = lp_bug
+        return r
+
+    def handle_bug_data_response(self, response):
+        return self.handle_bug_data(response.body,
+                                    response.meta['lp_bug'])
 
     def handle_bug_data(self, bug_data, lp_bug):
         """
@@ -143,11 +149,15 @@ class LaunchpadBugImporter(BugImporter):
         lp_bug.parse_bug(data)
 
         sub_url = data['subscriptions_collection_link']
-        self.add_url_to_waiting_list(
-                url=sub_url,
-                callback=self.handle_subscriptions_data,
-                c_args={'lp_bug': lp_bug})
-        self.push_urls_onto_reactor()
+        r = scrapy.http.Request(
+            url=sub_url,
+            callback=self.handle_subscriptions_response)
+        r.meta['lp_bug'] = lp_bug
+        return r
+
+    def handle_subscriptions_response(self, response):
+        return self.handle_subscriptions_data(response.body,
+                                              response.meta['lp_bug'])
 
     def handle_subscriptions_data(self, sub_data, lp_bug):
         """
@@ -157,11 +167,15 @@ class LaunchpadBugImporter(BugImporter):
         data = json.loads(sub_data)
         lp_bug.parse_subscriptions(data)
 
-        self.add_url_to_waiting_list(
-                url=lp_bug.owner_link,
-                callback=self.handle_user_data,
-                c_args={'lp_bug': lp_bug})
-        self.push_urls_onto_reactor()
+        r = scrapy.http.Request(
+            url=lp_bug.owner_link,
+            callback=self.handle_user_response)
+        r.meta['lp_bug'] =  lp_bug
+        return r
+
+    def handle_user_response(self, response):
+        return self.handle_user_data(response.body,
+                                     response.meta['lp_bug'])
 
     def handle_user_data(self, user_data, lp_bug):
         """
@@ -175,29 +189,24 @@ class LaunchpadBugImporter(BugImporter):
 
         full_data.update({
             'canonical_bug_link': lp_bug.url,
-            'tracker': self.tm
+            '_tracker_name': self.tm.tracker_name
         })
 
-        self.data_transits['bug']['update'](full_data)
-
-    def determine_if_finished(self):
-        logging.debug('determine_if_finished')
-        self.finish_import()
-
+        return bugimporters.items.ParsedBug(full_data)
 
 class LaunchpadBug(object):
     def __init__(self, tracker):
         self._tracker = tracker
         self._data = bugimporters.items.ParsedBug()
-        self._data['last_polled'] = datetime.datetime.utcnow()
+        self._data['last_polled'] = datetime.datetime.utcnow().isoformat()
 
     def _parse_datetime(self, ts):
-        return dateutil.parser.parse(ts)
+        return dateutil.parser.parse(ts).replace(tzinfo=None)
 
     def parse_task(self, data):
         self.url = data['web_link']
         self._data['status'] = data['status']
-        self._data['date_reported'] = self._parse_datetime(data['date_created'])
+        self._data['date_reported'] = self._parse_datetime(data['date_created']).isoformat()
         self._data['title'] = data['title']
         self._data['importance'] = data['importance']
         self._data['canonical_bug_link'] = data['web_link']
@@ -205,7 +214,7 @@ class LaunchpadBug(object):
 
     def parse_bug(self, data):
         self.owner_link = data['owner_link']
-        self._data['last_touched'] = self._parse_datetime(data['date_last_updated'])
+        self._data['last_touched'] = self._parse_datetime(data['date_last_updated']).isoformat()
         self._data['_project_name'] = self._tracker.tracker_name
         self._data['description'] = data['description']
         self._data['concerns_just_documentation'] = \

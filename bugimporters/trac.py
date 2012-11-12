@@ -47,10 +47,8 @@ class TracBugImporter(BugImporter):
 
     def process_queries(self, queries):
         # If this is an old Trac version, update the timeline.
-        if self.tm.old_trac:
-            pass
-            ### FIXME: Ensure old_trac handling is covered in the
-            ### test suite.
+        ### FIXME: Ensure old_trac handling is covered in the
+        ### test suite.
 
         # Add all the queries to the waiting list
         for query in queries:
@@ -211,18 +209,6 @@ class TracBugImporter(BugImporter):
         # Get the parsed data dict from the TracBugParser
         data = tbp.get_parsed_data_dict(self.tm)
         data['_tracker_name'] = self.tm.tracker_name
-
-        if self.tm.old_trac:
-
-            # It's an old version of Trac that doesn't have links from the
-            # bugs to the timeline. So we need to fetch these times from
-            # the database built earlier.
-            date_reported, last_touched = self.data_transits[
-                    'trac']['get_bug_times'](tbp.bug_url)
-            data.update({
-                'date_reported': date_reported,
-                'last_touched': last_touched,
-                })
 
         return bugimporters.items.ParsedBug(data)
 
@@ -392,10 +378,9 @@ class TracBugParser(object):
         ret['people_involved'] = len(all_people)
 
         # FIXME: Need time zone
-        if not tm.old_trac:
-            # All is fine, proceed as normal.
-            ret['date_reported'] = TracBugParser.page2date_opened(self.bug_html)
-            ret['last_touched'] = TracBugParser.page2date_modified(self.bug_html)
+        # All is fine, proceed as normal.
+        ret['date_reported'] = TracBugParser.page2date_opened(self.bug_html)
+        ret['last_touched'] = TracBugParser.page2date_modified(self.bug_html)
 
         # Check for the bitesized keyword
         if tm.bitesized_type:

@@ -1,0 +1,755 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE bugzilla SYSTEM "http://bugzilla.pculture.org/bugzilla.dtd">
+
+<bugzilla version="4.0.1"
+          urlbase="http://bugzilla.pculture.org/"
+          
+          maintainer="sysadmin@pculture.org"
+>
+
+    <bug>
+          <bug_id>2374</bug_id>
+          <alias></alias>
+          <creation_ts>2006-06-15 14:53:00 -0400</creation_ts>
+          <short_desc>add unittest for very slow scraping</short_desc>
+          <delta_ts>2012-10-08 17:02:25 -0400</delta_ts>
+          <reporter_accessible>1</reporter_accessible>
+          <cclist_accessible>1</cclist_accessible>
+          <classification_id>1</classification_id>
+          <classification>Unclassified</classification>
+          <product>Miro</product>
+          <component>main</component>
+          <version>nightly build</version>
+          <rep_platform>all</rep_platform>
+          <op_sys>all</op_sys>
+          <bug_status>ASSIGNED</bug_status>
+          <resolution></resolution>
+          
+          
+          <bug_file_loc></bug_file_loc>
+          <status_whiteboard></status_whiteboard>
+          <keywords>bitesized, unittest</keywords>
+          <priority>P3</priority>
+          <bug_severity>normal</bug_severity>
+          <target_milestone>6.1</target_milestone>
+          
+          
+          <everconfirmed>1</everconfirmed>
+          <reporter name="Nicholas Reville">npr</reporter>
+          <assigned_to name="Ben [pcf_dev]">ben</assigned_to>
+          <cc>ben</cc>
+    
+    <cc>msshawnshawn2</cc>
+
+      
+
+      
+
+      
+
+          <long_desc isprivate="0">
+            <commentid>7707</commentid>
+            <who name="Nicholas Reville">npr</who>
+            <bug_when>2006-06-15 14:53:37 -0400</bug_when>
+            <thetext>RC2, OSX:
+
+if you add this webpage as a channel:
+
+http://www.apple.com/trailers
+
+Democracy starts beachballing after 1 or 2 minutes...  and gives errors like this in console:
+
+DTV: Stopping system activity updater timer
+WARNING: Calling &lt;function callback at 0xd9baa30&gt; on HTTPClient: http://www.apple.com/trailers/universal/miamivice/hd/ too slow (0.683 secs)
+Trac ticket id: 2374
+Owner: wguaraldi
+Reporter: npr
+Keywords: UnitTest</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>51341</commentid>
+            <who name="Will Kahn-Greene [pcf dev]">will.guaraldi</who>
+            <bug_when>2010-05-23 13:39:38 -0400</bug_when>
+            <thetext>Moving these from &quot;weekly build&quot; to &quot;nightly build&quot; version.  &quot;nightly build&quot; should be a catch-all for anything build that shows up on the nightlies page.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>29846</commentid>
+            <who name="Will Kahn-Greene [pcf dev]">will.guaraldi</who>
+            <bug_when>2008-03-05 10:06:00 -0500</bug_when>
+            <thetext>This is a bitesized task for a new contributor or someone looking for something to do.
+
+Documentation on unit tests is located in the wiki at:
+
+https://develop.participatoryculture.org/trac/democracy/wiki/UnitTesting
+
+Any status or thoughts should be in the comments on this bug.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>7724</commentid>
+            <who name="Will Kahn-Greene [pcf dev]">will.guaraldi</who>
+            <bug_when>2007-07-24 13:14:28 -0400</bug_when>
+            <thetext>
+Original author: wguaraldi</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>7723</commentid>
+            <who name="Janet [pcf QA]">jed</who>
+            <bug_when>2007-06-06 01:45:03 -0400</bug_when>
+            <thetext>COMMENT SPAM REMOVED</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>7722</commentid>
+            <who name="Janet [pcf QA]">jed</who>
+            <bug_when>2007-06-05 21:36:20 -0400</bug_when>
+            <thetext>COMMENT SPAM REMOVED</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>7721</commentid>
+            <who name="Janet [pcf QA]">jed</who>
+            <bug_when>2007-06-05 09:53:30 -0400</bug_when>
+            <thetext>COMMENT SPAM REMOVED</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>7720</commentid>
+            <who name="Janet [pcf QA]">jed</who>
+            <bug_when>2007-06-05 06:51:55 -0400</bug_when>
+            <thetext>COMMENT SPAM REMOVED</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>7719</commentid>
+            <who name="Janet [pcf QA]">jed</who>
+            <bug_when>2007-06-04 22:27:33 -0400</bug_when>
+            <thetext>COMMENT SPAM REMOVED</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>7718</commentid>
+            <who name="Janet [pcf QA]">jed</who>
+            <bug_when>2007-06-04 17:14:42 -0400</bug_when>
+            <thetext>COMMENT SPAM REMOVED</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>7717</commentid>
+            <who name="Janet [pcf QA]">jed</who>
+            <bug_when>2007-06-04 09:54:04 -0400</bug_when>
+            <thetext>COMMENT SPAM REMOVED</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>7716</commentid>
+            <who name="Janet [pcf QA]">jed</who>
+            <bug_when>2007-06-01 14:12:22 -0400</bug_when>
+            <thetext>COMMENT SPAM REMOVED</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>7715</commentid>
+            <who name="Janet [pcf QA]">jed</who>
+            <bug_when>2007-05-29 00:39:02 -0400</bug_when>
+            <thetext>COMMENT SPAM REMOVED</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>7714</commentid>
+            <who name="Janet [pcf QA]">jed</who>
+            <bug_when>2007-05-24 12:34:16 -0400</bug_when>
+            <thetext>COMMENT SPAM REMOVED</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>7713</commentid>
+            <who name="Janet [pcf QA]">jed</who>
+            <bug_when>2007-04-28 02:11:46 -0400</bug_when>
+            <thetext>COMMENT SPAM REMOVED</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>7712</commentid>
+            <who name="Janet [pcf QA]">jed</who>
+            <bug_when>2006-12-19 23:13:27 -0500</bug_when>
+            <thetext>
+Original author: jed</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>7711</commentid>
+            <who name="Chris Lahey">clahey</who>
+            <bug_when>2006-11-11 07:53:35 -0500</bug_when>
+            <thetext>
+Original author: clahey</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>7710</commentid>
+            <who name="Nick Nassar">nassar</who>
+            <bug_when>2006-06-16 16:35:13 -0400</bug_when>
+            <thetext>Fixed, but we still need to add a unittest for this
+Original author: nassar</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>7709</commentid>
+            <who name="Luc Heinrich">luc</who>
+            <bug_when>2006-06-16 10:45:33 -0400</bug_when>
+            <thetext>The freeze is occuring in feed.HTMLLinkGrabber.getLinks, line 1639:
+{{{
+match = HTMLLinkGrabber.linkPattern.match(data)
+}}}
+
+Original author: luc</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>7708</commentid>
+            <who name="Luc Heinrich">luc</who>
+            <bug_when>2006-06-16 10:20:01 -0400</bug_when>
+            <thetext>Are we sure this only happens on OS X ? I&apos;m pretty sure it could happen on other platforms as well because it seems to be a regexp matching problem.
+Original author: luc</thetext>
+          </long_desc>
+      
+          <attachment
+              isobsolete="0"
+              ispatch="0"
+              isprivate="0"
+              isurl="0"
+          >
+            <attachid>328</attachid>
+            <date>2006-06-16 10:43:00 -0400</date>
+            <delta_ts>2006-06-16 10:43:57 -0400</delta_ts>
+            <desc>Sample code and data reproducing the freeze.
+Original author: luc</desc>
+            <filename>test.py</filename>
+            <type>text/x-python</type>
+            <size>11706</size>
+            <attacher>luc</attacher>
+            
+
+          </attachment>
+      
+
+    </bug>
+    <bug>
+          <bug_id>4763</bug_id>
+          <alias></alias>
+          <creation_ts>2006-10-28 23:26:00 -0400</creation_ts>
+          <short_desc>[Patch included] Open file dialog should list supported extensions</short_desc>
+          <delta_ts>2012-03-02 22:15:35 -0500</delta_ts>
+          <reporter_accessible>1</reporter_accessible>
+          <cclist_accessible>1</cclist_accessible>
+          <classification_id>1</classification_id>
+          <classification>Unclassified</classification>
+          <product>Miro</product>
+          <component>main</component>
+          <version>0.9.1</version>
+          <rep_platform>all</rep_platform>
+          <op_sys>Windows</op_sys>
+          <bug_status>ASSIGNED</bug_status>
+          <resolution></resolution>
+          
+          
+          <bug_file_loc></bug_file_loc>
+          <status_whiteboard></status_whiteboard>
+          <keywords>bitesized</keywords>
+          <priority>P5</priority>
+          <bug_severity>normal</bug_severity>
+          <target_milestone>5.0</target_milestone>
+          
+          
+          <everconfirmed>1</everconfirmed>
+          <reporter name="Janet [pcf QA]">jed</reporter>
+          <assigned_to name="Janet [pcf QA]">jed</assigned_to>
+          <cc>ben</cc>
+    
+    <cc>ben</cc>
+    
+    <cc>npr</cc>
+
+      
+
+      
+
+      
+
+          <long_desc isprivate="0">
+            <commentid>14817</commentid>
+            <who name="Janet [pcf QA]">jed</who>
+            <bug_when>2006-10-28 23:26:31 -0400</bug_when>
+            <thetext>The Open dialog should have the files of type pulldown menu populated with supported video formats.
+Trac ticket id: 4763
+Owner: ben
+Reporter: jdragojevic@twcny.rr.com
+Keywords: Open file</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>84034</commentid>
+            <who name="Ben Sturmfels">ben</who>
+            <bug_when>2012-03-02 22:15:35 -0500</bug_when>
+            <thetext>(In reply to comment #9)
+&gt; Janet, can you give this a look over and make sure we&apos;re not losing any
+&gt; functionality.  One thing I noticed is that you can no longer open downloaded
+&gt; subscription files with the open menu item, but I don&apos;t think that&apos;s important.
+&gt;  Maybe we should add a *.* filter just in case though.
+
+On my system (GNU/Linux under Gnome 2) there is always a default &quot;All files&quot; option in the file type filter menu. Selecting this provides the &quot;*.*&quot; functionality Ben mentioned.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>84033</commentid>
+            <who name="Ben [pcf_dev]">ben</who>
+            <bug_when>2012-03-02 22:08:59 -0500</bug_when>
+            <thetext>I&apos;m going to leave this one open until I get the go-ahead from janet that things are okay.  Assigning to her now.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>84032</commentid>
+            <who name="Ben [pcf_dev]">ben</who>
+            <bug_when>2012-03-02 22:07:59 -0500</bug_when>
+            <thetext>4a17b97 implements this one.
+
+Janet, can you give this a look over and make sure we&apos;re not losing any functionality.  One thing I noticed is that you can no longer open downloaded subscription files with the open menu item, but I don&apos;t think that&apos;s important.  Maybe we should add a *.* filter just in case though.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>83743</commentid>
+            <who name="Janet [pcf QA]">jed</who>
+            <bug_when>2012-02-22 06:28:36 -0500</bug_when>
+            <thetext>Hi, thanks for taking the time to make a patch for this.
+
+For it to be included - it needs to go through the review process and you will need to sign a patch contributer form.  ben@pculture handles this so I&apos;m cc&apos;ing him here.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>83742</commentid>
+              <attachid>4404</attachid>
+            <who name="Ben Sturmfels">ben</who>
+            <bug_when>2012-02-22 04:15:21 -0500</bug_when>
+            <thetext>Created attachment 4404
+Patch to add file filters to &quot;Open file&quot; dialog.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>83741</commentid>
+            <who name="Ben Sturmfels">ben</who>
+            <bug_when>2012-02-22 04:14:03 -0500</bug_when>
+            <thetext>I&apos;ve attached a patch to add a filter with &quot;All Media Files&quot;, &quot;Video Files&quot; and &quot;Audio Files&quot; options. This is done similarly to `frontends.widgets.application.import_choose_files`.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>34029</commentid>
+            <who name="Will Kahn-Greene [pcf dev]">will.guaraldi</who>
+            <bug_when>2008-09-21 19:31:54 -0400</bug_when>
+            <thetext>This is low priority so I&apos;m bumping it down to P5.  If it happens, it happens.
+
+This is a good bitesized bug for someone if they want to tackle it.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>33703</commentid>
+            <who name="Will Kahn-Greene [pcf dev]">will.guaraldi</who>
+            <bug_when>2008-09-12 12:16:51 -0400</bug_when>
+            <thetext>Re-assigning to npr--needs decision making.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>33427</commentid>
+            <who name="Will Kahn-Greene [pcf dev]">will.guaraldi</who>
+            <bug_when>2008-09-03 21:14:52 -0400</bug_when>
+            <thetext>Bumping it to 2.0.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>31443</commentid>
+            <who name="Ben [pcf_dev]">ben</who>
+            <bug_when>2008-04-29 12:52:16 -0400</bug_when>
+            <thetext>This is tricky for a couple reasons, one is that open file can handle a ton of different kinds of files: movie files, .miro files, torrent files.  Each of those should really be a different option.  However, then we have a difficult choice we either have the &quot;all files&quot; option selected by default, which wouldn&apos;t make a big difference, or we select one of those options (movie files?) and force the user to change the pulldown menu if they want to pick a different kind.
+
+Also, we would have to add code to all 3 platforms which is kind of annoying.
+
+What do you think about this bug npr?
+
+I&apos;m accepting this bug and putting it in 1.3.  Let&apos;s either decide to drop it or implement it.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>14818</commentid>
+            <who name="Janet [pcf QA]">jed</who>
+            <bug_when>2006-12-17 22:01:34 -0500</bug_when>
+            <thetext>
+Original author: jed</thetext>
+          </long_desc>
+      
+          <attachment
+              isobsolete="0"
+              ispatch="1"
+              isprivate="0"
+              isurl="0"
+          >
+            <attachid>4404</attachid>
+            <date>2012-02-22 04:15:00 -0500</date>
+            <delta_ts>2012-02-22 04:15:21 -0500</delta_ts>
+            <desc>Patch to add file filters to &quot;Open file&quot; dialog.</desc>
+            <filename>miro-bugzilla-4763.diff</filename>
+            <type>text/plain</type>
+            <size>1967</size>
+            <attacher>ben</attacher>
+            
+
+          </attachment>
+      
+
+    </bug>
+    <bug>
+          <bug_id>9415</bug_id>
+          <alias></alias>
+          <creation_ts>2008-01-07 14:16:00 -0500</creation_ts>
+          <short_desc>Livingroom GUI mode</short_desc>
+          <delta_ts>2010-12-16 21:58:20 -0500</delta_ts>
+          <reporter_accessible>1</reporter_accessible>
+          <cclist_accessible>1</cclist_accessible>
+          <classification_id>1</classification_id>
+          <classification>Unclassified</classification>
+          <product>Miro</product>
+          <component>main</component>
+          <version>1.0</version>
+          <rep_platform>all</rep_platform>
+          <op_sys>all</op_sys>
+          <bug_status>NEW</bug_status>
+          <resolution></resolution>
+          
+          
+          <bug_file_loc></bug_file_loc>
+          <status_whiteboard></status_whiteboard>
+          <keywords>bitesized</keywords>
+          <priority>P5</priority>
+          <bug_severity>enhancement</bug_severity>
+          <target_milestone>Wishlist</target_milestone>
+          
+          
+          <everconfirmed>1</everconfirmed>
+          <reporter name="fidoboy">fido68</reporter>
+          <assigned_to name="Administrator">admin</assigned_to>
+          <cc>davidandfran2004</cc>
+    
+    <cc>elmargol</cc>
+    
+    <cc>mwcole</cc>
+    
+    <cc>shariff.jamil</cc>
+    
+    <cc>will.guaraldi</cc>
+
+      
+
+      
+
+      
+
+          <long_desc isprivate="0">
+            <commentid>28808</commentid>
+            <who name="fidoboy">fido68</who>
+            <bug_when>2008-01-07 14:16:14 -0500</bug_when>
+            <thetext>User-Agent:       Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1) ; .NET CLR 1.1.4322; .NET CLR 2.0.50727; .NET CLR 3.0.04506.30; .NET CLR 3.0.04506.648)
+Build Identifier: 
+
+It could be great to have a new GUI (Graphical User Interface) for use Miro from my living room, using my big screen. That mode should have a simple and readable elements and all should be available under remote/keyboard control (no mouse). Just something like Joost...
+
+Reproducible: 
+
+Steps to Reproduce:</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>62933</commentid>
+            <who name="Will Kahn-Greene [pcf dev]">will.guaraldi</who>
+            <bug_when>2010-12-16 21:58:20 -0500</bug_when>
+            <thetext>We don&apos;t have enough manpower to go implement Miro plugins in other applications, but I&apos;m happy to help anyone who wants to do that work.
+
+Pretty sure MythTV has a plugin already.  I don&apos;t know if there are others.
+
+Making this a bitesized bug.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>35202</commentid>
+            <who name="Markus Golser">elmargol</who>
+            <bug_when>2008-10-29 04:11:29 -0400</bug_when>
+            <thetext>Or maybe a miro plugin für elisa...</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>29271</commentid>
+            <who name="M. W. Cole">mwcole</who>
+            <bug_when>2008-02-05 11:00:10 -0500</bug_when>
+            <thetext>I agree that Miro needs a &quot;living room&quot; mode for those of us using it on a television. Anyone know if this is in the works?</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>29056</commentid>
+            <who name="Jamil">shariff.jamil</who>
+            <bug_when>2008-01-21 09:22:31 -0500</bug_when>
+            <thetext>...or like Elisa, in Ubuntu anyways. I&apos;d also really like to see better integration of Miro into Ubuntu&apos;s Media centre, rumoured to be using Elisa.</thetext>
+          </long_desc>
+      
+      
+
+    </bug>
+    <bug>
+          <bug_id>9569</bug_id>
+          <alias></alias>
+          <creation_ts>2008-02-10 13:03:00 -0500</creation_ts>
+          <short_desc>EnhReq: UI enhancement to allow PodNova feed to be read</short_desc>
+          <delta_ts>2010-05-23 13:57:09 -0400</delta_ts>
+          <reporter_accessible>1</reporter_accessible>
+          <cclist_accessible>1</cclist_accessible>
+          <classification_id>1</classification_id>
+          <classification>Unclassified</classification>
+          <product>Miro</product>
+          <component>Feeds</component>
+          <version>nightly build</version>
+          <rep_platform>all</rep_platform>
+          <op_sys>all</op_sys>
+          <bug_status>NEW</bug_status>
+          <resolution></resolution>
+          
+          
+          <bug_file_loc></bug_file_loc>
+          <status_whiteboard></status_whiteboard>
+          <keywords>bitesized</keywords>
+          <priority>P5</priority>
+          <bug_severity>enhancement</bug_severity>
+          <target_milestone>Wishlist</target_milestone>
+          
+          
+          <everconfirmed>1</everconfirmed>
+          <reporter name="Jeff Young">ahnan.usa</reporter>
+          <assigned_to name="Administrator">admin</assigned_to>
+          <cc>ahnan.usa</cc>
+    
+    <cc>jed</cc>
+    
+    <cc>will.guaraldi</cc>
+
+      
+
+      
+
+      
+
+          <long_desc isprivate="0">
+            <commentid>29349</commentid>
+              <attachid>1064</attachid>
+            <who name="Jeff Young">ahnan.usa</who>
+            <bug_when>2008-02-10 13:03:08 -0500</bug_when>
+            <thetext>Created attachment 1064
+External service subscription list
+
+ENHANCEMENT REQUEST: Allow for synchronizing subscriptions from a remote service
+
+iPodder &amp; Juice currently allow user to add an OPML.xml subscription feed from an external source to synchronize subscriptions from a remove service, in its Preferences...Feed Manager dialog box.
+
+Ex: http://feeds.podnova.com/32a/32ad9389515551f0160810a2713333d6/opml.xml
+
+This allows changing a subscription list in a single location that is then updated to any client that references that address.
+
+A obvious and easy UI control in Miro to accomplish this same functionality would be greatly helpful.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>52353</commentid>
+            <who name="Will Kahn-Greene [pcf dev]">will.guaraldi</who>
+            <bug_when>2010-05-23 13:57:09 -0400</bug_when>
+            <thetext>Moving these from &quot;weekly build&quot; to &quot;nightly build&quot; version.  &quot;nightly build&quot; should be a catch-all for anything build that shows up on the nightlies page.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>30495</commentid>
+            <who name="Will Kahn-Greene [pcf dev]">will.guaraldi</who>
+            <bug_when>2008-03-28 12:05:06 -0400</bug_when>
+            <thetext>I was talking with Chris Blizzard at Mozilla and he said that it&apos;s possible/likely we could use Weave for this.
+
+http://labs.mozilla.com/featured-projects/#weave
+
+Another possibility is to tie this into the channelguide where (some) people already have accounts and such.
+
+Definitely a good bitesized project for a contributor to flesh out and work on.  I&apos;m marking this accordingly.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>29405</commentid>
+            <who name="Jeff Young">ahnan.usa</who>
+            <bug_when>2008-02-13 21:39:57 -0500</bug_when>
+            <thetext>Yes essentially... This is current function of other products such as JUICE.  One modification I would say is that the remote OPML would be checked when Miro communicates out to check for updates to the feeds.  Changes in the remote OPML would then be reflected in the local feed subscriptions and the subscriptions then processed and checked for updates.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>29353</commentid>
+            <who name="Will Kahn-Greene [pcf dev]">will.guaraldi</who>
+            <bug_when>2008-02-11 02:03:05 -0500</bug_when>
+            <thetext>Just to clarify, Miro does allow you to import an OPML file and pick up channels, but I think the OPML file needs to be local.
+
+So the enhancement request here is two fold:
+
+1. handle remote OPML files accessible via http
+
+2. check the remote OPML file every time Miro starts up
+
+Is that correct?</thetext>
+          </long_desc>
+      
+          <attachment
+              isobsolete="0"
+              ispatch="0"
+              isprivate="0"
+              isurl="1"
+          >
+            <attachid>1064</attachid>
+            <date>2008-02-10 13:03:00 -0500</date>
+            <delta_ts>2008-02-10 13:03:08 -0500</delta_ts>
+            <desc>External service subscription list</desc>
+            <filename></filename>
+            <type>text/plain</type>
+            <size>70</size>
+            <attacher>ahnan.usa</attacher>
+            
+
+          </attachment>
+      
+
+    </bug>
+    <bug>
+          <bug_id>11882</bug_id>
+          <alias></alias>
+          <creation_ts>2009-06-07 06:08:00 -0400</creation_ts>
+          <short_desc>Provide Phonon backend (renderer)</short_desc>
+          <delta_ts>2010-12-16 19:48:26 -0500</delta_ts>
+          <reporter_accessible>1</reporter_accessible>
+          <cclist_accessible>1</cclist_accessible>
+          <classification_id>1</classification_id>
+          <classification>Unclassified</classification>
+          <product>Miro</product>
+          <component>main</component>
+          <version>2.0.4</version>
+          <rep_platform>all</rep_platform>
+          <op_sys>all</op_sys>
+          <bug_status>NEW</bug_status>
+          <resolution></resolution>
+          
+          
+          <bug_file_loc></bug_file_loc>
+          <status_whiteboard></status_whiteboard>
+          <keywords>bitesized</keywords>
+          <priority>P5</priority>
+          <bug_severity>enhancement</bug_severity>
+          <target_milestone>Wishlist</target_milestone>
+          
+          
+          <everconfirmed>1</everconfirmed>
+          <reporter name="Hendrik">hendrik</reporter>
+          <assigned_to name="Administrator">admin</assigned_to>
+          <cc>jed</cc>
+    
+    <cc>will.guaraldi</cc>
+
+      
+
+      
+
+      
+
+          <long_desc isprivate="0">
+            <commentid>41678</commentid>
+            <who name="Hendrik">hendrik</who>
+            <bug_when>2009-06-07 06:08:24 -0400</bug_when>
+            <thetext>User-Agent:       Mozilla/5.0 (compatible; Konqueror/4.2; Linux) KHTML/4.2.85 (like Gecko)
+Build Identifier: 
+
+With KDE 4 a new intermediate layer for audio and video was introduced which in theory should make it easier to create apps such as video players. Phonon takes care of the backend (Xine or Gstreamer on Linux) and provides cross-platform compatibility when used with the KDE base system on Windows or OS X.
+
+While it will probably be a substantial amount of work it would greatly increase the integration of Miro into KDE. Especially in cases where users have several audio devices which have specific defined uses through Phonon which are not known to GTK/Gnome apps and others.
+
+Reproducible: 
+
+Steps to Reproduce:
+
+
+
+
+An introduction to Phonon: http://techbase.kde.org/Development/Tutorials/Phonon/Introduction
+
+Someone&apos;s attempt at using Phonon in Python with PyQT4: http://pastebin.ca/1362335
+Taken from here: http://www.mail-archive.com/pyqt@riverbankcomputing.com/msg16866.html</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>62844</commentid>
+            <who name="Will Kahn-Greene [pcf dev]">will.guaraldi</who>
+            <bug_when>2010-12-16 19:48:26 -0500</bug_when>
+            <thetext>If anyone is interested in implementing a phonon backend and has questions, let me know.  I can&apos;t work on this, but I can provide support for someone who is interested.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>41693</commentid>
+            <who name="Janet [pcf QA]">jed</who>
+            <bug_when>2009-06-08 04:47:49 -0400</bug_when>
+            <thetext>moving to wishlist.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>41683</commentid>
+            <who name="Will Kahn-Greene [pcf dev]">will.guaraldi</who>
+            <bug_when>2009-06-07 16:39:52 -0400</bug_when>
+            <thetext>I don&apos;t think it&apos;d be too much work, but it&apos;s not something that I&apos;m going to do.  I currently have my hands full doing a mediocre job of maintaining the gstreamer and xine renderers.  I don&apos;t think any of the core developers use KDE.
+
+Generally speaking, the &quot;renderers&quot; are in platform/gtk-x11/plat/renderers/ .  To add phonon support, you&apos;d create a module called &quot;phononrenderer.py&quot; which implement an AudioRenderer class, a VideoRenderer class and a movie_data_program_info function.  The gstreamerrenderer.py is probably a good example.
+
+If someone wanted to take this on, I&apos;m more than happy to help out.  If phonon has Python bindings like gstreamer does, then it shouldn&apos;t be too difficult to implement.
+
+I&apos;d also be very interested in fixing the gtk-x11 code so that renderers could be provided as separate packages.
+
+I&apos;m going to mark this as bitesized since it&apos;s a well-defined project that&apos;s ideal for a contributor to help out with.</thetext>
+          </long_desc>
+      
+      
+
+    </bug>
+    <bug>
+          <bug_id>15672</bug_id>
+          <alias></alias>
+          <creation_ts>2011-01-01 21:25:00 -0500</creation_ts>
+          <short_desc>Miro doesn&apos;t start minimized at startup</short_desc>
+          <delta_ts>2011-01-02 21:06:10 -0500</delta_ts>
+          <reporter_accessible>1</reporter_accessible>
+          <cclist_accessible>1</cclist_accessible>
+          <classification_id>1</classification_id>
+          <classification>Unclassified</classification>
+          <product>Miro</product>
+          <component>Startup</component>
+          <version>3.5.1</version>
+          <rep_platform>all</rep_platform>
+          <op_sys>Linux</op_sys>
+          <bug_status>NEW</bug_status>
+          <resolution></resolution>
+          
+          
+          <bug_file_loc></bug_file_loc>
+          <status_whiteboard></status_whiteboard>
+          <keywords>bitesized</keywords>
+          <priority>P5</priority>
+          <bug_severity>enhancement</bug_severity>
+          <target_milestone>Wishlist</target_milestone>
+          
+          
+          <everconfirmed>1</everconfirmed>
+          <reporter name="Daniel Lee">erget2005</reporter>
+          <assigned_to name="Janet [pcf QA]">jed</assigned_to>
+          <cc>will.guaraldi</cc>
+
+      
+
+      
+
+      
+
+          <long_desc isprivate="0">
+            <commentid>64252</commentid>
+            <who name="Daniel Lee">erget2005</who>
+            <bug_when>2011-01-01 21:25:00 -0500</bug_when>
+            <thetext>Hello,
+
+I&apos;ve got Miro from the Packman repository running on OpenSUSE 11.3 64-bit with KDE. In Miro&apos;s preferences I&apos;ve enabled the system tray icon and told Miro to run automatically when I log in.
+
+When I start my computer, Miro doesn&apos;t start automatically, so I used the KDE Autostart GUI to have it start at login. However, it always started maximized. Then I switched to using kstart, which is a program that allows you to start programs minimized, etc. In case someone knows kstart the command I use is:
+kstart --iconify --skiptaskbar --skippager miro
+
+Miro still started maximized. Then I told KDE to not save Miro&apos;s status when I log off, so that Miro is theoretically closed when I log off and started fresh when I log on. Same result. I&apos;ve also tried using the command ksystraycmd with identical results.
+
+It would be really nice to launch Miro minimized at startup. Are there plans to include this functionality any time soon? Thanks!
+
+Best,
+Daniel</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>64255</commentid>
+            <who name="Will Kahn-Greene [pcf dev]">will.guaraldi</who>
+            <bug_when>2011-01-02 21:06:10 -0500</bug_when>
+            <thetext>Seems like you&apos;re trying to get Miro to start minimized by using KDE-specific things.  Since Miro isn&apos;t a KDE app, KDE support is primarily done by community members.  If you can figure out how to make the appropriate changes, then I&apos;d be game for accepting patches.  Otherwise it&apos;s unlikely anything will be done on this.
+
+Marking this as an enhancement, targeting wishlist, and marking as bitesized.
+
+Note: I&apos;m pretty sure this is not a duplicate of the other &quot;start as minimized&quot; bug since this one involves KDE-specific mechanics.</thetext>
+          </long_desc>
+      
+      
+
+    </bug>
+
+</bugzilla>

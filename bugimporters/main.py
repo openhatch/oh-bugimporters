@@ -45,11 +45,19 @@ def main(raw_arguments):
                        ]
     return scrapy.cmdline.execute(args_for_scrapy)
 
+def grab_bugimporter_attribute_via_string(s):
+    module, class_name = s.split('.', 1)
+    bug_import_module = importlib.import_module('bugimporters.%s' % (
+            module,))
+    found_class = getattr(bug_import_module, class_name)
+    return found_class
 
 class BugImportSpider(scrapy.spider.BaseSpider):
     name = "Spider for importing using oh-bugimporters"
 
-    def start_requests(self):
+    def get_bugimporters(self):
+        '''This method gets called after __init__() because sometimes
+        we set the .input_data parameter after __init__() time.'''
         objs = []
         for d in self.input_data:
             objs.append(dict2obj(d))
@@ -61,19 +69,34 @@ class BugImportSpider(scrapy.spider.BaseSpider):
                 'github': 'github.GitHubBugImporter',
                 'google': 'google.GoogleBugImporter',
                 'launchpad': 'launchpad.LaunchpadBugImporter',
+                'bugzilla': 'bugzilla.BugzillaBugImporter',
                 }
 
             raw_bug_importer = obj.bugimporter
             if '.' not in raw_bug_importer:
                 raw_bug_importer = bugimporter_aliases[raw_bug_importer]
 
-            module, class_name = raw_bug_importer.split('.', 1)
-            bug_import_module = importlib.import_module('bugimporters.%s' % (
-                    module,))
-            bug_import_class = getattr(bug_import_module, class_name)
+            bug_import_class = grab_bugimporter_attribute_via_string(
+                raw_bug_importer)
+
+            # The configuration may ask us to use a specific bug parser
+            special_bug_parser_name = getattr(obj, 'custom_parser', None)
+            if special_bug_parser_name:
+                bug_parser_class = grab_bugimporter_attribute_via_string(
+                    special_bug_parser_name)
+            else:
+                bug_parser_class = None
+                # By passing None here, we ask the
+                # BugImporter object to use its default.
+
             bug_importer = bug_import_class(
                 obj, reactor_manager=None,
+                bug_parser=bug_parser_class,
                 data_transits=None)
+            yield (obj, bug_importer)
+
+    def start_requests(self):
+        for (obj, bug_importer) in self.get_bugimporters():
             for request in bug_importer.process_queries(obj.queries):
                 yield request
 

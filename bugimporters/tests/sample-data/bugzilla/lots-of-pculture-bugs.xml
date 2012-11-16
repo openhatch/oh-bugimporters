@@ -1,0 +1,2350 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE bugzilla SYSTEM "http://bugzilla.pculture.org/bugzilla.dtd">
+
+<bugzilla version="4.0.1"
+          urlbase="http://bugzilla.pculture.org/"
+          
+          maintainer="sysadmin@pculture.org"
+>
+
+    <bug>
+          <bug_id>2138</bug_id>
+          <alias></alias>
+          <creation_ts>2006-05-30 16:44:00 -0400</creation_ts>
+          <short_desc>Icon cache unit tests</short_desc>
+          <delta_ts>2012-10-08 17:11:56 -0400</delta_ts>
+          <reporter_accessible>1</reporter_accessible>
+          <cclist_accessible>1</cclist_accessible>
+          <classification_id>1</classification_id>
+          <classification>Unclassified</classification>
+          <product>Miro</product>
+          <component>Testing</component>
+          <version>unknown</version>
+          <rep_platform>all</rep_platform>
+          <op_sys>all</op_sys>
+          <bug_status>ASSIGNED</bug_status>
+          <resolution></resolution>
+          
+          
+          <bug_file_loc></bug_file_loc>
+          <status_whiteboard></status_whiteboard>
+          <keywords>bitesized, unittest</keywords>
+          <priority>P4</priority>
+          <bug_severity>normal</bug_severity>
+          <target_milestone>6.1</target_milestone>
+          
+          
+          <everconfirmed>1</everconfirmed>
+          <reporter name="Nick Nassar">nassar</reporter>
+          <assigned_to name="Ben [pcf_dev]">ben</assigned_to>
+          <cc>ben</cc>
+    
+    <cc>jed</cc>
+    
+    <cc>will.guaraldi</cc>
+
+      
+
+      
+
+      
+
+          <long_desc isprivate="0">
+            <commentid>7027</commentid>
+            <who name="Nick Nassar">nassar</who>
+            <bug_when>2006-05-30 16:44:19 -0400</bug_when>
+            <thetext>We need to write unit tests for the icon cache. We&apos;ve broken it and fixed it a couple times recently.
+Trac ticket id: 2138
+Owner: wguaraldi
+Reporter: nassar
+Keywords: UnitTest</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>87835</commentid>
+            <who name="Ben [pcf_dev]">ben</who>
+            <bug_when>2012-10-08 17:11:56 -0400</bug_when>
+            <thetext>Moving lots of cleanup-related bugs to the 6.1 milestone.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>45649</commentid>
+            <who name="Ben [pcf_dev]">ben</who>
+            <bug_when>2010-01-05 20:55:38 -0500</bug_when>
+            <thetext>Good question.  Here&apos;s what I can think of:
+
+ - Downloading icons
+ - That we limit the number of simultaneous downloads to RUNNING_MAX
+ - HTTP errors while downloading
+ - Supporting etag and last-modified</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>45623</commentid>
+            <who name="Will Kahn-Greene [pcf dev]">will.guaraldi</who>
+            <bug_when>2010-01-05 09:56:28 -0500</bug_when>
+            <thetext>There&apos;s an iconcachetest module with two tests in it.  The first is for testing whether iconcache gets removed when another DDBObject is removed.  The second is for testing the case where an item is removed before the iconcache has been created.
+
+Ben: You know more about the iconcache than I do.  What other things should we be testing?</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>29854</commentid>
+            <who name="Will Kahn-Greene [pcf dev]">will.guaraldi</who>
+            <bug_when>2008-03-05 10:10:26 -0500</bug_when>
+            <thetext>This is a bitesized task for a new contributor or someone looking for something to do.
+
+Documentation on unit tests is located in the wiki at:
+
+https://develop.participatoryculture.org/trac/democracy/wiki/UnitTesting
+
+Any status or thoughts should be in the comments on this bug.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>27884</commentid>
+            <who name="Will Kahn-Greene [pcf dev]">will.guaraldi</who>
+            <bug_when>2007-11-07 13:47:19 -0500</bug_when>
+            <thetext>Testing related issue--deferring it to the future.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>7030</commentid>
+            <who name="Will Kahn-Greene [pcf dev]">will.guaraldi</who>
+            <bug_when>2007-07-24 13:09:29 -0400</bug_when>
+            <thetext>
+Original author: wguaraldi</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>7029</commentid>
+            <who name="Janet [pcf QA]">jed</who>
+            <bug_when>2006-12-19 23:13:03 -0500</bug_when>
+            <thetext>
+Original author: jed</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>7028</commentid>
+            <who name="Ben [pcf_dev]">ben</who>
+            <bug_when>2006-06-01 20:21:22 -0400</bug_when>
+            <thetext>Let&apos;s do this for 0.9.
+Original author: ben</thetext>
+          </long_desc>
+      
+      
+
+    </bug>
+    <bug>
+          <bug_id>2283</bug_id>
+          <alias></alias>
+          <creation_ts>2006-06-08 12:57:00 -0400</creation_ts>
+          <short_desc>Write test for feed bug #2191</short_desc>
+          <delta_ts>2012-10-08 17:03:50 -0400</delta_ts>
+          <reporter_accessible>1</reporter_accessible>
+          <cclist_accessible>1</cclist_accessible>
+          <classification_id>1</classification_id>
+          <classification>Unclassified</classification>
+          <product>Miro</product>
+          <component>main</component>
+          <version>unknown</version>
+          <rep_platform>all</rep_platform>
+          <op_sys>all</op_sys>
+          <bug_status>ASSIGNED</bug_status>
+          <resolution></resolution>
+          
+          
+          <bug_file_loc></bug_file_loc>
+          <status_whiteboard></status_whiteboard>
+          <keywords>bitesized, unittest</keywords>
+          <priority>P2</priority>
+          <bug_severity>normal</bug_severity>
+          <target_milestone>6.0</target_milestone>
+          
+          
+          <everconfirmed>1</everconfirmed>
+          <reporter name="Nick Nassar">nassar</reporter>
+          <assigned_to name="Ben [pcf_dev]">ben</assigned_to>
+          <cc>ben</cc>
+
+      
+
+      
+
+      
+
+          <long_desc isprivate="0">
+            <commentid>7424</commentid>
+            <who name="Nick Nassar">nassar</who>
+            <bug_when>2006-06-08 12:57:57 -0400</bug_when>
+            <thetext>Yeah, we need to fix this.
+Trac ticket id: 2283
+Owner: wguaraldi
+Reporter: nassar
+Keywords: UnitTest</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>87812</commentid>
+            <who name="Ben [pcf_dev]">ben</who>
+            <bug_when>2012-10-08 17:03:50 -0400</bug_when>
+            <thetext>Not sure how this one got lost in the shuffle.  I&apos;m going to review the patch for 6.0.  If it requires work then we should probably push to 6.1.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>79554</commentid>
+              <attachid>4158</attachid>
+            <who name="Caio Romão">caioromao</who>
+            <bug_when>2011-09-14 00:48:46 -0400</bug_when>
+            <thetext>Created attachment 4158
+Tentative patch for this bug
+
+What would a proper test for bug #2191 be? Simply add the test data in comment #2, it&apos;s expected output and update the test infrastructure?
+
+If so, the attached patch does (or tries to do) it.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>29842</commentid>
+            <who name="Will Kahn-Greene [pcf dev]">will.guaraldi</who>
+            <bug_when>2008-03-05 09:56:53 -0500</bug_when>
+            <thetext>This is a bitesized bug and could be done by a new contributor or someone looking for something to do.
+
+Documentation on the unit test system is available in the wiki at:
+
+https://develop.participatoryculture.org/trac/democracy/wiki/UnitTesting
+
+Any thoughts or status will be in the comments on this bug.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>7429</commentid>
+            <who name="Will Kahn-Greene [pcf dev]">will.guaraldi</who>
+            <bug_when>2007-07-24 13:10:42 -0400</bug_when>
+            <thetext>
+Original author: wguaraldi</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>7428</commentid>
+            <who name="Janet [pcf QA]">jed</who>
+            <bug_when>2006-12-19 23:13:16 -0500</bug_when>
+            <thetext>
+Original author: jed</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>7427</commentid>
+            <who name="Chris Lahey">clahey</who>
+            <bug_when>2006-11-11 07:53:04 -0500</bug_when>
+            <thetext>
+Original author: clahey</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>7426</commentid>
+            <who name="Nick Nassar">nassar</who>
+            <bug_when>2006-06-08 13:18:00 -0400</bug_when>
+            <thetext>{{{
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&lt;rss version=&quot;2.0&quot; 
+	xmlns:media=&quot;http://search.yahoo.com/mrss&quot; 
+	xmlns:creativeCommons=&quot;http://backend.userland.com/creativeCommonsRssModule&quot;
+	xmlns:dtvmedia=&quot;http://participatoryculture.org/RSSModules/dtv/1.0&quot;&gt;
+
+	&lt;channel&gt;&lt;title&gt;ooze.com&apos;s nosebleedingly funny videos&lt;/title&gt;
+			&lt;description&gt;A collection of internet videos that either unlock the very secret of inner transendence and uplift your spirts ABOVE the heavens, or make you poop. Uncontrollably. &lt;/description&gt;
+			&lt;link&gt;http://ooze.com/bm/library.php?i=1&lt;/link&gt;
+			&lt;dtvmedia:libraryLink&gt;http://ooze.com/bm/library.php?i=1&lt;/dtvmedia:libraryLink&gt;
+			&lt;pubDate&gt;Wed,  5 Apr 2006 04:12:56 -0700&lt;/pubDate&gt;
+			&lt;generator&gt;Broadcast Machine version 20&lt;/generator&gt;
+			&lt;atom:link 
+				 rel=&quot;self&quot; 
+				 type=&quot;application/rss+xml&quot; 
+				 title=&quot;ooze.com&apos;s nosebleedingly funny videos&quot; 
+				 href=&quot;http://ooze.com/bm/rss.php?i=1&quot; 
+				 xmlns:atom=&quot;http://www.w3.org/2005/Atom&quot; /&gt;
+				 &lt;item&gt;&lt;title&gt;The ED BEGLEY JR. LIVE SEX SHOW&lt;/title&gt;
+
+					&lt;link&gt;http://ooze.com/bm/detail/1/ead680146c58c9a54cd385f29c529cc8e4624a0a&lt;/link&gt;
+					&lt;guid isPermaLink=&quot;false&quot;&gt;ead680146c58c9a54cd385f29c529cc8e4624a0a&lt;/guid&gt;
+&lt;dtvmedia:paymentLink&gt;&lt;![CDATA[&lt;p&gt;
+
+visit &lt;a href=&quot;http://ooze.com&quot;&gt;&lt;b&gt;Ooze&lt;/b&gt;&lt;/a&gt; or just &lt;a href=&quot;https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&amp;item_name=Donation&amp;no_shipping=0&amp;no_note=1&amp;tax=0&amp;currency_code=USD&amp;charset=UTF%2d8&amp;business=matt@ooze.com&quot;&gt;Donate&lt;/a&gt;]]&gt;&lt;/dtvmedia:paymentLink&gt;
+&lt;description&gt;Actor Ed Begley Jr. does not host a television show where he has sex with his guests in front of a live studio audience. But if he did, could we get people to come to see a taping?&lt;/description&gt;
+&lt;enclosure url=&quot;http://ooze.com/bm/download/1/ead680146c58c9a54cd385f29c529cc8e4624a0a.mov&quot; type=&quot;video/quicktime&quot;  length=&quot;11138186&quot; /&gt;
+							&lt;pubDate&gt;Tue, 21 Mar 2006 15:42:00 -0800&lt;/pubDate&gt;
+&lt;media:thumbnail url=&quot;http://ooze.com/oozetv/edb.jpg&quot; /&gt;
+&lt;/item&gt;
+&lt;item&gt;&lt;title&gt;The Force is a Tool of Satan&lt;/title&gt;
+
+					&lt;link&gt;http://ooze.com/bm/detail/1/dff02dc74ecf7ba02d11022aaba666e1cc753e6c&lt;/link&gt;
+					&lt;guid isPermaLink=&quot;false&quot;&gt;dff02dc74ecf7ba02d11022aaba666e1cc753e6c&lt;/guid&gt;
+&lt;dtvmedia:paymentLink&gt;&lt;![CDATA[&lt;p&gt;
+
+visit &lt;a href=&quot;http://ooze.com&quot;&gt;&lt;b&gt;Ooze&lt;/b&gt;&lt;/a&gt; or just &lt;a href=&quot;https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&amp;item_name=Donation&amp;no_shipping=0&amp;no_note=1&amp;tax=0&amp;currency_code=USD&amp;charset=UTF%2d8&amp;business=matt@ooze.com&quot;&gt;Donate&lt;/a&gt;]]&gt;&lt;/dtvmedia:paymentLink&gt;
+&lt;description&gt;In 1999, Mortimer and Luke Fontaine led a protest at the opening of The Phantom Menace to convince the Heathen Fan to turn their backs on Satan&apos;s Tool, the FORCE.
+
+
+
+Stay Tuned to oozeTV for a stunning up-to-date expose on the fall out from this and subsequent protests!&lt;/description&gt;
+&lt;enclosure url=&quot;http://ooze.com/bm/download/1/dff02dc74ecf7ba02d11022aaba666e1cc753e6c.mov&quot; type=&quot;video/quicktime&quot;  length=&quot;10063983&quot; /&gt;
+							&lt;pubDate&gt;Tue, 14 Mar 2006 16:55:00 -0800&lt;/pubDate&gt;
+&lt;media:thumbnail url=&quot;http://ooze.com/toolofsatan/signs.jpg&quot; /&gt;
+&lt;/item&gt;
+&lt;item&gt;&lt;title&gt;Freeze Out â€“ Trailer&lt;/title&gt;
+
+					&lt;link&gt;http://ooze.com/bm/detail/1/19f2e84a3192369c5a0860ffe8f7a5248c224c16&lt;/link&gt;
+					&lt;guid isPermaLink=&quot;false&quot;&gt;19f2e84a3192369c5a0860ffe8f7a5248c224c16&lt;/guid&gt;&lt;description&gt;Freeze Out is a comedy about one man&apos;s ridiculous and overzealous attempt to get revenge for the constant ribbing of his best friends at his weekly poker game. John&apos;s weekly poker game is a sanctuary from the horrors of living and working in Los Angeles: a ritual of jokes, beer drinking, talking movies, politics, and sex. In short, it&apos;s a good time and the max bet is 25 cents so no one is going to go broke. But something is bugging John. His friends don&apos;t respect him; any chance they get they cut him down, tell him he&apos;s boring, make him feel small. He&apos;s tired of being the butt of their jokes and he&apos;s not going to take it anymore. So he raises the stakes, trains in secret and engineers a winner-take-all Freeze Out, never realizing it might cost him his 7 best friends. What starts as an innocent night of low stakes poker becomes a ripping lampoon of friendship and a funny look at how we all lie to ourselves.
+
+
+
+From a feature film by Ooze Dude MJ&lt;/description&gt;
+&lt;enclosure url=&quot;http://ooze.com/bm/download/1/19f2e84a3192369c5a0860ffe8f7a5248c224c16.mov&quot; type=&quot;video/quicktime&quot;  length=&quot;22098153&quot; /&gt;
+							&lt;pubDate&gt;Fri, 10 Mar 2006 21:26:00 -0800&lt;/pubDate&gt;
+&lt;media:thumbnail url=&quot;http://www.freeze-out.com/images/wideshot.jpg&quot; /&gt;
+&lt;/item&gt;
+&lt;item&gt;&lt;title&gt;Porno Mustache!&lt;/title&gt;
+
+					&lt;link&gt;http://ooze.com/bm/detail/1/f4957f61eb38df3bcdb8324c2d072dc806e56a70&lt;/link&gt;
+					&lt;guid isPermaLink=&quot;false&quot;&gt;f4957f61eb38df3bcdb8324c2d072dc806e56a70&lt;/guid&gt;
+&lt;dtvmedia:paymentLink&gt;&lt;![CDATA[&lt;p&gt;
+
+visit &lt;a href=&quot;http://ooze.com&quot;&gt;&lt;b&gt;Ooze&lt;/b&gt;&lt;/a&gt; or just &lt;a href=&quot;https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&amp;item_name=Donation&amp;no_shipping=0&amp;no_note=1&amp;tax=0&amp;currency_code=USD&amp;charset=UTF%2d8&amp;business=matt@ooze.com&quot;&gt;Donate&lt;/a&gt;]]&gt;&lt;/dtvmedia:paymentLink&gt;
+&lt;description&gt;Not gettin&apos; any? Porno Mustache turns any dud into a Super-Stud! This simple device is a natural alternative to the drugs prescribed for sexual dysfunction. Don&apos;t take our word on it, download this educational video commercial to find out how you can become the sexual monster you always dreamed of! - also see a cameo by Bunny of The Dingleberrys&lt;/description&gt;
+&lt;enclosure url=&quot;http://ooze.com/bm/download/1/f4957f61eb38df3bcdb8324c2d072dc806e56a70.mov&quot; type=&quot;video/quicktime&quot;  length=&quot;2032552&quot; /&gt;
+							&lt;pubDate&gt;Tue, 28 Feb 2006 16:44:00 -0800&lt;/pubDate&gt;
+&lt;media:thumbnail url=&quot;http://ooze.com/oozetv/porno.jpg&quot; /&gt;
+&lt;/item&gt;
+&lt;item&gt;&lt;title&gt;MPAA Marketing Fun&lt;/title&gt;
+
+					&lt;link&gt;http://ooze.com/bm/detail/1/8fee95fe0dab71e75502c1024077e9b5c74eefc5&lt;/link&gt;
+					&lt;guid isPermaLink=&quot;false&quot;&gt;8fee95fe0dab71e75502c1024077e9b5c74eefc5&lt;/guid&gt;
+&lt;dtvmedia:paymentLink&gt;&lt;![CDATA[&lt;p&gt;
+
+visit &lt;a href=&quot;http://ooze.com&quot;&gt;&lt;b&gt;Ooze&lt;/b&gt;&lt;/a&gt; or just &lt;a href=&quot;https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&amp;item_name=Donation&amp;no_shipping=0&amp;no_note=1&amp;tax=0&amp;currency_code=USD&amp;charset=UTF%2d8&amp;business=matt@ooze.com&quot;&gt;Donate&lt;/a&gt;]]&gt;&lt;/dtvmedia:paymentLink&gt;
+&lt;description&gt;If you&apos;re an MPAA rated film, all of your marketing material must be rated G - no matter what. See how the MPAA controls what you see in this series of semi-animated films.
+
+
+
+Ooze was invited to create Proof of Concept visuals for a segment in the Sundance Festival film, &quot;This Film is Not Yet Rated&quot; - This footage, although sometimes similar, DOES NOT APPEAR in the film. These movies are more like a slide show that was used by the producer to show how animations would work in the final film.- They&apos;re still FUNNY&lt;/description&gt;
+&lt;enclosure url=&quot;http://ooze.com/bm/download/1/8fee95fe0dab71e75502c1024077e9b5c74eefc5.mov&quot; type=&quot;video/quicktime&quot;  length=&quot;4400634&quot; /&gt;
+							&lt;pubDate&gt;Mon, 13 Feb 2006 19:46:00 -0800&lt;/pubDate&gt;
+&lt;media:thumbnail url=&quot;http://www.ooze.com/oozetv/mpaa-marketing.jpg&quot; /&gt;
+&lt;/item&gt;
+&lt;item&gt;&lt;title&gt;The MPAA Mass Appeals Board&lt;/title&gt;
+
+					&lt;link&gt;http://ooze.com/bm/detail/1/a4e9475c06ba4c99eb2abf4c1a4600428d41785f&lt;/link&gt;
+					&lt;guid isPermaLink=&quot;false&quot;&gt;a4e9475c06ba4c99eb2abf4c1a4600428d41785f&lt;/guid&gt;
+&lt;dtvmedia:paymentLink&gt;&lt;![CDATA[&lt;p&gt;
+
+visit &lt;a href=&quot;http://ooze.com&quot;&gt;&lt;b&gt;Ooze&lt;/b&gt;&lt;/a&gt; or just &lt;a href=&quot;https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&amp;item_name=Donation&amp;no_shipping=0&amp;no_note=1&amp;tax=0&amp;currency_code=USD&amp;charset=UTF%2d8&amp;business=matt@ooze.com&quot;&gt;Donate&lt;/a&gt;]]&gt;&lt;/dtvmedia:paymentLink&gt;
+&lt;description&gt;Budding filmmakers learn what it&apos;s like to appeal a rating from the MPAA - and it&apos;s not fun. See how the MPAA controls what you see, in this series of semi-animated films.  
+
+
+
+Ooze was invited to create Proof of Concept visuals for a segment in the Sundance Festival film, &quot;This Film is Not Yet Rated&quot; - This footage, although sometimes similar, DOES NOT APPEAR in the film. These movies are more like a slide show that was used by the producer to show how animations would work in the final film.- They&apos;re still FUNNY.&lt;/description&gt;
+&lt;enclosure url=&quot;http://ooze.com/bm/download/1/a4e9475c06ba4c99eb2abf4c1a4600428d41785f.mov&quot; type=&quot;video/quicktime&quot;  length=&quot;3866247&quot; /&gt;
+							&lt;pubDate&gt;Mon, 13 Feb 2006 19:42:00 -0800&lt;/pubDate&gt;
+&lt;media:thumbnail url=&quot;http://www.ooze.com/oozetv/mpaa-appeals.jpg&quot; /&gt;
+&lt;/item&gt;
+&lt;item&gt;&lt;title&gt;How Does the MPAA Rate Films?&lt;/title&gt;
+
+					&lt;link&gt;http://ooze.com/bm/detail/1/e3fa69f4f1d490ba72ec50cc16886f8d93425bb8&lt;/link&gt;
+					&lt;guid isPermaLink=&quot;false&quot;&gt;e3fa69f4f1d490ba72ec50cc16886f8d93425bb8&lt;/guid&gt;
+&lt;dtvmedia:paymentLink&gt;&lt;![CDATA[&lt;p&gt;
+
+visit &lt;a href=&quot;http://ooze.com&quot;&gt;&lt;b&gt;Ooze&lt;/b&gt;&lt;/a&gt; or just &lt;a href=&quot;https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&amp;item_name=Donation&amp;no_shipping=0&amp;no_note=1&amp;tax=0&amp;currency_code=USD&amp;charset=UTF%2d8&amp;business=matt@ooze.com&quot;&gt;Donate&lt;/a&gt;]]&gt;&lt;/dtvmedia:paymentLink&gt;
+&lt;description&gt;How does the MPAA decide what movies get which rating? Turns out, it&apos;s a pretty arbitrary system with very little oversight nor any clear guidelines for filmmakers. 
+
+ 
+
+In this &quot;animated&quot; video, we attempt to decode the confusing criteria the uses to determine the ratings.
+
+
+
+Ooze was invited to create Proof of Concept visuals for a segment in the Sundance Festival film, &quot;This Film is Not Yet Rated&quot; - This footage, although sometimes similar, DOES NOT APPEAR in the film. These movies are more like a slide show that was used by the producer to show how animations would work in the final film.- They&apos;re still FUNNY.&lt;/description&gt;
+&lt;enclosure url=&quot;http://ooze.com/bm/download/1/e3fa69f4f1d490ba72ec50cc16886f8d93425bb8.mov&quot; type=&quot;video/quicktime&quot;  length=&quot;4054414&quot; /&gt;
+							&lt;pubDate&gt;Mon, 13 Feb 2006 16:31:00 -0800&lt;/pubDate&gt;
+&lt;media:thumbnail url=&quot;http://www.ooze.com/oozetv/mpaa-1.jpg&quot; /&gt;
+&lt;/item&gt;
+&lt;item&gt;&lt;title&gt;Adults for Adult Cinema - Pro Porn Protest&lt;/title&gt;
+
+					&lt;link&gt;http://ooze.com/bm/detail/1/1f584a1d1c76bdb756e71057a91327db23905743&lt;/link&gt;
+					&lt;guid isPermaLink=&quot;false&quot;&gt;1f584a1d1c76bdb756e71057a91327db23905743&lt;/guid&gt;
+&lt;dtvmedia:paymentLink&gt;&lt;![CDATA[&lt;p&gt;
+
+visit &lt;a href=&quot;http://ooze.com&quot;&gt;&lt;b&gt;Ooze&lt;/b&gt;&lt;/a&gt; or just &lt;a href=&quot;https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&amp;item_name=Donation&amp;no_shipping=0&amp;no_note=1&amp;tax=0&amp;currency_code=USD&amp;charset=UTF%2d8&amp;business=matt@ooze.com&quot;&gt;Donate&lt;/a&gt;]]&gt;&lt;/dtvmedia:paymentLink&gt;
+&lt;description&gt;Ooze takes to the streets as the action group, THE ADULTS FOR ADULT CINEMA. What do we want? Porn in mainstream movie theatres! Why can&apos;t adults see people having raunchy sex in the comfort of a modern cineplex with its stadium seating, fresh popcorn, huge screens and digital surround sound? Ooze confronts confused patrons outside several suburban movie palaces, and is even &quot;removed&quot; by the LA County Sheriff&apos;s Department. Also includes an &quot;artistic&quot; porno we&apos;d like to see in movie theatres called, &quot;Traffuck.&quot;&lt;/description&gt;
+&lt;enclosure url=&quot;http://ooze.com/bm/download/1/1f584a1d1c76bdb756e71057a91327db23905743.mov&quot; type=&quot;video/quicktime&quot;  length=&quot;8697188&quot; /&gt;
+							&lt;pubDate&gt;Sat, 11 Feb 2006 18:09:00 -0800&lt;/pubDate&gt;
+&lt;media:thumbnail url=&quot;http://ooze.com/oozetv/pornprotest.jpg&quot; /&gt;
+&lt;/item&gt;
+&lt;item&gt;&lt;title&gt;Shit Happens... to Babies.&lt;/title&gt;
+
+					&lt;link&gt;http://ooze.com/bm/detail/1/75eab60e903f3535285315e87e1eca60031dc235&lt;/link&gt;
+					&lt;guid isPermaLink=&quot;false&quot;&gt;75eab60e903f3535285315e87e1eca60031dc235&lt;/guid&gt;
+&lt;dtvmedia:paymentLink&gt;&lt;![CDATA[&lt;p&gt;
+
+visit &lt;a href=&quot;http://ooze.com&quot;&gt;&lt;b&gt;Ooze&lt;/b&gt;&lt;/a&gt; or just &lt;a href=&quot;https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&amp;item_name=Donation&amp;no_shipping=0&amp;no_note=1&amp;tax=0&amp;currency_code=USD&amp;charset=UTF%2d8&amp;business=matt@ooze.com&quot;&gt;Donate&lt;/a&gt;]]&gt;&lt;/dtvmedia:paymentLink&gt;
+&lt;description&gt;Gorilla tells Bunny that if he chooses to keep his baby, it may have unintended consequences...&lt;/description&gt;
+&lt;enclosure url=&quot;http://ooze.com/bm/download/1/75eab60e903f3535285315e87e1eca60031dc235.mov&quot; type=&quot;video/quicktime&quot;  length=&quot;487634&quot; /&gt;
+							&lt;pubDate&gt;Wed, 25 Jan 2006 00:11:00 -0800&lt;/pubDate&gt;
+&lt;media:thumbnail url=&quot;http://www.ooze.com/dingleberrys/dingle-baby.jpg&quot; /&gt;
+&lt;/item&gt;
+&lt;item&gt;&lt;title&gt;Your Baby, or Your Band?&lt;/title&gt;
+
+					&lt;link&gt;http://ooze.com/bm/detail/1/ddf80c10599e3d33a7b69ad11245108dfa68bf62&lt;/link&gt;
+					&lt;guid isPermaLink=&quot;false&quot;&gt;ddf80c10599e3d33a7b69ad11245108dfa68bf62&lt;/guid&gt;
+&lt;dtvmedia:paymentLink&gt;&lt;![CDATA[&lt;p&gt;
+
+visit &lt;a href=&quot;http://ooze.com&quot;&gt;&lt;b&gt;Ooze&lt;/b&gt;&lt;/a&gt; or just &lt;a href=&quot;https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&amp;item_name=Donation&amp;no_shipping=0&amp;no_note=1&amp;tax=0&amp;currency_code=USD&amp;charset=UTF%2d8&amp;business=matt@ooze.com&quot;&gt;Donate&lt;/a&gt;]]&gt;&lt;/dtvmedia:paymentLink&gt;
+&lt;description&gt;The Dingleberrys are at it again - this time they are preparing you for their dramatic debut. Watch furry animals Gorilla and Chicken make their friend, Bunny, choose: his band, or his unborn baby.&lt;/description&gt;
+&lt;enclosure url=&quot;http://ooze.com/bm/download/1/ddf80c10599e3d33a7b69ad11245108dfa68bf62.mov&quot; type=&quot;video/quicktime&quot;  length=&quot;1531454&quot; /&gt;
+							&lt;pubDate&gt;Wed, 25 Jan 2006 00:04:00 -0800&lt;/pubDate&gt;
+&lt;media:thumbnail url=&quot;http://www.ooze.com/dingleberrys/dingle-baby.jpg&quot; /&gt;
+&lt;/item&gt;
+&lt;item&gt;&lt;title&gt;Celebrity Parking Only!&lt;/title&gt;
+
+					&lt;link&gt;http://ooze.com/bm/detail/1/5530631c6ef3e11887f487498ee885048643f04f&lt;/link&gt;
+					&lt;guid isPermaLink=&quot;false&quot;&gt;5530631c6ef3e11887f487498ee885048643f04f&lt;/guid&gt;
+&lt;dtvmedia:paymentLink&gt;&lt;![CDATA[&lt;p&gt;
+
+visit &lt;a href=&quot;http://ooze.com&quot;&gt;&lt;b&gt;Ooze&lt;/b&gt;&lt;/a&gt; or just &lt;a href=&quot;https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&amp;item_name=Donation&amp;no_shipping=0&amp;no_note=1&amp;tax=0&amp;currency_code=USD&amp;charset=UTF%2d8&amp;business=matt@ooze.com&quot;&gt;Donate&lt;/a&gt;]]&gt;&lt;/dtvmedia:paymentLink&gt;
+&lt;description&gt;Ooze posts &quot;Celebrity Parking Only&quot; signs in LA - Since Celebrities are better than regular people, we thought that they should have special parking spots on public streets. So as a public service, Ooze Editor Eddie Schmidt placed &quot;Celebrity Parking Only&quot; signs around town. While some people questioned his authority, many chose not to park in these spots. Yeah for Celebs!&lt;/description&gt;
+&lt;enclosure url=&quot;http://ooze.com/bm/download/1/5530631c6ef3e11887f487498ee885048643f04f.mp4&quot; type=&quot;video/unknown&quot;  length=&quot;5022056&quot; /&gt;
+							&lt;pubDate&gt;Mon, 23 Jan 2006 00:52:00 -0800&lt;/pubDate&gt;
+&lt;media:thumbnail url=&quot;http://www.ooze.com/oozetv/celebrity-parking-big.jpg&quot; /&gt;
+&lt;/item&gt;
+&lt;item&gt;&lt;title&gt;Good Girls of the Century?&lt;/title&gt;
+
+					&lt;link&gt;http://ooze.com/bm/detail/1/fca0e21e9d065f4406f01baaa63b3c5a855762ea&lt;/link&gt;
+					&lt;guid isPermaLink=&quot;false&quot;&gt;fca0e21e9d065f4406f01baaa63b3c5a855762ea&lt;/guid&gt;
+&lt;dtvmedia:paymentLink&gt;&lt;![CDATA[&lt;p&gt;
+
+visit &lt;a href=&quot;http://ooze.com&quot;&gt;&lt;b&gt;Ooze&lt;/b&gt;&lt;/a&gt; or just &lt;a href=&quot;https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&amp;item_name=Donation&amp;no_shipping=0&amp;no_note=1&amp;tax=0&amp;currency_code=USD&amp;charset=UTF%2d8&amp;business=matt@ooze.com&quot;&gt;Donate&lt;/a&gt;]]&gt;&lt;/dtvmedia:paymentLink&gt;
+&lt;description&gt;Talented songwriter, Matt Patterson composed and performed a song on his autoharp about a contest called &quot;Good Girl of the Century&quot; he holds for his two dogs. But do either of these dogs really qualify for an award when they&apos;ve been caught being bad in this video? It makes more sense if you hear the song first- which you can at http://ooze.com/oozetv/goodgirlsofthecentury.mp3 - but Hi-Larious nonetheless...&lt;/description&gt;
+&lt;enclosure url=&quot;http://ooze.com/bm/download/1/fca0e21e9d065f4406f01baaa63b3c5a855762ea.mov&quot; type=&quot;video/quicktime&quot;  length=&quot;6431157&quot; /&gt;
+							&lt;pubDate&gt;Fri, 20 Jan 2006 01:16:00 -0800&lt;/pubDate&gt;
+&lt;media:thumbnail url=&quot;http://ooze.com/oozetv/ggoc.jpg&quot; /&gt;
+&lt;/item&gt;
+&lt;item&gt;&lt;title&gt;REEL (GAY) SEX&lt;/title&gt;
+
+					&lt;link&gt;http://ooze.com/bm/detail/1/66576a6ff19b59b89028dc4d07dd78a27982beb6&lt;/link&gt;
+					&lt;guid isPermaLink=&quot;false&quot;&gt;66576a6ff19b59b89028dc4d07dd78a27982beb6&lt;/guid&gt;
+&lt;dtvmedia:paymentLink&gt;&lt;![CDATA[&lt;p&gt;
+
+visit &lt;a href=&quot;http://ooze.com&quot;&gt;&lt;b&gt;Ooze&lt;/b&gt;&lt;/a&gt; or just &lt;a href=&quot;https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&amp;item_name=Donation&amp;no_shipping=0&amp;no_note=1&amp;tax=0&amp;currency_code=USD&amp;charset=UTF%2d8&amp;business=matt@ooze.com&quot;&gt;Donate&lt;/a&gt;]]&gt;&lt;/dtvmedia:paymentLink&gt;
+&lt;description&gt;Ooze guest star Stephanie Escajeda asks real live gay men if they know who invested gay man sex. Nobody really knows, and they seem to take our stupid suggestions at face value.&lt;/description&gt;
+&lt;enclosure url=&quot;http://ooze.com/bm/download/1/66576a6ff19b59b89028dc4d07dd78a27982beb6.mov&quot; type=&quot;video/quicktime&quot;  length=&quot;2749356&quot; /&gt;
+							&lt;pubDate&gt;Fri, 20 Jan 2006 01:12:00 -0800&lt;/pubDate&gt;
+&lt;media:thumbnail url=&quot;http://ooze.com/oozetv/gay.jpg&quot; /&gt;
+&lt;/item&gt;
+&lt;item&gt;&lt;title&gt;Blessing of the Marital Aids&lt;/title&gt;
+
+					&lt;link&gt;http://ooze.com/bm/detail/1/01700f573250c226af4f8b28ef187c3805252efa&lt;/link&gt;
+					&lt;guid isPermaLink=&quot;false&quot;&gt;01700f573250c226af4f8b28ef187c3805252efa&lt;/guid&gt;
+&lt;dtvmedia:paymentLink&gt;&lt;![CDATA[&lt;p&gt;
+
+visit &lt;a href=&quot;http://ooze.com&quot;&gt;&lt;b&gt;Ooze&lt;/b&gt;&lt;/a&gt; or just &lt;a href=&quot;https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&amp;item_name=Donation&amp;no_shipping=0&amp;no_note=1&amp;tax=0&amp;currency_code=USD&amp;charset=UTF%2d8&amp;business=matt@ooze.com&quot;&gt;Donate&lt;/a&gt;]]&gt;&lt;/dtvmedia:paymentLink&gt;
+&lt;description&gt;Once a year, the Catholic Church of Los Angeles reaches out to married couples in trouble and blesses their sex toys. Some people apparently don&apos;t like priests standing outside a porn shop and taping them. Go figure.&lt;/description&gt;
+&lt;enclosure url=&quot;http://ooze.com/bm/download/1/01700f573250c226af4f8b28ef187c3805252efa.mov&quot; type=&quot;video/quicktime&quot;  length=&quot;7139880&quot; /&gt;
+							&lt;pubDate&gt;Tue, 10 Jan 2006 19:45:00 -0800&lt;/pubDate&gt;
+&lt;media:thumbnail url=&quot;http://ooze.com/oozetv/aids.jpg&quot; /&gt;
+&lt;/item&gt;
+&lt;item&gt;&lt;title&gt;DILDO PROTOTYPE&lt;/title&gt;
+
+					&lt;link&gt;http://ooze.com/bm/detail/1/be9bf4097b56330c640bbcf63684827e7f2ffc34&lt;/link&gt;
+					&lt;guid isPermaLink=&quot;false&quot;&gt;be9bf4097b56330c640bbcf63684827e7f2ffc34&lt;/guid&gt;
+&lt;dtvmedia:paymentLink&gt;&lt;![CDATA[&lt;p&gt;
+
+visit &lt;a href=&quot;http://ooze.com&quot;&gt;&lt;b&gt;Ooze&lt;/b&gt;&lt;/a&gt; or just &lt;a href=&quot;https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&amp;item_name=Donation&amp;no_shipping=0&amp;no_note=1&amp;tax=0&amp;currency_code=USD&amp;charset=UTF%2d8&amp;business=matt@ooze.com&quot;&gt;Donate&lt;/a&gt;]]&gt;&lt;/dtvmedia:paymentLink&gt;
+&lt;description&gt;Matt Patterson asks people to comment on some dildo &quot;prototypes&quot; he&apos;s invented. Not for the faint of heart, nor sound of mind.&lt;/description&gt;
+&lt;enclosure url=&quot;http://ooze.com/bm/download/1/be9bf4097b56330c640bbcf63684827e7f2ffc34.mov&quot; type=&quot;video/quicktime&quot;  length=&quot;4369956&quot; /&gt;
+							&lt;pubDate&gt;Tue, 10 Jan 2006 19:30:00 -0800&lt;/pubDate&gt;
+&lt;media:thumbnail url=&quot;http://ooze.com/oozetv/dildo.jpg&quot; /&gt;
+&lt;/item&gt;
+&lt;item&gt;&lt;title&gt;The DINGLEBERRYS sing Choke the Chicken&lt;/title&gt;
+
+					&lt;link&gt;http://ooze.com/bm/detail/1/b1e19133214935445d5e8b28bbedd5310df48413&lt;/link&gt;
+					&lt;guid isPermaLink=&quot;false&quot;&gt;b1e19133214935445d5e8b28bbedd5310df48413&lt;/guid&gt;
+&lt;dtvmedia:paymentLink&gt;&lt;![CDATA[&lt;p&gt;
+
+visit &lt;a href=&quot;http://ooze.com&quot;&gt;&lt;b&gt;Ooze&lt;/b&gt;&lt;/a&gt; or just &lt;a href=&quot;https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&amp;item_name=Donation&amp;no_shipping=0&amp;no_note=1&amp;tax=0&amp;currency_code=USD&amp;charset=UTF%2d8&amp;business=matt@ooze.com&quot;&gt;Donate&lt;/a&gt;]]&gt;&lt;/dtvmedia:paymentLink&gt;
+&lt;description&gt;What happens when beloved children TV show stars go bad? Gorilla, Bunny, Chicken and a special bodacious guest release a music video like CHOKE THE CHICKEN. Rage in a Cage with punk rock&apos;s answer to the Banana Splits, THE DINGLEBERRYS&lt;/description&gt;
+&lt;enclosure url=&quot;http://ooze.com/bm/download/1/b1e19133214935445d5e8b28bbedd5310df48413.mov&quot; type=&quot;video/quicktime&quot;  length=&quot;3800274&quot; /&gt;
+							&lt;pubDate&gt;Thu, 08 Dec 2005 01:40:00 -0800&lt;/pubDate&gt;
+&lt;media:thumbnail url=&quot;http://ooze.com/oozetv/dberries.jpg&quot; /&gt;
+&lt;/item&gt;
+&lt;item&gt;&lt;title&gt;My Friend Pepper Sprays Himself (for fun)&lt;/title&gt;
+
+					&lt;link&gt;http://ooze.com/bm/detail/1/d146e6a360b3227c6faea50a7f894ef5715eab6f&lt;/link&gt;
+					&lt;guid isPermaLink=&quot;false&quot;&gt;d146e6a360b3227c6faea50a7f894ef5715eab6f&lt;/guid&gt;
+&lt;dtvmedia:paymentLink&gt;&lt;![CDATA[&lt;p&gt;
+
+visit &lt;a href=&quot;http://ooze.com&quot;&gt;&lt;b&gt;Ooze&lt;/b&gt;&lt;/a&gt; or just &lt;a href=&quot;https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&amp;item_name=Donation&amp;no_shipping=0&amp;no_note=1&amp;tax=0&amp;currency_code=USD&amp;charset=UTF%2d8&amp;business=matt@ooze.com&quot;&gt;Donate&lt;/a&gt;]]&gt;&lt;/dtvmedia:paymentLink&gt;
+&lt;description&gt;Back before Jackass was a &quot;hit,&quot; we filmed Editor Joe get pepper sprayed to celebrate the launch of his website. Watch him flail around helplessly in pain! We suggest you watch this before you protest the next WTO meeting.&lt;/description&gt;
+&lt;enclosure url=&quot;http://ooze.com/bm/download/1/d146e6a360b3227c6faea50a7f894ef5715eab6f.mov&quot; type=&quot;video/quicktime&quot;  length=&quot;7149580&quot; /&gt;
+							&lt;pubDate&gt;Thu, 08 Dec 2005 01:36:00 -0800&lt;/pubDate&gt;
+&lt;media:thumbnail url=&quot;http://www.firsthomesecurity.com/mace/mace_pepper_spray_defense.JPG&quot; /&gt;
+&lt;/item&gt;
+&lt;item&gt;&lt;title&gt;Sexterminate the Doctor&lt;/title&gt;
+
+					&lt;link&gt;http://ooze.com/bm/detail/1/78a0c8990f525e2c41a6ea08319130b1844b6f77&lt;/link&gt;
+					&lt;guid isPermaLink=&quot;false&quot;&gt;78a0c8990f525e2c41a6ea08319130b1844b6f77&lt;/guid&gt;&lt;description&gt;What happens when you take Alien Robots from the long-running BBCscience fiction show, Dr. Who, and mix them up with naked ladies? A lawsuit.
+
+
+
+This is an article and not a TV show. Just so you know.&lt;/description&gt;
+&lt;enclosure url=&quot;http://ooze.com/bm/download/1/78a0c8990f525e2c41a6ea08319130b1844b6f77.html&quot; type=&quot;other&quot;  length=&quot;1&quot; /&gt;
+							&lt;pubDate&gt;Thu, 01 Dec 2005 13:28:00 -0800&lt;/pubDate&gt;
+&lt;media:thumbnail url=&quot;http://ooze.com/bm/thumbnails/feec82f3d5100b00a01bcdc459184bbd.jpg&quot; /&gt;
+&lt;/item&gt;
+&lt;item&gt;&lt;title&gt;Submit To Ooze&lt;/title&gt;
+
+					&lt;link&gt;http://ooze.com/bm/detail/1/118f33c82a83ae2922b6db69788694f0c2513ea2&lt;/link&gt;
+					&lt;guid isPermaLink=&quot;false&quot;&gt;118f33c82a83ae2922b6db69788694f0c2513ea2&lt;/guid&gt;&lt;enclosure url=&quot;http://ooze.com/bm/download/1/118f33c82a83ae2922b6db69788694f0c2513ea2.html&quot; type=&quot;other&quot;  length=&quot;59535&quot; /&gt;
+							&lt;pubDate&gt;Thu, 01 Dec 2005 12:16:00 -0800&lt;/pubDate&gt;
+&lt;media:thumbnail url=&quot;http://www.ooze.com/ooze8/Where-Ooze.gif&quot; /&gt;
+&lt;/item&gt;
+&lt;item&gt;&lt;title&gt;EL CULO NEGRO for Vice President&lt;/title&gt;
+
+					&lt;link&gt;http://ooze.com/bm/detail/1/b0208d44ad43c43bebf4c1486df58218dbb82b6b&lt;/link&gt;
+					&lt;guid isPermaLink=&quot;false&quot;&gt;b0208d44ad43c43bebf4c1486df58218dbb82b6b&lt;/guid&gt;
+&lt;dtvmedia:paymentLink&gt;&lt;![CDATA[&lt;p&gt;
+
+visit &lt;a href=&quot;http://ooze.com&quot;&gt;&lt;b&gt;Ooze&lt;/b&gt;&lt;/a&gt; or just &lt;a href=&quot;https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&amp;item_name=Donation&amp;no_shipping=0&amp;no_note=1&amp;tax=0&amp;currency_code=USD&amp;charset=UTF%2d8&amp;business=matt@ooze.com&quot;&gt;Donate&lt;/a&gt;]]&gt;&lt;/dtvmedia:paymentLink&gt;
+&lt;description&gt;Ooze braves the chaos of the 2000 Democratic National Convention to get &quot;El Culo Negro&quot; (the black ass en espa&amp;ntilde;ol) nominated as Gore&apos;s running mate. Our write-in campaign based off our website ironically worked well enough to get 142 votes in Florida, thus depriving Gore of the votes needed to win.&lt;/description&gt;
+&lt;enclosure url=&quot;http://ooze.com/bm/download/1/b0208d44ad43c43bebf4c1486df58218dbb82b6b.mov&quot; type=&quot;video/quicktime&quot;  length=&quot;9212574&quot; /&gt;
+							&lt;pubDate&gt;Thu, 01 Dec 2005 11:59:00 -0800&lt;/pubDate&gt;
+&lt;media:thumbnail url=&quot;http://ooze.com/oozetv/culo.jpg&quot; /&gt;
+&lt;/item&gt;
+&lt;item&gt;&lt;title&gt;Bitch, I Love You&lt;/title&gt;
+
+					&lt;link&gt;http://ooze.com/bm/detail/1/bcd4df03a8141f50b7f645779f2b625e278464b5&lt;/link&gt;
+					&lt;guid isPermaLink=&quot;false&quot;&gt;bcd4df03a8141f50b7f645779f2b625e278464b5&lt;/guid&gt;
+&lt;dtvmedia:paymentLink&gt;&lt;![CDATA[&lt;p&gt;
+
+visit &lt;a href=&quot;http://ooze.com&quot;&gt;&lt;b&gt;Ooze&lt;/b&gt;&lt;/a&gt; or just &lt;a href=&quot;https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&amp;item_name=Donation&amp;no_shipping=0&amp;no_note=1&amp;tax=0&amp;currency_code=USD&amp;charset=UTF%2d8&amp;business=matt@ooze.com&quot;&gt;Donate&lt;/a&gt;]]&gt;&lt;/dtvmedia:paymentLink&gt;
+&lt;enclosure url=&quot;http://ooze.com/bm/download/1/bcd4df03a8141f50b7f645779f2b625e278464b5.mov&quot; type=&quot;video/quicktime&quot;  length=&quot;2148126&quot; /&gt;
+							&lt;pubDate&gt;Thu, 01 Dec 2005 11:51:00 -0800&lt;/pubDate&gt;
+&lt;media:thumbnail url=&quot;http://www.ooze.com/finger/assets/images/confusedchrisitine.jpg&quot; /&gt;
+&lt;/item&gt;
+&lt;item&gt;&lt;title&gt;Funny Titty Video&lt;/title&gt;
+
+					&lt;link&gt;http://ooze.com/bm/detail/1/600766e3bc70325fc365b509c4f9d5f006a6c403&lt;/link&gt;
+					&lt;guid isPermaLink=&quot;false&quot;&gt;600766e3bc70325fc365b509c4f9d5f006a6c403&lt;/guid&gt;&lt;enclosure url=&quot;http://ooze.com/bm/download/1/600766e3bc70325fc365b509c4f9d5f006a6c403.mov&quot; type=&quot;video/quicktime&quot;  length=&quot;4418544&quot; /&gt;
+							&lt;pubDate&gt;Sat, 19 Nov 2005 02:08:00 -0800&lt;/pubDate&gt;
+&lt;media:thumbnail url=&quot;http://ooze.com/bm/thumbnails/36290df5788169d3470bbf4104edd29e.jpg&quot; /&gt;
+&lt;/item&gt;
+&lt;item&gt;&lt;title&gt;Pie in My Face for $40&lt;/title&gt;
+
+					&lt;link&gt;http://ooze.com/bm/detail/1/472420a48d5938d3a94654bfae625b0907dd0dd8&lt;/link&gt;
+					&lt;guid isPermaLink=&quot;false&quot;&gt;472420a48d5938d3a94654bfae625b0907dd0dd8&lt;/guid&gt;
+&lt;dtvmedia:paymentLink&gt;&lt;![CDATA[&lt;p&gt;
+
+visit &lt;a href=&quot;http://ooze.com&quot;&gt;&lt;b&gt;Ooze&lt;/b&gt;&lt;/a&gt; or just &lt;a href=&quot;https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&amp;item_name=Donation&amp;no_shipping=0&amp;no_note=1&amp;tax=0&amp;currency_code=USD&amp;charset=UTF%2d8&amp;business=matt@ooze.com&quot;&gt;Donate&lt;/a&gt;]]&gt;&lt;/dtvmedia:paymentLink&gt;
+&lt;enclosure url=&quot;http://ooze.com/bm/download/1/472420a48d5938d3a94654bfae625b0907dd0dd8.mov&quot; type=&quot;video/quicktime&quot;  length=&quot;8509572&quot; /&gt;
+							&lt;pubDate&gt;Sat, 19 Nov 2005 02:04:00 -0800&lt;/pubDate&gt;
+&lt;media:thumbnail url=&quot;http://ooze.com/oozetv/pie.jpg&quot; /&gt;
+&lt;/item&gt;
+&lt;item&gt;&lt;title&gt;My Brother&apos;s Wedding&lt;/title&gt;
+
+					&lt;link&gt;http://ooze.com/bm/detail/1/9dbb00ac659849c72cf9f024a9ea42856e79c7b7&lt;/link&gt;
+					&lt;guid isPermaLink=&quot;false&quot;&gt;9dbb00ac659849c72cf9f024a9ea42856e79c7b7&lt;/guid&gt;
+&lt;dtvmedia:paymentLink&gt;&lt;![CDATA[&lt;p&gt;
+
+visit &lt;a href=&quot;http://ooze.com&quot;&gt;&lt;b&gt;Ooze&lt;/b&gt;&lt;/a&gt; or just &lt;a href=&quot;https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&amp;item_name=Donation&amp;no_shipping=0&amp;no_note=1&amp;tax=0&amp;currency_code=USD&amp;charset=UTF%2d8&amp;business=matt@ooze.com&quot;&gt;Donate&lt;/a&gt;]]&gt;&lt;/dtvmedia:paymentLink&gt;
+&lt;enclosure url=&quot;http://ooze.com/bm/download/1/9dbb00ac659849c72cf9f024a9ea42856e79c7b7.mov&quot; type=&quot;video/quicktime&quot;  length=&quot;30211893&quot; /&gt;
+							&lt;pubDate&gt;Fri, 18 Nov 2005 22:32:00 -0800&lt;/pubDate&gt;
+&lt;media:thumbnail url=&quot;http://ooze.com/oozetv/wedding.jpg&quot; /&gt;
+&lt;/item&gt;
+&lt;item&gt;&lt;title&gt;Crisis Response Team&lt;/title&gt;
+
+					&lt;link&gt;http://ooze.com/bm/detail/1/b84cea71a71420646bd6fd3a5a7971107e59a22a&lt;/link&gt;
+					&lt;guid isPermaLink=&quot;false&quot;&gt;b84cea71a71420646bd6fd3a5a7971107e59a22a&lt;/guid&gt;&lt;enclosure url=&quot;http://ooze.com/bm/download/1/b84cea71a71420646bd6fd3a5a7971107e59a22a.wmv&quot; type=&quot;video/unknown&quot;  length=&quot;13533222&quot; /&gt;
+							&lt;pubDate&gt;Fri, 18 Nov 2005 12:55:00 -0800&lt;/pubDate&gt;
+&lt;media:thumbnail url=&quot;http://ooze.com/bm/thumbnails/117bed808feba3fcbcaf9d474ded1c5b.jpg&quot; /&gt;
+&lt;/item&gt;
+&lt;item&gt;&lt;title&gt;How to Make Love to an Alien&lt;/title&gt;
+
+					&lt;link&gt;http://ooze.com/bm/detail/1/72e6e2097c5659a584f673b761a6eb17b46f465d&lt;/link&gt;
+					&lt;guid isPermaLink=&quot;false&quot;&gt;72e6e2097c5659a584f673b761a6eb17b46f465d&lt;/guid&gt;
+&lt;dtvmedia:paymentLink&gt;&lt;![CDATA[&lt;p&gt;
+
+visit &lt;a href=&quot;http://ooze.com&quot;&gt;&lt;b&gt;Ooze&lt;/b&gt;&lt;/a&gt; or just &lt;a href=&quot;https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&amp;item_name=Donation&amp;no_shipping=0&amp;no_note=1&amp;tax=0&amp;currency_code=USD&amp;charset=UTF%2d8&amp;business=matt@ooze.com&quot;&gt;Donate&lt;/a&gt;]]&gt;&lt;/dtvmedia:paymentLink&gt;
+&lt;description&gt;Xroxnarr can&apos;t find love in his home planetoid, so he summons a man of Earth to make deep deep love to him. &lt;/description&gt;
+&lt;enclosure url=&quot;http://ooze.com/bm/download/1/72e6e2097c5659a584f673b761a6eb17b46f465d.mov&quot; type=&quot;video/quicktime&quot;  length=&quot;3299722&quot; /&gt;
+							&lt;pubDate&gt;Thu, 17 Nov 2005 10:24:00 -0800&lt;/pubDate&gt;
+&lt;media:thumbnail url=&quot;http://www.ooze.com/oozetv/alien.jpg&quot; /&gt;
+&lt;/item&gt;
+&lt;item&gt;&lt;title&gt;Obey the Signs... and Live!&lt;/title&gt;
+
+					&lt;link&gt;http://ooze.com/bm/detail/1/cc94cdbebba14c676c3d2d46b75589bbdfdb058b&lt;/link&gt;
+					&lt;guid isPermaLink=&quot;false&quot;&gt;cc94cdbebba14c676c3d2d46b75589bbdfdb058b&lt;/guid&gt;
+&lt;dtvmedia:paymentLink&gt;&lt;![CDATA[&lt;p&gt;
+
+visit &lt;a href=&quot;http://ooze.com&quot;&gt;&lt;b&gt;Ooze&lt;/b&gt;&lt;/a&gt; or just &lt;a href=&quot;https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&amp;item_name=Donation&amp;no_shipping=0&amp;no_note=1&amp;tax=0&amp;currency_code=USD&amp;charset=UTF%2d8&amp;business=matt@ooze.com&quot;&gt;Donate&lt;/a&gt;]]&gt;&lt;/dtvmedia:paymentLink&gt;
+&lt;description&gt;They&apos;re everywhere you look, telling you something urgent, explaining the rules. Why? If you don&apos;t obey the signs, something could happen to you. Something terrible.
+
+
+
+This is an &quot;educational&quot; short film for adults told in the style of yesteryear.
+
+
+
+WINNER 2003 LA 5 min. Film Fest
+
+2004 Century City Film Festival
+
+2004 Tromadance&lt;/description&gt;
+&lt;enclosure url=&quot;http://ooze.com/bm/download/1/cc94cdbebba14c676c3d2d46b75589bbdfdb058b.mov&quot; type=&quot;video/quicktime&quot;  length=&quot;12156271&quot; /&gt;
+							&lt;pubDate&gt;Thu, 17 Nov 2005 09:57:00 -0800&lt;/pubDate&gt;
+&lt;media:thumbnail url=&quot;http://ooze.com/obey/still.jpg&quot; /&gt;
+&lt;/item&gt;
+&lt;item&gt;&lt;title&gt;The Mating Dance&lt;/title&gt;
+
+					&lt;link&gt;http://ooze.com/bm/detail/1/4720334f220676191bc3811e73956012820bb255&lt;/link&gt;
+					&lt;guid isPermaLink=&quot;false&quot;&gt;4720334f220676191bc3811e73956012820bb255&lt;/guid&gt;
+&lt;dtvmedia:paymentLink&gt;&lt;![CDATA[&lt;p&gt;
+
+visit &lt;a href=&quot;http://ooze.com&quot;&gt;&lt;b&gt;Ooze&lt;/b&gt;&lt;/a&gt; or just &lt;a href=&quot;https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&amp;item_name=Donation&amp;no_shipping=0&amp;no_note=1&amp;tax=0&amp;currency_code=USD&amp;charset=UTF%2d8&amp;business=matt@ooze.com&quot;&gt;Donate&lt;/a&gt;]]&gt;&lt;/dtvmedia:paymentLink&gt;
+&lt;description&gt;MJ dances in the woods... in a speedo. Why? Because he feels women will be powerless before his beautiful body! This video has confused over 1 million viewers&lt;/description&gt;
+&lt;enclosure url=&quot;http://ooze.com/bm/download/1/4720334f220676191bc3811e73956012820bb255.mov&quot; type=&quot;video/quicktime&quot;  length=&quot;1755586&quot; /&gt;
+							&lt;pubDate&gt;Thu, 17 Nov 2005 09:52:00 -0800&lt;/pubDate&gt;
+&lt;media:thumbnail url=&quot;http://ooze.com/oozetv/BirdsnBees.jpg&quot; /&gt;
+&lt;/item&gt;
+&lt;item&gt;&lt;title&gt;Tap Trek&lt;/title&gt;
+
+					&lt;link&gt;http://ooze.com/bm/detail/1/6a8438f279ddc4497adde7d699b3a6466503c312&lt;/link&gt;
+					&lt;guid isPermaLink=&quot;false&quot;&gt;6a8438f279ddc4497adde7d699b3a6466503c312&lt;/guid&gt;
+&lt;dtvmedia:paymentLink&gt;&lt;![CDATA[&lt;p&gt;
+
+visit &lt;a href=&quot;http://ooze.com&quot;&gt;&lt;b&gt;Ooze&lt;/b&gt;&lt;/a&gt; or just &lt;a href=&quot;https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&amp;item_name=Donation&amp;no_shipping=0&amp;no_note=1&amp;tax=0&amp;currency_code=USD&amp;charset=UTF%2d8&amp;business=matt@ooze.com&quot;&gt;Donate&lt;/a&gt;]]&gt;&lt;/dtvmedia:paymentLink&gt;
+&lt;description&gt;Live dance performance where the crew of the USS Shufflin&apos; Foot fights Abraham Lincoln for control of the UNIVERSE.
+
+
+
+Abraham Lincoln floats through time and space challenging all to a deadly dance off. Will the crew be able to out dance the 16th President of the United States?&lt;/description&gt;
+&lt;enclosure url=&quot;http://ooze.com/bm/download/1/6a8438f279ddc4497adde7d699b3a6466503c312.mov&quot; type=&quot;video/quicktime&quot;  length=&quot;14531282&quot; /&gt;
+							&lt;pubDate&gt;Thu, 17 Nov 2005 09:48:00 -0800&lt;/pubDate&gt;
+&lt;media:thumbnail url=&quot;http://ooze.com/taptrek/taptrek-sm.jpg&quot; /&gt;
+&lt;/item&gt;
+&lt;item&gt;&lt;title&gt;Hollywood Sex Tour&lt;/title&gt;
+
+					&lt;link&gt;http://ooze.com/bm/detail/1/ff4192b203b8894425668599ef485303de0c243a&lt;/link&gt;
+					&lt;guid isPermaLink=&quot;false&quot;&gt;ff4192b203b8894425668599ef485303de0c243a&lt;/guid&gt;
+&lt;dtvmedia:paymentLink&gt;&lt;![CDATA[&lt;p&gt;
+
+visit &lt;a href=&quot;http://ooze.com&quot;&gt;&lt;b&gt;Ooze&lt;/b&gt;&lt;/a&gt; or just &lt;a href=&quot;https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&amp;item_name=Donation&amp;no_shipping=0&amp;no_note=1&amp;tax=0&amp;currency_code=USD&amp;charset=UTF%2d8&amp;business=matt@ooze.com&quot;&gt;Donate&lt;/a&gt;]]&gt;&lt;/dtvmedia:paymentLink&gt;
+&lt;description&gt;Ooze convinces seven unsuspecting tourists visiting Hollywood to get in a van and drive with us for two hours to see the places where celebrity scandals happened. We visit the toilet where cops caught George Michael jerking off, the alley Eddie Murphy picked up a foot fetishist cross dresser and much much more. It&apos;s a tour so good that the real tour operators working the area threaten to expose us to the public!&lt;/description&gt;
+&lt;enclosure url=&quot;http://ooze.com/bm/download/1/ff4192b203b8894425668599ef485303de0c243a.mov&quot; type=&quot;video/quicktime&quot;  length=&quot;1&quot; /&gt;
+							&lt;pubDate&gt;Thu, 17 Nov 2005 09:32:00 -0800&lt;/pubDate&gt;
+&lt;media:thumbnail url=&quot;http://ooze.com/oozetv/hwoodsextour.jpg&quot; /&gt;
+&lt;/item&gt;
+&lt;item&gt;&lt;title&gt;Great American Beardrace &apos;04&lt;/title&gt;
+
+					&lt;link&gt;http://ooze.com/bm/detail/1/0933343d29c0a5b533321219cc29bc1949358437&lt;/link&gt;
+					&lt;guid isPermaLink=&quot;false&quot;&gt;0933343d29c0a5b533321219cc29bc1949358437&lt;/guid&gt;&lt;description&gt;Two guys race to see who grows the bushiest beard before they cross the finish line. A truely odd find.&lt;/description&gt;
+&lt;enclosure url=&quot;http://ooze.com/bm/download/1/0933343d29c0a5b533321219cc29bc1949358437.wmv&quot; type=&quot;video/x-ms-wmv&quot;  length=&quot;1186038&quot; /&gt;
+							&lt;pubDate&gt;Wed, 16 Nov 2005 11:53:00 -0800&lt;/pubDate&gt;
+&lt;media:thumbnail url=&quot;http://ooze.com/bm/thumbnails/62d1b3aac22c05711f7a59e126994a84.jpg&quot; /&gt;
+&lt;/item&gt;
+&lt;item&gt;&lt;title&gt;George Bush Flips You Off&lt;/title&gt;
+
+					&lt;link&gt;http://ooze.com/bm/detail/1/d146692a7fab3af282129d3a8ff83608290d47c1&lt;/link&gt;
+					&lt;guid isPermaLink=&quot;false&quot;&gt;d146692a7fab3af282129d3a8ff83608290d47c1&lt;/guid&gt;&lt;description&gt;When George Bush was Governor of Texas he gave the camera a &quot;One-Fingered Salute&quot; before going on the air. While Bush may not have been the Commander-in-Chief at the time, this video is historically significant because the highest ranking U.S. official caught flipping someone off previously was Vice-President Nelson Rockefeller in 1975. Mr. Rockefeller was thought to be in the first stages of dementia at the time and died two years later. The same thing could be argued about Bush, but two years later he was made President.&lt;/description&gt;
+&lt;enclosure url=&quot;http://ooze.com/bm/download/1/d146692a7fab3af282129d3a8ff83608290d47c1.mov&quot; type=&quot;video/quicktime&quot;  length=&quot;1169081&quot; /&gt;
+							&lt;pubDate&gt;Wed, 16 Nov 2005 02:59:00 -0800&lt;/pubDate&gt;
+&lt;media:thumbnail url=&quot;http://www.ooze.com/finger/bushfinger.jpg&quot; /&gt;
+&lt;/item&gt;
+&lt;item&gt;&lt;title&gt;Robots Gone Wild!&lt;/title&gt;
+
+					&lt;link&gt;http://ooze.com/bm/detail/1/bec0ce30254e2046bde1df3a675653422c52dc4f&lt;/link&gt;
+					&lt;guid isPermaLink=&quot;false&quot;&gt;bec0ce30254e2046bde1df3a675653422c52dc4f&lt;/guid&gt;
+&lt;dtvmedia:paymentLink&gt;&lt;![CDATA[&lt;p&gt;
+
+visit &lt;a href=&quot;http://ooze.com&quot;&gt;&lt;b&gt;Ooze&lt;/b&gt;&lt;/a&gt; or just &lt;a href=&quot;https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&amp;item_name=Donation&amp;no_shipping=0&amp;no_note=1&amp;tax=0&amp;currency_code=USD&amp;charset=UTF%2d8&amp;business=matt@ooze.com&quot;&gt;Donate&lt;/a&gt;]]&gt;&lt;/dtvmedia:paymentLink&gt;
+&lt;description&gt;A depressed Robot comes home from a hard day of work and settles into EXCITEMENT! All the sudden he&apos;s confronted with hot ROBOTS that are super SEXY and OUT-of- CONTROL!&lt;/description&gt;
+&lt;enclosure url=&quot;http://ooze.com/bm/download/1/bec0ce30254e2046bde1df3a675653422c52dc4f.mov&quot; type=&quot;video/quicktime&quot;  length=&quot;2863751&quot; /&gt;
+							&lt;pubDate&gt;Wed, 16 Nov 2005 00:18:00 -0800&lt;/pubDate&gt;
+&lt;media:thumbnail url=&quot;http://www.ooze.com/oozetv/robots.jpg&quot; /&gt;
+&lt;/item&gt;
+
+&lt;image&gt;
+&lt;title&gt;ooze.com&apos;s nosebleedingly funny videos&lt;/title&gt;
+&lt;url&gt;http://ooze.com/bm/thumbnails/oozetvtype.png&lt;/url&gt;
+&lt;link&gt;http://ooze.com/bm/library.php?i=1&lt;/link&gt;
+&lt;/image&gt;&lt;/channel&gt;&lt;/rss&gt;
+}}}
+
+Original author: nassar</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>7425</commentid>
+            <who name="Nick Nassar">nassar</who>
+            <bug_when>2006-06-08 13:04:39 -0400</bug_when>
+            <thetext>http://ooze.com/bm/rss.php?i=1
+Original author: nassar</thetext>
+          </long_desc>
+      
+          <attachment
+              isobsolete="0"
+              ispatch="1"
+              isprivate="0"
+              isurl="0"
+          >
+            <attachid>4158</attachid>
+            <date>2011-09-14 00:48:00 -0400</date>
+            <delta_ts>2011-09-14 00:48:46 -0400</delta_ts>
+            <desc>Tentative patch for this bug</desc>
+            <filename>0001-2283-Write-test-for-feed-bug-2191.patch</filename>
+            <type>text/plain</type>
+            <size>119659</size>
+            <attacher>caioromao</attacher>
+            
+
+          </attachment>
+      
+
+    </bug>
+    <bug>
+          <bug_id>2374</bug_id>
+          <alias></alias>
+          <creation_ts>2006-06-15 14:53:00 -0400</creation_ts>
+          <short_desc>add unittest for very slow scraping</short_desc>
+          <delta_ts>2012-10-08 17:02:25 -0400</delta_ts>
+          <reporter_accessible>1</reporter_accessible>
+          <cclist_accessible>1</cclist_accessible>
+          <classification_id>1</classification_id>
+          <classification>Unclassified</classification>
+          <product>Miro</product>
+          <component>main</component>
+          <version>nightly build</version>
+          <rep_platform>all</rep_platform>
+          <op_sys>all</op_sys>
+          <bug_status>ASSIGNED</bug_status>
+          <resolution></resolution>
+          
+          
+          <bug_file_loc></bug_file_loc>
+          <status_whiteboard></status_whiteboard>
+          <keywords>bitesized, unittest</keywords>
+          <priority>P3</priority>
+          <bug_severity>normal</bug_severity>
+          <target_milestone>6.1</target_milestone>
+          
+          
+          <everconfirmed>1</everconfirmed>
+          <reporter name="Nicholas Reville">npr</reporter>
+          <assigned_to name="Ben [pcf_dev]">ben</assigned_to>
+          <cc>ben</cc>
+    
+    <cc>msshawnshawn2</cc>
+
+      
+
+      
+
+      
+
+          <long_desc isprivate="0">
+            <commentid>7707</commentid>
+            <who name="Nicholas Reville">npr</who>
+            <bug_when>2006-06-15 14:53:37 -0400</bug_when>
+            <thetext>RC2, OSX:
+
+if you add this webpage as a channel:
+
+http://www.apple.com/trailers
+
+Democracy starts beachballing after 1 or 2 minutes...  and gives errors like this in console:
+
+DTV: Stopping system activity updater timer
+WARNING: Calling &lt;function callback at 0xd9baa30&gt; on HTTPClient: http://www.apple.com/trailers/universal/miamivice/hd/ too slow (0.683 secs)
+Trac ticket id: 2374
+Owner: wguaraldi
+Reporter: npr
+Keywords: UnitTest</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>51341</commentid>
+            <who name="Will Kahn-Greene [pcf dev]">will.guaraldi</who>
+            <bug_when>2010-05-23 13:39:38 -0400</bug_when>
+            <thetext>Moving these from &quot;weekly build&quot; to &quot;nightly build&quot; version.  &quot;nightly build&quot; should be a catch-all for anything build that shows up on the nightlies page.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>29846</commentid>
+            <who name="Will Kahn-Greene [pcf dev]">will.guaraldi</who>
+            <bug_when>2008-03-05 10:06:00 -0500</bug_when>
+            <thetext>This is a bitesized task for a new contributor or someone looking for something to do.
+
+Documentation on unit tests is located in the wiki at:
+
+https://develop.participatoryculture.org/trac/democracy/wiki/UnitTesting
+
+Any status or thoughts should be in the comments on this bug.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>7724</commentid>
+            <who name="Will Kahn-Greene [pcf dev]">will.guaraldi</who>
+            <bug_when>2007-07-24 13:14:28 -0400</bug_when>
+            <thetext>
+Original author: wguaraldi</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>7723</commentid>
+            <who name="Janet [pcf QA]">jed</who>
+            <bug_when>2007-06-06 01:45:03 -0400</bug_when>
+            <thetext>COMMENT SPAM REMOVED</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>7722</commentid>
+            <who name="Janet [pcf QA]">jed</who>
+            <bug_when>2007-06-05 21:36:20 -0400</bug_when>
+            <thetext>COMMENT SPAM REMOVED</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>7721</commentid>
+            <who name="Janet [pcf QA]">jed</who>
+            <bug_when>2007-06-05 09:53:30 -0400</bug_when>
+            <thetext>COMMENT SPAM REMOVED</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>7720</commentid>
+            <who name="Janet [pcf QA]">jed</who>
+            <bug_when>2007-06-05 06:51:55 -0400</bug_when>
+            <thetext>COMMENT SPAM REMOVED</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>7719</commentid>
+            <who name="Janet [pcf QA]">jed</who>
+            <bug_when>2007-06-04 22:27:33 -0400</bug_when>
+            <thetext>COMMENT SPAM REMOVED</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>7718</commentid>
+            <who name="Janet [pcf QA]">jed</who>
+            <bug_when>2007-06-04 17:14:42 -0400</bug_when>
+            <thetext>COMMENT SPAM REMOVED</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>7717</commentid>
+            <who name="Janet [pcf QA]">jed</who>
+            <bug_when>2007-06-04 09:54:04 -0400</bug_when>
+            <thetext>COMMENT SPAM REMOVED</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>7716</commentid>
+            <who name="Janet [pcf QA]">jed</who>
+            <bug_when>2007-06-01 14:12:22 -0400</bug_when>
+            <thetext>COMMENT SPAM REMOVED</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>7715</commentid>
+            <who name="Janet [pcf QA]">jed</who>
+            <bug_when>2007-05-29 00:39:02 -0400</bug_when>
+            <thetext>COMMENT SPAM REMOVED</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>7714</commentid>
+            <who name="Janet [pcf QA]">jed</who>
+            <bug_when>2007-05-24 12:34:16 -0400</bug_when>
+            <thetext>COMMENT SPAM REMOVED</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>7713</commentid>
+            <who name="Janet [pcf QA]">jed</who>
+            <bug_when>2007-04-28 02:11:46 -0400</bug_when>
+            <thetext>COMMENT SPAM REMOVED</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>7712</commentid>
+            <who name="Janet [pcf QA]">jed</who>
+            <bug_when>2006-12-19 23:13:27 -0500</bug_when>
+            <thetext>
+Original author: jed</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>7711</commentid>
+            <who name="Chris Lahey">clahey</who>
+            <bug_when>2006-11-11 07:53:35 -0500</bug_when>
+            <thetext>
+Original author: clahey</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>7710</commentid>
+            <who name="Nick Nassar">nassar</who>
+            <bug_when>2006-06-16 16:35:13 -0400</bug_when>
+            <thetext>Fixed, but we still need to add a unittest for this
+Original author: nassar</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>7709</commentid>
+            <who name="Luc Heinrich">luc</who>
+            <bug_when>2006-06-16 10:45:33 -0400</bug_when>
+            <thetext>The freeze is occuring in feed.HTMLLinkGrabber.getLinks, line 1639:
+{{{
+match = HTMLLinkGrabber.linkPattern.match(data)
+}}}
+
+Original author: luc</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>7708</commentid>
+            <who name="Luc Heinrich">luc</who>
+            <bug_when>2006-06-16 10:20:01 -0400</bug_when>
+            <thetext>Are we sure this only happens on OS X ? I&apos;m pretty sure it could happen on other platforms as well because it seems to be a regexp matching problem.
+Original author: luc</thetext>
+          </long_desc>
+      
+          <attachment
+              isobsolete="0"
+              ispatch="0"
+              isprivate="0"
+              isurl="0"
+          >
+            <attachid>328</attachid>
+            <date>2006-06-16 10:43:00 -0400</date>
+            <delta_ts>2006-06-16 10:43:57 -0400</delta_ts>
+            <desc>Sample code and data reproducing the freeze.
+Original author: luc</desc>
+            <filename>test.py</filename>
+            <type>text/x-python</type>
+            <size>11706</size>
+            <attacher>luc</attacher>
+            
+
+          </attachment>
+      
+
+    </bug>
+    <bug>
+          <bug_id>4763</bug_id>
+          <alias></alias>
+          <creation_ts>2006-10-28 23:26:00 -0400</creation_ts>
+          <short_desc>[Patch included] Open file dialog should list supported extensions</short_desc>
+          <delta_ts>2012-03-02 22:15:35 -0500</delta_ts>
+          <reporter_accessible>1</reporter_accessible>
+          <cclist_accessible>1</cclist_accessible>
+          <classification_id>1</classification_id>
+          <classification>Unclassified</classification>
+          <product>Miro</product>
+          <component>main</component>
+          <version>0.9.1</version>
+          <rep_platform>all</rep_platform>
+          <op_sys>Windows</op_sys>
+          <bug_status>ASSIGNED</bug_status>
+          <resolution></resolution>
+          
+          
+          <bug_file_loc></bug_file_loc>
+          <status_whiteboard></status_whiteboard>
+          <keywords>bitesized</keywords>
+          <priority>P5</priority>
+          <bug_severity>normal</bug_severity>
+          <target_milestone>5.0</target_milestone>
+          
+          
+          <everconfirmed>1</everconfirmed>
+          <reporter name="Janet [pcf QA]">jed</reporter>
+          <assigned_to name="Janet [pcf QA]">jed</assigned_to>
+          <cc>ben</cc>
+    
+    <cc>ben</cc>
+    
+    <cc>npr</cc>
+
+      
+
+      
+
+      
+
+          <long_desc isprivate="0">
+            <commentid>14817</commentid>
+            <who name="Janet [pcf QA]">jed</who>
+            <bug_when>2006-10-28 23:26:31 -0400</bug_when>
+            <thetext>The Open dialog should have the files of type pulldown menu populated with supported video formats.
+Trac ticket id: 4763
+Owner: ben
+Reporter: jdragojevic@twcny.rr.com
+Keywords: Open file</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>84034</commentid>
+            <who name="Ben Sturmfels">ben</who>
+            <bug_when>2012-03-02 22:15:35 -0500</bug_when>
+            <thetext>(In reply to comment #9)
+&gt; Janet, can you give this a look over and make sure we&apos;re not losing any
+&gt; functionality.  One thing I noticed is that you can no longer open downloaded
+&gt; subscription files with the open menu item, but I don&apos;t think that&apos;s important.
+&gt;  Maybe we should add a *.* filter just in case though.
+
+On my system (GNU/Linux under Gnome 2) there is always a default &quot;All files&quot; option in the file type filter menu. Selecting this provides the &quot;*.*&quot; functionality Ben mentioned.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>84033</commentid>
+            <who name="Ben [pcf_dev]">ben</who>
+            <bug_when>2012-03-02 22:08:59 -0500</bug_when>
+            <thetext>I&apos;m going to leave this one open until I get the go-ahead from janet that things are okay.  Assigning to her now.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>84032</commentid>
+            <who name="Ben [pcf_dev]">ben</who>
+            <bug_when>2012-03-02 22:07:59 -0500</bug_when>
+            <thetext>4a17b97 implements this one.
+
+Janet, can you give this a look over and make sure we&apos;re not losing any functionality.  One thing I noticed is that you can no longer open downloaded subscription files with the open menu item, but I don&apos;t think that&apos;s important.  Maybe we should add a *.* filter just in case though.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>83743</commentid>
+            <who name="Janet [pcf QA]">jed</who>
+            <bug_when>2012-02-22 06:28:36 -0500</bug_when>
+            <thetext>Hi, thanks for taking the time to make a patch for this.
+
+For it to be included - it needs to go through the review process and you will need to sign a patch contributer form.  ben@pculture handles this so I&apos;m cc&apos;ing him here.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>83742</commentid>
+              <attachid>4404</attachid>
+            <who name="Ben Sturmfels">ben</who>
+            <bug_when>2012-02-22 04:15:21 -0500</bug_when>
+            <thetext>Created attachment 4404
+Patch to add file filters to &quot;Open file&quot; dialog.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>83741</commentid>
+            <who name="Ben Sturmfels">ben</who>
+            <bug_when>2012-02-22 04:14:03 -0500</bug_when>
+            <thetext>I&apos;ve attached a patch to add a filter with &quot;All Media Files&quot;, &quot;Video Files&quot; and &quot;Audio Files&quot; options. This is done similarly to `frontends.widgets.application.import_choose_files`.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>34029</commentid>
+            <who name="Will Kahn-Greene [pcf dev]">will.guaraldi</who>
+            <bug_when>2008-09-21 19:31:54 -0400</bug_when>
+            <thetext>This is low priority so I&apos;m bumping it down to P5.  If it happens, it happens.
+
+This is a good bitesized bug for someone if they want to tackle it.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>33703</commentid>
+            <who name="Will Kahn-Greene [pcf dev]">will.guaraldi</who>
+            <bug_when>2008-09-12 12:16:51 -0400</bug_when>
+            <thetext>Re-assigning to npr--needs decision making.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>33427</commentid>
+            <who name="Will Kahn-Greene [pcf dev]">will.guaraldi</who>
+            <bug_when>2008-09-03 21:14:52 -0400</bug_when>
+            <thetext>Bumping it to 2.0.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>31443</commentid>
+            <who name="Ben [pcf_dev]">ben</who>
+            <bug_when>2008-04-29 12:52:16 -0400</bug_when>
+            <thetext>This is tricky for a couple reasons, one is that open file can handle a ton of different kinds of files: movie files, .miro files, torrent files.  Each of those should really be a different option.  However, then we have a difficult choice we either have the &quot;all files&quot; option selected by default, which wouldn&apos;t make a big difference, or we select one of those options (movie files?) and force the user to change the pulldown menu if they want to pick a different kind.
+
+Also, we would have to add code to all 3 platforms which is kind of annoying.
+
+What do you think about this bug npr?
+
+I&apos;m accepting this bug and putting it in 1.3.  Let&apos;s either decide to drop it or implement it.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>14818</commentid>
+            <who name="Janet [pcf QA]">jed</who>
+            <bug_when>2006-12-17 22:01:34 -0500</bug_when>
+            <thetext>
+Original author: jed</thetext>
+          </long_desc>
+      
+          <attachment
+              isobsolete="0"
+              ispatch="1"
+              isprivate="0"
+              isurl="0"
+          >
+            <attachid>4404</attachid>
+            <date>2012-02-22 04:15:00 -0500</date>
+            <delta_ts>2012-02-22 04:15:21 -0500</delta_ts>
+            <desc>Patch to add file filters to &quot;Open file&quot; dialog.</desc>
+            <filename>miro-bugzilla-4763.diff</filename>
+            <type>text/plain</type>
+            <size>1967</size>
+            <attacher>ben</attacher>
+            
+
+          </attachment>
+      
+
+    </bug>
+    <bug>
+          <bug_id>8462</bug_id>
+          <alias></alias>
+          <creation_ts>2007-08-13 04:12:00 -0400</creation_ts>
+          <short_desc>uninstall should check if the app is running</short_desc>
+          <delta_ts>2011-06-01 05:31:19 -0400</delta_ts>
+          <reporter_accessible>1</reporter_accessible>
+          <cclist_accessible>1</cclist_accessible>
+          <classification_id>1</classification_id>
+          <classification>Unclassified</classification>
+          <product>Miro</product>
+          <component>Install</component>
+          <version>unknown</version>
+          <rep_platform>all</rep_platform>
+          <op_sys>Windows</op_sys>
+          <bug_status>NEW</bug_status>
+          <resolution></resolution>
+          
+          
+          <bug_file_loc></bug_file_loc>
+          <status_whiteboard></status_whiteboard>
+          <keywords>bitesized, install, uninstall</keywords>
+          <priority>P5</priority>
+          <bug_severity>normal</bug_severity>
+          <target_milestone>Future</target_milestone>
+          
+          
+          <everconfirmed>1</everconfirmed>
+          <reporter name="Janet [pcf QA]">jed</reporter>
+          <assigned_to name="Administrator">admin</assigned_to>
+          <cc>darrinsdd_208</cc>
+    
+    <cc>paulswartz+pcf</cc>
+
+      
+
+      
+
+      
+
+          <long_desc isprivate="0">
+            <commentid>25346</commentid>
+            <who name="Janet [pcf QA]">jed</who>
+            <bug_when>2007-08-13 04:12:51 -0400</bug_when>
+            <thetext>On Windows - 
+
+I have done this myself and also I believe a few other users have done this as well.  If you choose to uninstall the application while it is still running - not all of the files get deleted from the system (leftovers in Program Files\Participatory...\Miro\... and it can result in unexpected behavior on a re-install.
+
+When selecting Miro -&gt; Uninstall - the uninstaller should check if the application is running and prompt the user to shutdown - and refuse to continue until the app is shutdown.
+Trac ticket id: 8462
+Owner: clahey
+Reporter: jed
+Keywords: install uninstall</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>76336</commentid>
+              <attachid>3956</attachid>
+            <who name="Oraby">hatem.oraby</who>
+            <bug_when>2011-06-01 05:31:19 -0400</bug_when>
+            <thetext>Created attachment 3956
+A suggested patch to fix the bug.
+
+Following the &quot;TestRunning&quot; code in the .onInit, I&apos;ve added a similar code in the un.onInit function (with the same name as used with &quot;TestRunning&quot; but preceded with the word Uninstall e.g. UninstallTestRunning).
+
+Since there wasn&apos;t any code removed (only added code) so I didn&apos;t rename the function to Oldun.onInit and just added to the original un.onInit (or should it have been renamed??).
+
+I&apos;ve built a release and tested it on Windows Vista and Windows XP and it worked fine (i.e. If the user tried to uninstall the application while the application is running, then the uninstaller would pop-up a message and won&apos;t continue until the user shuts down the application).
+
+I have no more machines with different Windows versions to carry further tests on.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>63186</commentid>
+            <who name="Paul Swartz">paulswartz+pcf</who>
+            <bug_when>2010-12-20 18:16:16 -0500</bug_when>
+            <thetext>This is likely still an issue, but easy to fix.  There&apos;s already a TestRunning bit of code in the Miro.nsi file, but it only runs on installation.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>31786</commentid>
+            <who name="Janet [pcf QA]">jed</who>
+            <bug_when>2008-05-12 04:57:22 -0400</bug_when>
+            <thetext>*** Bug 9457 has been marked as a duplicate of this bug. ***</thetext>
+          </long_desc>
+      
+          <attachment
+              isobsolete="0"
+              ispatch="1"
+              isprivate="0"
+              isurl="0"
+          >
+            <attachid>3956</attachid>
+            <date>2011-06-01 05:31:00 -0400</date>
+            <delta_ts>2011-06-01 05:31:19 -0400</delta_ts>
+            <desc>A suggested patch to fix the bug.</desc>
+            <filename>Miro.nsi</filename>
+            <type>text/plain</type>
+            <size>52268</size>
+            <attacher>hatem.oraby</attacher>
+            
+
+          </attachment>
+      
+
+    </bug>
+    <bug>
+          <bug_id>8489</bug_id>
+          <alias></alias>
+          <creation_ts>2007-08-16 04:15:00 -0400</creation_ts>
+          <short_desc>support for portable apps</short_desc>
+          <delta_ts>2011-02-09 19:41:59 -0500</delta_ts>
+          <reporter_accessible>1</reporter_accessible>
+          <cclist_accessible>1</cclist_accessible>
+          <classification_id>1</classification_id>
+          <classification>Unclassified</classification>
+          <product>Miro</product>
+          <component>Global Preferences</component>
+          <version>0.9.8.1</version>
+          <rep_platform>all</rep_platform>
+          <op_sys>Windows</op_sys>
+          <bug_status>NEW</bug_status>
+          <resolution></resolution>
+          
+          
+          <bug_file_loc></bug_file_loc>
+          <status_whiteboard></status_whiteboard>
+          <keywords>bitesized</keywords>
+          <priority>P5</priority>
+          <bug_severity>enhancement</bug_severity>
+          <target_milestone>Future</target_milestone>
+          
+          
+          <everconfirmed>1</everconfirmed>
+          <reporter name="Janet [pcf QA]">jed</reporter>
+          <assigned_to name="Administrator">admin</assigned_to>
+          <cc>jed</cc>
+    
+    <cc>kaz+bugs</cc>
+    
+    <cc>ryanmccue</cc>
+    
+    <cc>will.guaraldi</cc>
+
+      
+
+      
+
+      
+
+          <long_desc isprivate="0">
+            <commentid>25407</commentid>
+            <who name="Janet [pcf QA]">jed</who>
+            <bug_when>2007-08-16 04:15:43 -0400</bug_when>
+            <thetext>Using the -profile command line parameter specifies the profile directory, however it doesn&apos;t change the location of the SQLite database stored in %APPDATA%
+Trac ticket id: 8489
+Owner: None
+Reporter: ryanmccue@cubegames.net
+Keywords: </thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>63131</commentid>
+            <who name="Will Kahn-Greene [pcf dev]">will.guaraldi</who>
+            <bug_when>2010-12-19 19:23:47 -0500</bug_when>
+            <thetext>*** Bug 9827 has been marked as a duplicate of this bug. ***</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>63013</commentid>
+            <who name="Will Kahn-Greene [pcf dev]">will.guaraldi</who>
+            <bug_when>2010-12-19 17:43:34 -0500</bug_when>
+            <thetext>Marking this as an enhancement.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>62865</commentid>
+            <who name="Will Kahn-Greene [pcf dev]">will.guaraldi</who>
+            <bug_when>2010-12-16 20:13:30 -0500</bug_when>
+            <thetext>I&apos;m changing this bug to add support for portable apps.
+
+In the last 3 years, we implemented support for U3, then ditched it.  Since then, there&apos;s a bunch of lingering code in the codebase, but we haven&apos;t been doing any U3 testing.  It&apos;s likely the case that we&apos;d need to do some serious work to support portable apps.
+
+I&apos;m interested in doing that, but it&apos;s pretty low on my priority list and I haven&apos;t had time to get to it.
+
+I&apos;m going to make this a bitesized bug.  I&apos;d love to help someone else implement support for portable apps for Miro on Windows.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>30530</commentid>
+            <who name="Ryan McCue">ryanmccue</who>
+            <bug_when>2008-03-28 20:04:15 -0400</bug_when>
+            <thetext>Can you elaborate on how it works exactly please?</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>30519</commentid>
+            <who name="Janet [pcf QA]">jed</who>
+            <bug_when>2008-03-28 12:43:12 -0400</bug_when>
+            <thetext>recently code was added to make a u3 portable app - you should check it out.
+
+Clahey - is our u3 work also applicable to portable apps?</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>26110</commentid>
+            <who name="Ryan McCue">ryanmccue</who>
+            <bug_when>2007-09-01 02:23:26 -0400</bug_when>
+            <thetext>This needs to be rectified as soon as possible, as it&apos;s the only thing blocking me from making a Portable version (see http://portableapps.com/)</thetext>
+          </long_desc>
+      
+      
+
+    </bug>
+    <bug>
+          <bug_id>8670</bug_id>
+          <alias></alias>
+          <creation_ts>2007-09-03 13:51:00 -0400</creation_ts>
+          <short_desc>Start minimized</short_desc>
+          <delta_ts>2011-08-24 14:48:36 -0400</delta_ts>
+          <reporter_accessible>1</reporter_accessible>
+          <cclist_accessible>1</cclist_accessible>
+          <classification_id>1</classification_id>
+          <classification>Unclassified</classification>
+          <product>Miro</product>
+          <component>main</component>
+          <version>0.9.8.1</version>
+          <rep_platform>all</rep_platform>
+          <op_sys>all</op_sys>
+          <bug_status>NEW</bug_status>
+          <resolution></resolution>
+          
+          
+          <bug_file_loc></bug_file_loc>
+          <status_whiteboard></status_whiteboard>
+          <keywords>bitesized</keywords>
+          <priority>P3</priority>
+          <bug_severity>enhancement</bug_severity>
+          <target_milestone>4.1</target_milestone>
+          
+          
+          <everconfirmed>1</everconfirmed>
+          <reporter name="Billy">karjala</reporter>
+          <assigned_to name="Administrator">admin</assigned_to>
+          <cc>acracia0.2</cc>
+    
+    <cc>adam.jimenez</cc>
+    
+    <cc>geoffl</cc>
+    
+    <cc>info</cc>
+    
+    <cc>jed</cc>
+    
+    <cc>jwz</cc>
+    
+    <cc>kayze</cc>
+    
+    <cc>lah</cc>
+    
+    <cc>list</cc>
+    
+    <cc>paul.shade</cc>
+    
+    <cc>will.guaraldi</cc>
+
+      
+
+      
+
+      
+
+          <long_desc isprivate="0">
+            <commentid>26123</commentid>
+            <who name="Billy">karjala</who>
+            <bug_when>2007-09-03 13:51:28 -0400</bug_when>
+            <thetext>User-Agent:       Mozilla/5.0 (Windows; U; Windows NT 6.0; en-US; rv:1.8.1.6) Gecko/20070725 Firefox/2.0.0.6
+Build Identifier: 
+
+Include an option to have Miro start up minimized. Currently at windows vista I get miro running at full screen every time I start my machine. This option could be placed in the Options dialog box.
+
+Reproducible: 
+
+Steps to Reproduce:</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>78962</commentid>
+            <who name="Will Kahn-Greene [pcf dev]">will.guaraldi</who>
+            <bug_when>2011-08-24 14:48:36 -0400</bug_when>
+            <thetext>I&apos;m unassigning myself from this one.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>76525</commentid>
+            <who name="Will Kahn-Greene [pcf dev]">will.guaraldi</who>
+            <bug_when>2011-06-03 19:53:32 -0400</bug_when>
+            <thetext>I&apos;m bumping this to 4.1.  I want to implement this on Windows and OSX at least.  Then figure out the bits for OSX, too.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>73259</commentid>
+            <who name="Geoffrey Lee">geoffl</who>
+            <bug_when>2011-04-26 14:34:35 -0400</bug_when>
+            <thetext>So, having a further look at this, it seems that on the Mac this isn&apos;t so easy after all in practical terms.  The reason is the startup protocol is fragile, it relies on the window being actually shown to get stuff done.  I tried to do all that without actually showing the window the first time and it&apos;s missing bits - but I guess at this stage of the dev cycle it&apos;s too late to gut it any further.  This is a shame, but we can revisit earlier in the next dev cycle.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>73253</commentid>
+            <who name="Geoffrey Lee">geoffl</who>
+            <bug_when>2011-04-26 12:57:27 -0400</bug_when>
+            <thetext>(In reply to comment #12)
+&gt; Bringing over comment #3 from bug #9199:
+&gt; 
+&gt; &quot;&quot;&quot;
+&gt; FYI, &quot;System Preferences / Accounts / Login Items&quot;.  The left column is a
+&gt; &quot;Hide&quot; checkbox.  When checked, apps are supposed to launch in a hidden state,
+&gt; as in Cmd-H -- present in dock, but no windows visible.
+&gt; &quot;&quot;&quot;
+&gt; 
+&gt; This portion is OSX-specific.
+&gt; 
+&gt; The rest of this bug is platform-agnostic.  Changing the platform to all.
+&gt; 
+&gt; Also, I&apos;ll toss it in my queue of things to look into for 4.0.
+
+The hidden bit sounds like something that&apos;d be easy to do on the Mac - it&apos;s broken because we unconditionally show the window even if NSApp().isHidden() returns YES on startup.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>63215</commentid>
+            <who name="Will Kahn-Greene [pcf dev]">will.guaraldi</who>
+            <bug_when>2010-12-20 19:12:50 -0500</bug_when>
+            <thetext>Bringing over comment #3 from bug #9199:
+
+&quot;&quot;&quot;
+FYI, &quot;System Preferences / Accounts / Login Items&quot;.  The left column is a
+&quot;Hide&quot; checkbox.  When checked, apps are supposed to launch in a hidden state,
+as in Cmd-H -- present in dock, but no windows visible.
+&quot;&quot;&quot;
+
+This portion is OSX-specific.
+
+The rest of this bug is platform-agnostic.  Changing the platform to all.
+
+Also, I&apos;ll toss it in my queue of things to look into for 4.0.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>63209</commentid>
+            <who name="Kaz Wesley">kaz+bugs</who>
+            <bug_when>2010-12-20 18:53:30 -0500</bug_when>
+            <thetext>*** Bug 9199 has been marked as a duplicate of this bug. ***</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>57581</commentid>
+            <who name="Will Kahn-Greene [pcf dev]">will.guaraldi</who>
+            <bug_when>2010-09-02 14:01:12 -0400</bug_when>
+            <thetext>Bumping this to the unassigned target.
+
+If someone wants to implement this, that&apos;d be great.  Let me know.  I&apos;m making it a bite-sized bug.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>43038</commentid>
+            <who name="Janet [pcf QA]">jed</who>
+            <bug_when>2009-08-19 06:45:30 -0400</bug_when>
+            <thetext>*** Bug 12098 has been marked as a duplicate of this bug. ***</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>42565</commentid>
+            <who name="Will Kahn-Greene [pcf dev]">will.guaraldi</who>
+            <bug_when>2009-07-30 13:46:48 -0400</bug_when>
+            <thetext>Bumping this to 2.6 and grabbing it.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>36851</commentid>
+            <who name="Janet [pcf QA]">jed</who>
+            <bug_when>2008-12-31 10:13:02 -0500</bug_when>
+            <thetext>*** Bug 10168 has been marked as a duplicate of this bug. ***</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>36841</commentid>
+            <who name="Janet [pcf QA]">jed</who>
+            <bug_when>2008-12-31 06:28:02 -0500</bug_when>
+            <thetext>*** Bug 11024 has been marked as a duplicate of this bug. ***</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>28663</commentid>
+            <who name="Janet [pcf QA]">jed</who>
+            <bug_when>2007-12-28 03:52:52 -0500</bug_when>
+            <thetext>jana - just so you know - there is also a preference for it to not launch on startup.  Not exactly what you want - but a workaround in the meantime.
+</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>28660</commentid>
+            <who name="Jana Persson">info</who>
+            <bug_when>2007-12-27 07:47:44 -0500</bug_when>
+            <thetext>Please make inclusion of this option a priority. The start behaviour in XP or Vista is very disruptive and in your face.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>27264</commentid>
+            <who name="kayze">kayze</who>
+            <bug_when>2007-10-15 20:26:24 -0400</bug_when>
+            <thetext>The hide thing does not work on my Mac 10.4.9</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>26679</commentid>
+            <who name="Lars Hallberg">lah</who>
+            <bug_when>2007-09-21 18:26:51 -0400</bug_when>
+            <thetext>GTK/X11 to!</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>26517</commentid>
+            <who name="Ephilei">jbjjunk</who>
+            <bug_when>2007-09-18 20:36:49 -0400</bug_when>
+            <thetext>Mac users can already do this: in account preferences/login items, checkmark &quot;hide.&quot;</thetext>
+          </long_desc>
+      
+      
+
+    </bug>
+    <bug>
+          <bug_id>9339</bug_id>
+          <alias></alias>
+          <creation_ts>2007-12-11 23:31:00 -0500</creation_ts>
+          <short_desc>Need to set limit on maximum disk space used by Miro, not just set limit by free space on disk (feature request)</short_desc>
+          <delta_ts>2011-12-30 07:09:24 -0500</delta_ts>
+          <reporter_accessible>1</reporter_accessible>
+          <cclist_accessible>1</cclist_accessible>
+          <classification_id>1</classification_id>
+          <classification>Unclassified</classification>
+          <product>Miro</product>
+          <component>Download</component>
+          <version>1.0</version>
+          <rep_platform>all</rep_platform>
+          <op_sys>all</op_sys>
+          <bug_status>ASSIGNED</bug_status>
+          <resolution></resolution>
+          
+          
+          <bug_file_loc></bug_file_loc>
+          <status_whiteboard></status_whiteboard>
+          <keywords>bitesized</keywords>
+          <priority>P5</priority>
+          <bug_severity>enhancement</bug_severity>
+          <target_milestone>4.1</target_milestone>
+          
+          
+          <everconfirmed>1</everconfirmed>
+          <reporter name="indulis">indulis</reporter>
+          <assigned_to name="Vivek Narayanan">mail</assigned_to>
+          <cc>mail</cc>
+    
+    <cc>mesquitakieran</cc>
+    
+    <cc>will.guaraldi</cc>
+
+      
+
+      
+
+      
+
+          <long_desc isprivate="0">
+            <commentid>28491</commentid>
+            <who name="indulis">indulis</who>
+            <bug_when>2007-12-11 23:31:42 -0500</bug_when>
+            <thetext>User-Agent:       Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.11) Gecko/20071127 (CK-IBM) Firefox/2.0.0.11
+Build Identifier: 
+
+Miro fights with other applications on my system that automatically download media files (iPodder being one of them).
+
+The problem is that if Miro gets started, then it will take up all my disk space until I have (say) 1GB left, as I have set it to limit downloads until there is 1GB free space.  I set the same limit in my other applications.  So now depending on which application gets started (Miro or the others), that app soaks up all my disk space until the others can&apos;t download.
+
+What is needed is an additional checkbox in the Download Options that limits the amount of disk space that Miro is allowed to use (i.e. total amount of disk that Miro&apos;s files are taking up). This would work in combination with the &quot;don&apos;t start a download unless it leaves more than X free disk space&quot;, so that if both are checked, then Miro would only download if there is more than a certain amount of free disk space, AND it had not used up more than its allowance of disk. That way, I can stop it filling up my disk, and allow other applications to work.
+
+Miro should &quot;play nice&quot; with the other kids on the block instead of thinking it owns all the disk.  
+
+Reproducible: Always
+
+Steps to Reproduce:
+1. Run Miro and let it download stuff
+2.
+3.
+Actual Results:  
+Miro fills my disk.
+
+Expected Results:  
+Feature request- N/A</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>81926</commentid>
+            <who name="Swurl CEO">mesquitakieran</who>
+            <bug_when>2011-12-30 07:09:24 -0500</bug_when>
+            <thetext>This bug should be easy to fix in windows. mac might be a little harder but not too hard either</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>74878</commentid>
+            <who name="Will Kahn-Greene [pcf dev]">will.guaraldi</who>
+            <bug_when>2011-05-15 22:58:20 -0400</bug_when>
+            <thetext>I&apos;m putting this in the 4.1 milestone so that I look at it then.  We&apos;re working hard on the 4.0 release for the next week and I just don&apos;t have time to work through this any more than I have already.
+
+I&apos;m really sorry about that.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>74481</commentid>
+              <attachid>3889</attachid>
+            <who name="Vivek Narayanan">mail</who>
+            <bug_when>2011-05-10 19:50:43 -0400</bug_when>
+            <thetext>Created attachment 3889
+Patch that adds optional max-size limit for movies directory</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>74475</commentid>
+              <attachid>3888</attachid>
+            <who name="Vivek Narayanan">mail</who>
+            <bug_when>2011-05-10 19:25:21 -0400</bug_when>
+            <thetext>Created attachment 3888
+Patch that adds optional max-size limit for movies directory
+
+Moved get_movies_directory_size to tv/lib/util.py</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>74474</commentid>
+            <who name="Vivek Narayanan">mail</who>
+            <bug_when>2011-05-10 19:17:49 -0400</bug_when>
+            <thetext>Sure, it is ok to send it that email address. I&apos;ll move the function to lib/utils.py now.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>74473</commentid>
+            <who name="Will Kahn-Greene [pcf dev]">will.guaraldi</who>
+            <bug_when>2011-05-10 19:14:27 -0400</bug_when>
+            <thetext>So, there are a couple of issues here.
+
+First, this is a non-trivial change, so we need you to sign a copyright assignment form.  Is it ok for me to send it to the email address you&apos;re using for your bugzilla account?
+
+Second, everything in dl_daemon package is off limits to the other code.  It&apos;s probably better to put get_movies_directory_size in tv/lib/utils.py and then refer to it from both the downloader and the regular code.
+
+Otherwise I think this is ok.  I&apos;m kind of skimming it right now because we&apos;re pushing for a release candidate today and I&apos;ve got a bunch of things on my plate.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>74342</commentid>
+              <attachid>3877</attachid>
+            <who name="Vivek Narayanan">mail</who>
+            <bug_when>2011-05-09 19:11:32 -0400</bug_when>
+            <thetext>Created attachment 3877
+Patch that adds optional max-size limit for movies directory
+
+I&apos;ve added a patch that adds the required functionality, it is modeled on PRESERVE_DISK_SPACE, ie, I added two new Preferences and updated the available space label on the UI. Looking for some feedback on this.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>74275</commentid>
+            <who name="Vivek Narayanan">mail</who>
+            <bug_when>2011-05-09 12:51:18 -0400</bug_when>
+            <thetext>Sorry for assigning the bug to myself without any comments anywhere. I am new to Miro and would like to contribute. I thought of starting off with this one. I&apos;m still browsing the code and hopefully will come up with a solution soon.
+
+Vivek</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>74273</commentid>
+            <who name="Will Kahn-Greene [pcf dev]">will.guaraldi</who>
+            <bug_when>2011-05-09 12:24:42 -0400</bug_when>
+            <thetext>Hi Vivek!  I noticed that you assigned this bug to yourself, but you didn&apos;t add a comment or anything, I haven&apos;t seen you on IRC that I know of, and you haven&apos;t sent anything to the develop list, so I&apos;m not sure if you did this intentionally or by accident.
+
+Are you planning to work on this bug?  If so, what&apos;s your plan of attack?</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>62926</commentid>
+            <who name="Will Kahn-Greene [pcf dev]">will.guaraldi</who>
+            <bug_when>2010-12-16 21:48:57 -0500</bug_when>
+            <thetext>Making this a bitesized bug for a contributor to implement.</thetext>
+          </long_desc>
+      
+          <attachment
+              isobsolete="1"
+              ispatch="1"
+              isprivate="0"
+              isurl="0"
+          >
+            <attachid>3877</attachid>
+            <date>2011-05-09 19:11:00 -0400</date>
+            <delta_ts>2011-05-10 19:25:21 -0400</delta_ts>
+            <desc>Patch that adds optional max-size limit for movies directory</desc>
+            <filename>9339.diff</filename>
+            <type>text/plain</type>
+            <size>5785</size>
+            <attacher>mail</attacher>
+            
+
+          </attachment>
+          <attachment
+              isobsolete="1"
+              ispatch="1"
+              isprivate="0"
+              isurl="0"
+          >
+            <attachid>3888</attachid>
+            <date>2011-05-10 19:25:00 -0400</date>
+            <delta_ts>2011-05-10 19:50:43 -0400</delta_ts>
+            <desc>Patch that adds optional max-size limit for movies directory</desc>
+            <filename>9339.diff</filename>
+            <type>text/plain</type>
+            <size>6592</size>
+            <attacher>mail</attacher>
+            
+
+          </attachment>
+          <attachment
+              isobsolete="0"
+              ispatch="1"
+              isprivate="0"
+              isurl="0"
+          >
+            <attachid>3889</attachid>
+            <date>2011-05-10 19:50:00 -0400</date>
+            <delta_ts>2011-05-15 22:58:58 -0400</delta_ts>
+            <desc>Patch that adds optional max-size limit for movies directory</desc>
+            <filename>9339.diff</filename>
+            <type>text/plain</type>
+            <size>6776</size>
+            <attacher>mail</attacher>
+            
+<flag name="review"
+          id="406"
+          type_id="1"
+          status="?"
+          setter="will.guaraldi"
+          requestee="will.guaraldi"
+    />
+          </attachment>
+      
+
+    </bug>
+    <bug>
+          <bug_id>9415</bug_id>
+          <alias></alias>
+          <creation_ts>2008-01-07 14:16:00 -0500</creation_ts>
+          <short_desc>Livingroom GUI mode</short_desc>
+          <delta_ts>2010-12-16 21:58:20 -0500</delta_ts>
+          <reporter_accessible>1</reporter_accessible>
+          <cclist_accessible>1</cclist_accessible>
+          <classification_id>1</classification_id>
+          <classification>Unclassified</classification>
+          <product>Miro</product>
+          <component>main</component>
+          <version>1.0</version>
+          <rep_platform>all</rep_platform>
+          <op_sys>all</op_sys>
+          <bug_status>NEW</bug_status>
+          <resolution></resolution>
+          
+          
+          <bug_file_loc></bug_file_loc>
+          <status_whiteboard></status_whiteboard>
+          <keywords>bitesized</keywords>
+          <priority>P5</priority>
+          <bug_severity>enhancement</bug_severity>
+          <target_milestone>Wishlist</target_milestone>
+          
+          
+          <everconfirmed>1</everconfirmed>
+          <reporter name="fidoboy">fido68</reporter>
+          <assigned_to name="Administrator">admin</assigned_to>
+          <cc>davidandfran2004</cc>
+    
+    <cc>elmargol</cc>
+    
+    <cc>mwcole</cc>
+    
+    <cc>shariff.jamil</cc>
+    
+    <cc>will.guaraldi</cc>
+
+      
+
+      
+
+      
+
+          <long_desc isprivate="0">
+            <commentid>28808</commentid>
+            <who name="fidoboy">fido68</who>
+            <bug_when>2008-01-07 14:16:14 -0500</bug_when>
+            <thetext>User-Agent:       Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1) ; .NET CLR 1.1.4322; .NET CLR 2.0.50727; .NET CLR 3.0.04506.30; .NET CLR 3.0.04506.648)
+Build Identifier: 
+
+It could be great to have a new GUI (Graphical User Interface) for use Miro from my living room, using my big screen. That mode should have a simple and readable elements and all should be available under remote/keyboard control (no mouse). Just something like Joost...
+
+Reproducible: 
+
+Steps to Reproduce:</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>62933</commentid>
+            <who name="Will Kahn-Greene [pcf dev]">will.guaraldi</who>
+            <bug_when>2010-12-16 21:58:20 -0500</bug_when>
+            <thetext>We don&apos;t have enough manpower to go implement Miro plugins in other applications, but I&apos;m happy to help anyone who wants to do that work.
+
+Pretty sure MythTV has a plugin already.  I don&apos;t know if there are others.
+
+Making this a bitesized bug.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>35202</commentid>
+            <who name="Markus Golser">elmargol</who>
+            <bug_when>2008-10-29 04:11:29 -0400</bug_when>
+            <thetext>Or maybe a miro plugin für elisa...</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>29271</commentid>
+            <who name="M. W. Cole">mwcole</who>
+            <bug_when>2008-02-05 11:00:10 -0500</bug_when>
+            <thetext>I agree that Miro needs a &quot;living room&quot; mode for those of us using it on a television. Anyone know if this is in the works?</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>29056</commentid>
+            <who name="Jamil">shariff.jamil</who>
+            <bug_when>2008-01-21 09:22:31 -0500</bug_when>
+            <thetext>...or like Elisa, in Ubuntu anyways. I&apos;d also really like to see better integration of Miro into Ubuntu&apos;s Media centre, rumoured to be using Elisa.</thetext>
+          </long_desc>
+      
+      
+
+    </bug>
+    <bug>
+          <bug_id>9466</bug_id>
+          <alias></alias>
+          <creation_ts>2008-01-17 02:51:00 -0500</creation_ts>
+          <short_desc>Elisa Integration for a remote control TV based interface....</short_desc>
+          <delta_ts>2010-12-16 21:59:09 -0500</delta_ts>
+          <reporter_accessible>1</reporter_accessible>
+          <cclist_accessible>1</cclist_accessible>
+          <classification_id>1</classification_id>
+          <classification>Unclassified</classification>
+          <product>Miro</product>
+          <component>main</component>
+          <version>0.9.8.1</version>
+          <rep_platform>all</rep_platform>
+          <op_sys>Linux</op_sys>
+          <bug_status>NEW</bug_status>
+          <resolution></resolution>
+          
+          
+          <bug_file_loc></bug_file_loc>
+          <status_whiteboard></status_whiteboard>
+          <keywords>bitesized</keywords>
+          <priority>P5</priority>
+          <bug_severity>enhancement</bug_severity>
+          <target_milestone>Wishlist</target_milestone>
+          
+          
+          <everconfirmed>1</everconfirmed>
+          <reporter name="Jason Brower">encompass</reporter>
+          <assigned_to name="Administrator">admin</assigned_to>
+          <cc>will.guaraldi</cc>
+
+      
+
+      
+
+      
+
+          <long_desc isprivate="0">
+            <commentid>29011</commentid>
+            <who name="Jason Brower">encompass</who>
+            <bug_when>2008-01-17 02:51:36 -0500</bug_when>
+            <thetext>User-Agent:       Mozilla/5.0 (X11; U; Linux i686; en; rv:1.8.1.11) Gecko/20071204 Epiphany/2.20 Firefox/2.0.0.11
+Build Identifier: 
+
+Elisa works very well with media when you have a remote and TV.  It would be nice to have integration with it and have it able to play all this saved media in a nice way.  For example, saving the screenshots in miro also work without redoing the work in elisa.  The interface should show new and downloading content.
+
+Reproducible: 
+
+Steps to Reproduce:</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>62934</commentid>
+            <who name="Will Kahn-Greene [pcf dev]">will.guaraldi</who>
+            <bug_when>2010-12-16 21:59:09 -0500</bug_when>
+            <thetext>This is something that someone should implement in Elisa.  I don&apos;t think it&apos;s something we&apos;re going to implement because we don&apos;t have enough manpower.
+
+Marking this as bitesized in the hopes that someone decides to work on it.</thetext>
+          </long_desc>
+      
+      
+
+    </bug>
+    <bug>
+          <bug_id>9569</bug_id>
+          <alias></alias>
+          <creation_ts>2008-02-10 13:03:00 -0500</creation_ts>
+          <short_desc>EnhReq: UI enhancement to allow PodNova feed to be read</short_desc>
+          <delta_ts>2010-05-23 13:57:09 -0400</delta_ts>
+          <reporter_accessible>1</reporter_accessible>
+          <cclist_accessible>1</cclist_accessible>
+          <classification_id>1</classification_id>
+          <classification>Unclassified</classification>
+          <product>Miro</product>
+          <component>Feeds</component>
+          <version>nightly build</version>
+          <rep_platform>all</rep_platform>
+          <op_sys>all</op_sys>
+          <bug_status>NEW</bug_status>
+          <resolution></resolution>
+          
+          
+          <bug_file_loc></bug_file_loc>
+          <status_whiteboard></status_whiteboard>
+          <keywords>bitesized</keywords>
+          <priority>P5</priority>
+          <bug_severity>enhancement</bug_severity>
+          <target_milestone>Wishlist</target_milestone>
+          
+          
+          <everconfirmed>1</everconfirmed>
+          <reporter name="Jeff Young">ahnan.usa</reporter>
+          <assigned_to name="Administrator">admin</assigned_to>
+          <cc>ahnan.usa</cc>
+    
+    <cc>jed</cc>
+    
+    <cc>will.guaraldi</cc>
+
+      
+
+      
+
+      
+
+          <long_desc isprivate="0">
+            <commentid>29349</commentid>
+              <attachid>1064</attachid>
+            <who name="Jeff Young">ahnan.usa</who>
+            <bug_when>2008-02-10 13:03:08 -0500</bug_when>
+            <thetext>Created attachment 1064
+External service subscription list
+
+ENHANCEMENT REQUEST: Allow for synchronizing subscriptions from a remote service
+
+iPodder &amp; Juice currently allow user to add an OPML.xml subscription feed from an external source to synchronize subscriptions from a remove service, in its Preferences...Feed Manager dialog box.
+
+Ex: http://feeds.podnova.com/32a/32ad9389515551f0160810a2713333d6/opml.xml
+
+This allows changing a subscription list in a single location that is then updated to any client that references that address.
+
+A obvious and easy UI control in Miro to accomplish this same functionality would be greatly helpful.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>52353</commentid>
+            <who name="Will Kahn-Greene [pcf dev]">will.guaraldi</who>
+            <bug_when>2010-05-23 13:57:09 -0400</bug_when>
+            <thetext>Moving these from &quot;weekly build&quot; to &quot;nightly build&quot; version.  &quot;nightly build&quot; should be a catch-all for anything build that shows up on the nightlies page.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>30495</commentid>
+            <who name="Will Kahn-Greene [pcf dev]">will.guaraldi</who>
+            <bug_when>2008-03-28 12:05:06 -0400</bug_when>
+            <thetext>I was talking with Chris Blizzard at Mozilla and he said that it&apos;s possible/likely we could use Weave for this.
+
+http://labs.mozilla.com/featured-projects/#weave
+
+Another possibility is to tie this into the channelguide where (some) people already have accounts and such.
+
+Definitely a good bitesized project for a contributor to flesh out and work on.  I&apos;m marking this accordingly.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>29405</commentid>
+            <who name="Jeff Young">ahnan.usa</who>
+            <bug_when>2008-02-13 21:39:57 -0500</bug_when>
+            <thetext>Yes essentially... This is current function of other products such as JUICE.  One modification I would say is that the remote OPML would be checked when Miro communicates out to check for updates to the feeds.  Changes in the remote OPML would then be reflected in the local feed subscriptions and the subscriptions then processed and checked for updates.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>29353</commentid>
+            <who name="Will Kahn-Greene [pcf dev]">will.guaraldi</who>
+            <bug_when>2008-02-11 02:03:05 -0500</bug_when>
+            <thetext>Just to clarify, Miro does allow you to import an OPML file and pick up channels, but I think the OPML file needs to be local.
+
+So the enhancement request here is two fold:
+
+1. handle remote OPML files accessible via http
+
+2. check the remote OPML file every time Miro starts up
+
+Is that correct?</thetext>
+          </long_desc>
+      
+          <attachment
+              isobsolete="0"
+              ispatch="0"
+              isprivate="0"
+              isurl="1"
+          >
+            <attachid>1064</attachid>
+            <date>2008-02-10 13:03:00 -0500</date>
+            <delta_ts>2008-02-10 13:03:08 -0500</delta_ts>
+            <desc>External service subscription list</desc>
+            <filename></filename>
+            <type>text/plain</type>
+            <size>70</size>
+            <attacher>ahnan.usa</attacher>
+            
+
+          </attachment>
+      
+
+    </bug>
+    <bug>
+          <bug_id>11882</bug_id>
+          <alias></alias>
+          <creation_ts>2009-06-07 06:08:00 -0400</creation_ts>
+          <short_desc>Provide Phonon backend (renderer)</short_desc>
+          <delta_ts>2010-12-16 19:48:26 -0500</delta_ts>
+          <reporter_accessible>1</reporter_accessible>
+          <cclist_accessible>1</cclist_accessible>
+          <classification_id>1</classification_id>
+          <classification>Unclassified</classification>
+          <product>Miro</product>
+          <component>main</component>
+          <version>2.0.4</version>
+          <rep_platform>all</rep_platform>
+          <op_sys>all</op_sys>
+          <bug_status>NEW</bug_status>
+          <resolution></resolution>
+          
+          
+          <bug_file_loc></bug_file_loc>
+          <status_whiteboard></status_whiteboard>
+          <keywords>bitesized</keywords>
+          <priority>P5</priority>
+          <bug_severity>enhancement</bug_severity>
+          <target_milestone>Wishlist</target_milestone>
+          
+          
+          <everconfirmed>1</everconfirmed>
+          <reporter name="Hendrik">hendrik</reporter>
+          <assigned_to name="Administrator">admin</assigned_to>
+          <cc>jed</cc>
+    
+    <cc>will.guaraldi</cc>
+
+      
+
+      
+
+      
+
+          <long_desc isprivate="0">
+            <commentid>41678</commentid>
+            <who name="Hendrik">hendrik</who>
+            <bug_when>2009-06-07 06:08:24 -0400</bug_when>
+            <thetext>User-Agent:       Mozilla/5.0 (compatible; Konqueror/4.2; Linux) KHTML/4.2.85 (like Gecko)
+Build Identifier: 
+
+With KDE 4 a new intermediate layer for audio and video was introduced which in theory should make it easier to create apps such as video players. Phonon takes care of the backend (Xine or Gstreamer on Linux) and provides cross-platform compatibility when used with the KDE base system on Windows or OS X.
+
+While it will probably be a substantial amount of work it would greatly increase the integration of Miro into KDE. Especially in cases where users have several audio devices which have specific defined uses through Phonon which are not known to GTK/Gnome apps and others.
+
+Reproducible: 
+
+Steps to Reproduce:
+
+
+
+
+An introduction to Phonon: http://techbase.kde.org/Development/Tutorials/Phonon/Introduction
+
+Someone&apos;s attempt at using Phonon in Python with PyQT4: http://pastebin.ca/1362335
+Taken from here: http://www.mail-archive.com/pyqt@riverbankcomputing.com/msg16866.html</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>62844</commentid>
+            <who name="Will Kahn-Greene [pcf dev]">will.guaraldi</who>
+            <bug_when>2010-12-16 19:48:26 -0500</bug_when>
+            <thetext>If anyone is interested in implementing a phonon backend and has questions, let me know.  I can&apos;t work on this, but I can provide support for someone who is interested.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>41693</commentid>
+            <who name="Janet [pcf QA]">jed</who>
+            <bug_when>2009-06-08 04:47:49 -0400</bug_when>
+            <thetext>moving to wishlist.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>41683</commentid>
+            <who name="Will Kahn-Greene [pcf dev]">will.guaraldi</who>
+            <bug_when>2009-06-07 16:39:52 -0400</bug_when>
+            <thetext>I don&apos;t think it&apos;d be too much work, but it&apos;s not something that I&apos;m going to do.  I currently have my hands full doing a mediocre job of maintaining the gstreamer and xine renderers.  I don&apos;t think any of the core developers use KDE.
+
+Generally speaking, the &quot;renderers&quot; are in platform/gtk-x11/plat/renderers/ .  To add phonon support, you&apos;d create a module called &quot;phononrenderer.py&quot; which implement an AudioRenderer class, a VideoRenderer class and a movie_data_program_info function.  The gstreamerrenderer.py is probably a good example.
+
+If someone wanted to take this on, I&apos;m more than happy to help out.  If phonon has Python bindings like gstreamer does, then it shouldn&apos;t be too difficult to implement.
+
+I&apos;d also be very interested in fixing the gtk-x11 code so that renderers could be provided as separate packages.
+
+I&apos;m going to mark this as bitesized since it&apos;s a well-defined project that&apos;s ideal for a contributor to help out with.</thetext>
+          </long_desc>
+      
+      
+
+    </bug>
+    <bug>
+          <bug_id>13122</bug_id>
+          <alias></alias>
+          <creation_ts>2010-03-29 22:40:00 -0400</creation_ts>
+          <short_desc>keyboard controls don&apos;t work with FC and gstreamer</short_desc>
+          <delta_ts>2010-12-21 16:01:44 -0500</delta_ts>
+          <reporter_accessible>1</reporter_accessible>
+          <cclist_accessible>1</cclist_accessible>
+          <classification_id>1</classification_id>
+          <classification>Unclassified</classification>
+          <product>Miro</product>
+          <component>Playback</component>
+          <version>3.0</version>
+          <rep_platform>all</rep_platform>
+          <op_sys>Linux</op_sys>
+          <bug_status>NEW</bug_status>
+          <resolution></resolution>
+          
+          
+          <bug_file_loc></bug_file_loc>
+          <status_whiteboard></status_whiteboard>
+          <keywords>bitesized</keywords>
+          <priority>P5</priority>
+          <bug_severity>major</bug_severity>
+          <target_milestone>Future</target_milestone>
+          
+          
+          <everconfirmed>1</everconfirmed>
+          <reporter name="oleksandr korneta">atenrok</reporter>
+          <assigned_to name="Administrator">admin</assigned_to>
+          <cc>jed</cc>
+    
+    <cc>will.guaraldi</cc>
+
+      
+
+      
+
+      
+
+          <long_desc isprivate="0">
+            <commentid>49079</commentid>
+            <who name="oleksandr korneta">atenrok</who>
+            <bug_when>2010-03-29 22:40:41 -0400</bug_when>
+            <thetext>User-Agent:       Mozilla/5.0 (X11; U; Linux x86_64; en-US; rv:1.9.1.8) Gecko/20100216 Fedora/3.5.8-1.fc12 Firefox/3.5.8
+Build Identifier: 
+
+when playback starts no keyboard controls work. In order to stop/pause/ff/rw/FullScreen/Separate_window video I have to click on control corresponding interface button. Keyboards shortcuts Ctrl+D/Space/Right/Left/Ctrl+F/Ctrl+T don&apos;t work. I always had the same problem on this machine on the 2.* branch using gstreamer, so I&apos;ve been using xine as video engine (everything worked nicely there). In version 3.0 you left me no choice so I am reporting it. 
+
+
+Reproducible: Always
+
+Steps to Reproduce:
+1. start video playback
+2. try to use any of keyboard shortcuts Ctrl+D/Space/Right/Left/Ctrl+F/Ctrl+T
+3. no shortcuts work. Playback needs to be controlled by mouseclicks. 
+
+
+Expected Results:  
+keyboard controlled playback 
+
+fedora 12. Fluxbox wm. Running from source build tree by run.sh
+
+$ rpm -qa | grep gstreamer
+gstreamer-plugins-ugly-0.10.13-1.fc12.x86_64
+gstreamer-ffmpeg-0.10.9-1.fc12.x86_64
+gstreamer-0.10.28-2.fc12.i686
+gstreamer-plugins-bad-nonfree-0.10.17-2.fc12.x86_64
+PackageKit-gstreamer-plugin-0.5.7-1.fc12.x86_64
+gstreamer-plugins-base-0.10.28-1.fc12.x86_64
+gstreamer-python-0.10.16-1.fc12.x86_64
+gstreamer-plugins-bad-free-devel-0.10.18-1.fc12.x86_64
+phonon-backend-gstreamer-4.3.80-5.fc12.i686
+phonon-backend-gstreamer-4.3.80-5.fc12.x86_64
+gstreamer-plugins-good-devel-0.10.21-1.fc12.x86_64
+gstreamer-plugins-bad-0.10.17-4.fc12.x86_64
+gstreamer-plugins-base-devel-0.10.28-1.fc12.x86_64
+gstreamer-plugins-base-0.10.28-1.fc12.i686
+gstreamer-plugins-good-0.10.21-1.fc12.x86_64
+gstreamer-devel-0.10.28-2.fc12.x86_64
+gstreamer-java-1.3-3.fc12.x86_64
+gstreamer-0.10.28-2.fc12.x86_64
+gstreamer-plugins-bad-free-extras-0.10.18-1.fc12.x86_64
+gstreamer-plugins-espeak-0.3.3-2.fc12.x86_64
+gstreamer-plugins-bad-free-0.10.18-1.fc12.x86_64
+gstreamer-tools-0.10.28-2.fc12.x86_6</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>62875</commentid>
+            <who name="Will Kahn-Greene [pcf dev]">will.guaraldi</who>
+            <bug_when>2010-12-16 20:26:01 -0500</bug_when>
+            <thetext>I can&apos;t reproduce this without building a new setup and I don&apos;t have time to do that.  If someone else could get to this, that&apos;d be great.  Otherwise, it&apos;ll just hang out in limbo.
+
+I&apos;m making this a bitesized bug.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>62873</commentid>
+            <who name="oleksandr korneta">atenrok</who>
+            <bug_when>2010-12-16 20:22:09 -0500</bug_when>
+            <thetext>(In reply to comment #11)
+
+forgot to add, just for the record. I tried to initiate a discussion on fluxbox maillist but nobody seems to be interested.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>62869</commentid>
+            <who name="oleksandr korneta">atenrok</who>
+            <bug_when>2010-12-16 20:18:43 -0500</bug_when>
+            <thetext>(In reply to comment #10)
+&gt; Is this still a problem with Miro 3.5.1 and recent versions of gstreamer?
+
+at the moment I&apos;m at gstreamer-0.10.30-1.fc13.x86_64 and Miro-3.5-2.fc13.x86_64
+
+I confirm -- the problem is still there. Keyboard control don&apos;t work as long as the mouse cursor is in playback area. They do work when the cursor is above the navigation bar in payback window. I thought the problem was specific to fluxbox and gstreamer, however after trying other gstreamer-based media players (like Totem) I cannot reproduce such problem there. Therefore it appears to be between Miro and fluxbox. 
+
+My workaround it to use external player for playback and it is nice to see you&apos;ve added the option to Miro. However Miro cannot feed playlists to external players so I end up playing content directly from directories, using Miro solely as a content downloader. 
+
+Would be nice to see this fixed.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>62848</commentid>
+            <who name="Will Kahn-Greene [pcf dev]">will.guaraldi</who>
+            <bug_when>2010-12-16 19:51:47 -0500</bug_when>
+            <thetext>Is this still a problem with Miro 3.5.1 and recent versions of gstreamer?</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>49197</commentid>
+            <who name="oleksandr korneta">atenrok</who>
+            <bug_when>2010-04-01 00:10:02 -0400</bug_when>
+            <thetext>I&apos;m totally lost now. I switched to openbox just in order to enjoy videos in Miro. Now I have 90% of videos played as expected with working keyboard control, but there is that 10% which still separate the playback window from the main interface and controls don;t work. I just don&apos;t get it why this f**king gstreamer only works properly in that f**king gnome.
+</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>49145</commentid>
+            <who name="oleksandr korneta">atenrok</who>
+            <bug_when>2010-03-31 00:04:41 -0400</bug_when>
+            <thetext>(In reply to comment #5)
+ 
+&gt; Maybe this has to do with fluxbox somehow?
+
+
+I guess you are right, it must have something to do with fluxbox. I just tested Miro 3.0 in gnome, openbox and fluxbox under my user and clean test user. The keyboard controls work fine in first two, but don&apos;t work at all under fluxbox as long as mouse cursor is within gstreamer video playback area. I&apos;m going to talk to fluxbox devs. Thanks for your help. 
+
+</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>49143</commentid>
+            <who name="oleksandr korneta">atenrok</who>
+            <bug_when>2010-03-30 22:59:07 -0400</bug_when>
+            <thetext>(In reply to comment #4)
+&gt; How do you initiate video playback?  Are you clicking on the playback button on
+&gt; the bottom?  Are you clicking on the play button for an item?  Are you
+&gt; selecting play from the menus?
+&gt; 
+
+I always initiate a playback by mouse click on the play icon (or preview frame) on the video item itself. Since you asked, I tried all possible methods, namely: play button on the item, play button on the toolbar, &quot;Play&quot; in the playback menu and Play from context menu of the video item. All of those yield the same result -- keyboard controls don&apos;t work. 
+
+However, playing with all these options I found that keyboard controls in Miro work beautifully when I move the mouse away from video frame. In case of detached window I have to keep the mouse cursor on its titlebar in order for this to work. I assume this has to with the videosink for gstreamer. I checked it in gstreamer-properties and it has Autodetect set as its default output plugin, which tells me that it picks up X11. The only other options available are 
+SDL, 
+X Window system (no xv),
+X Window system (X11/XShm/Xv)
+
+after playing with different options I can say that none of these makes a difference, except SDL. This one makes things even weirder, separating the playback window without controls off the main interface. 
+
+the default videosink for xine is set on xv, and this what worked for me in Miro 2.*. Besides that there is like other 10 options available in xine (including aa,fb and opengl). I don&apos;t see anything like that for gstreamer and have no idea how do I get myself more videosink plugins to test stuff. 
+
+What is your videosink? What are the other options you have for gstreamer? 
+</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>49112</commentid>
+            <who name="Will Kahn-Greene [pcf dev]">will.guaraldi</who>
+            <bug_when>2010-03-30 11:42:21 -0400</bug_when>
+            <thetext>I&apos;m taking this out of the 3.1 target and putting it back in unassigned.  It&apos;s not something I&apos;m going to work on for the 3.1 timeframe.</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>49111</commentid>
+            <who name="Will Kahn-Greene [pcf dev]">will.guaraldi</who>
+            <bug_when>2010-03-30 11:41:08 -0400</bug_when>
+            <thetext>Oh, whoops.  I missed the fluxbox part.  I don&apos;t run fluxbox, so I don&apos;t really know anything about it.  I do know that Miro 3.0 works fine on Fedora 12 with the default setup (GNOME, Metacity, ...).
+
+Maybe this has to do with fluxbox somehow?</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>49110</commentid>
+            <who name="Will Kahn-Greene [pcf dev]">will.guaraldi</who>
+            <bug_when>2010-03-30 10:31:44 -0400</bug_when>
+            <thetext>How do you initiate video playback?  Are you clicking on the playback button on the bottom?  Are you clicking on the play button for an item?  Are you selecting play from the menus?</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>49109</commentid>
+            <who name="oleksandr korneta">atenrok</who>
+            <bug_when>2010-03-30 10:23:14 -0400</bug_when>
+            <thetext>(In reply to comment #2)
+&gt; I&apos;m not able to reproduce this.  I suspect there&apos;s something missing in the
+&gt; steps to reproduce, but I&apos;m not sure what it would be.
+&gt; 
+&gt; Can you elaborate on the steps to reproduce the problem?
+&gt; 
+
+sure. What exactly do you want me to do? 
+
+my steps are:
+
+1. start miro (run.sh)
+2. initiate video playback
+3. try to use keyboard shortcuts to control the playback -- nothing works
+
+I emphasize -- apparently it is related to the video-engine in use on my system. It did not work with gstreamer in previous version either, but worked fine with xine. 
+If I&apos;m missing something -- I would be happy to find out what. </thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>49108</commentid>
+            <who name="Will Kahn-Greene [pcf dev]">will.guaraldi</who>
+            <bug_when>2010-03-30 09:56:52 -0400</bug_when>
+            <thetext>I&apos;m not able to reproduce this.  I suspect there&apos;s something missing in the steps to reproduce, but I&apos;m not sure what it would be.
+
+Can you elaborate on the steps to reproduce the problem?</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>49088</commentid>
+            <who name="Janet [pcf QA]">jed</who>
+            <bug_when>2010-03-30 05:03:46 -0400</bug_when>
+            <thetext>Moving to the 3.1 milestone
+</thetext>
+          </long_desc>
+      
+      
+
+    </bug>
+    <bug>
+          <bug_id>15672</bug_id>
+          <alias></alias>
+          <creation_ts>2011-01-01 21:25:00 -0500</creation_ts>
+          <short_desc>Miro doesn&apos;t start minimized at startup</short_desc>
+          <delta_ts>2011-01-02 21:06:10 -0500</delta_ts>
+          <reporter_accessible>1</reporter_accessible>
+          <cclist_accessible>1</cclist_accessible>
+          <classification_id>1</classification_id>
+          <classification>Unclassified</classification>
+          <product>Miro</product>
+          <component>Startup</component>
+          <version>3.5.1</version>
+          <rep_platform>all</rep_platform>
+          <op_sys>Linux</op_sys>
+          <bug_status>NEW</bug_status>
+          <resolution></resolution>
+          
+          
+          <bug_file_loc></bug_file_loc>
+          <status_whiteboard></status_whiteboard>
+          <keywords>bitesized</keywords>
+          <priority>P5</priority>
+          <bug_severity>enhancement</bug_severity>
+          <target_milestone>Wishlist</target_milestone>
+          
+          
+          <everconfirmed>1</everconfirmed>
+          <reporter name="Daniel Lee">erget2005</reporter>
+          <assigned_to name="Janet [pcf QA]">jed</assigned_to>
+          <cc>will.guaraldi</cc>
+
+      
+
+      
+
+      
+
+          <long_desc isprivate="0">
+            <commentid>64252</commentid>
+            <who name="Daniel Lee">erget2005</who>
+            <bug_when>2011-01-01 21:25:00 -0500</bug_when>
+            <thetext>Hello,
+
+I&apos;ve got Miro from the Packman repository running on OpenSUSE 11.3 64-bit with KDE. In Miro&apos;s preferences I&apos;ve enabled the system tray icon and told Miro to run automatically when I log in.
+
+When I start my computer, Miro doesn&apos;t start automatically, so I used the KDE Autostart GUI to have it start at login. However, it always started maximized. Then I switched to using kstart, which is a program that allows you to start programs minimized, etc. In case someone knows kstart the command I use is:
+kstart --iconify --skiptaskbar --skippager miro
+
+Miro still started maximized. Then I told KDE to not save Miro&apos;s status when I log off, so that Miro is theoretically closed when I log off and started fresh when I log on. Same result. I&apos;ve also tried using the command ksystraycmd with identical results.
+
+It would be really nice to launch Miro minimized at startup. Are there plans to include this functionality any time soon? Thanks!
+
+Best,
+Daniel</thetext>
+          </long_desc>
+          <long_desc isprivate="0">
+            <commentid>64255</commentid>
+            <who name="Will Kahn-Greene [pcf dev]">will.guaraldi</who>
+            <bug_when>2011-01-02 21:06:10 -0500</bug_when>
+            <thetext>Seems like you&apos;re trying to get Miro to start minimized by using KDE-specific things.  Since Miro isn&apos;t a KDE app, KDE support is primarily done by community members.  If you can figure out how to make the appropriate changes, then I&apos;d be game for accepting patches.  Otherwise it&apos;s unlikely anything will be done on this.
+
+Marking this as an enhancement, targeting wishlist, and marking as bitesized.
+
+Note: I&apos;m pretty sure this is not a duplicate of the other &quot;start as minimized&quot; bug since this one involves KDE-specific mechanics.</thetext>
+          </long_desc>
+      
+      
+
+    </bug>
+
+</bugzilla>

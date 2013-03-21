@@ -1,8 +1,0 @@
-- base_url: http://twistedmatrix.com/trac/
-  tracker_name: Twisted
-  bugimporter: trac.TracBugImporter
-  documentation_text: documentation
-  documentation_type: keywords
-  bitesized_text: easy
-  bitesized_type: keywords
-  queries: ['http://twistedmatrix.com/trac/query?id=5858&format=csv']

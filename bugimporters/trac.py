@@ -216,16 +216,6 @@ class TracBugImporter(BugImporter):
         return self.tm.bug_project_name_format.format(
                 tracker_name=self.tm.tracker_name, component=tbp.component)
 
-class SynchronousTracBugImporter(TracBugImporter):
-    def add_url_to_waiting_list(self, url, callback, c_args={}, errback=None, e_args={}):
-        try:
-            data = urllib2.urlopen(url).read()
-        except Exception, e:
-            if errback:
-                return errback(e)
-            else:
-                raise
-        return callback(data, **c_args)
 
 class TracBugParser(object):
     @staticmethod

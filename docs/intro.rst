@@ -25,21 +25,21 @@ following commands in your command prompt/terminal emulator.
 
 Get the code:
 
-1. git clone https://github.com/openhatch/oh-bugimporters.git
+1. ``git clone https://github.com/openhatch/oh-bugimporters.git``
 
 Switch into its directory:
 
-2. cd oh-bugimporters
+2. ``cd oh-bugimporters``
 
 Create a virtualenv for the project. (On Debian/Ubuntu systems, you'll
 need to run "apt-get install python-virtualenv" before this will work.)
 
-3. virtualenv env
+3. ``virtualenv env``
 
 Tell the virtualenv we want to "develop" this app, which also has the
 side-effect of downloading and installing any dependencies.
 
-4. env/bin/python setup.py develop
+4. ``env/bin/python setup.py develop``
 
 *Note*: If you run into a problem involving Scrapy and "uses_query", then you are hitting a `bug involving Python 2.7.3 and scrapy`_. In that case, you should make the virtualenv again with Python 2.6::
 
@@ -53,7 +53,7 @@ can continue.
 
 Finally, install a few optional dependencies:
 
-5. env/bin/pip install -r devrequirements.txt
+5. ``env/bin/pip install -r devrequirements.txt``
 
 Running the test suite
 ======================

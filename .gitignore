@@ -8,6 +8,7 @@ develop-eggs
 bugimporters/*.egg-info
 .coverage
 report.xml
+coverage.xml
 build
 *.orig
 *#

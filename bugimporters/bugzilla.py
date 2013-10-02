@@ -24,7 +24,7 @@ import logging
 import scrapy
 
 import bugimporters.items
-from bugimporters.base import BugImporter
+from bugimporters.base import BugImporter, printable_datetime
 from bugimporters.helpers import cached_property, string2naive_datetime
 
 ### The design of the BugzillaBugImporter has always been very special.
@@ -301,6 +301,7 @@ class BugzillaBugParser:
                     date_reported_text),
             'last_touched': self.bugzilla_date_to_printable_datetime(
                     last_touched_text),
+            'last_polled': printable_datetime(),
             'submitter_username': u,
             'submitter_realname': r,
             'canonical_bug_link': self.bug_url,

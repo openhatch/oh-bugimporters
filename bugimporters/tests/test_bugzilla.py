@@ -12,6 +12,12 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 def sample_data_path(f):
     return os.path.join(HERE, 'sample-data', 'bugzilla', f)
 
+class FakeDate(datetime.datetime):
+    #Class to mock datetime.datetime.utcnow()
+    @classmethod
+    def utcnow(cls):
+        return cls(2013, 10, 1)
+
 class TestCustomBugParser(object):
     @staticmethod
     def assertEqual(x, y):
@@ -40,12 +46,16 @@ class TestCustomBugParser(object):
             bug_data = bugzilla_data.xpath('bug')[0]
 
             kdebugzilla = bugimporters.bugzilla.KDEBugzilla(bug_data)
-            kdebugzilla.get_parsed_data_dict(base_url='http://bugs.kde.org/',
-                                             bitesized_type=None,
-                                             bitesized_text='',
-                                             documentation_type=None,
-                                             documentation_text='')
+
+            with mock.patch('datetime.datetime', FakeDate) as mock_date:
+                data = kdebugzilla.get_parsed_data_dict(base_url='http://bugs.kde.org/',
+                                                        bitesized_type=None,
+                                                        bitesized_text='',
+                                                        documentation_type=None,
+                                                        documentation_text='')
+                self.assertEqual(data['last_polled'], datetime.datetime(2013, 10, 1).isoformat())
             assert mock_specific.called
+
     ### Now, test that the bug import spider will create an importer
     ### configured to use the right class.
     def test_customs_twist_creates_importers_correctly(self):

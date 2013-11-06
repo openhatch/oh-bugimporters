@@ -25,8 +25,8 @@ class TestJiraBugImporter(object):
         self.tm.tracker_name = 'openhatch tests'
         self.tm.base_url = 'http://jira.cyanogenmod.org/browse/'
         self.tm.bitesized_type = 'label'
-        self.tm.bitesized_tag = 'bitesize'
-        self.tm.documentation_tag = 'docs'
+        self.tm.bitesized_text = 'bitesize'
+        self.tm.documentation_text = 'docs'
         self.tm.queries = [
             'https://jira.cyanogenmod.org/rest/api/2/search?jql=status=open'
         ]
@@ -66,8 +66,8 @@ class TestJiraBugImporter(object):
         self.tm.tracker_name = 'openhatch tests'
         self.tm.base_url = 'http://jira.cyanogenmod.org/browse/'
         self.tm.bitesized_type = 'priority'
-        self.tm.bitesized_tag = 'Trivial'
-        self.tm.documentation_tag = 'docs'
+        self.tm.bitesized_text = 'Trivial'
+        self.tm.documentation_text = 'docs'
         self.tm.queries = [
             'https://jira.cyanogenmod.org/rest/api/2/search?jql=status=closed'
         ]
@@ -106,8 +106,8 @@ class TestJiraBugImporter(object):
         self.tm.bugimporter = 'jira.JiraBugImporter'
         self.tm.tracker_name = 'openhatch tests'
         self.tm.base_url = 'http://jira.cyanogenmod.org/browse/'
-        self.tm.bitesized_tag = 'bitesize'
-        self.tm.documentation_tag = 'docs'
+        self.tm.bitesized_text = 'bitesize'
+        self.tm.documentation_text = 'docs'
         self.tm.queries = []
         self.tm.get_older_bug_data = ('http://jira.cyanogenmod.org/rest/api/2/search?jql=created>2011-12-08')
         self.tm.existing_bug_urls = [

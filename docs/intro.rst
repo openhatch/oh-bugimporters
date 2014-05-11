@@ -43,7 +43,7 @@ side-effect of downloading and installing any dependencies.
 
 If on Debian or Ubuntu, run::
 
- sudo apt-get install libxml-dev
+ sudo apt-get install libxml2-dev
  sudo apt-get build-dep python-lxml
  sudo apt-get install libffi-dev
 

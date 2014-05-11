@@ -14,7 +14,7 @@ This package is maintained by the OpenHatch community, so when you
 want to share code with us, you'll probably want to read the
 `OpenHatch patch contribution guide`_.
 
-.. _OpenHatch patch contribution guide: http://openhatch.readthedocs.org/en/latest/contributor/handling_patches.html
+.. _OpenHatch patch contribution guide: http://openhatch.readthedocs.org/en/latest/getting_started/handling_contributions.html
 
 Installation
 ============
@@ -23,49 +23,59 @@ If you want to use oh-bugimporters as a standalone Python package,
 which is the recommended way to develop it, you'll need to run the
 following commands in your command prompt/terminal emulator.
 
-Get the code:
+1. **Get the code**::
 
-1. ``git clone https://github.com/openhatch/oh-bugimporters.git``
+     git clone https://github.com/openhatch/oh-bugimporters.git
 
-Switch into its directory:
+2. **Switch into its directory**::
 
-2. ``cd oh-bugimporters``
+     cd oh-bugimporters
 
-Create a virtualenv for the project. (On Debian/Ubuntu systems, you'll
-need to run "apt-get install python-virtualenv" before this will work.)
+3. **Create a virtualenv for the project**::
 
-3. ``virtualenv env``
+     virtualenv env
 
-Tell the virtualenv we want to "develop" this app, which also has the
-side-effect of downloading and installing any dependencies.
+   On Debian/Ubuntu systems, you'll need to run "``apt-get install
+   python-virtualenv``" before this will work.
 
-4. Install compile-time dependences
+4. **Install compile-time dependences**
 
-If on Debian or Ubuntu, run::
+   If on Debian or Ubuntu, run::
 
- sudo apt-get install libxml-dev
- sudo apt-get build-dep python-lxml
- sudo apt-get install libffi-dev
+      sudo apt-get install libxml2-dev
+      sudo apt-get build-dep python-lxml
+      sudo apt-get install libffi-dev
+      sudo apt-get install libssl-dev
 
-If on Windows or Mac OS, then you might run into some errors. If you
-get it working there, please let us know what commands make it work on
-those platforms.
+   If on Windows or Mac OS, then you might run into some errors. If you
+   get it working there, please let us know what commands make it work
+   on those platforms.
 
-5. ``env/bin/python setup.py develop``
+5. **Build a working virtualenv**
 
-*Note*: If you run into a problem involving Scrapy and "uses_query", then you are hitting a `bug involving Python 2.7.3 and scrapy`_. In that case, you should make the virtualenv again with Python 2.6::
+   Tell the virtualenv we want to "develop" this app, which also has the
+   side-effect of downloading and installing any dependencies.::
 
-    virtualenv -p python2.6 env
+     env/bin/python setup.py develop
 
-After you re-create the virtualenv, you should run the "develop"
-command listed in step 4 again, and now you won't get an error, so you
-can continue.
+   **Note**: If you run into a problem involving Scrapy and "uses_query",
+   then you are hitting a `bug involving Python 2.7.3 and scrapy`_. In
+   that case, you can make the virtualenv again with Python 2.6::
+
+     virtualenv -p python2.6 env
+
+   Python 2.7.6 should be fine too, for more modern Debian-like systems.
+   If you have to re-create the virtualenv, you should run the "develop"
+   command listed in above again. When you don't get an error, you can
+   continue.
+
+6. **Install the test framework**
+
+   This is optional, but hightly recommended::
+
+     env/bin/pip install -r devrequirements.txt
 
 .. _bug involving Python 2.7.3 and scrapy: https://github.com/scrapy/scrapy/issues/144
-
-Finally, install a few optional dependencies:
-
-6. ``env/bin/pip install -r devrequirements.txt``
 
 Running the test suite
 ======================
@@ -74,7 +84,7 @@ This set of code comes with a set of automated tests that verify the
 behavior of the code. We like to keep the code in a clean state where
 all of those tests pass.
 
-You can run them as so::
+You can run them like so::
 
   env/bin/py.test
 

@@ -44,6 +44,7 @@ def main(raw_arguments):
                        '-s', 'CONCURRENT_REQUESTS_PER_DOMAIN=1',
                        '-s', 'CONCURRENT_REQUESTS=200',
                        '-s', 'DEPTH_PRIORITY=1',
+                       '-s', 'DOWNLOAD_DELAY=0.5',  # per host
                        '-s', 'SCHEDULER_DISK_QUEUE=scrapy.squeue.PickleFifoDiskQueue',
                        '-s', 'SCHEDULER_MEMORY_QUEUE=scrapy.squeue.FifoMemoryQueue',
                        '-a', 'extended_scrape=%s' % (args.extended_scrape)

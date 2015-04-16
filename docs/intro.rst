@@ -48,7 +48,14 @@ following commands in your command prompt/terminal emulator.
       sudo apt-get build-dep python-lxml
       sudo apt-get install libffi-dev
       sudo apt-get install libssl-dev
+ 
+   If on Fedora (tested on Fedora 21), run::
 
+      sudo yum install libxml2-devel
+      sudo yum install libxskt-devel
+      sudo yum install libffi-devel
+      sudo yum install openssl-devel
+      
    If on MacOS (10.9), a user reported the following way to get started using 
    both brew (a common package manager on Mac) and pip::
    

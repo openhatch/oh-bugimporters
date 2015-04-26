@@ -48,6 +48,7 @@ following commands in your command prompt/terminal emulator.
       sudo apt-get build-dep -y python-lxml
       sudo apt-get install -y libffi-dev
       sudo apt-get install -y libssl-dev
+      sudo apt-get build-dep -y python-yaml
  
    If on Fedora (tested on Fedora 21), run::
 

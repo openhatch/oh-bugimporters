@@ -16,20 +16,53 @@
 
 import datetime
 import importlib
+import os
 import json
 import scrapy.http
 import scrapy.spider
+import w3lib.http
 
 import bugimporters.items
 from bugimporters.base import BugImporter, printable_datetime
 from bugimporters.helpers import string2naive_datetime
+
+def make_github_headers():
+    generated_headers = {}
+
+    # Right now, the only GitHub headers we send are a basic
+    # authorization header, if the GITHUB_USERNAME and
+    # GITHUB_PERSONAL_ACCESS_TOKEN environment variables are set.
+    #
+    # It's important within this file to consistently call
+    # make_github_headers when creating scrapy.http.Request objects.
+    username = os.environ.get('GITHUB_USERNAME')
+    token = os.environ.get('GITHUB_PERSONAL_ACCESS_TOKEN')
+
+    # If there is both a username and a token, add that to our
+    # headers.
+    if username and token:
+        generated_headers['Authorization'] = w3lib.http.basic_auth_header(
+            username, token)
+
+    return generated_headers
+
+# In the absence of a valid username or token, then just return
+    # what we have so far, which is nothing.
+    if (not username) or (not token):
+        return generated_headers
+
+    return {
+        'Authorization': w3lib.http.basic_auth_header(
+            username, token),
+    }
 
 class GitHubBugImporter(BugImporter):
     def process_queries(self, queries):
         for query in queries:
             yield scrapy.http.Request(
                 url=query,
-                callback=self.handle_bug_list_response)
+                callback=self.handle_bug_list_response,
+                headers=make_github_headers())
 
     def handle_bug_list_response(self, response):
         issue_list = json.loads(response.body)
@@ -40,7 +73,8 @@ class GitHubBugImporter(BugImporter):
     def process_bugs(self, bug_list, older_bug_data_url):
         r = scrapy.http.Request(
             url=older_bug_data_url,
-            callback=self.handle_old_bug_query)
+            callback=self.handle_old_bug_query,
+            headers=make_github_headers())
         # For historical reasons, bug_list is a tuple of (url, data).
         # We just want the URLs.
         r.meta['bug_list'] = [url for (url, data) in bug_list]

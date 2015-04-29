@@ -1,6 +1,7 @@
 import autoresponse
 import datetime
 import os
+import mock
 
 from bugimporters.base import printable_datetime
 from bugimporters.github import GitHubBugImporter
@@ -14,6 +15,10 @@ class TestGitHubBugImporter(object):
     @staticmethod
     def assertEqual(x, y):
         assert x == y
+
+    @staticmethod
+    def assertTrue(x):
+        assert x
 
     def setup_class(cls):
         cls.tm = TrackerModel()
@@ -132,3 +137,57 @@ class TestGitHubBugImporter(object):
         bug = bugs[0]
         self.assertEqual(bug['canonical_bug_link'],
                          self.tm.existing_bug_urls[0])
+
+    @mock.patch('os.environ', {
+        'GITHUB_USERNAME': 'sample_username',
+        'GITHUB_PERSONAL_ACCESS_TOKEN': 'sample_token',
+    })
+    def test_process_bugs_uses_basic_auth(self):
+        '''Verify that we are providing GitHub with a HTTP basic auth header,
+        under the following conditions:
+
+        - There is an environment variable called GITHUB_USERNAME
+        - There is an environment variable called GITHUB_PERSONAL_ACCESS_TOKEN
+
+        To test, this we:
+
+        - Do a bunch of setup work to get the GitHub codepath to emit
+        scrapy.http.Request objects, then
+
+        - Verify that they have the "Authorization" header that indicates
+        basic auth is working.
+
+        For more on that, see:
+        https://github.com/scrapy/scrapy/blob/master/scrapy/contrib/downloadermiddleware/httpauth.py
+        '''
+        # Do setup work to get the GitHub codepath to emit request objects.
+        spider = bugimporters.main.BugImportSpider()
+        self.tm.bugimporter = 'github.GitHubBugImporter'
+        self.tm.tracker_name = 'mango django'
+        self.tm.github_name = 'acm-uiuc'
+        self.tm.github_repo = 'mango-django'
+        self.tm.bitesized_tag = ''
+        self.tm.get_older_bug_data = ('https://api.github.com/repos/acm-uiuc/'
+                                      'mango-django/issues?since='
+                                      '2012-09-15T00%3A00%3A00')
+        self.tm.existing_bug_urls = [
+            'https://github.com/acm-uiuc/mango-django/issues/3',
+            ]
+        self.tm.documentation_tag = ''
+        self.tm.queries = []
+        spider.input_data = [self.tm.__dict__]
+
+        # Now, grab at least one Request objects the spider would make.
+        first_request = spider.start_requests().next()
+
+        # The following is a hard-coded basic auth header for
+        # username=sample_username password=sample_token. If you need
+        # to refresh this with a different hard-coded sample, use the
+        # w3lib.http.basic_auth_header() function.
+        EXPECTED_AUTHORIZATION_HEADER = (
+            'Basic c2FtcGxlX3VzZXJuYW1lOnNhbXBsZV90b2tlbg=='
+        )
+
+        self.assertTrue(first_request.url.startswith('https://api.github.com'))
+        self.assertEqual(first_request.headers.get('Authorization'),
+                         EXPECTED_AUTHORIZATION_HEADER)

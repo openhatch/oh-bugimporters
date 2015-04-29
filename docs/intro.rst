@@ -44,10 +44,11 @@ following commands in your command prompt/terminal emulator.
 
    If on Debian or Ubuntu, run::
 
-      sudo apt-get install libxml2-dev
-      sudo apt-get build-dep python-lxml
-      sudo apt-get install libffi-dev
-      sudo apt-get install libssl-dev
+      sudo apt-get install -y libxml2-dev
+      sudo apt-get build-dep -y python-lxml
+      sudo apt-get install -y libffi-dev
+      sudo apt-get install -y libssl-dev
+      sudo apt-get build-dep -y python-yaml
  
    If on Fedora (tested on Fedora 21), run::
 

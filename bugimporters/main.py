@@ -78,6 +78,7 @@ class BugImportSpider(scrapy.spider.BaseSpider):
                 'launchpad': 'launchpad.LaunchpadBugImporter',
                 'bugzilla': 'bugzilla.BugzillaBugImporter',
                 'tigris': 'tigris.TigrisBugImporter',
+                'redmine': 'redmine.RedmineBugImporter',
                 }
 
             raw_bug_importer = obj.bugimporter

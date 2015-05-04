@@ -1,0 +1,56 @@
+{
+  "total_count": 1,
+  "offset": 0,
+  "issues": [
+    {
+      "author": {
+        "id": 202,
+        "name": "William Orr"
+      },
+      "project": {
+        "id": 1,
+        "name": "Some awesome project"
+      },
+      "description": "foo bar baz",
+      "id": 7111,
+      "done_ratio": 100,
+      "assigned_to": {
+        "id": 202,
+        "name": "Some other person"
+      },
+      "custom_fields": [
+        {
+          "id": 5,
+          "name": "Tags",
+          "value": ""
+        }
+      ],
+      "tracker": {
+        "id": 2,
+        "name": "Feature"
+      },
+      "fixed_version": {
+        "id": 182,
+        "name": "3.7.0"
+      },
+      "subject": "A bug",
+      "category": {
+        "id": 64,
+        "name": "Parsing"
+      },
+      "priority": {
+        "id": 12,
+        "name": "Medium"
+      },
+      "updated_on": "2015-04-27T07:55:37Z",
+      "status": {
+        "id": 5,
+        "name": "Closed"
+      },
+      "created_on": "2015-04-16T08:11:18Z",
+      "start_date": "2015-04-16",
+      "closed_on": "2015-04-27T07:55:37Z"
+    }
+  ],
+  "limit": 25
+}

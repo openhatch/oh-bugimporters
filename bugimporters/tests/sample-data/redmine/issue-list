@@ -1,0 +1,51 @@
+{
+  "total_count": 2,
+  "offset": 0,
+  "issues": [
+    {
+      "author": {
+        "id": 8,
+        "name": "William Orr"
+      },
+      "project": {
+        "id": 1,
+        "name": "Some awesome project"
+      },
+      "description": "foo bar baz",
+      "id": 7137,
+      "done_ratio": 0,
+      "assigned_to": {
+        "id": 8,
+        "name": "Some other person"
+      },
+      "custom_fields": [
+        {
+          "id": 5,
+          "name": "Tags",
+          "value": "bitesize"
+        }
+      ],
+      "tracker": {
+        "id": 2,
+        "name": "Feature"
+      },
+      "subject": "A bug",
+      "category": {
+        "id": 20,
+        "name": "Evaluation"
+      },
+      "priority": {
+        "id": 11,
+        "name": "Low"
+      },
+      "updated_on": "2015-04-29T21:41:04Z",
+      "status": {
+        "id": 7,
+        "name": "Open"
+      },
+      "created_on": "2015-04-29T21:40:20Z",
+      "start_date": "2015-04-29"
+    }
+  ],
+  "limit": 1
+}

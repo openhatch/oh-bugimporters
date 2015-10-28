@@ -41,7 +41,7 @@ class TestGoogleBugImporter(object):
         }
 
         request = retval[0]
-        request.http.Request.assertCalledWith(**expected_call_kwargs)
+        scrapy.Request.assert_called_with(**expected_call_kwargs)
 
     def test_handle_query_csv(self):
         with mock.patch.object(self.importer, 'prepare_bug_urls') as prep:
@@ -65,7 +65,7 @@ class TestGoogleBugImporter(object):
         }
 
         request = retval[0]
-        request.http.Request.assertCalledWith(**expected_call_kwargs)
+        scrapy.Request.assert_called_with(**expected_call_kwargs)
 
     def test_create_bug_dict_from_csv(self):
         project = 'myproj'
@@ -97,11 +97,11 @@ class TestGoogleBugImporter(object):
         self.importer._create_bug_dict_from_csv(project, csv_data)
 
         expected_call_kwargs = {
-            'url': 'http://example.com/',
+            'url': 'https://example.com/',
             'callback': self.importer.handle_query_csv,
         }
 
-        scrapy.http.Request.assertCalledWith(**expected_call_kwargs)
+        scrapy.Request.assert_called_with(**expected_call_kwargs)
 
     def test_create_bug_dict_from_csv_just_these_urls(self):
         just_these = ['https://code.google.com/p/myproj/issues/detail?id=1',
@@ -127,9 +127,10 @@ class TestGoogleBugImporter(object):
         assert retval == expected
 
     def test_handle_bug_html(self):
+
         with mock.patch.object(google.GoogleBugParser, 'parse') as parse:
             self.importer.handle_bug_html(self.response)
-            parse.assertCalledWith(self.tracker_model)
+            parse.assert_called_with(self.tracker_model)
 
     def test_prepare_bug_urls(self):
         project = 'myproj'

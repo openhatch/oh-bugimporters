@@ -1,8 +1,8 @@
 language: python
+sudo: false
 python:
   - "2.7"
 install:
- - python setup.py develop
+ - pip install -e .
  - pip install -r devrequirements.txt --use-mirrors
 script: py.test
-

@@ -1,0 +1,7 @@
+dev:
+  build: .
+  volumes:
+    - .:/code
+  stdin_open: true
+  tty: true
+  command: bash
